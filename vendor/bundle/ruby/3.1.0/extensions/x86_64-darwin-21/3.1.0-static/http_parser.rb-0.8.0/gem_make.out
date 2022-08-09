@@ -1,0 +1,20 @@
+current directory: /Users/ashishpatil/Desktop/p2022/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/Users/ashishpatil/.rubies/ruby-3.1.2/bin/ruby -I /Users/ashishpatil/.rubies/ruby-3.1.2/lib/ruby/3.1.0 -r ./siteconf20220806-85740-4u5w8g.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ashishpatil/Desktop/p2022/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= clean
+
+current directory: /Users/ashishpatil/Desktop/p2022/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\=
+compiling ruby_http_parser.c
+ruby_http_parser.c:365:17: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'long' [-Wsign-compare]
+    if (nparsed < len)
+        ~~~~~~~ ^ ~~~
+1 warning generated.
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+current directory: /Users/ashishpatil/Desktop/p2022/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20220806-85740-wvrsao
