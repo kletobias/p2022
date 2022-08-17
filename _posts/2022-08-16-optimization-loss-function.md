@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Test Blog
+title: 'The Math Behind "Stepping The Weights"'
 date: 2022-08-16 16:00:00
-description: 'In this blog post, the first part of the 2022 Google Search
-Operators are listed and explained in detail. These are all working in 2022.'
+description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
 ---
 
 # The Math Behind "Stepping The Weights"
@@ -40,10 +39,10 @@ $$h_{w}(\,x)\, =\, w_{1}x\,+\,w_{0}$$
 
 <br>
 
-This function is optimized by the linear regression algorithm, e.g., given $$n$$ training
-points in the *x,y* plane. **Linear Regression** finds the best fit for $$h_{w}$$,
-given these data. The only values, that it can change are the ones of $$w_{0}$$ and
-$$w_{1}$$, in order to minimize the empirical loss.<br>
+This function is optimized by the linear regression algorithm, e.g., given $$n$$
+training points in the *x,y* plane. **Linear Regression** finds the best fit for
+$$h_{w}$$, given these data. The only values, that it can change are the ones of
+$$w_{0}$$ and $$w_{1}$$, in order to minimize the empirical loss.<br>
 
 ## Minimizing The $$L_{2}$$ Loss
 
@@ -464,10 +463,11 @@ $$\frac{\partial}{\partial w_{i}}\mathit{Loss}(\,\mathbb{w})\, = \,
 The partial derivative was not specified for the 'inner function', since it
 depends on which of the two $$w$$ parameters is parsimoniously derived.
 
-The parcial derivatives to $$w_{0}$$, respectively $$w_{1}$$ are the following.
+The parcial derivatives to $$w_{0}$$, respectively $$w_{1}$$ are the following:
 
 $$\frac{\partial}{\partial w_{0}}(\,y - (\,w_{1}x + w_{0})\,)\, =
 \frac{\partial}{\partial w_{0}} (\,y - w_{1}x - w_{0})\, =\, -1$$
+
 $$\frac{\partial}{\partial w_{1}}(\,y - (\,w_{1}x + w_{0})\,)\, =
 \frac{\partial}{\partial w_{1}} (\,y - w_{1}x - w_{0})\, =\, -x$$
 
