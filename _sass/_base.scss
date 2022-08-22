@@ -4,6 +4,10 @@
 
 // Typography
 
+body{
+  font-family: var(--global-font);
+  font-size: 20px;
+}
 p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
   color: var(--global-text-color);
 }
@@ -651,3 +655,45 @@ html.transition *:after {
     }
   }
 }
+table {
+    min-width: 600px;
+    margin: 32px 0 40px;
+    border: 2px solid #202224;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table thead {
+    background: #202224;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 700;
+}
+table thead th {
+    font-weight: 700;
+    color: #ffffff !important;
+}
+th {
+    padding: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #ffffff;
+}
+td{
+  padding: 20px;
+}
+tr:nth-child(2n) {
+    background: #f4f5f6;
+}
+
+.post-list li a { color: var(--global-link); text-decoration: none; }
+
+.post-list li a:hover { color: var(--global-theme-color); }
+
+table.rouge-table {
+    border: none;
+    margin: 0;
+    min-width: auto;
+}
+table.table.table-sm.table-borderless{border: none;}
