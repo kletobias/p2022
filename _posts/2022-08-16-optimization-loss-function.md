@@ -1,8 +1,20 @@
 ---
-layout: post
+layout: distillnew
 title: 'The Math Behind "Stepping The Weights"'
 date: 2022-08-16 16:00:00
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
+
+toc:
+  - name: A Univariate Linear Regression Function
+    # if a section has subsections, you can add them as follows:
+    # subsections:
+    #   - name: Example Child Subsection 1
+    #   - name: Example Child Subsection 2
+  - name: Citations
+  - name: Footnotes
+  - name: Code Blocks
+  - name: Layouts
+  - name: Other Typography?
 ---
 
 # The Math Behind "Stepping The Weights"
@@ -18,6 +30,7 @@ terms and concepts are covered in this article, among others.
 3. Linear Regression.
 4. The empirical loss (using $$\mathit{L}_2$$).
 5. Gradient Descent
+
 
 ## A Univariate Linear Regression Function
 
@@ -262,7 +275,7 @@ plt.show()
 
 
 ​    
-![png](output_13_0.png)
+![png](assets/img/output_13_0.png)
 ​    
 
 
@@ -308,7 +321,7 @@ plotls(df_indep, w1, w0)
 ```
 
 
-![png](output_17_1.png)
+![png](assets/img/output_17_1.png)
 
 
 

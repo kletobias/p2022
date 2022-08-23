@@ -697,3 +697,30 @@ table.rouge-table {
     min-width: auto;
 }
 table.table.table-sm.table-borderless{border: none;}
+br {padding-bottom: 20px;}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    scroll-margin-top: 66px;
+    text-transform: capitalize;
+}
+@media (min-width: 1024px){
+d-article {
+    font-size: 20px !important;
+    line-height: 1.7em;
+}
+}
+d-article d-contents nav a {
+    border-bottom: none !important;
+    font-weight: normal !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+}
+d-article d-contents{
+  width: calc(max(100%, 500px)) !important;
+}
+d-article d-contents nav div{
+  margin-bottom: 1.8em !important;
+}
+.distill a:hover{
+  border-bottom-color: var(--global-theme-color) !important;
+  color: var(--global-theme-color) !important;
+}

@@ -62,13 +62,6 @@
     <!-- Content -->
     <div class="post distill">
 
-      <d-title>
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.description }}</p>
-      </d-title>
-
-      <d-byline></d-byline>
-
       <d-article>
         {% if page.toc -%}
         <d-contents>
@@ -90,11 +83,6 @@
 
         {{ content }}
       </d-article>
-
-      <d-appendix>
-        <d-footnote-list></d-footnote-list>
-        <d-citation-list></d-citation-list>
-      </d-appendix>
 
     </div>
 
