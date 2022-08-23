@@ -594,29 +594,6 @@ footer.sticky-bottom {
   }
 }
 
-// Rouge Color Customization
-figure.highlight {
-  margin: 0 0 1rem;
-}
-
-pre {
-  color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 6px;
-  padding: 6px 12px;
-  pre, code {
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
-  }
-}
-
-code {
-  color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 3px;
-  padding: 3px 3px;
-}
 
 
 // Transitioning Themes
@@ -723,4 +700,7 @@ d-article d-contents nav div{
 .distill a:hover{
   border-bottom-color: var(--global-theme-color) !important;
   color: var(--global-theme-color) !important;
+}
+.dataframe thead th {
+    text-align: left !important;
 }
