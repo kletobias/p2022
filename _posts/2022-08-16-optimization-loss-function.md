@@ -10,12 +10,15 @@ toc:
     # subsections:
     #   - name: Example Child Subsection 1
     #   - name: Example Child Subsection 2
+  - name: Minimizing The $$L_{2}$$ Loss
   - name: Citations
   - name: Footnotes
   - name: Code Blocks
   - name: Layouts
   - name: Other Typography?
 ---
+
+Minimizing The $$L_{2}$$ Loss
 
 # The Math Behind "Stepping The Weights"
 
@@ -66,11 +69,7 @@ finding.* We assume, that the noise of the dependent variable is normally
 distributed and use $$L_{2}$$ as loss function. We sum over all the training
 values:
 
-$$\mathit{Loss}(\,h_{w})\,=\,
-\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,)\, =\,
-\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2\, =\,
-\sum_{j=1}^{N}\,(\,y_{j}\, -\,
-(\,w_{1}x{j}\, +\, w_{0})\,)^2\,$$
+$$\mathit{Loss}(\,h_{w})\,=\,\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,)\, =\,\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2\, =\,\sum_{j=1}^{N}\,(\,y_{j}\, -\,(\,w_{1}x{j}\, +\, w_{0})\,)^2\,$$
 # From Loss Function To Optimization
 
 
