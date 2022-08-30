@@ -280,11 +280,7 @@ plt.show()
 ```
 
 
-​    
-![png](assets/img/output_13_0.png)
-​    
-
-
+{% include figure.html path="assets/img/output_13_0.png" class="img-fluid rounded z-depth-1" %}
 
 
 
@@ -327,11 +323,7 @@ plotls(df_indep, w1, w0)
 ```
 
 
-![png](assets/img/output_17_1.png)
-
-
-
-
+{% include figure.html path="assets/img/output_17_1.png" class="img-fluid rounded z-depth-1" %}
 
 
 ### Solving By Hand
@@ -481,7 +473,7 @@ layer.
 
 
 We calculate the partial derivatives, using the chain rule, and a single sample
-of independent and dependent variable $$(\,x,y)\,$$.
+of independent and dependent variable $$(x,y)$$.
 
 $$\frac{\partial}{\partial w_{i}}\mathit{Loss}(\,\mathbb{w})\, = \,
 \frac{\partial}{\partial w_{i}}(\,y\,-h_{w}(\,x)\,)^2 \, =\, 2(\,y\, - h_{w}(
@@ -549,7 +541,7 @@ The **stochastic gradient descent** or **SGD** is a faster variant. It randomly
 picks a small subset of training examples at each step, and updates the weights
 using the equation under heading 'Single Training Example'. It is common, that
 the SGD selects a **minibatch** of $$m$$ out of the $$N$$ examples. E.g., Given
-$$N=1\mathit{E}4$$ and the minibatch size of $$m=1\mathit{E}2$$, the difference in
+$$N=1\mathit{e}4$$ and the minibatch size of $$m=1\mathit{e}2$$, the difference in
 order of magnitude between $$N$$ and $$m$$ is 2, which equals a factor of 100 times
 less computationally expensive compared to the entire batch for each step.
 
