@@ -3,8 +3,7 @@ layout: distillnew
 title: 'The Math Behind<br>"Stepping The Weights"'
 date: 2022-08-16 16:00:00
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
-tags: Deep Learning
-category: Deep Learning
+tags: deep-learning,
 
 toc:
   - name: A Univariate Linear Regression Function
@@ -20,7 +19,7 @@ toc:
   - name: Other Typography?
 ---
 
-# The Math Behind<br>\"Stepping The Weights\"
+# The Math Behind<br>"Stepping The Weights"
 <br>
 **Stochastic Gradient Descent in detail.**
 
