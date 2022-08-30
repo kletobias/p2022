@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Here you can find multi-part series and longer articles.
 nav: true
 nav_order: 2
-display_categories: [work, fun]
+display_categories: [data preprocessing, deep learning]
 horizontal: false
 ---
 
