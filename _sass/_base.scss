@@ -690,7 +690,7 @@ d-article d-contents nav a {
     cursor: pointer !important;
 }
 d-article d-contents{
-  width: calc(max(100%, 500px)) !important;
+  width: calc(max(70%, 400px)) !important;
 }
 d-article d-contents nav div{
   margin-bottom: 1.8em !important;
@@ -707,4 +707,7 @@ footer.fixed-bottom{
 }
 footer.fixed-bottom .container{
   text-align: center;
+}
+.no-math mjx-container{
+  display: contents !important;
 }
