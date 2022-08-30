@@ -1,6 +1,6 @@
 ---
 layout: distillnew
-title: 'The Math Behind "Stepping The Weights"'
+title: 'The Math Behind<br>"Stepping The Weights"'
 date: 2022-08-16 16:00:00
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
 
@@ -18,10 +18,8 @@ toc:
   - name: Other Typography?
 ---
 
-Minimizing The $$L_{2}$$ Loss
-
-# The Math Behind "Stepping The Weights"
-
+# The Math Behind<br>\"Stepping The Weights\"
+<br>
 **Stochastic Gradient Descent in detail.**
 
 In this article we highlight a key concept in the Stochastic Gradient Descent
@@ -69,7 +67,15 @@ finding.* We assume, that the noise of the dependent variable is normally
 distributed and use $$L_{2}$$ as loss function. We sum over all the training
 values:
 
-$$\mathit{Loss}(\,h_{w})\,=\,\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,)\, =\,\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2\, =\,\sum_{j=1}^{N}\,(\,y_{j}\, -\,(\,w_{1}x{j}\, +\, w_{0})\,)^2\,$$
+$$
+\begin{aligned}
+\mathit{Loss}(\,h_{w})\,=\,&\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,) \\
+\iff\, &\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2 \\
+\iff\, &\sum_{j=1}^{N}\,(\,y_{j}\, -\,(\,w_{1}x{j}\, +\, w_{0})\,)^2\,
+\end{aligned}
+$$
+
+
 # From Loss Function To Optimization
 
 
@@ -335,17 +341,25 @@ that has to be solved, fulfills $$w_{opt}\, =\, \mathrm{Min}\,\mathit{Loss}_{w}(
 ^2$$ is minimized, when its partial derivatives with respect to $$w_{0}$$ and $$w_
 {1}$$ are zero.
 
-$$\frac{\partial{h_{w}}}{\partial{w_{0}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_
-{1}x_{j}\, + w_{0})\,)^2 \,= 0\,\, \mathrm{and}\,\, \frac{\partial{h_
+$$
+\begin{aligned}&\frac{\partial{h_{w}}}{\partial{w_{0}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_
+{1}x_{j}\, + w_{0})\,)^2 \,= 0 \\
+\mathrm{and}\,\, &\frac{\partial{h_
 {w}}}{\partial{w_{1}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_{1}x_{j}\, + w_{0})
-\,)^2\, = 0$$
+\,)^2\, = 0
+\end{aligned}
+$$
 
 Solving for $$w_{1}$$ and $$w_{0}$$ respectively, gives:
 
-$$w_{1}\, =\, \frac{\mathit{N}\,(\,\sum_{j=1}^{N}\, x_{j}y_{j})\, - (\,\sum_
+$$
+\begin{aligned}&w_{1}\, =\, \frac{\mathit{N}\,(\,\sum_{j=1}^{N}\, x_{j}y_{j})\, - (\,\sum_
 {j=1}^{N}\,x_{j})\,(\,\sum_{j=1}^{N}\, y_{j})\,}{\mathit{N}(\,\sum_{j=1}^{N}\,x_
-{j}^2)\, - (\,\sum_{j=1}^{N}\, x_{j})^2}\:\;\; w_{0}\, =\, \frac{(\,\sum_{j=1}^N
-y_{i} - w_{1}\,(\,\sum_{j=1}^{N}x_{j})\,)\,}{\mathit{N}}$$
+{j}^2)\, - (\,\sum_{j=1}^{N}\, x_{j})^2} \\
+&w_{0}\, =\, \frac{(\,\sum_{j=1}^N
+y_{i} - w_{1}\,(\,\sum_{j=1}^{N}x_{j})\,)\,}{\mathit{N}}
+\end{aligned}
+$$
 
 We plug in the values for the independent and dependent variables and solve for
 $$w_{1}$$ and $$w_{0}$$ respectively. Two functions are defined, one for each
@@ -485,9 +499,13 @@ $$\frac{\partial}{\partial w_{1}}(\,y - (\,w_{1}x + w_{0})\,)\, =
 
 Thus, the partial derivative of the loss function for $$w_{0}$$ and $$w_{1}$$ is:
 
-$$\frac{\partial}{\partial w_{0}}\mathit{Loss}(\,\mathbb{w})\, = -2\,(\,y\, - h_
-{w}(\,x)\,)\,\, \mathrm{and}\,\, \frac{\partial}{\partial w_{1}}\mathit{Loss}(
-\,\mathbb{w})\, = -2x\,(\,y\, - h_{w}(\,x)\,)\,$$
+$$
+\begin{aligned}&\frac{\partial}{\partial w_{0}}\mathit{Loss}(\,\mathbb{w})\, = -2\,(\,y\, - h_
+{w}(\,x)\,) \\
+\mathrm{and}\,\, &\frac{\partial}{\partial w_{1}}\mathit{Loss}(
+\,\mathbb{w})\, = -2x\,(\,y\, - h_{w}(\,x)\,)\,
+\end{aligned}
+$$
 
 With these equations calculated, it is possible to plug in the values in the
 pseudocode under 'Gradient Descent: Steps'. The -2 is added to the learning
