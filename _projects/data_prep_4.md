@@ -65,28 +65,28 @@ for col in df.columns:
 
     bfitted_kitchen:
     [1 0]
-    
-    
+
+
     belevator:
     [0 1]
-    
-    
+
+
     auxiliary_costs:
     [190.84 117.95 249.83  70.   213.33]
-    
-    
+
+
     total_rent:
     [541.06 559.05 839.01 665.   651.81]
-    
-    
+
+
     lat:
     [53.52943934 53.58414267 53.60449188 53.5639497  53.60180649]
-    
-    
+
+
     lng:
     [10.15235715 10.06842725  9.86423116  9.95688142 10.08125725]
-    
-    
+
+
     parking:
     [nan ' Tiefgaragen-Stellplatz ' ' 3 Tiefgaragen-Stellplätze '
      ' 1 Duplex-Stellplatz ' ' 1 Tiefgaragen-Stellplatz '
@@ -99,31 +99,31 @@ for col in df.columns:
      ' 1 Parkhaus-Stellplatz ' ' 20 Stellplätze '
      ' 12 Tiefgaragen-Stellplätze ' ' 6 Garagen '
      ' 6 Tiefgaragen-Stellplätze ' ' 5 Außenstellplätze ']
-    
-    
+
+
     date_listed:
     ['2018-12-03T00:00:00.000000000' '2018-12-02T00:00:00.000000000'
      '2018-11-30T00:00:00.000000000' '2018-11-29T00:00:00.000000000'
      '2018-11-28T00:00:00.000000000']
-    
-    
+
+
     yoc:
     ['1976' '1950' '1997' '1951' '2001']
-    
-    
+
+
     object_condition:
     [nan ' Gepflegt ' ' Vollständig renoviert ' ' Erstbezug '
      ' Erstbezug nach Sanierung ' ' Neuwertig ' ' Modernisiert '
      ' Renovierungsbedürftig ' ' Saniert ' ' Nach Vereinbarung ']
-    
-    
+
+
     heating_type:
     [nan ' Etagenheizung ' ' Zentralheizung ' ' Fernwärme '
      ' Elektro-Heizung ' ' Nachtspeicheröfen ' ' Gas-Heizung '
      ' Blockheizkraftwerke ' ' Fußbodenheizung ' ' Öl-Heizung '
      ' Holz-Pelletheizung ' ' Ofenheizung ' ' Wärmepumpe ']
-    
-    
+
+
     main_es:
     [' Fernwärme ' nan ' Öl ' ' Strom ' ' Gas, Strom ' ' Gas ' ' KWK fossil '
      ' Erdgas schwer ' ' Erdgas leicht ' ' Gas, Fernwärme ' ' Nahwärme '
@@ -132,62 +132,62 @@ for col in df.columns:
      ' Erdwärme, Strom ' ' Solar, Gas ' ' Öl, Fernwärme '
      ' Fernwärme, Erdgas schwer ' ' Erdwärme, Fernwärme ' ' Solar '
      ' Gas, Öl ' ' Umweltwärme ' ' Strom, Erdgas leicht ' ' KWK erneuerbar ']
-    
-    
+
+
     total_energy_need:
     [nan ' 132,9 kWh/(m²*a) ' ' 65,9 kWh/(m²*a) ' ' 49 kWh/(m²*a) '
      ' 50 kWh/(m²*a) ']
-    
-    
+
+
     base_rent:
     [' 350,22 € ' ' 441,10 € ' ' 589,18 € ' ' 595 € ' ' 438,48 € ']
-    
-    
+
+
     square_meters:
     [' 76 m² ' ' 60 m² ' ' 75 m² ' ' 46 m² ' ' 52 m² ']
-    
-    
+
+
     no_rooms:
     [' 3 ' ' 2,5 ' ' 2 ' ' 1,5 ' ' 3,5 ' ' 1 ' ' 4 ' ' 4,5 ' ' 5 ' ' 6 '
      ' 5,5 ' ' 6,5 ' ' 7,5 ' ' 8 ' ' 7 ' ' 36 ' ' 140 ']
-    
-    
+
+
     bbalcony:
     [nan 'Balkon/ Terrasse']
-    
-    
+
+
     cellar:
     [nan 'Keller']
-    
-    
+
+
     type:
     [nan ' Sonstige ' ' Dachgeschoss ' ' Etagenwohnung ' ' Hochparterre '
      ' Erdgeschosswohnung ' ' Maisonette ' ' Souterrain ' ' Terrassenwohnung '
      ' Penthouse ' ' Loft ']
-    
-    
+
+
     floor:
     [' 0 ' ' 3 ' ' 2 ' nan ' 1 ']
-    
-    
+
+
     no_bedrooms:
     [nan  1.  2.  3.  4.  0.  5.  6.]
-    
-    
+
+
     no_bathrooms:
     [nan  1.  2.  0.  3. 11.]
-    
-    
+
+
     bpets_allowed:
     [nan ' Ja ' ' Nach Vereinbarung ' ' Nein ']
-    
-    
+
+
     date_unlisted:
     ['2018-12-03T00:00:00.000000000' '2018-12-02T00:00:00.000000000'
      '2018-11-30T00:00:00.000000000' '2018-12-01T00:00:00.000000000'
      '2018-11-29T00:00:00.000000000']
-    
-    
+
+
     json_heating_type:
     [nan '[\'"obj_heatingType":"self_contained_central_heating"\']'
      '[\'"obj_heatingType":"central_heating"\']'
@@ -202,12 +202,12 @@ for col in df.columns:
      '[\'"obj_heatingType":"wood_pellet_heating"\']'
      '[\'"obj_heatingType":"stove_heating"\']'
      '[\'"obj_heatingType":"heat_pump"\']']
-    
-    
+
+
     json_balcony:
     ['[\'"obj_balcony":"n"\']' '[\'"obj_balcony":"y"\']']
-    
-    
+
+
     json_picturecount:
     ['[\'"obj_picturecount":"6"\']' '[\'"obj_picturecount":"11"\']'
      '[\'"obj_picturecount":"5"\']' '[\'"obj_picturecount":"0"\']'
@@ -232,8 +232,8 @@ for col in df.columns:
      '[\'"obj_picturecount":"39"\']' '[\'"obj_picturecount":"37"\']'
      '[\'"obj_picturecount":"42"\']' '[\'"obj_picturecount":"41"\']'
      '[\'"obj_picturecount":"45"\']' '[\'"obj_picturecount":"64"\']']
-    
-    
+
+
     json_telekomdownloadspeed:
     ['[\'"obj_telekomDownloadSpeed":"100 MBit/s"\']'
      '[\'"obj_telekomDownloadSpeed":"50 MBit/s"\']'
@@ -241,20 +241,20 @@ for col in df.columns:
      '[\'"obj_telekomDownloadSpeed":"25 MBit/s"\']'
      '[\'"obj_telekomDownloadSpeed":"6 MBit/s"\']'
      '[\'"obj_telekomDownloadSpeed":"200 MBit/s"\']']
-    
-    
+
+
     json_total_rent:
     ['[\'"obj_totalRent":"541.06"\']' '[\'"obj_totalRent":"559.05"\']'
      '[\'"obj_totalRent":"839.01"\']' '[\'"obj_totalRent":"665"\']'
      '[\'"obj_totalRent":"651.81"\']']
-    
-    
+
+
     json_yoc:
     ['[\'"obj_yearConstructed":"1976"\']' '[\'"obj_yearConstructed":"1950"\']'
      '[\'"obj_yearConstructed":"1997"\']' '[\'"obj_yearConstructed":"1951"\']'
      '[\'"obj_yearConstructed":"2001"\']']
-    
-    
+
+
     json_main_es:
     ['[\'"obj_firingTypes":"district_heating"\']'
      '[\'"obj_firingTypes":"no_information"\']'
@@ -268,16 +268,16 @@ for col in df.columns:
      '[\'"obj_firingTypes":"heat_supply"\']'
      '[\'"obj_firingTypes":"pellet_heating"\']'
      '[\'"obj_firingTypes":"solar_heating"\']']
-    
-    
+
+
     json_bfitted_kitchen:
     ['[\'"obj_hasKitchen":"y"\']' '[\'"obj_hasKitchen":"n"\']']
-    
-    
+
+
     json_cellar:
     ['[\'"obj_cellar":"n"\']' '[\'"obj_cellar":"y"\']']
-    
-    
+
+
     json_const_time:
     ['[\'"obj_yearConstructedRange":"3"\']'
      '[\'"obj_yearConstructedRange":"1"\']'
@@ -288,20 +288,20 @@ for col in df.columns:
      '[\'"obj_yearConstructedRange":"8"\']'
      '[\'"obj_yearConstructedRange":"7"\']'
      '[\'"obj_yearConstructedRange":"9"\']']
-    
-    
+
+
     json_base_rent:
     ['[\'"obj_baseRent":"350.22"\']' '[\'"obj_baseRent":"441.1"\']'
      '[\'"obj_baseRent":"589.18"\']' '[\'"obj_baseRent":"595"\']'
      '[\'"obj_baseRent":"438.48"\']']
-    
-    
+
+
     json_square_meters:
     ['[\'"obj_livingSpace":"76"\']' '[\'"obj_livingSpace":"60"\']'
      '[\'"obj_livingSpace":"75"\']' '[\'"obj_livingSpace":"46"\']'
      '[\'"obj_livingSpace":"52"\']']
-    
-    
+
+
     json_object_condition:
     ['[\'"obj_condition":"no_information"\']'
      '[\'"obj_condition":"well_kept"\']'
@@ -313,30 +313,30 @@ for col in df.columns:
      '[\'"obj_condition":"need_of_renovation"\']'
      '[\'"obj_condition":"refurbished"\']'
      '[\'"obj_condition":"negotiable"\']']
-    
-    
+
+
     json_interiorqual:
     ['[\'"obj_interiorQual":"no_information"\']'
      '[\'"obj_interiorQual":"normal"\']'
      '[\'"obj_interiorQual":"sophisticated"\']'
      '[\'"obj_interiorQual":"simple"\']' '[\'"obj_interiorQual":"luxury"\']']
-    
-    
+
+
     json_bpets_allowed:
     ['[\'"obj_petsAllowed":"no_information"\']'
      '[\'"obj_petsAllowed":"yes"\']' '[\'"obj_petsAllowed":"negotiable"\']'
      '[\'"obj_petsAllowed":"no"\']']
-    
-    
+
+
     json_belevator:
     ['[\'"obj_lift":"n"\']' '[\'"obj_lift":"y"\']']
-    
-    
+
+
     time_listed:
     [              0 259200000000000  86400000000000 172800000000000
      518400000000000]
-    
-    
+
+
 
 
 ## Applying The Batch Processing
@@ -546,7 +546,7 @@ for cc in zip(json_check, json_colnames):
     print("\n", ut, "\n")
 ```
 
-    
+
      heating_type           json_heating_type             
      Zentralheizung        central_heating                   4763
     -9999                  -9999                             2074
@@ -562,21 +562,21 @@ for cc in zip(json_check, json_colnames):
      Elektro-Heizung       electric_heating                    16
      Wärmepumpe            heat_pump                            9
      Ofenheizung           stove_heating                        4
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      bbalcony          json_bbalcony
     Balkon/ Terrasse  y                6400
     -9999             n                3023
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      cellar  json_cellar
     Keller  y              4873
     -9999   n              4550
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      heating_type           json_heating_type             
      Zentralheizung        central_heating                   4763
     -9999                  -9999                             2074
@@ -592,40 +592,40 @@ for cc in zip(json_check, json_colnames):
      Elektro-Heizung       electric_heating                    16
      Wärmepumpe            heat_pump                            9
      Ofenheizung           stove_heating                        4
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      total_rent  json_total_rent
     750.0       750                49
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      yoc    json_yoc
     -9999  -9999       599
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      main_es  json_main_es
      Gas     gas             3257
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      bfitted_kitchen  json_bfitted_kitchen
     1                y                       5755
     0                n                       3668
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      base_rent  json_base_rent
     650        650               112
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      square_meters  json_square_meters
     60             60                    157
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      object_condition            json_object_condition             
     -9999                       no_information                        3617
      Gepflegt                   well_kept                             3047
@@ -637,22 +637,22 @@ for cc in zip(json_check, json_colnames):
      Saniert                    refurbished                            279
      Renovierungsbedürftig      need_of_renovation                      36
      Nach Vereinbarung          negotiable                              11
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      bpets_allowed        json_bpets_allowed
     -9999                no_information        6467
      Nach Vereinbarung   negotiable            1673
      Nein                no                    1124
      Ja                  yes                    159
-    dtype: int64 
-    
-    
+    dtype: int64
+
+
      belevator  json_belevator
     0          n                 7420
     1          y                 2003
-    dtype: int64 
-    
+    dtype: int64
+
 
 
 
@@ -700,25 +700,25 @@ for col in df.columns:
 
     auxiliary_costs:
     [190.84 117.95 249.83 ...  89.59 197.96  59.93]
-    
-    
+
+
     lat:
     [53.52943934 53.58414267 53.60449188 ... 53.58693861 53.55758333
      53.64864505]
-    
-    
+
+
     lng:
     [10.15235715 10.06842725  9.86423116 ... 10.01625824 10.03986901
      10.03996646]
-    
-    
+
+
     parking:
     [nan 'Tiefgaragen-Stellplatz' 'Tiefgaragen-Stellplätze'
      'Duplex-Stellplatz' 'Außenstellplatz' 'Garage' 'Stellplatz' 'Carport'
      'Stellplätze' 'Parkhaus-Stellplatz' 'Parkhaus-Stellplätze' 'Garagen'
      'Außenstellplätze' 'Carports']
-    
-    
+
+
     date_listed:
     ['2018-12-03T00:00:00.000000000' '2018-12-02T00:00:00.000000000'
      '2018-11-30T00:00:00.000000000' '2018-11-29T00:00:00.000000000'
@@ -733,8 +733,8 @@ for col in df.columns:
      '2018-11-12T00:00:00.000000000' '2018-11-11T00:00:00.000000000'
      '2018-03-03T00:00:00.000000000' '2017-02-12T00:00:00.000000000'
      '2016-11-27T00:00:00.000000000']
-    
-    
+
+
     total_energy_need:
     [nan '132.9' '65.9' '49' '50' '140' '158' '242.7' '23' '181.8' '176.6'
      '231.6' '102' '127' '57.2' '58.3' '148' '145' '126' '106.6' '189.4'
@@ -749,33 +749,33 @@ for col in df.columns:
      '216.6' '69.6' '147.5' '94' '41.3' '100' '93' '121' '53.6' '70.7' '163'
     '270.7' '191.4' '189' '96.4' '238.8' '243.3' '289.4' '232.1' '249.8'
     '259']
-    
-    
+
+
     no_rooms:
     ['3' '2.5' '2' '1.5' '3.5' '1' '4' '4.5' '5' '6' '5.5' '6.5' '7.5' '8' '7'
      '36' '14']
-    
-    
+
+
     type:
     [nan 'Sonstige' 'Dachgeschoss' 'Etagenwohnung' 'Hochparterre'
      'Erdgeschosswohnung' 'Maisonette' 'Souterrain' 'Terrassenwohnung'
      'Penthouse' 'Loft']
-    
-    
+
+
     floor:
     ['0' '3' '2' nan '1' '6' '5' '4' '7' '14' '9' '10' '11' '8' '22' '-1' '19'
      '12' '13' '24' '15' '23' '99']
-    
-    
+
+
     no_bedrooms:
     [-9.999e+03  1.000e+00  2.000e+00  3.000e+00  4.000e+00  0.000e+00
       5.000e+00  6.000e+00]
-    
-    
+
+
     no_bathrooms:
     [-9.999e+03  1.000e+00  2.000e+00  0.000e+00  3.000e+00  1.100e+01]
-    
-    
+
+
     date_unlisted:
     ['2018-12-03T00:00:00.000000000' '2018-12-02T00:00:00.000000000'
      '2018-11-30T00:00:00.000000000' '2018-12-01T00:00:00.000000000'
@@ -790,30 +790,30 @@ for col in df.columns:
      '2018-11-13T00:00:00.000000000' '2018-11-12T00:00:00.000000000'
      '2017-11-25T00:00:00.000000000' '2018-08-19T00:00:00.000000000'
      '2016-12-10T00:00:00.000000000']
-    
-    
+
+
     json_heating_type:
     [nan 'self_contained_central_heating' 'central_heating' 'no_information'
      'district_heating' 'electric_heating' 'night_storage_heater'
      'gas_heating' 'combined_heat_and_power_plant' 'floor_heating'
      'oil_heating' 'wood_pellet_heating' 'stove_heating' 'heat_pump']
-    
-    
+
+
     json_picturecount:
     ['6' '11' '5' '0' '13' '2' '4' '7' '3' '10' '1' '9' '8' '15' '12' '24'
      '17' '14' '21' '18' '19' '25' '20' '22' '40' '29' '16' '28' '27' '36'
      '35' '34' '26' '23' '43' '32' '31' '38' '30' '49' '39' '37' '42' '41'
      '45' '64']
-    
-    
+
+
     json_telekomdownloadspeed:
     ['100' '50' '16' nan '25' '6' '200']
-    
-    
+
+
     json_total_rent:
     ['541.06' '559.05' '839.01' ... '1189.24' '382.73' '499.91']
-    
-    
+
+
     json_yoc:
     ['1976' '1950' '1997' '1951' '2001' '1870' '1985' '1937' '1912' '1954'
      '1953' nan '1952' '1961' '2011' '1973' '1968' '1908' '1930' '1939' '1964'
@@ -830,52 +830,52 @@ for col in df.columns:
      '1946' '2005' '1882' '1899' '1944' '2003' '2004' '1893' '1897' '1942'
      '1943' '1941' '1799' '1945' '1991' '1896' '1850' '1898' '1869' '1916'
      '1909' '1875' '1891' '1858' '1895' '1887' '1865' '1667']
-    
-    
+
+
     json_main_es:
     ['district_heating' 'no_information' 'oil' 'electricity' nan 'gas'
      'natural_gas_heavy' 'natural_gas_light' 'local_heating' 'geothermal'
      'liquid_gas' 'heat_supply' 'pellet_heating' 'solar_heating']
-    
-    
+
+
     json_bfitted_kitchen:
     ['y' 'n']
-    
-    
+
+
     json_cellar:
     ['n' 'y']
-    
-    
+
+
     json_const_time:
     ['3' '1' '5' '2' '6' '4' nan '8' '7' '9']
-    
-    
+
+
     json_base_rent:
     ['350.22' '441.1' '589.18' ... '991.28' '301.18' '398.91']
-    
-    
+
+
     json_square_meters:
     ['76' '60' '75' ... '63.99' '69.56' '46.93']
-    
-    
+
+
     json_object_condition:
     ['no_information' 'well_kept' 'fully_renovated' 'first_time_use'
      'first_time_use_after_refurbishment' 'mint_condition' 'modernized'
      'need_of_renovation' 'refurbished' 'negotiable']
-    
-    
+
+
     json_interiorqual:
     ['no_information' 'normal' 'sophisticated' 'simple' 'luxury']
-    
-    
+
+
     json_bpets_allowed:
     ['no_information' 'yes' 'negotiable' 'no']
-    
-    
+
+
     json_belevator:
     ['n' 'y']
-    
-    
+
+
     time_listed:
     [                0   259200000000000    86400000000000   172800000000000
        518400000000000   432000000000000   777600000000000   864000000000000
@@ -890,8 +890,8 @@ for col in df.columns:
       3110400000000000  3888000000000000  3715200000000000  4924800000000000
     18835200000000000 39398400000000000 17971200000000000 11750400000000000
      15292800000000000 24019200000000000]
-    
-    
+
+
 
 
 
@@ -908,14 +908,14 @@ df.info()
      1   lat                        9423 non-null   float64        
      2   lng                        9423 non-null   float64        
      3   parking                    2065 non-null   object         
-     4   date_listed                9423 non-null   datetime64[ns] 
+     4   date_listed                9423 non-null   datetime64[ns]
      5   total_energy_need          2796 non-null   object         
      6   no_rooms                   9423 non-null   object         
      7   type                       7089 non-null   object         
      8   floor                      7923 non-null   object         
      9   no_bedrooms                9423 non-null   float64        
      10  no_bathrooms               9423 non-null   float64        
-     11  date_unlisted              9423 non-null   datetime64[ns] 
+     11  date_unlisted              9423 non-null   datetime64[ns]
      12  json_heating_type          7349 non-null   object         
      13  json_bbalcony              9423 non-null   object         
      14  json_picturecount          9423 non-null   object         
@@ -1044,7 +1044,7 @@ df.columns
 
 
 
-## Reordering Of Columns 
+## Reordering Of Columns
 
 We reorder the columns with dtype `categorical` to be at the beginning of the
 columns in `df.columns`, to make sub-setting of the columns during the *feature
