@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Here you can find multi-part series and longer articles.
+description: Here you can find multi-part series and in-depth articles.
 nav: true
 nav_order: 2
-display_categories: ['Deep Learning', 'The Basics', 'Data Visualization', 'Tabular Data', 'Image Data', 'Kaggle', 'Practical', 'data preprocessing']
+display_categories: ['data preprocessing','deep learning']
 horizontal: false
 ---
 
