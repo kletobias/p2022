@@ -270,6 +270,7 @@ coeffs = model.coef_
 intercept = model.intercept_
 ```
 
+
 We map the coefficients to the independent variables. The coefficients of the
 final model are the output of the following function.
 
@@ -277,7 +278,7 @@ final model are the output of the following function.
 ```python
 def final_params(indep, coeffs, intercept):
     return dict(
-        zip([col for col in indep.columns.tolist()], np.append(intercept, coeffs))
+        zip([col for col in indep.columns.tolist()] + ['intercept'], np.append(coeffs,intercept))
     )
 ```
 
@@ -295,14 +296,15 @@ final_params(indep, coeffs, intercept)
 
 
 
-    {'cement': 18.996750218740445,
-     'slag': 0.11084314870584021,
-     'fly_ash': 0.09778986094861224,
-     'water': 0.07512685155415182,
-     'superplasticizer': -0.21209276166636368,
+    {'cement': 0.11084314870584021,
+     'slag': 0.09778986094861224,
+     'fly_ash': 0.07512685155415182,
+     'water': -0.21209276166636368,
+     'superplasticizer': 0.0,
      'coarse_aggregate': 0.0,
-     'fine_aggregate': 0.0,
-     'age': 0.009994803080481951}
+     'fine_aggregate': 0.009994803080481951,
+     'age': 0.11255389788043503,
+     'intercept': 18.996750218740445}
 
 
 
