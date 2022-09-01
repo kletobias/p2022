@@ -711,3 +711,6 @@ footer.fixed-bottom .container{
 .no-math mjx-container{
   display: contents !important;
 }
+d-byline .authors-affiliations{
+  grid-column-end: span 1 !important;
+}

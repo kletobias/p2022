@@ -4,8 +4,10 @@ title: 'Part 1: Basic Automation For Deep Learning'
 description: 'How to create and use a custom test harness, that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.'
 img: 'assets/img/838338477938@+-67822330.jpg'
 importance: 6
-tags: deep learning, fastai, automation, learning rate, loss function, stochastic gradient descent, binary image classification 
-category: deep learning 
+tags: deep learning, fastai, automation, learning rate, loss function, stochastic gradient descent, binary image classification
+category: deep learning
+authors: 'Tobias Klein'
+
 ---
 
 # Part 1: Basic Automation For Deep Learning
@@ -98,7 +100,7 @@ there are images where each one holds an iPhone in front of them and takes
 selfies.
 
 There was no active image selection from my part and no image processing, apart
-from the raw conversion and the square crop, that was applied the same way to 
+from the raw conversion and the square crop, that was applied the same way to
 all images.
 
 The dataset has many 'setup' shots, where I adjusted the aperture, shutter
@@ -110,7 +112,7 @@ values are completely white, that means in RGB values $(255,255,255)$.
 
 For the deep learning model, that means, that it has less raw input information
 for these images, when only looking at the information that can gained directly
-from a pixel. 
+from a pixel.
 
 These areas could end up being very valuable for the deep learning model, if
 there is a certain pattern to be found in these over exposed areas, that is
@@ -299,7 +301,7 @@ mf.summary(source=(path))
     2 datasets of sizes 680,170
     Setting up Pipeline: PILBase.create
     Setting up Pipeline: partial -> Categorize -- {'vocab': None, 'sort': True, 'add_na': False}
-    
+
     Building one sample
       Pipeline: PILBase.create
         starting from
@@ -313,19 +315,19 @@ mf.summary(source=(path))
           male
         applying Categorize -- {'vocab': None, 'sort': True, 'add_na': False} gives
           TensorCategory(1)
-    
+
     Final sample: (PILImage mode=RGB size=224x224, TensorCategory(1))
-    
-    
+
+
     Collecting items from /datasets
     Found 850 items
     2 datasets of sizes 680,170
     Setting up Pipeline: PILBase.create
     Setting up Pipeline: partial -> Categorize -- {'vocab': None, 'sort': True, 'add_na': False}
     Setting up after_item: Pipeline: ToTensor
-    Setting up before_batch: Pipeline: 
+    Setting up before_batch: Pipeline:
     Setting up after_batch: Pipeline: IntToFloatTensor -- {'div': 255.0, 'div_mask': 1}
-    
+
     Building one batch
     Applying item_tfms to the first sample:
       Pipeline: ToTensor
@@ -333,13 +335,13 @@ mf.summary(source=(path))
           (PILImage mode=RGB size=224x224, TensorCategory(1))
         applying ToTensor gives
           (TensorImage of size 3x224x224, TensorCategory(1))
-    
+
     Adding the next 3 samples
-    
+
     No before_batch transform to apply
-    
+
     Collating items in a batch
-    
+
     Applying batch_tfms to the batch built
       Pipeline: IntToFloatTensor -- {'div': 255.0, 'div_mask': 1}
         starting from
