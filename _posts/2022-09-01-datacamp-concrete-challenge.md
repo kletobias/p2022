@@ -5,12 +5,12 @@ date: 2022-08-16 16:00:00
 description: 'This is my notebook I created to solve the datacamp concrete
 challenge within an hour. There are explanations for most of the code in this
 article and we look deeper into the workings of the Lasso regression model.'
-tags: regression-analysis,lass-regression,sklearn,cross-validation
+tags: ['regression-analysis', 'lass-regression', 'sklearn', 'cross-validation']
 
 toc:
   - name: Sub One Hour Regression Challenge
   - name: The Challenge
-  - name: The Data 
+  - name: The Data
   - name: Imports
   - name: Creating Dependent & Independent Variable Splits
   - name: Create Train & Test Split
@@ -226,7 +226,7 @@ $$\ell_1$$-Norm as regularizer in its default configuration with $$\alpha = 1$$.
 What this means is that the sum of the absolute values of the coefficients ($$w$$)
 is added to the ordinary least squares term. The complete term is
 to be minimised regarding $$w$$ by the model during coordinate descent. The
-objective function to minimise is 
+objective function to minimise is
 
 $$
 \begin{aligned}
@@ -234,7 +234,7 @@ $$
  &\mathrm{Euclidean}\;\mathrm{Norm:}\:\;\| x \|_2 = \left( \sum_{i=1}^n | x_i |^2 \right)^{1/2},\;\:\: \ell_1\text{-}\mathrm{Norm:}\;\: \left\| x \right\|_1 := \sum_{i=1}^{n} \left| x_i \right|
 \end{aligned}
 $$
- 
+
 With $$n$$ the number of observations, $$X$$ the vector of the independent
 variables with coefficients vector $$w$$ and $$y$$ the dependent variable. The
 model solves the minimisation problem regarding $$w$$ imposed by the added
@@ -253,7 +253,7 @@ the number of columns given by $$p$$ (number of regressors). Lasso is frequently
 used when there are far more regressors than there are observations, that is
 if $$p \gg n$$. As with a general regression model, the assumption is that the
 observations are either independent or that the $$y_i$$s are conditionally
-independent given the $$x_{ij}$$s. 
+independent given the $$x_{ij}$$s.
 
 ## Final Coefficients And Intercept
 
@@ -378,5 +378,3 @@ gm
   </tbody>
 </table>
 </div>
-
-
