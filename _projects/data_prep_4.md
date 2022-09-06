@@ -25,10 +25,10 @@ outputs are shortened for readability.
 
 #### Links To All Parts Of The Series
 
-[Data Preparation Series 1](https://kletobias.github.io/project/data-prep-1)  
-[Data Preparation Series 2](https://kletobias.github.io/project/data-prep-2)  
-[Data Preparation Series 3](https://kletobias.github.io/project/data-prep-3)  
-[Data Preparation Series 4](https://kletobias.github.io/project/data-prep-4)  
+[Data Preparation Series 1]({% link _projects/data_prep_1.md %})  
+[Data Preparation Series 2]({% link _projects/data_prep_2.md %})  
+[Data Preparation Series 3]({% link _projects/data_prep_3.md %})  
+[Data Preparation Series 4]({% link _projects/data_prep_4.md %})  
 
 ## Summary Of The Series
 
@@ -1171,7 +1171,7 @@ df.to_csv("/Volumes/data/df_first_cleaning.csv")
 ---
 <br>
 <br>
-[Data Preparation Series 1](https://kletobias.github.io/project/data-prep-1)  
-[Data Preparation Series 2](https://kletobias.github.io/project/data-prep-2)  
-[Data Preparation Series 3](https://kletobias.github.io/project/data-prep-3)  
-[Data Preparation Series 4](https://kletobias.github.io/project/data-prep-4)  
+[Data Preparation Series 1]({% link _projects/data_prep_1.md %})  
+[Data Preparation Series 2]({% link _projects/data_prep_2.md %})  
+[Data Preparation Series 3]({% link _projects/data_prep_3.md %})  
+[Data Preparation Series 4]({% link _projects/data_prep_4.md %})  
