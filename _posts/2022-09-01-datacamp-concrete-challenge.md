@@ -5,7 +5,7 @@ date: 2022-08-16 16:00:00
 description: 'This is my notebook I created to solve the datacamp concrete
 challenge within an hour. There are explanations for most of the code in this
 article and we look deeper into the workings of the Lasso regression model.'
-tags: ['regression-analysis', 'lass-regression', 'sklearn', 'cross-validation']
+tags: ['regression-analysis', 'lasso-regression', 'sklearn', 'cross-validation', 'in-depth-math']
 
 toc:
   - name: Sub One Hour Regression Challenge
