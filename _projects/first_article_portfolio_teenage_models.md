@@ -125,7 +125,7 @@ useful for classifying the images in 'male' model and 'female' model.
     </div>
 </div>
 <div class="caption">
-        9 random sample images, that show images of both categories. The applied
+        Figure 01 - 9 random sample images, that show images of both categories. The applied
         crop turns each image into a square image and its length is equal to the
         smaller dimension of the original image. The image in the center of the
         grid shows, that 'setup shots', where the power of the strobe was
