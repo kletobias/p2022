@@ -6,6 +6,12 @@ img: 'assets/img/838338477938@+-3948324823.jpg'
 importance: 3
 tags: tabular data, pandas, data exploration, introduction
 category: data preprocessing
+
+toc:
+  - name: Reading In The Input Data
+  - name: First Look At The DataFrame
+  
+
 ---
 
 # From Webscraping Data<br>To Tidy Pandas DataFrame
@@ -656,7 +662,7 @@ print('The resulting index, if False is used:\n %s\n ' % df_index_2.index)
                 ...
                 5582, 5583, 5584, 5585, 5586, 5587, 5588, 5589, 5590, 5591],
                dtype='int64', length=12495)
-     
+
     The resulting index, if False is used:
      Int64Index([   0,    1,    2,    3,    4,    5,    6,    7,    8,    9,
                 ...
