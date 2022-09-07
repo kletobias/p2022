@@ -677,6 +677,9 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
     scroll-margin-top: 66px;
     text-transform: capitalize;
 }
+d-article h4{
+  text-transform: lowercase !important;
+}
 @media (min-width: 1024px){
 d-article {
     font-size: 20px !important;
