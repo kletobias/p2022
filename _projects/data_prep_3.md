@@ -8,6 +8,22 @@ tags: tabular data, pandas, geospatial feature engineering, timedelta64 column
 category: data preprocessing
 ---
 
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#summary-of-this-article">Summary Of This Article</a></div>
+    <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
+    <div class="no-math"><a href="#heating-costs">Heating Costs</a></div>
+    <div class="no-math"><a href="#latitude">Latitude</a></div>
+    <div class="no-math"><a href="#creating-the-gps-column">Creating The GPS Column</a></div>
+    <div class="no-math"><a href="#creation-of-the-gps-column-13">Creation Of The GPS Column 1/3</a></div>
+    <div class="no-math"><a href="#reviewing-the-columns-in-the-dataframe-again">Reviewing The Columns In The DataFrame Again</a></div>
+    <div class="no-math"><a href="#date-listed--date-unlisted-columns">Date Listed & Date Unlisted Columns</a></div>
+    <div class="no-math"><a href="#time_listed-column">Time_Listed Column</a></div>
+  </nav>
+</d-contents>
+
+
 # Wrangling with that Data! 3/4
 
 This series shows how cleaning a CSV file using `pandas`, `numpy`, `re` and the
@@ -163,8 +179,8 @@ print(bb)
 ```
 
     [nan]
-    
-    
+
+
     [nan]
 
 
@@ -341,8 +357,8 @@ df[['gps']].info()
     <class 'pandas.core.frame.DataFrame'>
     Int64Index: 9423 entries, 0 to 12323
     Data columns (total 1 columns):
-     #   Column  Non-Null Count  Dtype 
-    ---  ------  --------------  ----- 
+     #   Column  Non-Null Count  Dtype
+    ---  ------  --------------  -----
      0   gps     9423 non-null   object
     dtypes: object(1)
     memory usage: 405.3+ KB

@@ -7,6 +7,18 @@ importance: 3
 tags: tabular data, pandas, data cleaning, regular expressions, pyjanitor, extract strings
 category: data preprocessing
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
+    <div class="no-math"><a href="#reading-in-the-dataframefrom-previous-steps">Reading In The DataFrame From Previous Steps</a></div>
+    <div class="no-math"><a href="#checking-data-typesof-the-columns">Checking Data Types Of The Columns</a></div>
+    <div class="no-math"><a href="#columns-withlittle-information">Columns With Little Information</a></div>
+    <div class="no-math"><a href="#has-fitted-kitchen---bool">Has Fitted Kitchen - Bool</a></div>
+    <div class="no-math"><a href="#has-elevator---bool">Has Elevator - Bool</a></div>
+    <div class="no-math"><a href="#auxiliary-costs--total-rent">Auxiliary Costs & Total Rent</a></div>
+  </nav>
+</d-contents>
 
 # Cleaning that Data! 2/4
 
@@ -260,16 +272,16 @@ certain characteristics, as shown below.
 - Both will be converted to a numerical value, if the dtype differs from numerical (`int64`).
 
 Columns, that are dropped, looking at the output from the following cells, are:  
-   
+
 - `json_electricitybaseprice` & `json_electricitykwhprice`  
-  
+
 Both columns only have 3 unique values (not including any missing values) and
 one value is found in all but 183 of the 12324 listings. That is an electricity
 base price of 90.76 Eur. for 12138 listing, leaving 183 that have a lower base
 price of 71.43 Eur.
-  
+
 - The `json_telekomdownloadspeed` & `json_telekomuploadspeed`  
-  
+
 Show the available internet speeds from provider Telekom. The download and
 upload speeds of internet provider Telekom are the same for around $\frac{2}{3}$
 of all listings. Upload and download speeds have the same distribution and so
@@ -284,7 +296,7 @@ print(
 ```
 
     Sorted nunique values, in ascending order:
-    
+
     bfitted_kitchen                 1
     belevator                       1
     cellar                          1
@@ -347,16 +359,16 @@ for key in fv:
     print(f"\n{df[key].value_counts()}")
 ```
 
-    
+
     ['"obj_electricityBasePrice":"90.76"']    12138
     ['"obj_electricityBasePrice":"71.43"']      183
     Name: json_electricitybaseprice, dtype: int64
-    
+
     ['"obj_electricityKwhPrice":"0.1985"']    12137
     ['"obj_electricityKwhPrice":"0.2205"']      183
     ['"obj_electricityKwhPrice":"0.2195"']        1
     Name: json_electricitykwhprice, dtype: int64
-    
+
     ['"obj_telekomDownloadSpeed":"100 MBit/s"']    8208
     ['"obj_telekomDownloadSpeed":"50 MBit/s"']     2756
     ['"obj_telekomDownloadSpeed":"16 MBit/s"']      605
@@ -364,7 +376,7 @@ for key in fv:
     ['"obj_telekomDownloadSpeed":"200 MBit/s"']       5
     ['"obj_telekomDownloadSpeed":"6 MBit/s"']         4
     Name: json_telekomdownloadspeed, dtype: int64
-    
+
     ['"obj_telekomUploadSpeed":"40 MBit/s"']     8208
     ['"obj_telekomUploadSpeed":"10 MBit/s"']     2756
     ['"obj_telekomUploadSpeed":"2,4 MBit/s"']     600
@@ -421,7 +433,7 @@ print(
     value_counts for bfitted_kitchen:
     Einbauküche    8024
     Name: bfitted_kitchen, dtype: int64,
-    
+
      json_bfitted_kitchen:
     ['"obj_hasKitchen":"y"']    8024
     ['"obj_hasKitchen":"n"']    4300
@@ -546,16 +558,16 @@ lov
 
 
 
-    160       keine Angabe 
-    657       keine Angabe 
-    766       keine Angabe 
-    788       keine Angabe 
-    905       keine Angabe 
-    1027      keine Angabe 
-    1188      keine Angabe 
-    1250      keine Angabe 
-    1407      keine Angabe 
-    1414      keine Angabe 
+    160       keine Angabe
+    657       keine Angabe
+    766       keine Angabe
+    788       keine Angabe
+    905       keine Angabe
+    1027      keine Angabe
+    1188      keine Angabe
+    1250      keine Angabe
+    1407      keine Angabe
+    1414      keine Angabe
     Name: auxiliary_costs, dtype: object
 
 
@@ -618,14 +630,14 @@ for i in ["auxiliary_costs", "total_rent"]:
     print(f"\nUnique values in {i}:\n\n{j}")
 ```
 
-    
+
     Unique values in auxiliary_costs:
-    
+
     ['  190,84  ' '  117,95  ' '  249,83  ' ... '  89,59  ' '  197,96  '
      '  59,93  ']
-    
+
     Unique values in total_rent:
-    
+
     [' 541,06  ' ' 559,05  ' ' 839,01  ' ... ' 1.189,24  ' ' 382,73  '
      ' 499,91  ']
 
@@ -892,4 +904,3 @@ print(ll)
 [Data Preparation Series 2]({% link _projects/data_prep_2.md %})  
 [Data Preparation Series 3]({% link _projects/data_prep_3.md %})  
 [Data Preparation Series 4]({% link _projects/data_prep_4.md %})  
-

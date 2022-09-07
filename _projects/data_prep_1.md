@@ -7,12 +7,14 @@ importance: 3
 tags: tabular data, pandas, data exploration, introduction
 category: data preprocessing
 
-toc:
-  - name: Reading In The Input Data
-  - name: First Look At The DataFrame
-  
-
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#reading-in-the-input-data">Reading In The Input Data</a></div>
+    <div class="no-math"><a href="#first-look-at-the-dataframe">First Look At The DataFrame</a></div>
+  </nav>
+</d-contents>
 
 # From Webscraping Data<br>To Tidy Pandas DataFrame
 
