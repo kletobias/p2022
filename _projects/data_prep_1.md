@@ -576,6 +576,8 @@ df.tail()
 </div>
 
 
+<br>
+<br>
 
 #### `df.columns`
 
@@ -621,6 +623,9 @@ df.columns
            'json_livingSpace', 'json_condition', 'json_interiorQual',
            'json_petsAllowed', 'json_lift'],
           dtype='object')
+
+<br>
+<br>
 
 #### `df.index`
 
@@ -669,6 +674,10 @@ print('The resulting index, if False is used:\n %s\n ' % df_index_2.index)
                 5582, 5583, 5584, 5585, 5586, 5587, 5588, 5589, 5590, 5591],
                dtype='int64', length=12495)
 
+
+<br>
+---
+
 ```python
 print('The resulting index, if True is used:\n %s\n ' % df.index)
 ```
@@ -681,9 +690,13 @@ print('The resulting index, if True is used:\n %s\n ' % df.index)
                 12494],
                dtype='int64', length=12325)
 
+<br>
+<br>
+
 #### `df.describe()`
 
-##### Description<br>
+##### Description
+
 The command `df.describe()` gives summary statistics for all columns, that are
 of a numerical data type (*dtype*) by default. In the default case, the
 following statistics are included in the output for each included column. The
@@ -699,7 +712,8 @@ missing values and $$\neg np.nan$$ stands for non missing values.
 - **75%:** The 75% quantile.
 - **max:** The maximum value and the 100% quantile among all $$\neg np.nan$$ of a column.
 
-##### Example<br>
+##### Example
+
 The *data types* (*dtypes*) in the DataFrame are checked, before `df.describe()` is explored for `df`.
 
 ```python
@@ -754,6 +768,9 @@ df.dtypes
     json_petsAllowed              object
     json_lift                     object
     dtype: object
+
+<br>
+<br>
 
 From the output one can see, that there only 2 columns that exclusively hold
 numerical data and thus have a numerical * data type* (*dtype*). All other
@@ -824,7 +841,8 @@ df.describe()
 </table>
 </div>
 
-
+<br>
+<br>
 
 We will use the summary statistics for variable `anz_schlafzimmer` as an example
 of how one can interpret their values for a given data series. The variable
@@ -903,6 +921,9 @@ df.count().sample(4,random_state=seed)
     json_condition           12324
     dtype: int64
 
+<br>
+<br>
+
 #### `df.nunique()`
 
 ##### Description
@@ -923,6 +944,10 @@ df.nunique().sample(4,random_state=seed)
     haustiere                  3
     json_condition            10
     dtype: int64
+
+
+<br>
+<br>
 
 #### `df.filter()`
 
@@ -981,6 +1006,9 @@ df.filter(items=['lift','str']).sample(4,random_state=seed)
 </div>
 
 
+
+<br>
+<br>
 
 Example 2 - Using `df.filter()` to select all columns, that have the prefix 'json\_' in their names.
 
@@ -1108,6 +1136,8 @@ df.filter(regex='^json', axis=1).sample(4,random_state=seed)
 </div>
 
 
+<br>
+<br>
 
 #### `df.sample()`
 
