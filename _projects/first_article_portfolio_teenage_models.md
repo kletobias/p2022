@@ -7,8 +7,16 @@ importance: 6
 tags: ['deep learning', 'fastai', 'automation', 'learning rate', 'loss function', 'stochastic gradient descent', 'binary image classification']
 category: ['deep learning']
 authors: 'Tobias Klein'
-
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#creating-the-datablock-item">Creating The DataBlock Item</a></div>
+    <div class="no-math"><a href="#creating-the-test-harness">Creating The Test Harness</a></div>
+    <div class="no-math"><a href="#summary--next-steps">Summary & Next Steps
+</a></div>
+  </nav>
+</d-contents>
 
 # Part 1: Basic Automation For Deep Learning
 

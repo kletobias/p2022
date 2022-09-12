@@ -1,23 +1,22 @@
 ---
-layout: distillnew
+layout: distill
 title: 'The Math Behind<br>"Stepping The Weights"'
 date: 2022-08-16 16:00:00
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
 tags: deep-learning,
-
-toc:
-  - name: A Univariate Linear Regression Function
-    # if a section has subsections, you can add them as follows:
-    # subsections:
-    #   - name: Example Child Subsection 1
-    #   - name: Example Child Subsection 2
-  - name: Minimizing The $$L_{2}$$ Loss
-  - name: Citations
-  - name: Footnotes
-  - name: Code Blocks
-  - name: Layouts
-  - name: Other Typography?
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div><a href="#a-univariate-linear-regression-function">A Univariate Linear Regression Function</a></div>
+    <div class="no-math"><a href="#minimizing-the-l_2-loss">Minimizing The $$L_{2}$$ Loss</a></div>
+    <div class="no-math"><a href="#from-loss-function-to-optimization">From Loss Function To Optimization</a></div>
+    <div class="no-math"><a href="#univariate-linear-regression">Univariate Linear Regression</a></div>
+    <div class="no-math"><a href="#gradient-descent">Gradient Descent</a></div>
+    <div class="no-math"><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></div>
+    <div class="no-math"><a href="#summary">Summary</a></div>
+  </nav>
+</d-contents>
 
 # The Math Behind<br>"Stepping The Weights"
 <br>

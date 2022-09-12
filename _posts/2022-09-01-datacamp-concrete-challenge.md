@@ -1,5 +1,5 @@
 ---
-layout: distillnew
+layout: distill
 title: 'datacamp concrete regression challenge'
 date: 2022-08-16 16:00:00
 description: 'This is my notebook I created to solve the datacamp concrete
@@ -7,19 +7,24 @@ challenge within an hour. There are explanations for most of the code in this
 article and we look deeper into the workings of the Lasso regression model.'
 tags: ['regression-analysis', 'lasso-regression', 'sklearn', 'cross-validation', 'in-depth-math']
 
-toc:
-  - name: Sub One Hour Regression Challenge
-  - name: The Challenge
-  - name: The Data
-  - name: Imports
-  - name: Creating Dependent & Independent Variable Splits
-  - name: Create Train & Test Split
-  - name: Data Preprocessing
-  - name: Lasso In-Depth
-  - name: Final Coefficients And Intercept
-  - name: Answer To Challenge Question Part 2
-  - name: Answer To Challenge Question Part 1
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#sub-one-hour-regression-challenge">Sub One Hour Regression Challenge</a></div>
+    <div class="no-math"><a href="#the-challenge">The Challenge</a></div>
+    <div class="no-math"><a href="#the-data">The Data</a></div>
+    <div class="no-math"><a href="#imports">Imports</a></div>
+    <div class="no-math"><a href="#creating-dependent--independent-variable-splits">Creating Dependent & Independent Variable Splits</a></div>
+    <div class="no-math"><a href="#create-train--test-split">Create Train & Test Split</a></div>
+    <div class="no-math"><a href="#data-preprocessing">Data Preprocessing</a></div>
+    <div class="no-math"><a href="#lasso-in-depth">Lasso In-Depth</a></div>
+    <div class="no-math"><a href="#final-coefficients-and-intercept">Final Coefficients And Intercept</a></div>
+    <div class="no-math"><a href="#answer-to-challenge-question-part-2">Answer To Challenge Question Part 2</a></div>
+    <div class="no-math"><a href="#answer-to-challenge-question-part-1">Answer To Challenge Question Part 1</a></div>
+  </nav>
+</d-contents>
+
 
 # Sub One Hour Regression Challenge
 
@@ -46,7 +51,7 @@ The team has already tested more than a thousand samples ([source](https://archi
 - "age" - Age of the sample in days
 - "strength" - Concrete compressive strength in megapascals (MPa)
 
-***Acknowledgments**: I-Cheng Yeh, "Modeling of strength of high-performance concrete using artificial neural networks," Cement and Concrete Research, Vol. 28, No. 12, pp. 1797-1808 (1998)*.
+>Acknowledgments: I-Cheng Yeh, "Modeling of strength of high-performance concrete using artificial neural networks," Cement and Concrete Research, Vol. 28, No. 12, pp. 1797-1808 (1998).
 
 ## Imports
 

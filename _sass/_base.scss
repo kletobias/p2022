@@ -675,7 +675,9 @@ table.table.table-sm.table-borderless{border: none;}
 br {padding-bottom: 20px;}
 body h1, body h2, body h3, body h4, body h5, body h6 {
     scroll-margin-top: 66px;
-    text-transform: capitalize;
+}
+d-article h4{
+  text-transform: lowercase !important;
 }
 @media (min-width: 1024px){
 d-article {
@@ -715,6 +717,9 @@ d-byline .authors-affiliations{
   grid-column-end: span 1 !important;
 }
 
+.dt-tags{
+  display: contents !important;
+}
 
 
 
