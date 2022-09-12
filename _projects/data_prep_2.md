@@ -4,8 +4,8 @@ title: 'Cleaning a 47 Column<br>Pandas DataFrame<br>Part 2'
 description: 'More Efficient Data Cleaning By Using The pyjanitor Module and Method Chaining.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 importance: 3
-tags: tabular data, pandas, data cleaning, regular expressions, pyjanitor, extract strings
-category: data preprocessing
+tags: ['tabular data', 'pandas', 'data cleaning', 'regular expressions', 'pyjanitor', 'extract strings']
+category: ['data preprocessing']
 ---
 <d-contents>
   <nav class="l-text figcaption">

@@ -4,8 +4,8 @@ title: 'Cleaning a 47 Column<br>Pandas DataFrame<br>Part 4'
 description: 'Showcase of how batch processing several columns of tabular data using pandas, pyjanitor and the re library can look like.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 importance: 4
-tags: tabular data, pandas, batch processing, data validation using regular expressions
-category: data preprocessing
+tags: ['tabular data', 'pandas', 'batch processing', 'data validation using regular expressions']
+category: ['data preprocessing']
 ---
 <d-contents>
   <nav class="l-text figcaption">
