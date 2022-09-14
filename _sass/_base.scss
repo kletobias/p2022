@@ -912,3 +912,25 @@ tr:nth-child(2n) th {
   text-align: left !important;
   line-height: 1.9rem;
 }
+.top {
+    position: fixed;
+    bottom: 50px;
+    right: -100px;
+    z-index: 1;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #17181e;
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.top.is-active {
+    right: 40px;
+}
+.top:hover {
+    color: #17181e;
+    background-color: #ffe66a;
+}
