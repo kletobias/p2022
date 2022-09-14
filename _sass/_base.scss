@@ -934,3 +934,78 @@ tr:nth-child(2n) th {
     color: #17181e;
     background-color: #ffe66a;
 }
+.nav-link{
+  padding: 1rem;
+}
+.contact-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #08877d;
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    display: block;
+}
+.contact-sec.no-bg {
+    padding: 75px 0 30px;
+}
+.contact-sec .contact-form .row .col-md-4, .contact-sec .contact-form .row .col-md-12 {
+    padding: 0 30px;
+}
+.contact-sec.no-bg .sec-title {
+    margin-bottom: 70px;
+}
+.contact-sec .contact-form .form-group {
+    position: relative;
+    margin-bottom: 64px;
+}
+.contact-sec .contact-form .form-group input, .contact-sec .contact-form .form-group textarea {
+    width: 100%;
+    color: #000;
+    font-size: 18px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    border-radius: 0;
+    outline: none;
+}
+.contact-sec .contact-form .form-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #999;
+    font-size: 18px;
+    transition: all 0.4s ease-in-out;
+}
+.btn-page {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #f59e31;
+    height: 62px;
+    line-height: 62px;
+    padding: 0 42px;
+    border-radius: 30px;
+}
+.btn-page.no-bg {
+    background-color: transparent;
+    color: #f59e31;
+    border: 1px solid #f59e31;
+    -ms-box-shadow: inherit;
+    box-shadow: inherit;
+}
+.btn-page.no-bg:hover {
+    background-color: #f59e31;
+    border-color: transparent;
+    color: #fff;
+}
+.contact-sec .contact-form .form-group input:focus ~ label, .contact-sec .contact-form .form-group textarea:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+}
+.contact-sec .contact-form .form-group input:focus, .contact-sec .contact-form .form-group textarea:focus {
+    border-bottom-color: #000;
+}
