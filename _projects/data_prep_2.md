@@ -6,6 +6,7 @@ img: 'assets/img/838338477938@+-3948324823.jpg'
 importance: 3
 tags: ['tabular data', 'pandas', 'data cleaning', 'regular expressions', 'pyjanitor', 'extract strings']
 category: ['data preprocessing']
+comments: true
 ---
 <d-contents>
   <nav class="l-text figcaption">

@@ -114,8 +114,9 @@
 
         {{ content }}
       </d-article>
-
       <d-appendix>
+        {% include disqus_comments.html %}
+
         <d-footnote-list></d-footnote-list>
         <d-citation-list></d-citation-list>
       </d-appendix>

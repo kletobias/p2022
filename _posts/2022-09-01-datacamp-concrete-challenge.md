@@ -6,6 +6,7 @@ description: 'This is my notebook I created to solve the datacamp concrete
 challenge within an hour. There are explanations for most of the code in this
 article and we look deeper into the workings of the Lasso regression model.'
 tags: ['regression analysis', 'lasso regression', 'sklearn', 'cross validation', 'in depth math']
+comments: true
 
 ---
 <d-contents>

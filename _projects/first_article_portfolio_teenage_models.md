@@ -7,6 +7,7 @@ importance: 6
 tags: ['deep learning', 'fastai', 'automation', 'learning rate', 'loss function', 'stochastic gradient descent', 'binary image classification']
 category: ['deep learning']
 authors: 'Tobias Klein'
+comments: true
 ---
 <d-contents>
   <nav class="l-text figcaption">

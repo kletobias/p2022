@@ -6,6 +6,7 @@ img: 'assets/img/838338477938@+-3948324823.jpg'
 importance: 4
 tags: ['tabular data', 'pandas', 'geospatial feature engineering', 'dtype timedelta64']
 category: ['data preprocessing']
+comments: true
 ---
 
 <d-contents>
