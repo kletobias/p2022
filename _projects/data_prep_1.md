@@ -132,7 +132,6 @@ the second call, the number of lines printed is changed to *n* =9.
 df.head() # Includes index values [0:4], which is default (n=5)
 ```
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -284,7 +283,6 @@ df.head() # Includes index values [0:4], which is default (n=5)
   </tbody>
 </table>
 <p>5 rows × 47 columns</p>
-</div>
 
 
 ```python
@@ -294,7 +292,6 @@ df.head(n=3) # Includes index values [0:2]
 
 
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -398,7 +395,6 @@ df.head(n=3) # Includes index values [0:2]
   </tbody>
 </table>
 <p>3 rows × 47 columns</p>
-</div>
 
 
 
@@ -424,7 +420,6 @@ df.tail()
 
     The maximum value of the range index of df is 12494
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -576,7 +571,6 @@ df.tail()
   </tbody>
 </table>
 <p>5 rows × 47 columns</p>
-</div>
 
 
 <br>
@@ -790,7 +784,6 @@ more details.
 df.describe()
 ```
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -842,7 +835,6 @@ df.describe()
     </tr>
   </tbody>
 </table>
-</div>
 
 <br>
 <br>
@@ -974,7 +966,6 @@ Example 1 - Using `df.filter()` to select a subset of columns.
 df.filter(items=['lift','str']).sample(4,random_state=seed)
 ```
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -1006,7 +997,6 @@ df.filter(items=['lift','str']).sample(4,random_state=seed)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -1019,7 +1009,6 @@ Example 2 - Using `df.filter()` to select all columns, that have the prefix 'jso
 df.filter(regex='^json', axis=1).sample(4,random_state=seed)
 ```
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -1136,7 +1125,6 @@ df.filter(regex='^json', axis=1).sample(4,random_state=seed)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 <br>
