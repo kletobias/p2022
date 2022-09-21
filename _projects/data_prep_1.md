@@ -132,7 +132,7 @@ the second call, the number of lines printed is changed to *n* =9.
 df.head() # Includes index values [0:4], which is default (n=5)
 ```
 
-<table>
+<table class="table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -292,7 +292,7 @@ df.head(n=3) # Includes index values [0:2]
 
 
 
-<table>
+<table class="table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -420,7 +420,7 @@ df.tail()
 
     The maximum value of the range index of df is 12494
 
-<table>
+<table class="table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1009,7 +1009,7 @@ Example 2 - Using `df.filter()` to select all columns, that have the prefix 'jso
 df.filter(regex='^json', axis=1).sample(4,random_state=seed)
 ```
 
-<table>
+<table class="table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>

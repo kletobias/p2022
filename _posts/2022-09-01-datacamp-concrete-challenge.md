@@ -91,7 +91,7 @@ df.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
