@@ -776,8 +776,7 @@ no_na_auxil_df.loc[y]
 
 
 
-<div style="width:656px;overflow-x:scroll;">
-    <table>
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -832,7 +831,6 @@ no_na_auxil_df.loc[y]
   </tbody>
 </table>
 <p>203 rows × 1 columns</p>
-</div>
 
 
 

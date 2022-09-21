@@ -502,7 +502,6 @@ df.loc[indv, ["date_listed", "date_unlisted"]]
 
 
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: right;">
@@ -634,7 +633,6 @@ df.loc[indv, ["date_listed", "date_unlisted"]]
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -699,7 +697,6 @@ df[['time_listed']].describe()
 
 
 
-<div style="width:656px;overflow-x:scroll;">
 <table>
   <thead>
     <tr style="text-align: center;">
@@ -742,7 +739,6 @@ df[['time_listed']].describe()
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
