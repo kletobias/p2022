@@ -1014,3 +1014,7 @@ tr:nth-child(2n) th {
 .contact-sec .contact-form .form-group input:focus, .contact-sec .contact-form .form-group textarea:focus {
     border-bottom-color: #000;
 }
+#search-google{
+  margin-top: 0.5rem;
+}
+.form-control:focus{border-color: none;}
