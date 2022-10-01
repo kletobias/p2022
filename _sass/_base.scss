@@ -666,6 +666,11 @@ tr:nth-child(2n) {
 .header-bar h1{color: var(--global-text-color);}
 
 .post-list li a:hover { color: var(--global-theme-color); }
+code {
+    font-size: 87.5%;
+    color: var(--global-distill-app-color);
+    word-wrap: break-word;
+}
 
 table.rouge-table {
     border: none;
@@ -944,7 +949,7 @@ tr:nth-child(2n) th {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     border: none;
-    background: #08877d;
+    background: var(--global-theme-color);
     color: #fff;
     text-transform: capitalize;
     margin-top: 0.5rem;
