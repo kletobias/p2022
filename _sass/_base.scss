@@ -662,7 +662,8 @@ tr:nth-child(2n) {
     background: #f4f5f6;
 }
 
-.post-list li a { color: var(--global-link); text-decoration: none; }
+.post-list li a { color: var(--global-text-color); text-decoration: none; }
+.header-bar h1{color: var(--global-text-color);}
 
 .post-list li a:hover { color: var(--global-theme-color); }
 
