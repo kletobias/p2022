@@ -116,7 +116,7 @@ speed and power of the strobe I used. As a result, there are images, that are
 overexposed by two or even three stops, e.g., as can be seen in the center image
 of the grid below (**Image[1]**). A large portion of the image suffers from *clipping*. Images
 that are overexposed by that much have areas in the image, where all pixel
-values are completely white, that means in RGB values $(255,255,255)$.
+values are completely white, that means in RGB values $$(255,255,255)$$.
 
 For the deep learning model, that means, that it has less raw input information
 for these images, when only looking at the information that can gained directly
@@ -291,7 +291,7 @@ mf = DataBlock(
 
 ### Checking The DataBlock For Problems
 
-Using the `.summary` method on the newly created `DataBlock` to check for any
+Using the `summary` method on the newly created `DataBlock` to check for any
 errors, that might be present.
 
 
@@ -406,7 +406,9 @@ in percent, then the fracture has to be multiplied by 100. In the fastai
 library, the output of the `error_rate` ([error_rate-Documentation](https://docs.fast.ai/metrics.html#error_rate)) is the raw fraction, not the percentage. Its numbers are the inverse of the `accuracy` metric. The formula of the
 error rate is:
 
-$$\mathrm{Error\, Rate} := \frac{\mathrm{wrong\,predictions}}{\mathrm{total\,predictions}} 100 \iff 1\, -\, \mathrm{Accuracy}$$
+$$
+\mathrm{Error\, Rate} := \frac{\mathrm{wrong\,predictions}}{\mathrm{total\,predictions}} 100 \iff 1\, -\, \mathrm{Accuracy}
+$$
 
 
 ### Detailed Construction Of The Test Harness
@@ -420,8 +422,7 @@ experiments, is neither scalable, nor reproducible. To create and log structured
 empirical experiments, a test harness is simply the best option.
 
 
-The metrics to track are:
-
+**The metrics to track are:**
 
 `model` - The specific model used in the configuration. This is
 either `resnet34` or `resnet18` in this case.
@@ -439,10 +440,10 @@ valid_pct. The samples in the validation set are unknown to the model and are
 only used once to gauge how well the model can predict the target label on
 unseen data.
 
-The values collected for each configuration are:
+**The values collected for each configuration are:**
 
-`train_loss` and `valid_loss` - The loss function is 'FlattenedLoss of
-CrossEntropyLoss()' for all configurations.
+`train_loss` and `valid_loss` - The loss function is `FlattenedLoss of
+CrossEntropyLoss` for all configurations.
 
 `error_rate` - The metric chosen to assess the model on the validation set,
 using a *metric designed for human consumption*.
@@ -506,10 +507,10 @@ it gives the idea behind this empirical testing scheme. It guarantees that all
 three element long parameter combination tuples get tested.
 
 The math behind calculating all combinations for any given number of parameters
-$m$, that have a number of unique parameter values given by $p_{i}$, for the
-$i_{th}$ out of the total $m$ parameters. Which can be interpreted as a vector of
-length $m$, with each element the total number of parameter values for one of
-the parameters: $\langle p_{1},..,p_{m}\rangle$
+$$m$$, that have a number of unique parameter values given by $$p_{i}$$, for the
+$$i_{th}$$ out of the total $$m$$ parameters. Which can be interpreted as a vector of
+length $$m$$, with each element the total number of parameter values for one of
+the parameters: $$\langle p_{1},..,p_{m}\rangle$$
 
 Then, the total number of combinations, that have to be tested is given by:
 
@@ -520,7 +521,7 @@ fine_tune', and their values from Table[1]:
 
 $$2\times 2\times 2\, = \, 8$$
 
-`itertools.poduct` does exactly that for us and will return a list of all the
+`itertools.product` does exactly that for us and will return a list of all the
 combinations of the input lists. See the sample output below.
 
 
@@ -535,10 +536,6 @@ setups[0]
 ```
 
     8
-
-
-
-
 
     (<function torchvision.models.resnet.resnet34(*, weights: Optional[torchvision.models.resnet.ResNet34_Weights] = None, progress: bool = True, **kwargs: Any) -> torchvision.models.resnet.ResNet>,
      0.2,
@@ -623,7 +620,6 @@ for setup in setups:
     w += 1
 ```
 
-**Image[2]**
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -631,7 +627,7 @@ for setup in setups:
     </div>
 </div>
 <div class="caption">
-        Changes in the loss function. Plot shows, that additional parameters
+        Image[2]: Changes in the loss function. Plot shows, that additional parameters
         need to be specified, in order to make this plot of any use.
 </div>
 
