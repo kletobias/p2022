@@ -1037,3 +1037,6 @@ input[type=number]:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
+
+d-article a{color: var(--global-theme-color); border-bottom-color: var(--global-theme-color); }
+d-article d-contents nav a{color: var(--global-text-color);}
