@@ -8,7 +8,7 @@ middle_name:
 last_name: Klein
 email:  progress.unveiled@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  This is the portfolio website of Tobias Klein. Join me, as I document my endeavours in the realm of Linux, Data Sciene and much more!
+  This is the portfolio website of Tobias Klein. Join me, as I document my endeavours in the realm of Linux, Data Science and much more!
 footer_text: >
   Portfolio Website of Tobias Klein
 #  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
