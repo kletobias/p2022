@@ -8,3 +8,9 @@ _site
 .tweet-cache
 Gemfile.lock
 vendor
+
+# ignore intellij files under .idea/ directory in root directory
+.idea/
+
+# ignore single zsh file
+git-get-branch.zsh
