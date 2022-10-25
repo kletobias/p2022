@@ -105,8 +105,12 @@ df.drop(labels=["heating_costs"], axis=1, inplace=True)
 
 ## Latitude
 
-This column is one of the most important ones in the dataset together with the Longitude column. Together they give the exact GPS coordinates for most of the listings. This spacial information will be joined with from the dataset independent external geospatial based information. Together these will lay the foundation for the most influential features used to train the *XGBoost* and *Lasso Regression* models.
-
+This column is one of the most important ones in the dataset together with the
+Longitude column. Together they give the exact GPS coordinates for most of the
+listings. This spacial information will be joined with from the dataset
+independent external geospatial based information. Together these will lay the
+foundation for the most influential features used to train the *XGBoost* and *
+Lasso Regression* models.
 
 ```python
 df.lat.value_counts().sample(10, random_state=seed)
