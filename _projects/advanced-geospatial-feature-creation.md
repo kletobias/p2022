@@ -35,7 +35,7 @@ Using this data, the goal is to create the following features, that will be adde
 - The GPS coordinates, as a tuple of latitude and longitude, using the format decimal degrees (*DD*).
 - Use boolean columns to mark if the station is for subway, or for suburban trains or both.
 
-The imported data is transformed and features are extracted using regular expressions and the pandas library, to create tidy columns for the new features. All data is made compatible with the main dataset, by converting the location data of the subway and suburban train stops found in the imported flat files from degrees, minutes, and seconds (*DMS*) to *DD* 
+The imported data is transformed and features are extracted using regular expressions and the pandas library, to create tidy columns for the new features. All data is made compatible with the main dataset, by converting the location data of the subway and suburban train stops found in the imported flat files from degrees, minutes, and seconds (*DMS*) to *DD*
 
 Once, the new features are created, the tabular data with the new features is exported as flat files for integration with the main dataset.
 
@@ -159,16 +159,16 @@ for s in dfu, dfs:
     2        Alsterdorf (AL)53° 36′ 23″ N, 10° 0′ 42″ O
     3    Alter Teichweg (AT)53° 35′ 12″ N, 10° 3′ 52″ O
     4           Barmbek (BA)53° 35′ 14″ N, 10° 2′ 40″ O
-    
-    
+
+
                                                  station
     0      Agathenburg (AABG)53° 33′ 53″ N, 9° 31′ 48″ O
     1        Allermöhe (AALH)53° 29′ 25″ N, 10° 9′ 31″ O
     2  Alte Wöhr (Stadtpark) (AAW)53° 35′ 51″ N, 10° ...
     3              Altona (AAS)53° 33′ 7″ N, 9° 56′ 4″ O
     4         Aumühle (AAMS)53° 31′ 48″ N, 10° 18′ 53″ O
-    
-    
+
+
 
 
 ## The Heavy Lifting - Extracting The GPS Coordinates
@@ -707,7 +707,7 @@ prev(dfu)
 ```
 
     latitude component looks like: 53° 39′ 39″ N,
-    
+
     longitude component looks like  10° 1′ 3″ O
 
 
@@ -717,7 +717,7 @@ prev(dfs)
 ```
 
     latitude component looks like: 53° 39′ 7″ N,
-    
+
     longitude component looks like  10° 5′ 38″ O
 
 
@@ -854,7 +854,7 @@ s(dfu)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -985,7 +985,7 @@ s(dfs)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1104,4 +1104,3 @@ dfu.to_csv("../data/u-bahn_final.csv")
 ```
 
 These are the steps for creating new geospatial features, that are completely independent of the ones in the core dataset scraped from www.immobilienscout24.de . In the following steps, these features will be integrated into the core dataset and used to create new features for each listing found in the core dataset.
-
