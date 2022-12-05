@@ -9,6 +9,7 @@ category: ['deep learning']
 authors: 'Tobias Klein'
 comments: true
 ---
+
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
@@ -24,10 +25,10 @@ comments: true
 **How to create and use a custom test harness, that automates many steps of the
 deep learning testing process. It lowers GPU idle time, lets one build more
 models, test more parameter combinations in less time. The
-[fastai](https://www.fast.ai/) library for deep learning is used throughout this
+[*fastai*](https://www.fast.ai/) library for deep learning is used throughout this
 article.**
 
-We will explore how well a pretrained `ResNet18/Resnet34` image classification
+We will explore how well a pretrained **ResNet18/ResNet34** image classification
 model does on classifying two models, from a photo shoot I did a while ago.
 The target labels are 'female' and 'male' and the data was labeled by
 filename.
@@ -40,15 +41,13 @@ Finally, all images were resized to have dimensions of 224×224 pixels. Color
 space is 'sRGB'.
 
 
-
-
 ## Creating The DataBlock Item
 
 
 The following code shows how the dataset was loaded into the notebook instance,
 and the target labels extracted. The DataBlock object is part of the fastai
 library. It can be found in the docs following this link:
-[DataBlock-Documentation](https://docs.fast.ai/data.block.html).
+[*DataBlock Documentation*](https://docs.fast.ai/data.block.html).
 
 
 ```python
@@ -69,7 +68,7 @@ import re
 
 Creating the `Path` variable, that leads to the directory where the images are
 in. The `Path` variable has the class `PosixPath`, a path type found
-in `pathlib` Python library. The [documentation can be found here](https://pathlib.readthedocs.io/en/pep428/index.html#concrete-paths).
+in `pathlib` Python library, [*pathlib Documentation*](https://pathlib.readthedocs.io/en/pep428/index.html#concrete-paths).
 
 
 
@@ -134,7 +133,7 @@ useful for classifying the images in 'male' model and 'female' model.
     </div>
 </div>
 <div class="caption">
-        Figure 01 - 9 random sample images, that show images of both categories. The applied
+        Image 1 - 9 random sample images, that show images of both categories. The applied
         crop turns each image into a square image and its length is equal to the
         smaller dimension of the original image. The image in the center of the
         grid shows, that 'setup shots', where the power of the strobe was
@@ -145,18 +144,18 @@ useful for classifying the images in 'male' model and 'female' model.
 ### Splitting Images By Filename
 
 
-All images are found inside the `male_female`, inside the `datasets` directory.
-From the filenames, that were printed out, the structure used to attach the
-correct label to each image can be seen. For this binary image classification
-problem, the filenames contain the target label.
+All images are found inside the 'male_female' directory, a subdirectory of the
+'datasets' directory. From the filenames, that were printed out, the structure
+used to attach the correct label to each image can be seen. For this binary
+image classification problem, the filenames contain the target label.
 
-- Images depicting the male model have filenames, that start with `male_model`.
-- Images depicting the female model have filenames, that start with `female_model`.
+- Images depicting the male model have filenames, that start with 'male_model'.
+- Images depicting the female model have filenames, that start with 'female_model'.
 
 The variable `fname` is assigned to the list of images, that contains all
 images. `fname` saved the `Path` variable, and not only the filename +
 extension. The next step separates the filename from its path and splits the
-images into two groups, the target labels `female` and `male`.
+images into two groups, the target labels 'female' and 'male'.
 
 
 ```python
@@ -172,11 +171,11 @@ print(fname[:5])
 dd = {"ff": [], "fm": []}
 for nn in fname:
     f = re.search(r"((female_model|male_model)-[^.]*\.png$)", str(nn))
-    if type(f) != None:
-        if str(f.group(2)) == "female_model":
-            dd["ff"].append(str(f.group(1)))
+    if f != None:
+        if f.group(2) == "female_model":
+            dd["ff"].append(f.group(1))
         else:
-            dd["fm"].append(str(f.group(1)))
+            dd["fm"].append(f.group(1))
 
 ```
 
@@ -188,7 +187,7 @@ found male. Both are assigned an empty list, that appends the filename +
 extension for each match.
 
 The regular expression uses `re.search`, a function found in the standard Python
-library [re](https://docs.python.org/3/library/re.html#). The main reason for
+library [*re*](https://docs.python.org/3/library/re.html#). The main reason for
 this is that `re.search` returns a `match object`, that makes it easy to work
 with the matched strings. In this case `f` was assigned as the match object. If
 `f` is of type `None`, no filename was appended to either of the dictionary
@@ -197,15 +196,15 @@ keys.
 If `type(f) != None` is true, then `f` holds capture groups 1 and 2, that by
 design will hold:
 
-- `str(f.group(1))`: the entire filename + the extension.
-- `str(f.group(2))`: Part of the filename, can be either of the two:
-    - `female_model`
-    - `male_model`
+- `f.group(1)`: the entire filename + the extension.
+- `f.group(2)`: Part of the filename, can be either of the two:
+    - 'female_model'
+    - 'male_model'
 
 Group 2 was used to assign each filename to one of the two lists, associated
 with the dictionary keys
 
-The sample output shows how the items in group 1, labeled `female` look like.
+The sample output shows how the items in group 1, labeled 'female' look like.
 
 
 ```python
@@ -215,7 +214,7 @@ print(dd["ff"][0:5])
     ['female_model--2.png', 'female_model-.png', 'female_model-1882.png', 'female_model-1883.png', 'female_model-1884.png']
 
 
-Analogously a sample of the items, that get labeled `male`.
+Analogously a sample of the items, that get labeled 'male'.
 
 
 ```python
@@ -234,7 +233,7 @@ the `female` class. The images used in this deep learning article were partly
 selected as to test whether around 400 images for each of the two classes would
 be enough when used in a transfer learning task.
 
-A model using the `ResNet` architecture seemed as the first choice, as it was
+A model using the **ResNet** architecture seemed as the first choice, as it was
 trained using general type images and is believed to generalize exceptionally
 well across a wide range of images.
 
@@ -361,8 +360,8 @@ mf.summary(source=(path))
 No errors were detected and so the `dataloaders` object can be created from the
 `DataBlock` using the `path` to the dataset, and the chosen size of the
 validation dataset, given as a fraction of the total dataset. The dataloaders
-documentation can be found following this link to its documentation page:
-[dataloaders-Documentation](https://docs.fast.ai/data.load.html).
+Documentation can be found following this link to its Documentation page:
+[*dataloaders Documentation*](https://docs.fast.ai/data.load.html).
 
 Since the image count in this dataset is on the lower side, compared to some
 well known datasets, a high value for `valid_pct` of 40% of the total dataset is
@@ -403,7 +402,7 @@ The error rate measures the fraction of the predictions made by the model, that
 are not correct. It takes the absolute number of incorrect predictions and
 divides them by the total number of predictions. If the result is supposed to be
 in percent, then the fracture has to be multiplied by 100. In the fastai
-library, the output of the `error_rate` ([error_rate-Documentation](https://docs.fast.ai/metrics.html#error_rate)) is the raw fraction, not the percentage. Its numbers are the inverse of the `accuracy` metric. The formula of the
+library, the output of the `error_rate` ([*error_rate Documentation*](https://docs.fast.ai/metrics.html#error_rate)) is the raw fraction, not the percentage. Its numbers are the inverse of the `accuracy` metric. The formula of the
 error rate is:
 
 $$
@@ -425,7 +424,7 @@ empirical experiments, a test harness is simply the best option.
 **The metrics to track are:**
 
 `model` - The specific model used in the configuration. This is
-either `resnet34` or `resnet18` in this case.
+either **ResNet34** or **ResNet18** in this case.
 
 `fine_tune` - The number of epochs used for transfer learning of the pretrained
 model. This excludes the initial training epoch, where only the final layers are
@@ -442,8 +441,8 @@ unseen data.
 
 **The values collected for each configuration are:**
 
-`train_loss` and `valid_loss` - The loss function is `FlattenedLoss of
-CrossEntropyLoss` for all configurations.
+`train_loss` and `valid_loss` - The loss function is 'FlattenedLoss of
+CrossEntropyLoss' for all configurations.
 
 `error_rate` - The metric chosen to assess the model on the validation set,
 using a *metric designed for human consumption*.
@@ -457,7 +456,7 @@ processing, since it already fulfills the requirements of *tidy data*.
 
 The way the logging was accomplished, using very limited knowledge of how
 `CallBacks` work in the fastai library
-([CallBacks-Documentation](https://docs.fast.ai/callback.core.html)) and what
+([*CallBacks Documentation*](https://docs.fast.ai/callback.core.html)) and what
 functions, methods overlap with the ones found in the `PyTorch` library and what
 `PyTorch` code can be used inside `fastai`.
 
@@ -465,7 +464,7 @@ There are two callbacks used for logging `train_loss`, `valid_loss` and
 `error_rate` for each setup and epoch. Using the `cbs` parameter, a list
 containing the two Callbacks `TrainEvalCallback` and `Recorder` was added to the
 instantiation call of the *vision_learner* object
-([vision_learner-Documentation](https://docs.fast.ai/vision.learner.html#vision_learner)).
+([*vision_learner Documentation*](https://docs.fast.ai/vision.learner.html#vision_learner)).
 In detail, the call to vision_learner looks as follows:
 
 ```python
@@ -474,12 +473,12 @@ learn=vision_learner(dls,setup[0],metrics=error_rate,cbs=[TrainEvalCallback,Reco
 
 The dictionary `harness_input` has keys for all input parameters, that will be
 tested and logged. Not all of its keys are used in this article. It is important
-not to wrap the values for `harness['model']` in quotes, e.g., `models.resnet34`.
-The value is recognized as being a PyTorch function and will be accepted, when
-passed to the `vision_learner` creation. `input_harness['valid_pct']` has a list
-of values for the `valid_pct` parameter, that should all be tested.
-`harness_input['fine_tune']` specifies the number of epochs, that should be used
-for training, after the initial fit one cycle epoch.
+not to wrap the values for `harness['model']` in quotes, e.g.,
+`models.resnet34`. The value is recognized as being a PyTorch function and will
+be accepted, when passed to the `vision_learner` creation.
+`input_harness['valid_pct']` has a list of values for the `valid_pct` parameter,
+that should all be tested. `harness_input['fine_tune']` specifies the number of
+epochs, that should be used for training, after the initial fit one cycle epoch.
 
 
 
@@ -488,18 +487,17 @@ for training, after the initial fit one cycle epoch.
 harness_input={'learner': [],'model': [], 'fine_tune': [],'lr': [], 'valid_pct': []}
 ```
 
-Below are the key, value pairs for the parameters that are tested in the following.
+Below are the key, value pairs for the parameters that are tested in the
+following.
 
 
-```python
-harness_input['model'] = [models.resnet34, models.resnet18]
-harness_input['valid_pct']= [0.2,0.4]
-harness_input['fine_tune']= [1,2]
-```
+```python harness_input['model'] = [models.resnet34, models.resnet18]
+harness_input['valid_pct']= [0.2,0.4] harness_input['fine_tune']= [1,2] ```
 
 ### Calculation Of Test Setups
 
-To rigorously test each parameter, only one parameter should be changed at a time.
+To rigorously test each parameter, only one parameter should be changed at a
+time.
 
 That means, that two out of the three parameters will remain the same from one
 setup to the next one. This description does not take into account ordering, but
@@ -508,16 +506,16 @@ three element long parameter combination tuples get tested.
 
 The math behind calculating all combinations for any given number of parameters
 $$m$$, that have a number of unique parameter values given by $$p_{i}$$, for the
-$$i_{th}$$ out of the total $$m$$ parameters. Which can be interpreted as a vector of
-length $$m$$, with each element the total number of parameter values for one of
-the parameters: $$\langle p_{1},..,p_{m}\rangle$$
+$$i_{th}$$ out of the total $$m$$ parameters. Which can be interpreted as a
+vector of length $$m$$, with each element the total number of parameter values
+for one of the parameters: $$\langle p_{1},..,p_{m}\rangle$$
 
 Then, the total number of combinations, that have to be tested is given by:
 
 $$\mathrm{number\, of\, combinations}:=\prod_{i=1}^m p_{i}$$
 
-In this case, the calculation is the following, using 'model', 'valid_pct' and '
-fine_tune', and their values from Table[1]:
+In this case, the calculation is the following, using `model`, `valid_pct` and
+`fine_tune`, and their values from Table[1]:
 
 $$2\times 2\times 2\, = \, 8$$
 
@@ -557,8 +555,8 @@ setups[0][2]
 The output for each setup is logged in a dictionary, that has *keys* for all
 parameters that are logged.
 
-For each of the 8 setups, one row per epoch is used. With the setups, that
-use 2 epochs using 2 rows. A column, that shows, which setup and epoch the other
+For each of the 8 setups, one row per epoch is used. With the setups, that use 2
+epochs using 2 rows. A column, that shows, which setup and epoch the other
 columns belong to, is added in the form of column `unique_setup`.
 
 The regular expressions used to match the exact name of the model was necessary,
@@ -575,7 +573,7 @@ The `cbs=[TrainEvalCallback,Recorder]` in the `vision_learner` assignment was
 necessary, since `recorder` kept throwing an error after the first loop. E.g.,
 
 > TypeError: Exception occurred in `Recorder` when calling event `after_batch`:
-	'float' object is not callable
+'float' object is not callable
 
 Adding `TrainEvalCallback` to the list of cbs solved the issue. The `plot_loss`
 function, while it could be useful in theory, does not add much insight into
@@ -811,8 +809,8 @@ df
 The fastai library holds some incredibly powerful tools, that can be easily used
 to create production ready models. It was only because of the pretrained models,
 that the fastai library has to offer, that a model could be created, that in
-almost all the tested setups has an impeccable error_rate of 0 on the
-validation dataset.
+almost all the tested setups has an impeccable error_rate of 0 on the validation
+dataset.
 
 In this article, we went from raw images, to creating a
 `Path` object, that points at the image files. Using the `RegexLabeller`, we
@@ -820,10 +818,10 @@ labeled the images by extracting the labels from the filenames. With that, we
 first created a DataBlock and from that a dataloaders object.
 
 This made it possible for us to instantiate a vision_learner object, that used
-one of two resnet architecture variants. The list of setups was created, setups
+one of two **ResNet** architecture variants. The list of setups was created, setups
 were built and logged. At this point we have a *tidy* DataFrame with all the
 logged data.
 
 In *Part 2*, we analyze the logged data in the DataFrame and build more
-combinations (*Batch No. 2*) to answer our questions, that we have after analyzing the
-DataFrame with the results of *Batch No. 1*.
+combinations (*Batch No. 2*) to answer our questions, that we have after
+analyzing the DataFrame with the results of *Batch No. 1*.
