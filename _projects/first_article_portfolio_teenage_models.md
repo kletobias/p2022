@@ -15,8 +15,7 @@ comments: true
   <h3>Contents</h3>
     <div class="no-math"><a href="#creating-the-datablock-item">Creating The DataBlock Item</a></div>
     <div class="no-math"><a href="#creating-the-test-harness">Creating The Test Harness</a></div>
-    <div class="no-math"><a href="#summary--next-steps">Summary & Next Steps
-</a></div>
+    <div class="no-math"><a href="#summary--next-steps">Summary & Next Steps</a></div>
   </nav>
 </d-contents>
 
@@ -491,8 +490,11 @@ Below are the key, value pairs for the parameters that are tested in the
 following.
 
 
-```python harness_input['model'] = [models.resnet34, models.resnet18]
-harness_input['valid_pct']= [0.2,0.4] harness_input['fine_tune']= [1,2] ```
+```python
+harness_input['model'] = [models.resnet34, models.resnet18]
+harness_input['valid_pct']= [0.2,0.4]
+harness_input['fine_tune']= [1,2]
+```
 
 ### Calculation Of Test Setups
 

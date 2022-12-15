@@ -10,6 +10,15 @@ authors: 'Tobias Klein'
 comments: true
 ---
 
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#summary">Summary</a></div>
+    <div class="no-math"><a href="#importing-the-flat-files">Importing The Flat Files</a></div>
+    <div class="no-math"><a href="#initial-cleaning">Initial Cleaning</a></div>
+  </nav>
+</d-contents>
+
 
 
 ```python
@@ -106,7 +115,9 @@ c_ubahn.columns, c_sbahn.columns
 
 
 ## Defining A Custom Function For Cleaning
-Since there are two DataFrames, that need the same cleaning steps, we save some time defining a function, that we hand a DataFrame as input, and returns the cleaned DataFrame. The cleaning steps it does are:
+Since there are two DataFrames, that need the same cleaning steps, we save some
+time defining a function, that we hand a DataFrame as input, and that returns
+the cleaned DataFrame. The cleaning steps it does are:
 - Rename column 'bahnhof_kurzel_karte' to 'station'.
 - Drop all columns except the renamed column 'station'.
 - Sort the values in this column in ascending order.
@@ -145,7 +156,11 @@ dfu.columns, dfs.columns
 
 
 
-Print the first five rows of each DataFrame to get a better understanding of its structure and what regular expression is needed for each, to extract the station name and the GPS coordinates from the 'station' column. One can see from the first 5 rows already, that two different regular expressions are needed for to extract the values from each one.
+Print the first five rows of each DataFrame to get a better understanding of its
+structure and what regular expression is needed for each, to extract the station
+name and the GPS coordinates from the 'station' column. One can see from the
+first 5 rows already, that two different regular expressions are needed for to
+extract the values from each one.
 
 
 ```python
@@ -379,7 +394,12 @@ dfu.loc[:, ["station", "name"]]
 
 
 ## Extract Entire Coordinate Pairs
-Given, that the coordinates have format *DMS* in the input files, regular expressions are used to extract the entire coordinate pair for each station. After looking at the value range for the *minute* component across all rows, there can only be one value for the minute component, that is *53*. The pattern matches and captures everything until the last capital *O*, which there is only one, which marks the end of one complete coordinate pair.
+Given, that the coordinates have format *DMS* in the input files, regular
+expressions are used to extract the entire coordinate pair for each station.
+After looking at the value range for the *minute* component across all rows,
+there can only be one value for the minute component, that is *53*. The pattern
+matches and captures everything until the last capital *O*, which there is only
+one, which marks the end of one complete coordinate pair.
 
 
 ```python
