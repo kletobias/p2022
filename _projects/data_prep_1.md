@@ -46,7 +46,7 @@ following stages is given below.
 - EDA - Exploratory Data Analysis.
 - Machine Learning - Fitting and optimizing candidate models to select the best model for this problem. Predictions are made for variable 'base rent'.
 - Presenting the Solution to Stakeholders.
-<br>
+
 Back to the task at hand, we begin by reading in the csv files and creating the
 Pandas (*pd*) DataFrame object.  Throughout this article, any Pandas DataFrame
 object will be assigned to a variable that always contains the letters ' df',
@@ -57,7 +57,7 @@ cases.  <br> In the first step, we import the necessary modules
 import pandas as pd # The library used to manipulate and to create a tidy DataFrame object
 seed = 42 # Create reproducible random output.
 ```
-<br>
+
 The path to the input data is assigned to variables `scraping_{1..3}`. For each
 of them a DataFrame object is created afterwards. The DataFrame `df`, which
 holds the data of all three is created and duplicate rows are dropped.  The
@@ -117,13 +117,13 @@ added for more detail on how each command works.
 
 #### `df.head()`
 
-##### Description<br>
+##### Description
 The command `df.head()`returns the first 5 rows of the DataFrame by default, if
 no parameters are specified by the user. Using the parameter *n*, one can
 specify the number of rows, that get returned. Needless to say, rows returned
 will always start at the first index value and include the following *n-1* rows.
 
-##### Example<br>
+##### Example
 In the first call to `df.head()`, the default value for number of lines printed
 (*n*=5) is used by not specifying any parameter value in the function call. In
 the second call, the number of lines printed is changed to *n* =9.
@@ -400,14 +400,14 @@ df.head(n=3) # Includes index values [0:2]
 
 #### `df.tail()`
 
-##### Description<br>
+##### Description
 The command `df.tail()` is the counterpart to `df.head()`, it returns the last 5
 rows of the DataFrame by default, if no parameters are specified by the user.
 Using the parameter *n*, one can specify the number of rows, that get returned.
 Needless to say, rows returned will always end with the row at the last index
 value and include the preceding *n-1* rows.
 
-##### Example<br>
+##### Example
 First the maximum of the index of `df` is checked, to show that the last printed
 row is indeed the last value in the index of the DataFrame, other than that the
 examples mirror the two from the `df.head()` command, to display their
@@ -573,12 +573,9 @@ df.tail()
 <p>5 rows × 47 columns</p>
 
 
-<br>
-<br>
-
 #### `df.columns`
 
-##### Description<br>
+##### Description
 The command `df.columns` does one thing and one thing well, one might say. It
 returns a list of strings, the list of the columns of the DataFrame. Its output
 can be iterated through, in order to select subsets of all columns. An iteration
@@ -589,7 +586,7 @@ an overview of all the columns names and therefore is a starting point for
 dropping certain columns and renaming the columns, so they follow an easy to
 remember and precise naming pattern.
 
-##### Example<br>
+##### Example
 Below, the set of columns of the DataFrame are printed. One can see, that there
 are two types of patterns found in the names of the columns.
 
@@ -621,12 +618,10 @@ df.columns
            'json_petsAllowed', 'json_lift'],
           dtype='object')
 
-<br>
-<br>
 
 #### `df.index`
 
-##### Description<br>
+##### Description
 The command `df.index` prints the type of the index of the DataFrame, as well as
 a couple of index values from the beginning and end of the 64bit integer index
 range in our example. When the final DataFrame `df` was created, using the
@@ -642,7 +637,7 @@ on top of the index of `df1`. Would that have happened the resulting index would
 have been unusable, since there would not have been a monotonously increasing
 range index in the resulting DataFrame.
 
-##### Example<br>
+##### Example
 In the example it is shown what the resulting index of the final DataFrame would
 have been, if parameter * ignore_index* would not have been specified at all
 (`df_index_1`) and what it would have been, given `ignore_index=False`
@@ -672,9 +667,6 @@ print('The resulting index, if False is used:\n %s\n ' % df_index_2.index)
                dtype='int64', length=12495)
 
 
-<br>
----
-
 ```python
 print('The resulting index, if True is used:\n %s\n ' % df.index)
 ```
@@ -687,8 +679,6 @@ print('The resulting index, if True is used:\n %s\n ' % df.index)
                 12494],
                dtype='int64', length=12325)
 
-<br>
-<br>
 
 #### `df.describe()`
 
@@ -766,8 +756,6 @@ df.dtypes
     json_lift                     object
     dtype: object
 
-<br>
-<br>
 
 From the output one can see, that there only 2 columns that exclusively hold
 numerical data and thus have a numerical * data type* (*dtype*). All other
@@ -836,8 +824,6 @@ df.describe()
   </tbody>
 </table>
 
-<br>
-<br>
 
 We will use the summary statistics for variable `anz_schlafzimmer` as an example
 of how one can interpret their values for a given data series. The variable
@@ -882,12 +868,12 @@ df['anz_schlafzimmer'].value_counts()
 
 #### `df.shape`
 
-##### Description<br>
+##### Description
 The command returns a tuple object which has two numerical values. Let $(x,y)$
 be the output of `df.shape`, a tuple object where $$x$$ gives the number of rows
 `df` has, while $$y$$ gives the number of columns of it.
 
-##### Example<br>
+##### Example
 See below for the created `df`.
 
 ```python
@@ -898,11 +884,11 @@ df.shape
 
 #### `df.count()`
 
-##### Description<br>
+##### Description
 `df.count()` returns the count of all $$\neg np.nan$$ for each column or for a
 subset.
 
-##### Example<br>
+##### Example
 In the example, the output was shortened by only including 4 randomly selected
 columns out of the 47 columns in the `df`.
 
@@ -916,8 +902,6 @@ df.count().sample(4,random_state=seed)
     json_condition           12324
     dtype: int64
 
-<br>
-<br>
 
 #### `df.nunique()`
 
@@ -926,7 +910,7 @@ Returns an integer value, that gives the number of unique values in the data
 frame or of a subset of columns in the `df`. It does not return the unique
 values themselves.
 
-##### Example<br>
+##### Example
 The example shows how it can be applied to `df` and what the output looks like.
 A subset of the columns is used again, to keep the output readable.
 
@@ -941,19 +925,16 @@ df.nunique().sample(4,random_state=seed)
     dtype: int64
 
 
-<br>
-<br>
-
 #### `df.filter()`
 
-##### Description<br>
+##### Description
 `df.filter()` can be used like `df.loc`, if parameter *items* is added. It
 prints the columns specified as a list of column names. However, where it shines
 is when there are subsets of columns that have a certain pattern in their names.
 In this case, one can use parameter *regex*, followed by a regex pattern along
 with the parameter and value *axis=1*.
 
-##### Example<br>
+##### Example
 In the first example `df.filter()` is used like `df.loc` to select a subset of
 two columns. The second example shows how *regex* can be used to filter certain
 columns. As mentioned earlier, in the DataFrame constructed there is a subset of
@@ -998,10 +979,6 @@ df.filter(items=['lift','str']).sample(4,random_state=seed)
   </tbody>
 </table>
 
-
-
-<br>
-<br>
 
 Example 2 - Using `df.filter()` to select all columns, that have the prefix 'json\_' in their names.
 
@@ -1127,12 +1104,9 @@ df.filter(regex='^json', axis=1).sample(4,random_state=seed)
 </table>
 
 
-<br>
-<br>
-
 #### `df.sample()`
 
-##### Description<br>
+##### Description
 Allows one to randomly sample from a DataFrame or `pandas.Series`. It was used
 several times in the examples so far, in order to give a better glimpse of the
 data in the `df`. Alternatives would have been, among others, `df.head()` and

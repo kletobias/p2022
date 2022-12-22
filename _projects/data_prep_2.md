@@ -60,7 +60,7 @@ import janitor
 seed = 42  # Random seed, to give repeatable random output.
 ```
 
-## Reading In The DataFrame<br>From Previous Steps
+## Reading In The DataFrame From Previous Steps
 
 A value we alter, compared to its default value is the following:
 
@@ -128,7 +128,7 @@ df = (
 )
 ```
 
-## Checking Data Types<br>Of The Columns
+## Checking Data Types Of The Columns
 
 The output shows us, that only 2 columns are of type numeric. After the cleaning
 process, the columns will all have the correct **data type (dtype)**. The dtype,
@@ -232,7 +232,7 @@ df.data_description
 
 
 
-## Columns With<br>Little Information
+## Columns With Little Information
 
 We get an overview of the number of unique values for each column in the
 DataFrame.
@@ -416,7 +416,7 @@ space of the specific kitchen and thus can not be moved to another apartment.
 This gives enough reason to fill the rows, that have missing values in
 `bfitted_kitchen` with '0' - does not have a fitted kitchen.
 
-### Comparing Values of<br>`bfitted_kitchen`<br>and<br>`json_bfitted_kitchen`
+### Comparing Values of `bfitted_kitchen` and `json_bfitted_kitchen`
 
 The show the same value count for listing has a fitted kitchen. The number of
 *NaN* values in column `bfitted_kitchen` is equivalent to the value count of
@@ -650,7 +650,7 @@ that the values in both columns only contain digits and optionally a `.` as
 decimal separator, followed by nothing else than 2 digits at the end of each
 value.
 
-### Detailed Cleaning Steps<br>For Total Rent<br>And Auxiliary Costs
+### Detailed Cleaning Steps For Total Rent And Auxiliary Costs
 
 Next up is the actual cleaning procedure for columns `auxiliary_costs` and
 `total_rent`. The problem with these variables is, that it is unknown, which of
@@ -738,7 +738,7 @@ df = (
 
 
 
-### Dealing With<br>Newly Created<br>Missing Values
+### Dealing With Newly Created Missing Values
 The cleaning process introduced around 200 missing values in the
 `auxiliary_costs` column, that were not recognized as such by *pandas*, prior to
 cleaning.
@@ -846,7 +846,7 @@ print(df.total_rent.isna().value_counts())
     Name: total_rent, dtype: int64
 
 
-### Total Rent<br>Post Cleaning<br>Validation
+### Total Rent Post Cleaning Validation
 The conversion of `total_rent` to float gave no errors. The column is converted
 into a list and all values pass the validation. That means they only contain
 digits before a period (`.`), followed by exactly 2 digits after the period
