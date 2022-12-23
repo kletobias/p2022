@@ -6,6 +6,7 @@ description: 'In this blog post, the first part of the 2022 Google Search
 Operators are listed and explained in detail. These are all working in 2022.'
 featured_image: '/images/negative-space-aerial-pacific-ocean.jpeg'
 comments: true
+categories: 'test'
 ---
 
 {% include figure.html path="assets/img/negative-space-aerial-pacific-ocean.jpeg" class="img-fluid rounded z-depth-1" %}
