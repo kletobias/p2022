@@ -2,7 +2,7 @@
 layout: default2
 ---
 
-        <section class="hero">
+<section class="hero">
   <div class="container">
     <div class="row">
       <div class="col col-12">
@@ -49,7 +49,7 @@ layout: default2
   </div>
 
   <div class="row">
-
+{% for post in site.projects limit:3 %}
 
     <div class="article col col-4 col-d-6 col-t-12">
 <div class="article__inner">
@@ -67,108 +67,32 @@ layout: default2
 <div class="article__content">
 
   <div class="article__meta">
-    <a class="article__author__link" href="/about/">Tobias Klein</a> –
-    <time class="article__date" datetime="2022-11-12T12:01:35+00:00">12 November, 2022</time>
+    {% for author in site.data.coauthors %}
+    <a class="article__author__link" href="{{author.url}}">{{author.name}}</a> –
+    <time class="article__date">{{post.date | date_to_string}}</time>
+    {% endfor %}
   </div>
 
   <h2 class="article__title">
-    <a href="/do-what-you-can-with-what-you-have-where-you-are/">datacamp concrete regression challenge</a>
+    <a href="/do-what-you-can-with-what-you-have-where-you-are/">{{post.title}}</a>
   </h2>
 
-  <p class="article__excerpt">This is my notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.</p>
+  <p class="article__excerpt">{{post.description}}</p>
 
 
   <div class="article__tags">
+    {% for category in post.categories %}
 
-    <a href="/tags/?tag=family" class="article__tag">regression-analysis </a>
-
-    <a href="/tags/?tag=story" class="article__tag">sklearn</a>
-
+    <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}" class="article__tag">{{post.categories}}</a>
+    {% endfor %}
   </div>
 
 
 </div>
 </div>
-</div>
-<div class="article col col-4 col-d-6 col-t-12">
-<div class="article__inner">
-
-<div class="article__head">
-
-
-
-<a class="article__image" href="/do-what-you-can-with-what-you-have-where-you-are/">
-<img class="lazy loaded" alt="Do what you can, with what you have, where you are" data-ll-status="loaded" src="assets/img/06.jpeg">
-</a>
 
 </div>
-
-<div class="article__content">
-
-<div class="article__meta">
-<a class="article__author__link" href="/about/">Tobias Klein</a> –
-<time class="article__date" datetime="2022-11-12T12:01:35+00:00">12 November, 2022</time>
-</div>
-
-<h2 class="article__title">
-<a href="/do-what-you-can-with-what-you-have-where-you-are/">datacamp concrete regression challenge</a>
-</h2>
-
-<p class="article__excerpt">This is my notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.</p>
-
-
-<div class="article__tags">
-
-<a href="/tags/?tag=family" class="article__tag">regression-analysis </a>
-
-<a href="/tags/?tag=story" class="article__tag">sklearn</a>
-
-</div>
-
-
-</div>
-</div>
-</div>
-<div class="article col col-4 col-d-6 col-t-12">
-<div class="article__inner">
-
-<div class="article__head">
-
-
-
-<a class="article__image" href="/do-what-you-can-with-what-you-have-where-you-are/">
-<img class="lazy loaded" alt="Do what you can, with what you have, where you are" data-ll-status="loaded" src="assets/img/06.jpeg">
-</a>
-
-</div>
-
-<div class="article__content">
-
-<div class="article__meta">
-<a class="article__author__link" href="/about/">Tobias Klein</a> –
-<time class="article__date" datetime="2022-11-12T12:01:35+00:00">12 November, 2022</time>
-</div>
-
-<h2 class="article__title">
-<a href="/do-what-you-can-with-what-you-have-where-you-are/">datacamp concrete regression challenge</a>
-</h2>
-
-<p class="article__excerpt">This is my notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.</p>
-
-
-<div class="article__tags">
-
-<a href="/tags/?tag=family" class="article__tag">regression-analysis </a>
-
-<a href="/tags/?tag=story" class="article__tag">sklearn</a>
-
-</div>
-
-
-</div>
-</div>
-</div>
-
+{% endfor %}
 
 
   </div>
@@ -185,6 +109,7 @@ layout: default2
           </div>
 
           <div class="row">
+            {% for post in site.projects limit:4 %}
             <div class="article col col-3 col-d-6 col-m-12">
               <div class="article__inner">
                 <div class="article__head">
@@ -197,98 +122,18 @@ layout: default2
                 </div>
                 <div class="article__content">
                   <div class="article__meta">
-                    <a class="article__author__link" href="/about/">Tobias Klein</a> –
-                    <time class="article__date" datetime="2022-11-07T12:01:35+00:00">7 Nov, 2022</time>
+                    {% for author in site.data.coauthors %}
+                    <a class="article__author__link" href="{{author.url}}">{{author.name}}</a> –
+                    <time class="article__date" datetime="2022-11-07T12:01:35+00:00">{{post.date | date_to_string}}</time>
+                    {% endfor %}
                   </div>
                   <h2 class="article__title">
-                    <a href="/what-you-do-speaks-so-loudly-that-I-cannot-hear-what-you-say/">Advanced Geospatial Feature Creation</a>
+                    <a href="/what-you-do-speaks-so-loudly-that-I-cannot-hear-what-you-say/">{{post.title}}</a>
                   </h2>
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-            <div class="article col col-3 col-d-6 col-m-12">
-              <div class="article__inner">
-                <div class="article__head">
-
-
-                  <a class="article__image" href="/remember-that-happiness-is-a-way-of-travel-not-a-destination/">
-                    <img class="lazy loaded" alt="Remember that happiness is a way of travel, not a destination" data-ll-status="loaded" src="assets/img/06.jpeg">
-                  </a>
-
-                </div>
-                <div class="article__content">
-                  <div class="article__meta">
-                    <a class="article__author__link" href="/about/">Tobias Klein</a> –
-                    <time class="article__date" datetime="2022-04-24T12:01:35+00:00">24 Apr, 2022</time>
-                  </div>
-                  <h2 class="article__title">
-                    <a href="/remember-that-happiness-is-a-way-of-travel-not-a-destination/">Cleaning a 47 Column Pandas DataFrame Part 4</a>
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="article col col-3 col-d-6 col-m-12">
-              <div class="article__inner">
-                <div class="article__head">
-
-
-                  <a class="article__image" href="/if-you-cannot-do-great-things-do-small-things-in-a-great-way/">
-                    <img class="lazy loaded" alt="If you cannot do great things, do small things in a great way" data-ll-status="loaded" src="assets/img/06.jpeg">
-                  </a>
-
-                </div>
-                <div class="article__content">
-                  <div class="article__meta">
-                    <a class="article__author__link" href="/about/">Tobias Klein</a> –
-                    <time class="article__date" datetime="2022-04-23T12:01:35+00:00">23 Apr, 2022</time>
-                  </div>
-                  <h2 class="article__title">
-                    <a href="/if-you-cannot-do-great-things-do-small-things-in-a-great-way/">Cleaning a 47 Column Pandas DataFrame Part 3</a>
-                  </h2>
-                </div>
-              </div>
-            </div>
-
-
-
-
-
-
-
-            <div class="article col col-3 col-d-6 col-m-12">
-              <div class="article__inner">
-                <div class="article__head">
-
-
-                  <a class="article__image" href="/a-journey-of-a-thousand-leagues-begins-beneath-ones-feet/">
-                    <img class="lazy loaded" alt="A journey of a thousand leagues begins beneath one’s feet" data-ll-status="loaded" src="assets/img/06.jpeg">
-                  </a>
-
-                </div>
-                <div class="article__content">
-                  <div class="article__meta">
-                    <a class="article__author__link" href="/about/">Tobias Klein</a> –
-                    <time class="article__date" datetime="2022-03-29T15:05:55+00:00">29 Mar, 2022</time>
-                  </div>
-                  <h2 class="article__title">
-                    <a href="/a-journey-of-a-thousand-leagues-begins-beneath-ones-feet/">Cleaning a 47 Column Pandas DataFrame Part 2</a>
-                  </h2>
-                  <p>Showcase of how batch processing several columns of tabular data using pandas, pyjanitor and the re library can look like.</p>
-                </div>
-              </div>
-            </div>
-
-
+            {% endfor %}
 
 
           </div>
@@ -307,67 +152,17 @@ layout: default2
         <div class="section__head">
           <h3 class="section__title">Popular Topics</h3>
         </div>
-
-
-
-
         <div class="row">
 
+          {% for category in site.projects %}
 
           <div class="col col-2 col-d-6 col-m-12">
             <a href="/tags/?tag=family" class="tag-image">
-              <span class="tag-name">family</span>
+              <span class="tag-name">{{category.categories}}</span>
               <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
             </a>
           </div>
-
-
-
-          <div class="col col-2 col-d-6 col-m-12">
-            <a href="/tags/?tag=hobby" class="tag-image">
-              <span class="tag-name">hobby</span>
-              <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
-            </a>
-          </div>
-
-
-
-          <div class="col col-2 col-d-6 col-m-12">
-            <a href="/tags/?tag=interior" class="tag-image">
-              <span class="tag-name">interior</span>
-              <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
-            </a>
-          </div>
-
-
-
-          <div class="col col-2 col-d-6 col-m-12">
-            <a href="/tags/?tag=kitchen" class="tag-image">
-              <span class="tag-name">kitchen</span>
-              <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
-            </a>
-          </div>
-
-
-
-          <div class="col col-2 col-d-6 col-m-12">
-            <a href="/tags/?tag=learn" class="tag-image">
-              <span class="tag-name">learn</span>
-              <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
-            </a>
-          </div>
-
-
-
-          <div class="col col-2 col-d-6 col-m-12">
-            <a href="/tags/?tag=lifestyle" class="tag-image">
-              <span class="tag-name">lifestyle</span>
-              <img class="lazy loaded" alt="post.title" data-ll-status="loaded" src="assets/img/06.jpeg">
-            </a>
-          </div>
-
-
-
+          {% endfor %}
         </div>
       </div>
     </div>
