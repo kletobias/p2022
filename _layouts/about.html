@@ -83,7 +83,7 @@ layout: default2
   <div class="article__tags">
     {% for category in post.categories %}
 
-    <a href="{{ category | prepend: '/blog/category/' | prepend: site.baseurl}}" class="article__tag">{{post.categories}}</a>
+    <a href="{{ category | prepend: '/projects/category/' | prepend: site.baseurl}}" class="article__tag">{{post.categories}}</a>
     {% endfor %}
   </div>
 
