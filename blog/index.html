@@ -16,7 +16,7 @@ pagination:
 <div class="post">
 
   <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
+    <h1>Blog</h1>
     <h2>{{ site.blog_description }}</h2>
   </div>
 
@@ -62,7 +62,7 @@ pagination:
           {% endif %}
         {% endif %}
       </h3>
-      <p>{{ post.description }}</p>
+      <p>{{ post.description | strip_html | truncatewords: 60 }}</p>
       <p class="post-meta">
         {{ read_time }} min read &nbsp; &middot; &nbsp;
         {{ post.date | date: '%B %-d, %Y' }}

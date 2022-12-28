@@ -95,17 +95,17 @@
               {%- endif -%}
               {% endfor -%}
               {%- if site.enable_darkmode %}
-
+              <li class="toggle-container">
+                <form method="get" id="search-google" action="https://www.google.com/search" target="_blank"><input type="hidden" name="sitesearch" value="deep-learning-mastery.com" /><input type="text" name="q" maxlength="255" value="" placeholder="Search via Google" class="form-control" /></form>
+              </li>
               <!-- Toogle theme mode -->
               <li class="toggle-container">
-                <button id="light-toggle" title="Change theme">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-                </button>
+                <a href="/contact" class="contact-btn">get in touch</a>
               </li>
               {%- endif %}
             </ul>
           </div>
         </div>
       </nav>
+
     </header>
