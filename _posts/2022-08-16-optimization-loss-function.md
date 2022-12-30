@@ -1,12 +1,26 @@
 ---
-layout: post
-title: 'The Math Behind "Stepping The Weights"'
+layout: distill
+title: 'The Math Behind<br>"Stepping The Weights"'
 date: 2022-08-16 16:00:00
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
+tags: ['deep learning']
+comments: true
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div><a href="#a-univariate-linear-regression-function">A Univariate Linear Regression Function</a></div>
+    <div class="no-math"><a href="#minimizing-the-l_2-loss">Minimizing The $$L_{2}$$ Loss</a></div>
+    <div class="no-math"><a href="#from-loss-function-to-optimization">From Loss Function To Optimization</a></div>
+    <div class="no-math"><a href="#univariate-linear-regression">Univariate Linear Regression</a></div>
+    <div class="no-math"><a href="#gradient-descent">Gradient Descent</a></div>
+    <div class="no-math"><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></div>
+    <div class="no-math"><a href="#summary">Summary</a></div>
+  </nav>
+</d-contents>
 
-# The Math Behind "Stepping The Weights"
-
+# The Math Behind<br>"Stepping The Weights"
+<br>
 **Stochastic Gradient Descent in detail.**
 
 In this article we highlight a key concept in the Stochastic Gradient Descent
@@ -18,6 +32,7 @@ terms and concepts are covered in this article, among others.
 3. Linear Regression.
 4. The empirical loss (using $$\mathit{L}_2$$).
 5. Gradient Descent
+
 
 ## A Univariate Linear Regression Function
 
@@ -53,11 +68,15 @@ finding.* We assume, that the noise of the dependent variable is normally
 distributed and use $$L_{2}$$ as loss function. We sum over all the training
 values:
 
-$$\mathit{Loss}(\,h_{w})\,=\,
-\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,)\, =\,
-\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2\, =\,
-\sum_{j=1}^{N}\,(\,y_{j}\, -\,
-(\,w_{1}x{j}\, +\, w_{0})\,)^2\,$$
+$$
+\begin{aligned}
+\mathit{Loss}(\,h_{w})\,=\,&\sum_{j=1}^{N}\,\mathit{L}_{2}(\,y_{j},\,h_{w}(\,x_{j})\,) \\
+\iff\, &\sum_{j=1}^{N}\,(\,y_{j}\, -\, h_{w}(\,x_{j})\,)^2 \\
+\iff\, &\sum_{j=1}^{N}\,(\,y_{j}\, -\,(\,w_{1}x{j}\, +\, w_{0})\,)^2\,
+\end{aligned}
+$$
+
+
 # From Loss Function To Optimization
 
 
@@ -261,11 +280,7 @@ plt.show()
 ```
 
 
-​    
-![png](output_13_0.png)
-​    
-
-
+{% include figure.html path="assets/img/output_13_0.png" class="img-fluid rounded z-depth-1" %}
 
 
 
@@ -308,11 +323,7 @@ plotls(df_indep, w1, w0)
 ```
 
 
-![png](output_17_1.png)
-
-
-
-
+{% include figure.html path="assets/img/output_17_1.png" class="img-fluid rounded z-depth-1" %}
 
 
 ### Solving By Hand
@@ -323,17 +334,25 @@ that has to be solved, fulfills $$w_{opt}\, =\, \mathrm{Min}\,\mathit{Loss}_{w}(
 ^2$$ is minimized, when its partial derivatives with respect to $$w_{0}$$ and $$w_
 {1}$$ are zero.
 
-$$\frac{\partial{h_{w}}}{\partial{w_{0}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_
-{1}x_{j}\, + w_{0})\,)^2 \,= 0\,\, \mathrm{and}\,\, \frac{\partial{h_
+$$
+\begin{aligned}&\frac{\partial{h_{w}}}{\partial{w_{0}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_
+{1}x_{j}\, + w_{0})\,)^2 \,= 0 \\
+\mathrm{and}\,\, &\frac{\partial{h_
 {w}}}{\partial{w_{1}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_{1}x_{j}\, + w_{0})
-\,)^2\, = 0$$
+\,)^2\, = 0
+\end{aligned}
+$$
 
 Solving for $$w_{1}$$ and $$w_{0}$$ respectively, gives:
 
-$$w_{1}\, =\, \frac{\mathit{N}\,(\,\sum_{j=1}^{N}\, x_{j}y_{j})\, - (\,\sum_
+$$
+\begin{aligned}&w_{1}\, =\, \frac{\mathit{N}\,(\,\sum_{j=1}^{N}\, x_{j}y_{j})\, - (\,\sum_
 {j=1}^{N}\,x_{j})\,(\,\sum_{j=1}^{N}\, y_{j})\,}{\mathit{N}(\,\sum_{j=1}^{N}\,x_
-{j}^2)\, - (\,\sum_{j=1}^{N}\, x_{j})^2}\:\;\; w_{0}\, =\, \frac{(\,\sum_{j=1}^N
-y_{i} - w_{1}\,(\,\sum_{j=1}^{N}x_{j})\,)\,}{\mathit{N}}$$
+{j}^2)\, - (\,\sum_{j=1}^{N}\, x_{j})^2} \\
+&w_{0}\, =\, \frac{(\,\sum_{j=1}^N
+y_{i} - w_{1}\,(\,\sum_{j=1}^{N}x_{j})\,)\,}{\mathit{N}}
+\end{aligned}
+$$
 
 We plug in the values for the independent and dependent variables and solve for
 $$w_{1}$$ and $$w_{0}$$ respectively. Two functions are defined, one for each
@@ -454,7 +473,7 @@ layer.
 
 
 We calculate the partial derivatives, using the chain rule, and a single sample
-of independent and dependent variable $$(\,x,y)\,$$.
+of independent and dependent variable $$(x,y)$$.
 
 $$\frac{\partial}{\partial w_{i}}\mathit{Loss}(\,\mathbb{w})\, = \,
 \frac{\partial}{\partial w_{i}}(\,y\,-h_{w}(\,x)\,)^2 \, =\, 2(\,y\, - h_{w}(
@@ -473,9 +492,13 @@ $$\frac{\partial}{\partial w_{1}}(\,y - (\,w_{1}x + w_{0})\,)\, =
 
 Thus, the partial derivative of the loss function for $$w_{0}$$ and $$w_{1}$$ is:
 
-$$\frac{\partial}{\partial w_{0}}\mathit{Loss}(\,\mathbb{w})\, = -2\,(\,y\, - h_
-{w}(\,x)\,)\,\, \mathrm{and}\,\, \frac{\partial}{\partial w_{1}}\mathit{Loss}(
-\,\mathbb{w})\, = -2x\,(\,y\, - h_{w}(\,x)\,)\,$$
+$$
+\begin{aligned}&\frac{\partial}{\partial w_{0}}\mathit{Loss}(\,\mathbb{w})\, = -2\,(\,y\, - h_
+{w}(\,x)\,) \\
+\mathrm{and}\,\, &\frac{\partial}{\partial w_{1}}\mathit{Loss}(
+\,\mathbb{w})\, = -2x\,(\,y\, - h_{w}(\,x)\,)\,
+\end{aligned}
+$$
 
 With these equations calculated, it is possible to plug in the values in the
 pseudocode under 'Gradient Descent: Steps'. The -2 is added to the learning
@@ -518,7 +541,7 @@ The **stochastic gradient descent** or **SGD** is a faster variant. It randomly
 picks a small subset of training examples at each step, and updates the weights
 using the equation under heading 'Single Training Example'. It is common, that
 the SGD selects a **minibatch** of $$m$$ out of the $$N$$ examples. E.g., Given
-$$N=1\mathit{E}4$$ and the minibatch size of $$m=1\mathit{E}2$$, the difference in
+$$N=1\mathit{e}4$$ and the minibatch size of $$m=1\mathit{e}2$$, the difference in
 order of magnitude between $$N$$ and $$m$$ is 2, which equals a factor of 100 times
 less computationally expensive compared to the entire batch for each step.
 
