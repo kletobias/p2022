@@ -4,30 +4,28 @@ title: 'Advanced Geospatial Feature Creation'
 date: 2022-11-04
 description: 'Extensive cleaning and transformation of tabular data, in order to create geospatial features. Once processed, the results are clean GPS values as "Point" objects in decimal degrees format and names of all subway and suburban train stations within Hamburg, Germany.'
 img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['tabular data', 'feature creation', 'geospatial feature', 'regular expression', 'data cleaning', 'data transformation', 'shapely', 'pandas', 'pyjanitor', 'geopandas', 're']
+tags: ['tabular data', 'feature creation', 'geospatial feature', 'regular expression', 'data cleaning', 'data transformation', 'shapely', 'pandas', 'pyjanitor', 're']
 category: ['data preprocessing']
 authors: 'Tobias Klein'
 comments: true
 ---
-
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div class="no-math"><a href="#summary">Summary</a></div>
-    <div class="no-math"><a href="#importing-the-flat-files">Importing The Flat Files</a></div>
+    <div class="no-math"><a href="#import-the-flat-files">Import The Flat Files</a></div>
     <div class="no-math"><a href="#initial-cleaning">Initial Cleaning</a></div>
-    <div class="no-math"><a href="#defining-a-custom-function-for-cleaning">Defining A Custom Function For Cleaning</a></div>
-    <div class="no-math"><a href="#the-heavy-lifting---extracting-the-gps-coordinates">The Heavy Lifting - Extracting The GPS Coordinates</a></div>
+    <div class="no-math"><a href="#define-a-custom-function-for-cleaning">Define A Custom Function For Cleaning</a></div>
+    <div class="no-math"><a href="#the-heavy-lifting-extracting-the-gps-coordinates">The Heavy Lifting - Extracting The GPS Coordinates</a></div>
     <div class="no-math"><a href="#extract-entire-coordinate-pairs">Extract Entire Coordinate Pairs</a></div>
     <div class="no-math"><a href="#check-for-missing-values">Check For Missing Values</a></div>
     <div class="no-math"><a href="#fill-missing-values">Fill Missing Values</a></div>
     <div class="no-math"><a href="#final-verification-of-the-gps-coordinates">Final Verification Of The GPS Coordinates</a></div>
     <div class="no-math"><a href="#creating-the-final-gps-column">Creating The Final GPS Column</a></div>
     <div class="no-math"><a href="#final-glimpse-at-the-tables">Final Glimpse At The Tables</a></div>
-    <div class="no-math"><a href="#exporting-the-cleaned-station-data">Exporting The Cleaned Station Data</a></div>
+    <div class="no-math"><a href="#export-the-cleaned-station-data">Export The Cleaned Station Data</a></div>
   </nav>
 </d-contents>
-
 
 ```python
 # imports
@@ -35,7 +33,6 @@ import janitor
 import re
 from pathlib import Path
 from subprocess import check_output
-import geopandas
 import pandas as pd
 from shapely.geometry import Point
 ```
@@ -1122,7 +1119,7 @@ s(dfs)
 
 
 
-## Exporting The Cleaned Station Data
+## Export The Cleaned Station Data
 The two tables are ready to be integrated into to main dataset, and are therefore exported as csv files.
 
 

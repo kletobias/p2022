@@ -24,7 +24,7 @@ comments: true
     <div class="no-math"><a href="#batch-no-2">Batch No. 2</a></div>
     <div class="no-math"><a href="#csv-to-dataframe">CSV To DataFrame</a></div>
     <div class="no-math"><a href="#creation-of-the-dataframe-for-analysis">Creation Of The DataFrame For Analysis</a></div>
-    <div class="no-math"><a href="#grouped-by-`split_seed`-and-`model`">Grouped By `split_seed` And `model`</a></div>
+    <div class="no-math"><a href="#grouped-by-split_seed-and-model">Grouped By split_seed And model</a></div>
     <div class="no-math"><a href="#the-worst-accuracy-993-percent">The Worst Accuracy: 99.3 Percent</a></div>
     <div class="no-math"><a href="#summary-batch-no-1--2">Summary: Batch No. 1 & 2</a></div>
   </nav>
@@ -1192,7 +1192,7 @@ gb
 
 
 
-## Grouped By `split_seed` And `model`
+## Grouped By split_seed And model
 
 Splitting by columns `split_seed` and `model` gives an array with 8 rows. We
 only care about the median, mean, minimum and maximum value for column

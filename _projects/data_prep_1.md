@@ -5,7 +5,7 @@ date: 2021-01-10
 description: 'Data Preparation Series: Exploring Tabular Data With pandas: An Overview Of Available Tools In The pandas Library'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 tags: ['deep learning', 'tabular data', 'pandas', 'data exploration', 'introduction']
-category: ['data preprocessing']
+category: ['data-preprocessing']
 comments: true
 
 ---
