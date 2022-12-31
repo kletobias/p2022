@@ -15,3 +15,7 @@ vendor
 # ignore single zsh file
 git-get-branch.zsh
 /_projects/.vim-bookmarks
+
+# ignore generated toc files
+toc_script/*.html
+/.vim-bookmarks

@@ -44,7 +44,7 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
             mc1 = re.sub(r'\w',lambda m: m[0].lower(),mc2)
             #mc1 = re.sub(r'([^.:a-z0-9&_])','-',mc1)
             mc1 = re.sub(r'(\s+)','-',mc1)
-            mc1 = re.sub(r'([&.:!;@()])','',mc1)
+            mc1 = re.sub(r'([&.:!;@()/\\])','',mc1)
 #            mc1 = re.sub(r'-{2,}','-',mc1)
             mc1 = re.sub(r'(\d)\.(\d)','\1\2',mc1)
 #            mc1 = re.sub(r'_','-',mc1)
