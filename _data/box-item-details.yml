@@ -1,0 +1,22 @@
+- title: "Fringilla Nullam"
+  sub_title: "Corporate, Application"
+  sm_image: "/assets/img/art/p1.webp"
+  big_image: "/assets/img/art/p1-full.webp"
+  url: "#"
+  filters:
+    - corporate
+    - branding
+- title: "Ridiculus Parturient"
+  sub_title: "Application"
+  sm_image: "/assets/img/art/p2.webp"
+  big_image: "/assets/img/art/p2-full.webp"
+  url: "#"
+  filters:
+    - application
+- title: "Nullam Mollis"
+  sub_title: "Application"
+  sm_image: "/assets/img/art/p3.webp"
+  big_image: "/assets/img/art/p3-full.webp"
+  url: "#"
+  filters:
+    - video

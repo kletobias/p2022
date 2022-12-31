@@ -9,7 +9,6 @@ category: ['deep learning']
 authors: 'Tobias Klein'
 comments: true
 ---
-
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
