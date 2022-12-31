@@ -8,7 +8,6 @@ tags: ['tabular data', 'pandas', 'geospatial feature engineering', 'dtype timede
 category: ['data preprocessing']
 comments: true
 ---
-
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
@@ -23,7 +22,6 @@ comments: true
     <div class="no-math"><a href="#time_listed-column">Time_Listed Column</a></div>
   </nav>
 </d-contents>
-
 
 # Wrangling with that Data! 3/4
 
@@ -640,7 +638,7 @@ df.loc[indv, ["date_listed", "date_unlisted"]]
 
 
 
-## Time_Listed Column
+## time_listed Column
 The `time_listed` column is created and added to the DataFrame.
 
 

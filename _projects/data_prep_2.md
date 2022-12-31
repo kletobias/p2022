@@ -16,9 +16,9 @@ comments: true
     <div class="no-math"><a href="#reading-in-the-dataframe-from-previous-steps">Reading In The DataFrame From Previous Steps</a></div>
     <div class="no-math"><a href="#checking-data-types-of-the-columns">Checking Data Types Of The Columns</a></div>
     <div class="no-math"><a href="#columns-with-little-information">Columns With Little Information</a></div>
-    <div class="no-math"><a href="#has-fitted-kitchen-bool">Has Fitted Kitchen - Bool</a></div>
-    <div class="no-math"><a href="#has-elevator-bool">Has Elevator - Bool</a></div>
-    <div class="no-math"><a href="#auxiliary-costs-total-rent">Auxiliary Costs & Total Rent</a></div>
+    <div class="no-math"><a href="#has-fitted-kitchen---bool">Has Fitted Kitchen - Bool</a></div>
+    <div class="no-math"><a href="#has-elevator---bool">Has Elevator - Bool</a></div>
+    <div class="no-math"><a href="#auxiliary-costs--total-rent">Auxiliary Costs & Total Rent</a></div>
   </nav>
 </d-contents>
 

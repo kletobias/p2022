@@ -11,10 +11,8 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#wrangling-with-that-data-44">Wrangling With That Data! 4/4</a></div>
     <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
-    <div class="no-math"><a href="#preparations-for-the-batch-operations">Preparations For The Batch Operations
-</a></div>
+    <div class="no-math"><a href="#preparations-for-the-batch-operations">Preparations for the Batch Operations</a></div>
     <div class="no-math"><a href="#applying-the-batch-processing">Applying The Batch Processing</a></div>
     <div class="no-math"><a href="#removal-of-any-remaining-white-space">Removal Of Any Remaining White Space</a></div>
     <div class="no-math"><a href="#final-validation-of-unique-values">Final Validation Of Unique Values</a></div>
