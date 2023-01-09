@@ -20,7 +20,7 @@ structure. The tree based models we use for understanding are ones, where the tr
 trees in the case of the `RandomForestRegressor` are intentionally kept weak.
 This is not necessarily the case for the `DecisionTreeRegressor` model, since
 without limiting the number of splits, there is no mechanism to limit the size
-of the final tree. (Menze et al., 2009)<d-cite key="menze_comparison_2009"></d-cite> This results in models, that have a low tendency to overfit during
+of the final tree. (Menze et al., 2009) <d-cite key="menze_comparison_2009"></d-cite> This results in models, that have a low tendency to overfit during
 training, which is a characteristic, that is good for the purpose of
 understanding the model.
 
@@ -39,9 +39,9 @@ From the *scikit-learn* website, one gets the following definition for the
 >
 > [*Definition of feature_importances_ attribute on scikit-learn*](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor.feature_importances_)
 
-This paper<d-cite key="menzeComparisonRandomForest2009"></d-cite> can be read for more on
+This paper <d-cite key="menze_comparison_2009"></d-cite> can be read for more on
 the Gini importance metric.
 
-YES besters<d-cite key="kuhnAppliedPredictiveModeling2013"></d-cite>
+YES besters <d-cite key="kuhn_applied_2013"></d-cite>
 
 TESSS
