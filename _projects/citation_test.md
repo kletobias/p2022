@@ -45,3 +45,6 @@ the Gini importance metric.
 YES besters <d-cite key="kuhn_applied_2013"></d-cite>
 
 TESSS
+
+<h2>Related Publications</h2>
+{% bibliography %}
