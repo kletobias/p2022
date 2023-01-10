@@ -2,16 +2,24 @@
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 2'
 date: 2023-01-09
-description: 'Model Interpretation'
+description: 'Feature selection using the DecisionTreeRegressor from sklearn and the feature_importances_ method.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['DecisionTreeRegressor', 'sklearn', 'tabular data', 'feature selection', 'feature importance']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
-<br>
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#train--validation-splits">Train & Validation Splits</a></div>
+    <div class="no-math"><a href="#sklearn-decisiontreeregressor">Sklearn DecisionTreeRegressor</a></div>
+    <div class="no-math"><a href="#theory">Theory</a></div>
+    <div class="no-math"><a href="#feature-importance-metric-deep-dive-experiment">Feature Importance Metric Deep Dive Experiment</a></div>
+  </nav>
+</d-contents>
 
-# Part 2: Tree Based Models For Interpretability
+# Part 2: Tree Based Models For Interpretability 1
 
 With the preprocessing done, we can start with the machine learning. However,
 this is not the type of machine learning where we look for the highest accuracy
@@ -19,36 +27,7 @@ we can get, given a model architecture and hyperparameters. In this case we are
 looking to get a better understanding of which of the 80 independent variables
 contribute most to the final predictions that the fitted model makes and how.
 
-## TOC Of Part 2
-
-```md
-  Tree Based Models For Interpretability
-    Train & Validation Splits
-    Sklearn DecisionTreeRegressor
-    Theory
-    Feature Importance Metric Deep Dive Experiment
-    RandomForestRegressor (RFR) For Interpretation
-    Out-Of-Bag Error Explained
-    RFR: Standard Deviation Of RMSE By Number Of Estimators
-    Dendrogram Visualization For Spearman Rank Correlations
-    Dendrogram Findings Applied
-    New Train & Validation Sets Using Resulting Feature Set
-  Exploring The Impact of Individual Columns
-  Partial Dependence
-  Tree Interpreter
-    Identifying *Out-Of-Domain Data*
-  Creation Of The Kaggle Submission
-    Creating Estimators Optimized For Kaggle
-    RandomForestRegressor Optimization
-    tabular_learner - Deep Learning Model
-    Preprocessing Of The Kaggle Test Dataset
-    tabular_learner Optimization
-    XGBRegressor Optimization
-    Three Model Ensemble
-    Kaggle Submission
-```
-
-### Train & Validation Splits
+## Train & Validation Splits
 
 We will always use `to.train.xs` and `to.train.y` to assign the training pair of
 independent variables and dependent variable. In the same way, we will always
@@ -60,7 +39,7 @@ xs, y = to.train.xs, to.train.y
 valid_xs, valid_y = to.valid.xs, to.valid.y
 ```
 
-### Sklearn DecisionTreeRegressor
+## Sklearn DecisionTreeRegressor
 
 The first model used is a simple decision tree model, that we will use to see
 what columns and values the model uses to create the splits. Plus, we like to
@@ -153,7 +132,7 @@ dtreeviz(
 
 
 
-### Theory
+## Theory
 
 A reason why tree based models are one of the best model types when it comes to
 understanding the model and the splits a fitted model created lies in the fact,
@@ -184,16 +163,13 @@ From the *scikit-learn* website, one gets the following definition for the
 >
 > [*Definition of feature_importances_ attribute on scikit-learn*](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor.feature_importances_)
 
-<!-- TODO: test citation below -->
-This paper<d-cite key="menze_comparison_2009"></d-cite> can be read for more on
-the Gini importance metric.
 
 
 ```python
 fi = dict(zip(train.columns.tolist(), m.feature_importances_))
 ```
 
-##### Feature Selection Using Features Importance Scores
+#### Feature Selection Using Features Importance Scores
 
 Using the feature importances values, we can set a lower limit for the feature
 importance score. All features with a feature importance lower than the
@@ -268,7 +244,7 @@ fipl
 
 
 
-### Feature Importance Metric Deep Dive Experiment
+## Feature Importance Metric Deep Dive Experiment
 
 It was unclear, whether the order from most important feature to the ones with a
 feature importance score of zero according to the `feature_importances_` method
