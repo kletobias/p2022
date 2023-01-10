@@ -5,7 +5,7 @@ permalink: /projects/
 description: Here you can find multi-part series and in-depth articles.
 nav: true
 nav_order: 2
-display_categories: ['data preprocessing','deep learning']
+display_categories: ['data preprocessing','deep learning','tabular data']
 horizontal: false
 ---
 

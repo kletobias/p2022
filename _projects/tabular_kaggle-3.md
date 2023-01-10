@@ -2,19 +2,37 @@
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 3'
 date: 2023-01-09
-description: 'RandomForestRegressor For Interpretation'
+description: 'RandomForestRegressor using feature_importances_ and out-of-bag error to asses model performance.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'RandomForestRegressor', 'feature selection', 'out-of-bag error', 'feature importance']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
-<br>
-# Part 3
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#randomforestregressor-rfr-for-interpretation">RandomForestRegressor For Interpretation</a></div>
+    <div class="no-math"><a href="#out-of-bag-error-explained">Out-Of-Bag Error Explained</a></div>
+    <div class="no-math"><a href="#rfr-standard-deviation-of-rmse-by-number-of-estimators">RFR: Standard Deviation Of RMSE By Number Of Estimators</a></div>
+  </nav>
+</d-contents>
 
-### RandomForestRegressor (RFR) For Interpretation
+# Series: Kaggle Competition - Deep Dive Tabular Data
 
-#### Create Root Mean Squared Error Metric For Scoring Models
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+
+# Part 3: Tree Based Models For Interpretability 2
+
+## RandomForestRegressor (RFR) For Interpretation
+
+### Create Root Mean Squared Error Metric For Scoring Models
 
 Given, that the kaggle competition we want to submit our final predictions uses
 a *root mean squared error* as scoring metric, we create this metric for all
@@ -59,7 +77,7 @@ m_rmse(m, valid_xs, valid_y)
 
 
 
-#### Custom Function To Create And Fit A RFR Estimator
+### Custom Function To Create And Fit A RFR Estimator
 
 A function, that creates a `RandomForestRegressor` estimator and fits it using
 the training data. Its output is the fitted estimator.
@@ -106,7 +124,7 @@ m_rmse(m, xs, y), m_rmse(m, valid_xs, valid_y)
 
 
 
-#### RFR - Theory
+### RFR - Theory
 
 The `RandomForestRegressor` model uses a subset of the training set to train
 each decision tree in the ensemble on. *The following parameter names are
@@ -139,7 +157,7 @@ print(f'The mean rmse over all trees on the validation dataset is: {r_mse(preds.
     The mean rmse over all trees on the validation dataset is: 0.13605
 
 
-#### RFR - Average RMSE By Number Of Estimators
+### RFR - Average RMSE By Number Of Estimators
 
 Visualization of the average rmse value, by number of estimators added.
 
@@ -170,7 +188,7 @@ plt.show()
     
 
 
-### Out-Of-Bag Error Explained
+## Out-Of-Bag Error Explained
 
 In the case, where the size of the subset used to train each base estimator was
 smaller than the set of the training data, one can look at the *out-of-bag
@@ -196,7 +214,7 @@ r_mse(m.oob_prediction_, y)
 
 
 
-### RFR: Standard Deviation Of RMSE By Number Of Estimators
+## RFR: Standard Deviation Of RMSE By Number Of Estimators
 
 We want to answer the following question:
 
@@ -213,7 +231,7 @@ low/high standard deviation for a particular sample means, that the spread in
 the predicted sale price across all estimators is low/high and thus, the
 confidence of the model in the prediction is high/low.
 
-#### Visualization Using Swarmplot
+### Visualization Using Swarmplot
 
 The values on the x-axis of the plot are $$\hat{\sigma}_{ln\,Y}$$, with $$Y$$
 the random variable, the distribution of the standard deviation over all
@@ -247,7 +265,7 @@ plt.show()
     
 
 
-#### Feature Importances And Selection Using RFR
+### Feature Importances And Selection Using RFR
 
 The dataset used here has 80 independent variables, of which most are assigned
 0, which means that their respective contribution, relative to the other
@@ -255,7 +273,7 @@ features in terms of lowering the overall *rmse* value is non-existent, judging
 by the `feature_importances_` method. The underlying metric is the Gini
 importance metric, as mentioned earlier.
 
-##### Compute Feature Importance Scores
+#### Compute Feature Importance Scores
 A function is created, that calculates the feature importances and returns a
 sorted DataFrame.
 
@@ -266,7 +284,7 @@ def rf_feat_importance(m, df):
         {"cols": df.columns, "imp": m.feature_importances_}).sort_values("imp", ascending=False)
 ```
 
-##### Display The Top 10
+#### Display The Top 10
 We call the function and display the 10 features with the highest feature
 importance scores.
 
@@ -344,7 +362,7 @@ fi[:10]
 
 
 
-##### Bar Plot: Feature Importances
+#### Bar Plot: Feature Importances
 Function for the visualization of feature importance scores.
 
 
@@ -353,7 +371,7 @@ def plot_fi(fi):
     return fi.plot("cols", "imp", "barh", figsize=(12, 7), legend=False,title='Feature Importance Plot',ylabel='Feature',xlabel='Feature Importance Score')
 ```
 
-##### Display The Top 30
+#### Display The Top 30
 Visualization of the 30 features, with the highest feature importance scores in
 ascending order.
 
@@ -382,7 +400,7 @@ plot_fi(fi[:30])
     
 
 
-##### Create Subset Of Features To Keep
+#### Create Subset Of Features To Keep
 
 We try to answer the following question:
 
@@ -406,7 +424,8 @@ len(to_keep)
 
 
 
-#### New Training Set *xs_imp* After Feature Elimination
+### New Training Set xs_imp After Feature Elimination
+
 `xs_imp`/`valid_xs_imp` is the subset of `xs`/`valid_xs` with the columns, that
 are in `to_keep`.
 
@@ -423,7 +442,7 @@ A `RandomForestRegressor` is fitted using `xs_imp`.
 m = rf(xs_imp, y)
 ```
 
-##### RMSE Values Using *xs_imp*
+#### RMSE Values Using *xs_imp*
 
 We want to answer this question:
 
@@ -443,7 +462,7 @@ m_rmse(m, xs_imp, y), m_rmse(m, valid_xs_imp, valid_y)
 
 
 
-#### Interpretation Of RMSE Values
+### Interpretation Of RMSE Values
 
 The rmse values for the smaller feature set are worse compared to the ones using
 all features. In this case, this is a problem, given that kaggle scores our
@@ -491,3 +510,12 @@ plot_fi(rf_feat_importance(m, xs_imp))
 </div>
     
 
+Entire Series:
+
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>

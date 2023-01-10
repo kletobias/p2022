@@ -4,11 +4,27 @@ title: 'Deep Dive Tabular Data Pt. 5'
 date: 2023-01-09
 description: 'Out-Of-Domain Problem'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#identifying-out-of-domain-data">Identifying Out-Of-Domain Data</a></div>
+  </nav>
+</d-contents>
+
+# Series: Kaggle Competition - Deep Dive Tabular Data
+<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
 <br>
 
 # Part 5: Out-Of-Domain Problem
@@ -130,7 +146,7 @@ values of the dependent variable for all samples in a leaf. This problem can
 lead to predictions on so called *out-of-domain data*, that are systematically
 too low. One has to ensure, that the validation set does not contain such data.
 
-### Identifying *Out-Of-Domain Data*
+## Identifying *Out-Of-Domain Data*
 
 **Tool: RandomForestRegressor** The `RandomForestRegressor` is used to predict
 whether a row is part of the train or the validation set. For this, the train
@@ -352,3 +368,13 @@ plt.subplots_adjust(top=.9)
 </div>
     
 
+Entire Series:<br>
+<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+<br>

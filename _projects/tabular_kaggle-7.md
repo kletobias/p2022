@@ -4,21 +4,41 @@ title: 'Deep Dive Tabular Data Pt. 7'
 date: 2023-01-09
 description: 'Kaggle Submission 2'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#tabular_learner-optimization">tabular_learner Optimization</a></div>
+    <div class="no-math"><a href="#xgbregressor-optimization">XGBRegressor Optimization</a></div>
+    <div class="no-math"><a href="#three-model-ensemble">Three Model Ensemble</a></div>
+    <div class="no-math"><a href="#kaggle-submission">Kaggle Submission</a></div>
+  </nav>
+</d-contents>
+
+# Series: Kaggle Competition - Deep Dive Tabular Data
 <br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+<br>
+
 # Part 7: Optimization Routines & Final Submission
 
-### tabular_learner Optimization
+## tabular_learner Optimization
 
 With the dataloaders objects created for training, as well as for the final
 predictions the `tabular_learner` has to be optimized using a manual
 hyperparameter optimization routine. Given, that this dataset is relatively
-small with less than 2000 rows, a 10 core CPU machine enough for the
-optimization.
+small with less than 2000 rows, a 10 core CPU machine is enough for the
+optimizations applied here.
 
 The initial step is to call method `lr_find` on the `tabular_learner` object, so
 the value range for parameter `lr` can be specified. Since the training set is
@@ -965,40 +985,18 @@ r_mse(ens_preds, y_val)
 
 
 
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
 
 
     0.126166
 
 
 
-### XGBRegressor Optimization
+## XGBRegressor Optimization
 
 The `XGBRegressor` is a top contender when it comes to a tree ensemble based
-model, that can deliver predictions of the highest accuracy, having being used in many
-competition winning submissions on Kaggle and other platforms in the past.
+model, that can deliver predictions of the highest accuracy, having being used
+in many competition winning submissions on Kaggle and other platforms in the
+past.
 
 In order to get the most out of this model, one has to use hyperparameter tuning
 during the fitting process together with strong cross-validation techniques to
@@ -1042,20 +1040,19 @@ containing all $$\textbf{machine numbers}$$ between $$0$$ and $$1$$ could not be
 tested in a grid search, as there are too many values in this range. Oftentimes
 only a small subset of all hyperparameters in a model and only a small subset of
 the respective value ranges for each parameter are of relevance for the value of
-the evaluation metric.
-However, the number of models can still become extremely high. Consider $$15$$
-hyperparameters and for illustration purposes assume each one has $$40$$
-possible values. If a $$5$$ fold cross validation is used to evaluate the
-models, the total number of models to build is given by $$15 \cdot 40 \cdot 5 =
-3000$$. To put it into perspective, with an estimated time of $$0.68$$ seconds
-that it takes to build one model on the here used machine, to build all $$3000$$
-models would take $$3000 \cdot 0.68 = 34 \;\mathrm{minutes}$$. While more
-computational power in the form of better hardware is a solution up to a certain
-point, using one of the following methods can be comparably more efficient.
-Considering these weaknesses of the grid search procedure, there are
-alternatives available and given the number and value range for each parameter
-included in the hyperparameter optimization, a random search is chosen over a
-grid search.
+the evaluation metric. However, the number of models can still become extremely
+high. Consider $$15$$ hyperparameters and for illustration purposes assume each
+one has $$40$$ possible values. If a $$5$$ fold cross validation is used to
+evaluate the models, the total number of models to build is given by $$15 \cdot
+40 \cdot 5 = 3000$$. To put it into perspective, with an estimated time of
+$$0.68$$ seconds that it takes to build one model on the here used machine, to
+build all $$3000$$ models would take $$3000 \cdot 0.68 = 34
+\;\mathrm{minutes}$$. While more computational power in the form of better
+hardware is a solution up to a certain point, using one of the following methods
+can be comparably more efficient. Considering these weaknesses of the grid
+search procedure, there are alternatives available and given the number and
+value range for each parameter included in the hyperparameter optimization, a
+random search is chosen over a grid search.
 
 Random search samples from the distribution passed for each parameter (specified
 by `get_truncated_normal`) during each iteration and can therefore cover a wider
@@ -1110,7 +1107,7 @@ print(f"{val_score} val_score")
     0.13291718065738678 val_score
 
 
-### Three Model Ensemble
+## Three Model Ensemble
 An ensemble consisting of `tabular_learner`, `RandomForestRegressor` and
 `XGBRegressor` is tested using equal weights for each one. The results beat the
 previous ones and this ensemble is used in the final submission.
@@ -1128,7 +1125,7 @@ r_mse(ens_preds2, y_val)
 
 
 
-### Kaggle Submission
+## Kaggle Submission
 
 Function `val_pred` takes a dataloader and the three estimators optimized in the
 previous sections as inputs and 
@@ -1138,9 +1135,9 @@ Since the rmse of the predictions is lowest when only using `XGBRegressor` and
 submitted to Kaggle.
 
 The exponential function is applied to the predictions of each estimator before
-adding them together and dividing them by three. This re-transforms them. In this
-form the predictions can be added to a DataFrame under a new column `SalePrice`
-and exported as CSV file.
+adding them together and dividing them by three. This re-transforms them. In
+this form the predictions can be added to a DataFrame under a new column
+`SalePrice` and exported as CSV file.
 
 Finally, since this submission turned out to be worse than the best one I had
 submitted prior, the predictions of the best one to that point was imported and
@@ -1182,27 +1179,6 @@ def val_pred(tonn_vfs_dl,m2,best,learn):
 df_sub_comp = val_pred(tonn_vfs_dl,m2,best,learn)
 print(df_sub_comp.columns)
 ```
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
 
 
 
@@ -1266,3 +1242,13 @@ plt.show()
 </div>
     
 
+Entire Series:<br>
+<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+<br>

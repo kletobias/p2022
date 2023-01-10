@@ -4,8 +4,8 @@ title: 'Deep Dive Tabular Data Pt. 1'
 date: 2023-01-09
 description: 'Preprocssing Data'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'fastai', 'pandas', 'tree models', 'hypterparameter optimization']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
@@ -21,12 +21,9 @@ comments: true
     <div class="no-math"><a href="#visualizing-missing-values">Visualizing Missing Values</a></div>
     <div class="no-math"><a href="#categorical-embeddings">Categorical Embeddings</a></div>
     <div class="no-math"><a href="#final-preprocessing-tabularpandas">Final Preprocessing: TabularPandas</a></div>
-    <div class="no-math"><a href="#toc-of-part-2">TOC Of Part 2</a></div>
-    <div class="no-math"><a href="#exploring-the-impact-of-individual-columns">Exploring The Impact of Individual Columns</a></div>
-    <div class="no-math"><a href="#partial-dependence">Partial Dependence</a></div>
-    <div class="no-math"><a href="#tree-interpreter">Tree Interpreter</a></div>
   </nav>
 </d-contents>
+
 # Series: Kaggle Competition - Deep Dive Tabular Data
 
 [**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
@@ -34,6 +31,8 @@ comments: true
 [**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
 [**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
 [**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
 
 This series documents the process of importing raw tabular data from a CSV file,
 to submitting the final predictions on the Kaggle test set for the competition.
@@ -2293,8 +2292,8 @@ save_pickle("top.pkl", to)
 <!-- date: 2023-01-09 -->
 <!-- description: 'Preprocssing Data' -->
 <!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
-<!-- tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
-<!-- category: ['deep learning'] -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
+<!-- category: ['tabular data'] -->
 <!-- authors: 'Tobias Klein' -->
 <!-- comments: true -->
 <!-- --- -->
@@ -2698,8 +2697,8 @@ fpdo = fp(i=1000)
 <!-- date: 2023-01-09 -->
 <!-- description: 'Preprocssing Data' -->
 <!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
-<!-- tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
-<!-- category: ['deep learning'] -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
+<!-- category: ['tabular data'] -->
 <!-- authors: 'Tobias Klein' -->
 <!-- comments: true -->
 <!-- --- -->
@@ -3192,8 +3191,8 @@ plot_fi(rf_feat_importance(m, xs_imp))
 <!-- date: 2023-01-09 -->
 <!-- description: 'Preprocssing Data' -->
 <!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
-<!-- tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
-<!-- category: ['deep learning'] -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
+<!-- category: ['tabular data'] -->
 <!-- authors: 'Tobias Klein' -->
 <!-- comments: true -->
 <!-- --- -->
@@ -3785,8 +3784,8 @@ plt.show()
 <!-- date: 2023-01-09 -->
 <!-- description: 'Preprocssing Data' -->
 <!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
-<!-- tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
-<!-- category: ['deep learning'] -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
+<!-- category: ['tabular data'] -->
 <!-- authors: 'Tobias Klein' -->
 <!-- comments: true -->
 <!-- --- -->
@@ -4139,8 +4138,8 @@ plt.subplots_adjust(top=.9)
 <!-- date: 2023-01-09 -->
 <!-- description: 'Preprocssing Data' -->
 <!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
-<!-- tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
-<!-- category: ['deep learning'] -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization'] -->
+<!-- category: ['tabular data'] -->
 <!-- authors: 'Tobias Klein' -->
 <!-- comments: true -->
 <!-- --- -->
@@ -6368,3 +6367,12 @@ plt.show()
 </div>
     
 
+Entire Series:
+
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>

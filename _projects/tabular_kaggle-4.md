@@ -4,15 +4,37 @@ title: 'Deep Dive Tabular Data Pt. 4'
 date: 2023-01-09
 description: 'Further Interpretation'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#dendrogram-visualization-for-spearman-rank-correlations">Dendrogram Visualization For Spearman Rank Correlations</a></div>
+    <div class="no-math"><a href="#dendrogram-findings-applied">Dendrogram Findings Applied</a></div>
+    <div class="no-math"><a href="#new-train--validation-sets-using-resulting-feature-set">New Train & Validation Sets Using Resulting Feature Set</a></div>
+    <div class="no-math"><a href="#exploring-the-impact-of-individual-columns">Exploring The Impact of Individual Columns</a></div>
+    <div class="no-math"><a href="#partial-dependence">Partial Dependence</a></div>
+    <div class="no-math"><a href="#tree-interpreter">Tree Interpreter</a></div>
+  </nav>
+</d-contents>
+
+
+# Series: Kaggle Competition *Deep Dive Tabular Data*
+<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
 <br>
 # Part 4
 
-### Dendrogram Visualization For Spearman Rank Correlations
+## Dendrogram Visualization For Spearman Rank Correlations
 
 With the *scipy* library, one can create a dendrogram using the features in the
 training set. Using the Spearman rank correlation ($$\rho$$), which does not have any
@@ -61,7 +83,7 @@ The output shows, that variable `garagetype` and `exterqual` are assumed to have
 a high similarity and are the two columns with the strongest assumed linear
 relationship among the features found in `xs_imp`.
 
-### Dendrogram Findings Applied
+## Dendrogram Findings Applied
 
 To test what the impact of dropping even more features from `xs_imp`, on the
 rmse on the training set is, we look at the *out-of-bag error* (oob). The features
@@ -263,7 +285,7 @@ df_oob
 
 
 
-### New Train & Validation Sets Using Resulting Feature Set
+## New Train & Validation Sets Using Resulting Feature Set
 
 The resulting Datasets have the two features removed. These two datasets are the
 new baseline datasets, that all of the following models are fitted/evaluated on.
@@ -590,3 +612,12 @@ plt.show()
 </div>
     
 
+Entire Series:
+
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>

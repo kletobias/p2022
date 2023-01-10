@@ -4,12 +4,33 @@ title: 'Deep Dive Tabular Data Pt. 6'
 date: 2023-01-09
 description: 'Kaggle Submission 1'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#creating-estimators-optimized-for-kaggle">Creating Estimators Optimized For Kaggle</a></div>
+    <div class="no-math"><a href="#randomforestregressor-optimization">RandomForestRegressor Optimization</a></div>
+    <div class="no-math"><a href="#tabular_learner---deep-learning-model">tabular_learner - Deep Learning Model</a></div>
+    <div class="no-math"><a href="#preprocessing-of-the-kaggle-test-dataset">Preprocessing Of The Kaggle Test Dataset</a></div>
+  </nav>
+</d-contents>
+
+
+# Series: Kaggle Competition - Deep Dive Tabular Data
 <br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+<br>
+
 # Part 6: Creation Of The Kaggle Submission
 
 For the final submission, we train several models and combine their predictions
@@ -36,7 +57,7 @@ The hyperparameter optimization for each of them is:
     - `RandomizedSearchCV` with 1400 iterations and 8 fold cross-validation for each from *sklearn* using a parameter distribution dictionary.
     - For details, see section 'XGBRegressor Optimization'.
 
-### Creating Estimators Optimized For Kaggle
+## Creating Estimators Optimized For Kaggle
 
 So far, the focus has been on fitting estimators for interpretability and not
 for the lowest rmse value. The kaggle competition we want to submit our final
@@ -49,7 +70,7 @@ more than 5 minutes give or take or stop adding more iterations to the hyper
 parameter optimization procedure, if rmse values stop improving despite
 increasing the number of iterations.
 
-### RandomForestRegressor Optimization
+## RandomForestRegressor Optimization
 
 Using a manually created test harness, the rmse values for each iteration on the
 training and validation set are appended to list `m_rmsel` and `m_rmselv`
@@ -218,7 +239,7 @@ m_rmse(m, xs_final, y), m_rmse(m, valid_xs_final, valid_y)
 
 
 
-### tabular_learner - Deep Learning Model
+## tabular_learner - Deep Learning Model
 
 While dropping `garagearea` resulted in a slightly higher accuracy using
 `RandomForestRegressor` on the validation set, the increase was marginal. Let's
@@ -552,7 +573,7 @@ to be narrower than the default range.
 learn = tabular_learner(dls, y_range=(10.45, 13.55), n_out=1, loss_func=F.mse_loss)
 ```
 
-### Preprocessing Of The Kaggle Test Dataset
+## Preprocessing Of The Kaggle Test Dataset
 A look at the columns of the DataFrame that holds the independent variables,
 as given by the Kaggle test dataset. This is the dataset that the final
 predictions need to be made on.
@@ -976,3 +997,13 @@ tonn_vfs_dl.show_batch()
   </tbody>
 </table>
 
+Entire Series:<br>
+<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+<br>
