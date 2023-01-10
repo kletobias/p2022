@@ -632,7 +632,7 @@ dfu[dfu["station"].str.contains("Haupt|Wandsbek")]
 
 
 
-Using the row indexes in the subway statitons DataFrame from above, the missing values in the suburban train stations DataFrame are filled manually by overwriting their values in the `gps` column.
+Using the row indexes in the subway stations DataFrame from above, the missing values in the suburban train stations DataFrame are filled manually by overwriting their values in the `gps` column.
 
 
 ```python

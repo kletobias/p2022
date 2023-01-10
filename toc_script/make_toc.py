@@ -61,4 +61,5 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
             toc.write('</d-contents>')
 #            toc.close()
 
+# make_toc(file='tabular_kaggle-1.md',all=False,remove_previous=True)
 make_toc(all=True,remove_previous=True)
