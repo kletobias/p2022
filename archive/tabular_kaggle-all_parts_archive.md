@@ -3,21 +3,36 @@ layout: distill
 title: 'Deep Dive Tabular Data Pt. 1'
 date: 2023-01-09
 description: 'Preprocssing Data'
-img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
-category: ['deep learning']
+img: 'assets/img/838338477938@+-791693336.jpg'
+tags: ['fastai', 'hyperparameter optimization', 'pandas', 'tabular data', 'tree models']
+category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
 ---
 <br>
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#complete-toc">Complete TOC</a></div>
+    <div class="no-math"><a href="#part-1-introduction">Part 1: Introduction</a></div>
+    <div class="no-math"><a href="#imports-for-the-series">Imports For The Series</a></div>
+    <div class="no-math"><a href="#importing-the-flat-files">Importing The Flat Files</a></div>
+    <div class="no-math"><a href="#looking-at-the-training-dataset">Looking At The Training Dataset</a></div>
+    <div class="no-math"><a href="#visualizing-missing-values">Visualizing Missing Values</a></div>
+    <div class="no-math"><a href="#categorical-embeddings">Categorical Embeddings</a></div>
+    <div class="no-math"><a href="#final-preprocessing-tabularpandas">Final Preprocessing: TabularPandas</a></div>
+  </nav>
+</d-contents>
 
 # Series: Kaggle Competition - Deep Dive Tabular Data
 
-[**Part 1**]({% link _projects/tabular_kaggle-1.md %})
-[**Part 2**]({% link _projects/tabular_kaggle-2.md %})
-[**Part 3**]({% link _projects/tabular_kaggle-3.md %})
-[**Part 4**]({% link _projects/tabular_kaggle-4.md %})
-[**Part 5**]({% link _projects/tabular_kaggle-5.md %})
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
 
 This series documents the process of importing raw tabular data from a CSV file,
 to submitting the final predictions on the Kaggle test set for the competition.
@@ -26,6 +41,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
 
 ```md
 Series: Kaggle Competition - Deep Dive Tabular Data
+
 Part 1: Introduction
   Imports For The Series
   Importing The Flat Files
@@ -117,7 +133,7 @@ The data can be found [*here*](https://www.kaggle.com/competitions/house-prices-
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/p.png" title="Overview" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/tabular-deep-dive-series/p.png" title="Overview" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -215,7 +231,7 @@ tl(train)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -411,7 +427,7 @@ train.iloc[:, :3].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -541,7 +557,7 @@ train.iloc[:, 10:20].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -675,7 +691,7 @@ train.iloc[:, 20:30].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -819,7 +835,7 @@ train.iloc[:, 30:40].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -968,7 +984,7 @@ train.iloc[:, 40:50].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1117,7 +1133,7 @@ train.iloc[:, 50:60].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1229,7 +1245,7 @@ train.iloc[:, 60:70].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1373,7 +1389,7 @@ train.iloc[:, 70:81].sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1576,17 +1592,30 @@ fp_msno(train)
 
 
     
-![png](output_39_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_39_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Missingno 1/2
+</div>
     
 
 
 
-    <Figure size 1100x500 with 0 Axes>
 
 
 
     
-![png](output_39_3.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_39_3.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Missingno 2/2
+</div>
     
 
 
@@ -2009,7 +2038,7 @@ xs.filter(like="_na", axis=1).sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -2154,7 +2183,7 @@ to.items.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -2257,6 +2286,20 @@ file like shown below.
 save_pickle("top.pkl", to)
 ```
 
+<!-- --- -->
+<!-- layout: distill -->
+<!-- title: 'Deep Dive Tabular Data Pt. 1' -->
+<!-- date: 2023-01-09 -->
+<!-- description: 'Preprocssing Data' -->
+<!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hyperparameter optimization'] -->
+<!-- category: ['tabular data'] -->
+<!-- authors: 'Tobias Klein' -->
+<!-- comments: true -->
+<!-- --- -->
+<!-- <br> -->
+
+
 # Part 2: Tree Based Models For Interpretability
 
 With the preprocessing done, we can start with the machine learning. However,
@@ -2267,6 +2310,7 @@ contribute most to the final predictions that the fitted model makes and how.
 
 ## TOC Of Part 2
 
+```md
   Tree Based Models For Interpretability
     Train & Validation Splits
     Sklearn DecisionTreeRegressor
@@ -2291,6 +2335,7 @@ contribute most to the final predictions that the fitted model makes and how.
     XGBRegressor Optimization
     Three Model Ensemble
     Kaggle Submission
+```
 
 ### Train & Validation Splits
 
@@ -2350,7 +2395,14 @@ plt.savefig(f"plot_tree-1", dpi=300,bbox_inches='tight')
 
 
     
-![png](output_80_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_80_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        sklearn plot_tree
+</div>
     
 
 
@@ -2375,13 +2427,19 @@ dtreeviz(
 
 
     
-![svg](output_81_0.svg)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_81_0.svg" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        dtreeviz visualization
+</div>
     
 
 
 
-
-    <Figure size 2200x1400 with 0 Axes>
 
 
 ### Theory
@@ -2442,7 +2500,6 @@ fipl
 
 
 
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2457,7 +2514,7 @@ fipl
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -2619,10 +2676,33 @@ fpdo = fp(i=1000)
 
 
     
-![png](output_89_0.png)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_89_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Left: Feature importance plot for features with feature importance score
+        greater 0 over 1000 samples.<br>
+        Right: Boxplot of 1000 samples, showing no change in rank and almost no
+        deviations in scores across samples.
+</div>
     
 
 
+<!-- --- -->
+<!-- layout: distill -->
+<!-- title: 'Deep Dive Tabular Data Pt. 1' -->
+<!-- date: 2023-01-09 -->
+<!-- description: 'Preprocssing Data' -->
+<!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hyperparameter optimization'] -->
+<!-- category: ['tabular data'] -->
+<!-- authors: 'Tobias Klein' -->
+<!-- comments: true -->
+<!-- --- -->
+<!-- <br> -->
 # Part 3
 
 ### RandomForestRegressor (RFR) For Interpretation
@@ -2769,7 +2849,17 @@ plt.show()
 
 
     
-![png](output_104_0.png)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_104_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        RMSE value on the training set, as base estimators are added one by one.
+        Value is volatile for low number of estimators, less so as more
+        estimators are added.
+</div>
     
 
 
@@ -2839,7 +2929,14 @@ plt.show()
 
 
     
-![png](output_108_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_108_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+     
+</div>
     
 
 
@@ -2889,7 +2986,7 @@ fi[:10]
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -2967,7 +3064,14 @@ plot_fi(fi[:30])
 
 
     
-![png](output_116_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_116_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3070,10 +3174,29 @@ plot_fi(rf_feat_importance(m, xs_imp))
 
 
     
-![png](output_128_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_128_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
+<!-- --- -->
+<!-- layout: distill -->
+<!-- title: 'Deep Dive Tabular Data Pt. 1' -->
+<!-- date: 2023-01-09 -->
+<!-- description: 'Preprocssing Data' -->
+<!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hyperparameter optimization'] -->
+<!-- category: ['tabular data'] -->
+<!-- authors: 'Tobias Klein' -->
+<!-- comments: true -->
+<!-- --- -->
+<!-- <br> -->
 # Part 4
 
 ### Dendrogram Visualization For Spearman Rank Correlations
@@ -3108,7 +3231,14 @@ cluster_columns(xs_imp)
 
 
     
-![png](output_130_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_130_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3280,7 +3410,7 @@ df_oob
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -3377,7 +3507,14 @@ plot_fi(dfi)
 
 
     
-![png](output_150_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_150_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3414,7 +3551,7 @@ xs_final["overallqual"].value_counts().reset_index().sort_values(by='index',asce
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -3481,7 +3618,14 @@ plt.show()
 
 
     
-![png](output_153_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_153_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3505,7 +3649,14 @@ plt.show()
 
 
     
-![png](output_155_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_155_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3527,7 +3678,7 @@ and their partial dependence plots are created.
 
 The output shows, that `overallqual` and `yearbuilt` show a high correlation with
 the dependent variable. Not only that though, the plot also shows how the
-assumed change in the value of the dependent variable, $$\frac{\partial \mathrm{saleprice}}{\partial x_{i}}\,\,\mathrm{for}\,\,\mathrm{i}\, \in \{\mathrm{"overallqual"}, \mathrm{"grlivarea"}, \mathrm{"garagecars"}, \mathrm{"yearbuilt"}\}$$
+assumed change in the value of the dependent variable, $$\frac{\partial \mathrm{saleprice}}{\partial x_{i}}\,\,\mathrm{for}\,\,\mathrm{i}\, \in \{\mathrm{overallqual},\, \mathrm{grlivarea},\, \mathrm{garagecars},\, \mathrm{yearbuilt}\}$$
 
 
 ```python
@@ -3544,7 +3695,14 @@ ax = plot_partial_dependence(
 
 
     
-![png](output_157_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_157_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3596,16 +3754,42 @@ plt.show()
 
 
     
-![png](output_160_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_160_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Example of how to use the treeinterpreter on a single sample.
+</div>
     
 
 
 
     
-![png](output_160_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_160_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Example of how to use the treeinterpreter on a single sample.
+</div>
     
 
 
+<!-- --- -->
+<!-- layout: distill -->
+<!-- title: 'Deep Dive Tabular Data Pt. 1' -->
+<!-- date: 2023-01-09 -->
+<!-- description: 'Preprocssing Data' -->
+<!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hyperparameter optimization'] -->
+<!-- category: ['tabular data'] -->
+<!-- authors: 'Tobias Klein' -->
+<!-- comments: true -->
+<!-- --- -->
+<!-- <br> -->
 # Part 5: Out-Of-Domain Problem
 
 A series of 45 linear values for the x-axis is created and a corresponding series
@@ -3622,13 +3806,19 @@ plt.scatter(xlins, ylins)
 
 
 
-    <matplotlib.collections.PathCollection at 0x15b6ae230>
 
 
 
 
     
-![png](output_162_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_162_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3700,7 +3890,14 @@ plt.ylabel('y-Axis')
 
 
     
-![png](output_170_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_170_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -3748,7 +3945,7 @@ fi.iloc[:5, :]
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -3910,16 +4107,43 @@ plt.subplots_adjust(top=.9)
 
 
     
-![png](output_186_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_186_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
 
     
-![png](output_186_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_187_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        ECDF plot is not rendered well, as it is not yet implemented in
+        matplotlib, according to an error message.
+</div>
     
 
 
+<!-- --- -->
+<!-- layout: distill -->
+<!-- title: 'Deep Dive Tabular Data Pt. 1' -->
+<!-- date: 2023-01-09 -->
+<!-- description: 'Preprocssing Data' -->
+<!-- img: 'assets/img/838338477938@+-791693336.jpg' -->
+<!-- tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hyperparameter optimization'] -->
+<!-- category: ['tabular data'] -->
+<!-- authors: 'Tobias Klein' -->
+<!-- comments: true -->
+<!-- --- -->
+<!-- <br> -->
 # Part 6: Creation Of The Kaggle Submission
 
 For the final submission, we train several models and combine their predictions
@@ -4035,7 +4259,7 @@ grouped_opt.iloc[:5, :]
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -4160,9 +4384,7 @@ dfnn_v.columns[:3]
 
 
 Assigning the ordered categorical columns to the data, as we did before for the
-tree based models in the previous part.
-
-TODO: add link to the exact article the has the definitions of these functions.
+tree based models in a previous part. See [**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
 
 
 ```python
@@ -4219,7 +4441,7 @@ dfnn_tf.sample(n=3, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -4525,7 +4747,7 @@ dfnn_vf.sample(n=5, random_state=seed)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -4650,7 +4872,7 @@ tonn_vfs_dl.show_batch()
 ```
 
 
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -4944,7 +5166,14 @@ learn.lr_find()
 
 
     
-![png](output_227_3.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_227_3.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -5766,7 +5995,7 @@ dfopt
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe table-responsive">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -5910,12 +6139,11 @@ input for the grid search algorithm, for each parameter to be optimised during
 the grid search. The underlying problem with the grid search is, that each
 hyperparameter can have a large value range for its possible values. An example
 is a parameter with a continuous value range between $$0$$ and $$1$$. This range
-containing all $$\emph{machine numbers}$$ between $$0$$ and $$1$$ could not be
+containing all $$\textbf{machine numbers}$$ between $$0$$ and $$1$$ could not be
 tested in a grid search, as there are too many values in this range. Oftentimes
 only a small subset of all hyperparameters in a model and only a small subset of
 the respective value ranges for each parameter are of relevance for the value of
-the evaluation
-metric~\cite{bergstraRandomSearchHyperParameter2012,bergstraAlgorithmsHyperParameterOptimization}.
+the evaluation metric.
 However, the number of models can still become extremely high. Consider $$15$$
 hyperparameters and for illustration purposes assume each one has $$40$$
 possible values. If a $$5$$ fold cross validation is used to evaluate the
@@ -5924,8 +6152,7 @@ models, the total number of models to build is given by $$15 \cdot 40 \cdot 5 =
 that it takes to build one model on the here used machine, to build all $$3000$$
 models would take $$3000 \cdot 0.68 = 34 \;\mathrm{minutes}$$. While more
 computational power in the form of better hardware is a solution up to a certain
-point, using one of the following methods can be comparably more
-efficient~\cite{bergstraRandomSearchHyperParameter2012,bergstraAlgorithmsHyperParameterOptimization,probstTunabilityImportanceHyperparameters2018}.
+point, using one of the following methods can be comparably more efficient.
 Considering these weaknesses of the grid search procedure, there are
 alternatives available and given the number and value range for each parameter
 included in the hyperparameter optimization, a random search is chosen over a
@@ -6093,7 +6320,14 @@ print(df_sub_comp.columns)
 
 
     
-![png](output_238_3.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_238_3.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
@@ -6110,12 +6344,35 @@ plt.show()
 
 
     
-![png](output_239_0.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_239_0.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
 
 
     
-![png](output_239_1.png)
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/tabular-deep-dive-series/output_239_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        
+</div>
     
 
+Entire Series:
+
+[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>

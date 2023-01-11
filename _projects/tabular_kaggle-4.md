@@ -1,10 +1,10 @@
 ---
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 4'
-date: 2023-01-09
-description: 'Further Interpretation'
+date: 2023-01-04
+description: 'Interpretation Using Advanced Statistical Visualizations. Dendrogram, Spearman rank correlation, partial dependence plot, impact of independent variables for sample on predictions.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['tabular data', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
+tags: ['dendrogram', 'partial dependence', 'spearman rank correlation', 'tabular data', 'treeinterpreter']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
@@ -32,8 +32,8 @@ comments: true
 [**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
 [**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
 <br>
-# Part 4
 
+# Part 4: Interpretation Using Advanced Statistical Visualizations
 ## Dendrogram Visualization For Spearman Rank Correlations
 
 With the *scipy* library, one can create a dendrogram using the features in the
