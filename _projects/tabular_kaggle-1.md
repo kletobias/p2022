@@ -4,7 +4,7 @@ title: 'Deep Dive Tabular Data Pt. 1'
 date: 2023-01-01
 description: 'Preprocessing Data: Visualizing missing values on an 80 feature dataset. Strategies for filling missing values and using categorical embeddings.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['categorical embeddings', 'fastai', 'fill strategies', 'preprocessing', 'tabular data']
+tags: ['categorical embeddings', 'data preprocessing', 'fastai', 'fill strategies', 'tabular data']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true

@@ -1028,7 +1028,7 @@ submission.
 The hyperparameter optimization used is `RandomizedSearchCV` from the *sklearn*
 library. It is a variation of the general method called *random search*. It
 shares some characteristics with method *grid search*, but differs in a few key
-ascpects from it.
+aspects from it.
 
 A grid search is a method where the user passes a grid with an exhaustive set of
 values to be tested to the algorithm as input. A set of values is passed on as
