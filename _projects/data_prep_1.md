@@ -4,8 +4,8 @@ title: 'Cleaning a 47 Column<br>Pandas DataFrame<br>Part 1'
 date: 2021-01-10
 description: 'Data Preparation Series: Exploring Tabular Data With pandas: An Overview Of Available Tools In The pandas Library'
 img: 'assets/img/838338477938@+-3948324823.jpg'
-tags: ['deep learning', 'tabular data', 'pandas', 'data exploration', 'introduction']
-category: ['data-preprocessing']
+tags: ['data exploration', 'first steps', 'introduction', 'pandas', 'tabular data']
+category: ['data preprocessing']
 comments: true
 
 ---

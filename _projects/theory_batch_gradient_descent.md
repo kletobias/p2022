@@ -1,11 +1,15 @@
 ---
 layout: distill
 title: 'The Math Behind<br>"Stepping The Weights"'
-date: 2022-08-16 16:00:00
+date: 2023-01-12
 description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
-tags: ['deep learning']
+img: 'assets/img/838338477938@+-67822330.jpg'
+tags: ['deep learning', 'math', 'ordinary least squares', 'partial derivate', 'stochastic gradient descent']
+category: ['deep learning']
+authors: 'Tobias Klein'
 comments: true
 ---
+<br>
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>

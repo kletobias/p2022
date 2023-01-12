@@ -3,8 +3,8 @@ layout: distill
 title: 'Advanced Geospatial Feature Creation'
 date: 2022-11-04
 description: 'Extensive cleaning and transformation of tabular data, in order to create geospatial features. Once processed, the results are clean GPS values as "Point" objects in decimal degrees format and names of all subway and suburban train stations within Hamburg, Germany.'
-img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['tabular data', 'feature creation', 'geospatial feature', 'regular expression', 'data cleaning', 'data transformation', 'shapely', 'pandas', 'pyjanitor', 're']
+img: 'assets/img/838338477938@+-3948324823.jpg'
+tags: ['data cleaning', 'data transformation', 'geospatial feature creation', 'regular expression', 'shapely', 'tabular data']
 category: ['data preprocessing']
 authors: 'Tobias Klein'
 comments: true
