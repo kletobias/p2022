@@ -211,8 +211,8 @@ jekyll-archives:
     year: '/projects/:year/'
     tag: '/projects/tag/:name/'
     category: '/projects/category/:name/'
-
-display_tags: ['deep-learning', 'the basics', 'data visualization', 'tabular data', 'image data', 'kaggle', 'practical'] # this tags will be dispalyed on the front page of your blog
+# display_tags: ['deep-learning', 'the basics', 'data visualization', 'tabular data', 'image data', 'kaggle', 'practical'] 
+# this tags will be dispalyed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
