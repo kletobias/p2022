@@ -124,3 +124,8 @@ d-appendix {
     }
   }
 }
+@media (min-width: 1179px)  {
+  d-contents {
+    width: calc(max(70%, 300px)) !important;
+}
+}
