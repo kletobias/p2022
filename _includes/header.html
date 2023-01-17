@@ -94,7 +94,6 @@
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
-              {%- if site.enable_darkmode %}
               <li class="toggle-container">
                 <form method="get" id="search-google" action="https://www.google.com/search" target="_blank"><input type="hidden" name="sitesearch" value="deep-learning-mastery.com" /><input type="text" name="q" maxlength="255" value="" placeholder="Search via Google" class="form-control" /></form>
               </li>
@@ -102,7 +101,6 @@
               <li class="toggle-container">
                 <a href="/contact" class="contact-btn">get in touch</a>
               </li>
-              {%- endif %}
             </ul>
           </div>
         </div>
