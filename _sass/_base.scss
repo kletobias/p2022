@@ -699,7 +699,7 @@ d-article d-contents nav a {
     cursor: pointer !important;
 }
 d-article d-contents{
-  width: calc(max(70%, 400px)) !important;
+  width: calc(max(70%, 400px));
 }
 d-article d-contents nav div{
   margin-bottom: 1.8em !important;
