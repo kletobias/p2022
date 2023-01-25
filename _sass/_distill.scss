@@ -129,3 +129,8 @@ d-appendix {
     width: calc(max(70%, 300px)) !important;
 }
 }
+@media (min-width: 1180px) and (max-width: 1220px)  {
+  d-contents {
+    width: calc(max(30%, 280px)) !important;
+}
+}
