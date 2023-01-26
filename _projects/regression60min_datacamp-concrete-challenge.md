@@ -208,9 +208,12 @@ def trntst(df, dep_col, test_size):
 Use the function defined above to create four subsets of the original DataFrame.
 
 The train/test subsets are for the independent variables:
-- `indep_tr` and `indep_tst`<br>
+
+- `indep_tr` and `indep_tst`
+
 And for the dependent variable these are:
-- `dep_trn` and `dep_tst`<br>
+
+- `dep_trn` and `dep_tst`
 
 
 ```python
@@ -238,7 +241,7 @@ objective function to minimise is
 $$
 \begin{aligned}
  &\qquad\qquad\qquad\qquad\qquad\min_{w} {\frac{1}{2n} ||X w - y||_2^2 + \alpha ||w||_1} \\
- &\mathrm{Euclidean}\;\mathrm{Norm:}\:\;\| x \|_2 = \left( \sum_{i=1}^n | x_i |^2 \right)^{1/2},\;\:\: \ell_1\text{-}\mathrm{Norm:}\;\: \left\| x \right\|_1 := \sum_{i=1}^{n} \left| x_i \right|
+ &\mathrm{Euclidean}\;\mathrm{Norm:}\:\;\| x \|_2 =( \sum_{i=1}^n | x_i |^2)^{1/2},\;\:\: \ell_1\text{-}\mathrm{Norm:}\;\:\| x\|_1 := \sum_{i=1}^{n}| x_i|
 \end{aligned}
 $$
 
