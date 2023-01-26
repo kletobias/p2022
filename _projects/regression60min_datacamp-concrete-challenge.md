@@ -1,21 +1,12 @@
 ---
 layout: distill
 title: 'datacamp concrete regression challenge'
-date: 2022-08-16
+date: 2022-12-26
 description: 'This is the notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['cross validation', 'lasso regression', 'math', 'multivariate regression', 'regression analysis']
 category: ['tabular data']
 authors: 'Tobias Klein'
-comments: true
----
----
-layout: distill
-title: 'post title'
-date: 2023-01-12
-description: 'description'
-img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['deep learning', 'fastai', 'pandas', 'tabular data', 'hypterparameter optimization']
 comments: true
 ---
 <br>
@@ -217,9 +208,9 @@ def trntst(df, dep_col, test_size):
 Use the function defined above to create four subsets of the original DataFrame.
 
 The train/test subsets are for the independent variables:
-- `indep_tr` and `indep_tst`
+- `indep_tr` and `indep_tst`<br>
 And for the dependent variable these are:
-- `dep_trn` and `dep_tst`
+- `dep_trn` and `dep_tst`<br>
 
 
 ```python
