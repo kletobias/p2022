@@ -175,6 +175,7 @@ get_convert()
 With the *csv* file imported into the database, one can begin sending queries to
 the MySQL database instance hosted on **AWS** using *Redshift* (**RDS**).
 
+[besta rank](#sending-mysql-queries-to-the-database)
 **Notice: All queries that return a table only have the first five rows printed
 out at maximum for readability.**
 
