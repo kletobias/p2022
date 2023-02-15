@@ -19,3 +19,5 @@ git-get-branch.zsh
 # ignore generated toc files
 toc_script/*.html
 /.vim-bookmarks
+/assets/img/psd/
+/landing-page-mockup/
