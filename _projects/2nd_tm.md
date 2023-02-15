@@ -1,8 +1,8 @@
 ---
 layout: distill
-title: 'Part 2:<br>Hyperparameter Optimzation<br>An Example'
+title: 'Part 2:<br>Hyperparameter Optimization<br>An Example'
 date: 2022-12-15
-description: "This is Part 2 in the series, where we explore how the fastai deep learning  library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, 'male' and 'female', that are assigned the gender of the model depicted in any of the images in the dataset."
+description: 'This is Part 2 in the series, where we explore how the fastai deep learning  library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, 'male' and 'female', that are assigned the gender of the model depicted in any of the images in the dataset.'
 img: 'assets/img/838338477938@+-67822330.jpg'
 tags: ['deep-learning', 'fastai', 'hyperparameter', 'optimization', 'tabular-data']
 category: ['deep learning']
