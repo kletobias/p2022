@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: 'Cleaning a 47 Column<br>Pandas DataFrame<br>Part 3'
+title: 'Cleaning a webscraped 47 Column<br>Pandas DataFrame<br>Part 3'
 date: 2022-01-11
 description: 'Extensive cleaning and validation and creation of a valid GPS column from the records, by joining the longitude and latitude columns together using geometry object Point.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
