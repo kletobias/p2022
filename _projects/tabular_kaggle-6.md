@@ -4,7 +4,7 @@ title: 'Deep Dive Tabular Data Pt. 6'
 date: 2023-01-06
 description: 'Kaggle Submission 1: Training RandomForestRegressor, fastai deep learning model using hyperparameter optimization techniques. Preprocessing of Kaggle test data.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['data preprocessing', 'fastai', 'hyperparameter optimization', 'random forest', 'tabular data']
+tags: ['data-preprocessing', 'fastai', 'hyperparameter-optimization', 'random-forest', 'tabular-data']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
