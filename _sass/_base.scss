@@ -1067,7 +1067,7 @@ pre code.hljs{line-height: 1.4em;}
     font-size: 50px;
     font-weight: 700;
     letter-spacing: -2px;
-    color: var(--heading-font-color);
+    color: #fff;
 }
 .hero__left .hero__title {
     margin-bottom: 10px;
@@ -1140,6 +1140,14 @@ pre code.hljs{line-height: 1.4em;}
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 16px;
+}
+.hero__description{
+  color: #fff;
+}
+a.hero__button {
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 .section__title {
     margin-bottom: 0;
@@ -2936,3 +2944,5 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	max-width: 1250px !important
 }
 .distill a{border-color: #08877d !important;}
+
+.hero {background-image: url("/assets/img/banner.webp"); background-repeat: no-repeat; background-size: cover;}
