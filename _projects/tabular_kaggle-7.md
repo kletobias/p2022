@@ -5,7 +5,7 @@ date: 2023-01-07
 description: 'Kaggle Submission 2: tabular\_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_learner', 'xgboost-regressor']
-category: ['tabular data']
+category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
 ---

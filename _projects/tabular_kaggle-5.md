@@ -5,7 +5,7 @@ date: 2023-01-05
 description: 'Out-of-domain problem: What it is, why it is important, how to spot it and how to deal with it.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['feature-importance', 'model-accuracy', 'out-of-domain-problem', 'random-forest', 'tabular-data']
-category: ['tabular data']
+category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
 ---

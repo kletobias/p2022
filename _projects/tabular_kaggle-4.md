@@ -5,7 +5,7 @@ date: 2023-01-04
 description: 'Interpretation Using Advanced Statistical Visualizations. Dendrogram, Spearman rank correlation, partial dependence plot, impact of independent variables for sample on predictions.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['dendrogram', 'partial-dependence', 'spearman-rank-correlation', 'tabular-data', 'treeinterpreter']
-category: ['tabular data']
+category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
 ---

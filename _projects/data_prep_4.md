@@ -5,7 +5,7 @@ date: 2022-01-11
 description: 'Extensive data cleaning and validation using regular expressions. Showcase of how batch processing several columns of tabular data using pandas, pyjanitor and the re library can look like.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 tags: ['batch-processing', 'data-validation', 'pandas', 'regular-expressions', 'tabular-data']
-category: ['data preprocessing']
+category: ['data-preprocessing']
 comments: true
 ---
 <d-contents>
