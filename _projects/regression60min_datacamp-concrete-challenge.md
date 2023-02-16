@@ -4,7 +4,7 @@ title: 'Datacamp Concrete Regression Challenge'
 date: 2022-12-26
 description: 'This is the notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['cross validation', 'lasso regression', 'math', 'multivariate regression', 'regression analysis']
+tags: ['cross-validation', 'lasso-regression', 'math', 'multivariate-regression', 'regression-analysis']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true

@@ -4,7 +4,7 @@ title: 'MySQL Queries Using An AWS Redshift MySQL Database'
 date: 2023-02-06
 description: 'This article shows how one can use Python to import CSV files using Pandas into a MySQL database hosted on AWS using Redshift and how to formulate basic MySQL queries to get the data of interest.'
 img: 'assets/img/838338477938@+-98398438.jpg'
-tags: ['mysql', 'AWS', 'pandas', 'tabular data', 'query']
+tags: ['mysql', 'AWS', 'pandas', 'tabular-data', 'query']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true

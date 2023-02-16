@@ -4,7 +4,7 @@ title: 'Deep Dive Tabular Data Pt. 3'
 date: 2023-01-03
 description: 'RandomForestRegressor using feature\_importances\_ and out-of-bag error to asses model performance.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['feature importance', 'feature selection', 'out-of-bag error', 'random forest', 'tabular data']
+tags: ['feature-importance', 'feature-selection', 'out-of-bag-error', 'random-forest', 'tabular-data']
 category: ['tabular data']
 authors: 'Tobias Klein'
 comments: true
