@@ -1,14 +1,15 @@
 ---
 layout: distill
-title: 'datacamp concrete regression challenge'
-date: 2022-08-16 16:00:00
-description: 'This is my notebook I created to solve the datacamp concrete
-challenge within an hour. There are explanations for most of the code in this
-article and we look deeper into the workings of the Lasso regression model.'
-tags: ['regression analysis', 'lasso regression', 'sklearn', 'cross validation', 'in depth math']
+title: 'Datacamp Concrete Regression Challenge'
+date: 2022-12-26
+description: 'This is the notebook I created to solve the datacamp concrete challenge within an hour. There are explanations for most of the code in this article and we look deeper into the workings of the Lasso regression model.'
+img: 'assets/img/838338477938@+-791693336.jpg'
+tags: ['cross-validation', 'lasso-regression', 'math', 'multivariate-regression', 'regression-analysis']
+category: ['tabular-data']
+authors: 'Tobias Klein'
 comments: true
-
 ---
+<br>
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
@@ -207,8 +208,11 @@ def trntst(df, dep_col, test_size):
 Use the function defined above to create four subsets of the original DataFrame.
 
 The train/test subsets are for the independent variables:
+
 - `indep_tr` and `indep_tst`
+
 And for the dependent variable these are:
+
 - `dep_trn` and `dep_tst`
 
 
@@ -237,7 +241,7 @@ objective function to minimise is
 $$
 \begin{aligned}
  &\qquad\qquad\qquad\qquad\qquad\min_{w} {\frac{1}{2n} ||X w - y||_2^2 + \alpha ||w||_1} \\
- &\mathrm{Euclidean}\;\mathrm{Norm:}\:\;\| x \|_2 = \left( \sum_{i=1}^n | x_i |^2 \right)^{1/2},\;\:\: \ell_1\text{-}\mathrm{Norm:}\;\: \left\| x \right\|_1 := \sum_{i=1}^{n} \left| x_i \right|
+ &\mathrm{Euclidean}\;\mathrm{Norm:}\:\;\| x \|_2 =( \sum_{i=1}^n | x_i |^2)^{1/2},\;\:\: \ell_1\text{-}\mathrm{Norm:}\;\:\| x\|_1 := \sum_{i=1}^{n}| x_i|
 \end{aligned}
 $$
 

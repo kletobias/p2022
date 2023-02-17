@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: 'Cleaning a 47 Column<br>Pandas DataFrame<br>Part 3'
+title: 'Cleaning a webscraped 47 Column<br>Pandas DataFrame<br>Part 3'
 date: 2022-01-11
-description: 'Creation of a valid GPS column from the records, by joining the longitude and latitude columns together using geometry object Point.'
+description: 'Extensive cleaning and validation and creation of a valid GPS column from the records, by joining the longitude and latitude columns together using geometry object Point.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
-tags: ['tabular data', 'pandas', 'geospatial feature engineering', 'dtype timedelta64']
-category: ['data preprocessing']
+tags: ['data-validation', 'dtype-timedelta64','geospatial-feature-engineering', 'pandas', 'tabular-data']
+category: ['data-preprocessing']
 comments: true
 ---
 <d-contents>

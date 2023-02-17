@@ -40,11 +40,12 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
         for i in h2r:
             mc2 = re.sub(r'^#{2}\s','',i)
             mc2 = re.sub(r'<br>',' ',mc2)
+            mc2 = re.sub(r'\*','',mc2)
             h2c2nd.append(mc2)
             mc1 = re.sub(r'\w',lambda m: m[0].lower(),mc2)
             #mc1 = re.sub(r'([^.:a-z0-9&_])','-',mc1)
             mc1 = re.sub(r'(\s+)','-',mc1)
-            mc1 = re.sub(r'([&.:!;@()/\\])','',mc1)
+            mc1 = re.sub(r'([&.:!;@()/\\*])','',mc1)
 #            mc1 = re.sub(r'-{2,}','-',mc1)
             mc1 = re.sub(r'(\d)\.(\d)','\1\2',mc1)
 #            mc1 = re.sub(r'_','-',mc1)
@@ -61,4 +62,7 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
             toc.write('</d-contents>')
 #            toc.close()
 
-make_toc(all=True,remove_previous=True)
+# make_toc(file='tocp.md',all=False,remove_previous=False)
+make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/sql-basics.md',
+         remove_previous=False)
+

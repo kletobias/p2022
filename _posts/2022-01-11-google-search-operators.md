@@ -2,11 +2,9 @@
 layout: distill
 title: 'Google Search Operators 2022 Part 1'
 date: 2022-01-11 16:00:00
-description: 'In this blog post, the first part of the 2022 Google Search
-Operators are listed and explained in detail. These are all working in 2022.'
-featured_image: '/images/negative-space-aerial-pacific-ocean.jpeg'
+description: 'In this blog post, the first part of the 2022 Google Search Operators are listed and explained in detail. These are all working in 2022.'
 comments: true
-categories: 'test'
+category: 'Google Search Operators'
 ---
 
 {% include figure.html path="assets/img/negative-space-aerial-pacific-ocean.jpeg" class="img-fluid rounded z-depth-1" %}
