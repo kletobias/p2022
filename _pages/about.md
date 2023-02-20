@@ -21,13 +21,13 @@ hero_area:
   profile-image: "assets/img/profile.jpeg"
 
 author_profile:
-  title: "Hi I'm Tobias Klein."
-  description: "I'm a product designer who's passionate about bringing projects to life! I love learning new things and jumping headfirst into solving problems."
+  title: "Predictive modeling is where I excel at."
+  description: ""
 
 social-links:
-  twitter: "https://twitter.com"
-  github: "https://twitter.com"
-  youtube: "https://twitter.com"
+  twitter: "https://www.kaggle.com/kletobias"
+  github: "https://github.com/kletobias"
+  youtube: "https://www.youtube.com/@summarizingthingsdatascien3325"
 ---
 
 ## README.md
@@ -35,7 +35,7 @@ social-links:
 On this website you can learn more about my skills in the field of machine
 learning.
 
-### Summary
+### Overview
 The overall idea behind this website is to lower transaction costs by
 transparently including my code and descriptions for every step I take in every
 article posted on this website.<br> Writing reproducible Python code is an
@@ -64,16 +64,16 @@ to train a machine learning model. Feature engineering is not the focus here,
 given that *clean data* is a prerequisite for this step. Below is a selection of
 articles I have written on the topic.
 
-[**cleaning a web scraped 47 column pandas dataframe part 3**]({% link _projects/data_prep_3.md %})
-[**cleaning a web scraped 47 column pandas dataframe part 4**]({% link _projects/data_prep_4.md %})
-[**advanced geospatial feature creation**]({% link _projects/advanced-geospatial-feature-creation.md %})
+[**cleaning a web scraped 47 column pandas dataframe part 3**]({% link _projects/data_prep_3.md %})<br>
+[**cleaning a web scraped 47 column pandas dataframe part 4**]({% link _projects/data_prep_4.md %})<br>
+[**advanced geospatial feature creation**]({% link _projects/advanced-geospatial-feature-creation.md %})<br>
 
 
 ### deep-learning
 
-[**the math behind \"stepping the weights\"**]({% link _projects/theory_batch_gradient_descent.md %})
-[**automation using a test harness for deep learning: part 1**]({% link _projects/1st_tm.md %})
-[**automation using a test harness for deep learning: part 2**]({% link _projects/2nd_tm.md %})
+[**the math behind \"stepping the weights\"**]({% link _projects/theory_batch_gradient_descent.md %})<br>
+[**automation using a test harness for deep learning: part 1**]({% link _projects/1st_tm.md %})<br>
+[**automation using a test harness for deep learning: part 2**]({% link _projects/2nd_tm.md %})<br>
 
 ### tabular-data
 
@@ -87,4 +87,4 @@ category.
 
 [**fill missing values and categorical embeddings**]({% link _projects/tabular_kaggle-1.md %})<br>
 [**kaggle submission 1: training RandomForestRegressor and deep learning model**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/tabular_kaggle-7.md %})
+[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/tabular_kaggle-7.md %})<br>
