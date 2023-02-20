@@ -20,7 +20,7 @@ import (using `sqlalchemy` to import data for example). You can find a detailed
 overview of Python libraries I use in the [Libraries I
 Use](TODO:link-to-about-page-libraries-i-use-section) section.
 
-All articles found under [projects]({% link _projects/ %}) belong to one or more
+All articles found under [projects]({% link projects/ %}) belong to one or more
 of the following categories.
 
 ### data-preprocessing

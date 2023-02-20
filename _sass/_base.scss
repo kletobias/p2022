@@ -2946,3 +2946,58 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .distill a{border-color: #08877d !important;}
 
 .hero {background-image: url("/assets/img/banner.webp"); background-repeat: no-repeat; background-size: cover;}
+.author-profile {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+}
+.author-profile .author-profile__name {
+    margin-bottom: 10px;
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+.author-profile .author-profile__desc {
+    margin-bottom: 20px;
+}
+.social {
+    text-align: center;
+}
+.social .social__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.list-reset {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.social .social__item {
+    display: inline-block;
+    margin: 0 2px;
+}
+.social .social__link {
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+    font-size: 21px;
+}
+.social .social__link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+    transition: all .25s;
+}
+.profile_intro{
+  padding-bottom: 60px;
+}
