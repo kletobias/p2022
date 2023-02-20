@@ -3,64 +3,16 @@ layout: default2
 ---
 
 {% include banner.html %}
-
-<div class="container animate">
-
-  <div class="section__head">
-    <h3 class="section__title">Featured posts</h3>
-  </div>
-
-  <div class="row">
-{% for post in site.projects limit:3 %}
-
-    <div class="article col col-4 col-d-6 col-t-12">
-<div class="article__inner">
-
-<div class="article__head">
-
-
-
-  <a class="article__image" href="/do-what-you-can-with-what-you-have-where-you-are/">
-    <img class="lazy loaded" alt="Do what you can, with what you have, where you are" data-ll-status="loaded" src="assets/img/06.jpeg">
-  </a>
-
+{% include author-profile.html %}
+<div class="container">
+    <div class="row">
+      <article class="">
+        {{content}}
+      </article>
+    </div>
 </div>
-
-<div class="article__content">
-
-  <div class="article__meta">
-    {% for author in site.data.coauthors %}
-    <a class="article__author__link" href="{{author.url}}">{{author.name}}</a> –
-    <time class="article__date">{{post.date | date_to_string}}</time>
-    {% endfor %}
-  </div>
-
-  <h2 class="article__title">
-    <a href="{{post.url}}">{{post.title}}</a>
-  </h2>
-
-  <p class="article__excerpt">{{post.description}}</p>
-
-
-  <div class="article__tags">
-    {% for category in post.categories %}
-
-    <a href="{{ category | prepend: '/projects/category/' | prepend: site.baseurl}}" class="article__tag">{{post.categories}}</a>
-    {% endfor %}
-  </div>
-
-
-</div>
-</div>
-
-</div>
-{% endfor %}
-
-
-  </div>
-</div>
-
-<section class="section featured-post animate">
+{% include featured-posts.html %}
+<!--<section class="section featured-post animate">
   <div class="container">
     <div class="row">
       <div class="col col-12">
@@ -104,9 +56,9 @@ layout: default2
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
-<section class="section section-tags animate">
+<!---<section class="section section-tags animate">
   <div class="container">
     <div class="row">
       <div class="col col-12">
@@ -129,4 +81,4 @@ layout: default2
       </div>
     </div>
   </div>
-</section>
+</section>-->
