@@ -75,7 +75,7 @@ The following list is tailored for tabular data.
             using adequate train/test splits function and cross-validation
             techniques.
         - The following steps depend on the type of model and on the findings of the
-            second step Links lead to the [*scikit-learn*](https://scikit-learn.org/stable/modules/classes.html) implementation of the mentioned tools.
+            second step. Links in the following lead to the [*scikit-learn*](https://scikit-learn.org/stable/modules/classes.html) implementation of the mentioned tool.
         - Choose a regression/classification model depending on the problem.
         - Fill missing values using a fitting fill strategy.
         - Do datatype conversions where necessary. E.g., Convert categorical
