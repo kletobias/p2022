@@ -4,7 +4,7 @@ title: 'The Tasks In Every Machine Learning Project:<br>Tabular Data'
 date: 2023-02-21
 description: 'The six tasks in every machine learning project with structured data.'
 img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['', '', 'pandas', 'tabular-data', '']
+tags: ['predictive-modeling', 'process', 'workflow', 'tabular-data', 'analysis']
 category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
@@ -13,20 +13,109 @@ comments: true
 
 # The Six Tasks In Every Machine Learning Project: Tabular Data
 
-A predictive modeling machine learning project can be split into the following 6
-main tasks. This list is tailored for tabular data. You can find the list for
-image and more generally unstructured data in the article [**The Six Tasks In
-Every ML Project: Unstructured Data**]({% link _projects/steps-unstructured.md
-%})
+## Summary
+A predictive modeling machine learning project can be divided into six main
+tasks. The following list is tailored for tabular data. You can find the tasks
+for image and more generally unstructured data in the article [**The Six Tasks
+In Every ML Project: Unstructured Data**]({% link
+_projects/steps-unstructured.md %}). There is no difference between structured
+and unstructured data in the tasks described here, only the subtasks within each
+task vary.
 
+## The Tasks
+
+### Task No. 1
 1. Understand the fundamentals: Understand and characterize the problem.
-    - Understand the input data. E.g., Type of input data, independent and
-        dependent variables, size of input data, format of input data.
+    - *Goal: Get a better understanding of the goals of the project.*
+    - Understand the input data. E.g., 
+    - What are the independent and dependent variables?
+    - What do the values (rows) in each of the columns in the dataset
+        represent?
+    - What is the structure and size of the train/test dataset?
+    - How was the input data gathered?
+    - In which form is the input data given? (flat file, database table, etc.)
     - What is it, that the model has to predict in the end?
-2. [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
-    - Analyze the how the raw data looks like. E.g., Look at unique values for
-        each column, visualize missing data, analyze data types.
-    - Create Visualizations that show univariate/bivariate/multivariate distributions and correlations
-    - Understand what the final data type should be for each column in the
-        dataset.
-3. Baseline Scores & [Feature Engineering](https://en.wikipedia.org/wiki/Feature_engineering)
+    - Evaluation metric:
+        - What is the Evaluation metric?
+        - Or what are the candidates for the evaluation metric, given the problem?
+
+### Task No. 2
+
+- [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+    - Analyze the how the raw data looks like. E.g.,
+        - Look at unique values for each column. 
+        - Visualize missing data
+        - Analyze the data type(s) for each variable in the input data.
+        - See, if the given data fulfills the requirements of *tidy data*.
+            - Each column is a single variable.
+            - Each row represents exactly one sample (also called: record or instance).
+    - Create Visualizations that show:
+        - Univariate/bivariate distributions between variables.
+        - Correlations between independent variables.
+        - Review the skew of the distributions of each variable.
+
+### Task No. 3
+
+- Baseline Scores & [Feature Engineering](https://en.wikipedia.org/wiki/Feature_engineering)
+    - Base Line Scores
+        - In general: Be mindful of possible data leakage, adhere to best practices
+            using adequate train/test splits function and cross-validation
+            techniques.
+        - The following steps depend on the type of model and on the findings of the
+            second step Links lead to the [*scikit-learn*](https://scikit-learn.org/stable/modules/classes.html) implementation of the mentioned tools.
+        - Choose a regression/classification model depending on the problem.
+        - Fill missing values using a fitting fill strategy.
+        - Do datatype conversions where necessary. E.g., Convert categorical
+            data given as string datatype to integer datatype.
+        - Get a first benchmark using a model, that has little requirements on the
+            input data that can be interpreted well. E.g., [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor) or [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)
+            - Start with feature selection, using [*feature\_importances\_*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor.feature_importances_) or in the
+                case of high cardinality features possibly [*permutation\_importance*](https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance).
+    - Feature Engineering
+        - Transform distributions of the variables, where necessary. E.g., log
+            transform, binning, normalizing, creating different *views* of the data.
+        - Consider categorical embeddings, especially if using a deep learning
+            model, that can utilize the added information.
+        - Consider libraries like [*automl*](https://github.com/automl) or [*TPOT*](http://epistasislab.github.io/tpot/),
+            to help with model selection. Results can depend on number
+            of iterations / time given for the algorithm to create pipelines
+            (A Cuda GPU can be helpful).
+        - Analyze the prediction results and go back and forth between steps
+            listed under *Task No. 3*, if necessary.
+
+### Task No. 4
+
+- Evaluate Algorithms: 
+    - Design a test harness to select from the models with the best scores from *Task No.
+        3*:
+        - Customize the training metric, if needed. E.g.,
+            - For an imbalanced binary classification problem, adjust the loss
+                function to account for this.
+        - Use hyperparameter optimization, where applicable to try and increase
+            the scores from *Task No. 3*. Use Methods such as:
+                - Grid search
+                - Random Search
+        - Use proper cross-validation methods, to be able to evaluate the model
+            performance on for the model unseen data and to combat overfitting,
+            if the case.
+
+
+
+<!-- DONE: with this -->
+1. Define Problem: Investigate and characterize the problem in order to better understand
+the goals of the project.
+
+<!-- DONE: with this -->
+2. Analyze Data: Use descriptive statistics and visualization to better understand the data
+you have available.
+
+3. Prepare Data: Use data transforms in order to better expose the structure of the
+prediction problem to modeling algorithms.
+
+4. Evaluate Algorithms: Design a test harness to evaluate a number of standard algorithms
+on the data and select the top few to investigate further.
+
+5. Improve Results: Use algorithm tuning and ensemble methods to get the most out of
+well-performing algorithms on your data.
+
+6. Present Results: Finalize the model, make przdictions and present results.
