@@ -108,23 +108,10 @@ tasks described here, only the subtasks within each task vary.
             estimator in the ensemble.
     - Go back and forth between tasks No. 2-4, as needed.
 
+### Task No. 6 | Present Results
 
-
-<!-- DONE: with this -->
-1. Define Problem: Investigate and characterize the problem in order to better understand
-the goals of the project.
-
-<!-- DONE: with this -->
-2. Analyze Data: Use descriptive statistics and visualization to better understand the data
-you have available.
-
-3. Prepare Data: Use data transforms in order to better expose the structure of the
-prediction problem to modeling algorithms.
-
-4. Evaluate Algorithms: Design a test harness to evaluate a number of standard algorithms
-on the data and select the top few to investigate further.
-
-5. Improve Results: Use algorithm tuning and ensemble methods to get the most out of
-well-performing algorithms on your data.
-
-6. Present Results: Finalize the model, make przdictions and present results.
+- Finalize the model.
+- Make final predictions
+- Document the process, that led to the final results.
+- Present your work and explain how the final solution solves the problem given
+    at the beginning.
