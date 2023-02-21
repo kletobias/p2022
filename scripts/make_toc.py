@@ -15,7 +15,7 @@ else:
 
 def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
     if remove_previous == True:
-        file_list=glob.glob(f'{adir[:-10]}toc_script/*.html')
+        file_list=glob.glob(f'{adir[:-10]}script/*.html')
         for h in file_list:
             os.remove(h)
     pat = re.compile(r'^##\s\w.+$')
@@ -45,13 +45,13 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
             mc1 = re.sub(r'\w',lambda m: m[0].lower(),mc2)
             #mc1 = re.sub(r'([^.:a-z0-9&_])','-',mc1)
             mc1 = re.sub(r'(\s+)','-',mc1)
-            mc1 = re.sub(r'([&.:!;@()/\\*])','',mc1)
+            mc1 = re.sub(r'([&.:!;@()/\\*|])','',mc1)
 #            mc1 = re.sub(r'-{2,}','-',mc1)
             mc1 = re.sub(r'(\d)\.(\d)','\1\2',mc1)
 #            mc1 = re.sub(r'_','-',mc1)
             h2c1st.append(mc1)
         cf = fname[n][:-3]
-        with open(f'{adir[:-10]}toc_script/{dt}-toc-output-{cf}.html','w+') as toc:
+        with open(f'{adir[:-10]}scripts/{dt}-toc-output-{cf}.html','w+') as toc:
             toc.write('<d-contents>\n')
             toc.write('  <nav class="l-text figcaption">\n')
             toc.write('  <h3>Contents</h3>\n')
@@ -63,6 +63,6 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
 #            toc.close()
 
 # make_toc(file='tocp.md',all=False,remove_previous=False)
-make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/sql-basics.md',
+make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/steps-tabular.md',
          remove_previous=False)
 

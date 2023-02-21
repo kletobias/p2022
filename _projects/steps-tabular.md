@@ -10,6 +10,18 @@ authors: 'Tobias Klein'
 comments: true
 ---
 <br>
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#summary">Summary</a></div>
+    <div class="no-math"><a href="#task-no-1--define-problem">Task No. 1 | Define Problem</a></div>
+    <div class="no-math"><a href="#task-no-2--analyze-data">Task No. 2 | Analyze Data</a></div>
+    <div class="no-math"><a href="#task-no-3--evaluate-candidate-estimators">Task No. 3 | Evaluate Candidate Estimators</a></div>
+    <div class="no-math"><a href="#task-no-4--feature-engineering">Task No. 4 | Feature Engineering</a></div>
+    <div class="no-math"><a href="#task-no-5--improve-results">Task No. 5 | Improve Results</a></div>
+    <div class="no-math"><a href="#task-no-6--present-results">Task No. 6 | Present Results</a></div>
+  </nav>
+</d-contents>
 
 # The Six Tasks In Every Machine Learning Project: Tabular Data
 
@@ -25,9 +37,7 @@ The following list is tailored for tabular data.
 <!-- and unstructured data in the tasks described here, only the subtasks within each -->
 <!-- task vary. -->
 
-## The Tasks
-
-### Task No. 1 | Define Problem
+## Task No. 1 | Define Problem
 1. Understand the fundamentals: Understand and characterize the problem.
     - *Goal: Get a better understanding of the goals of the project.*
     - Understand the input data. E.g., 
@@ -42,7 +52,7 @@ The following list is tailored for tabular data.
         - What is the Evaluation metric?
         - Or what are the candidates for the evaluation metric, given the problem?
 
-### Task No. 2 | Analyze Data
+## Task No. 2 | Analyze Data
 
 - [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
     - Analyze the how the raw data looks like. E.g.,
@@ -57,7 +67,7 @@ The following list is tailored for tabular data.
         - Correlations between independent variables.
         - Review the skew of the distributions of each variable.
 
-### Task No. 3 | Evaluate Candidate Estimators
+## Task No. 3 | Evaluate Candidate Estimators
 
 - Baseline Scores
     - Base Line Scores
@@ -75,7 +85,7 @@ The following list is tailored for tabular data.
             - Start with feature selection, using [*feature\_importances\_*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor.feature_importances_) or in the
                 case of high cardinality features possibly [*permutation\_importance*](https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance).
 
-### Task No. 4 | Feature Engineering
+## Task No. 4 | Feature Engineering
 
 - Feature Engineering & Evaluation Of Models
     - Transform distributions of the variables, where necessary. E.g., log
@@ -90,7 +100,7 @@ The following list is tailored for tabular data.
     - Analyze the prediction results and go back and forth between steps
         listed under *Task No. 3*, if necessary.
 
-### Task No. 5 | Improve Results
+## Task No. 5 | Improve Results
 
 - Improve Results: 
     - Design a test harness to select from the models with the best scores from *Task No.
@@ -109,7 +119,7 @@ The following list is tailored for tabular data.
             estimator in the ensemble.
     - Go back and forth between tasks 2-4, as needed.
 
-### Task No. 6 | Present Results
+## Task No. 6 | Present Results
 
 - Finalize the model.
 - Make final predictions.
