@@ -1,3 +1,14 @@
+---
+layout: distill
+title: 'The Tasks In Every Machine Learning Project:<br>Tabular Data'
+date: 2023-02-21
+description: 'The six tasks in every machine learning project with structured data.'
+img: 'assets/img/838338477938@+-398898935.jpg'
+tags: ['predictive-modeling', 'hyperparameter-optimization', 'reproducable-code', 'tabular-data', 'feature-engineering']
+category: ['tabular-data']
+authors: 'Tobias Klein'
+comments: true
+---
 # Predictive Modeling Machine Learning Project: Tasks
 
 A predictive modeling machine learning project can be split into the following 6
