@@ -4,7 +4,7 @@ title: 'The Tasks In Every Machine Learning Project:<br>Tabular Data'
 date: 2023-02-21
 description: 'The six tasks in every machine learning project with structured data.'
 img: 'assets/img/838338477938@+-67822330.jpg'
-tags: ['predictive-modeling', 'process', 'workflow', 'tabular-data', 'analysis']
+tags: ['predictive-modeling', 'hyperparameter-optimization', 'reproducable-code', 'tabular-data', 'feature-engineering']
 category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
@@ -18,11 +18,12 @@ A predictive modeling machine learning project can be divided into six main
 tasks. The tasks listed below are part of the *prototyping* process (as
 described using Python), not the production process, which is often handled
 using a *faster* implementation of the final model written in *C++* for example.
-The following list is tailored for tabular data. You can find the tasks for
-image and more generally unstructured data in the article [**The Six Tasks In
-Every ML Project: Unstructured Data**]({% link _projects/steps-unstructured.md
-%}). There is no difference between structured and unstructured data in the
-tasks described here, only the subtasks within each task vary.
+The following list is tailored for tabular data.
+<!-- You can find the tasks for image and more generally unstructured data in the -->
+<!-- article **The Six Tasks In Every ML Project: Unstructured Data** -->
+<!-- _projects/steps-unstructured.md. There is no difference between structured -->
+<!-- and unstructured data in the tasks described here, only the subtasks within each -->
+<!-- task vary. -->
 
 ## The Tasks
 
@@ -106,12 +107,12 @@ tasks described here, only the subtasks within each task vary.
             if the case.
         - Try ensembles of estimators together with custom weights for each
             estimator in the ensemble.
-    - Go back and forth between tasks No. 2-4, as needed.
+    - Go back and forth between tasks 2-4, as needed.
 
 ### Task No. 6 | Present Results
 
 - Finalize the model.
-- Make final predictions
+- Make final predictions.
 - Document the process, that led to the final results.
 - Present your work and explain how the final solution solves the problem given
     at the beginning.
