@@ -15,16 +15,18 @@ comments: true
 
 ## Summary
 A predictive modeling machine learning project can be divided into six main
-tasks. The following list is tailored for tabular data. You can find the tasks
-for image and more generally unstructured data in the article [**The Six Tasks
-In Every ML Project: Unstructured Data**]({% link
-_projects/steps-unstructured.md %}). There is no difference between structured
-and unstructured data in the tasks described here, only the subtasks within each
-task vary.
+tasks. The tasks listed below are part of the *prototyping* process (as
+described using Python), not the production process, which is often handled
+using a *faster* implementation of the final model written in *C++* for example.
+The following list is tailored for tabular data. You can find the tasks for
+image and more generally unstructured data in the article [**The Six Tasks In
+Every ML Project: Unstructured Data**]({% link _projects/steps-unstructured.md
+%}). There is no difference between structured and unstructured data in the
+tasks described here, only the subtasks within each task vary.
 
 ## The Tasks
 
-### Task No. 1
+### Task No. 1 | Define Problem
 1. Understand the fundamentals: Understand and characterize the problem.
     - *Goal: Get a better understanding of the goals of the project.*
     - Understand the input data. E.g., 
@@ -39,7 +41,7 @@ task vary.
         - What is the Evaluation metric?
         - Or what are the candidates for the evaluation metric, given the problem?
 
-### Task No. 2
+### Task No. 2 | Analyze Data
 
 - [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
     - Analyze the how the raw data looks like. E.g.,
@@ -54,9 +56,9 @@ task vary.
         - Correlations between independent variables.
         - Review the skew of the distributions of each variable.
 
-### Task No. 3
+### Task No. 3 | Evaluate Candidate Estimators
 
-- Baseline Scores & [Feature Engineering](https://en.wikipedia.org/wiki/Feature_engineering)
+- Baseline Scores
     - Base Line Scores
         - In general: Be mindful of possible data leakage, adhere to best practices
             using adequate train/test splits function and cross-validation
@@ -71,21 +73,25 @@ task vary.
             input data that can be interpreted well. E.g., [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor) or [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)
             - Start with feature selection, using [*feature\_importances\_*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor.feature_importances_) or in the
                 case of high cardinality features possibly [*permutation\_importance*](https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance).
-    - Feature Engineering
-        - Transform distributions of the variables, where necessary. E.g., log
-            transform, binning, normalizing, creating different *views* of the data.
-        - Consider categorical embeddings, especially if using a deep learning
-            model, that can utilize the added information.
-        - Consider libraries like [*automl*](https://github.com/automl) or [*TPOT*](http://epistasislab.github.io/tpot/),
-            to help with model selection. Results can depend on number
-            of iterations / time given for the algorithm to create pipelines
-            (A Cuda GPU can be helpful).
-        - Analyze the prediction results and go back and forth between steps
-            listed under *Task No. 3*, if necessary.
 
-### Task No. 4
+### Task No. 4 | Feature Engineering
 
-- Evaluate Algorithms: 
+- Feature Engineering & Evaluation Of Models
+    - Transform distributions of the variables, where necessary. E.g., log
+        transform, binning, normalizing, creating different *views* of the data.
+    - Consider categorical embeddings, especially if using a deep learning
+        model, that can utilize the added information.
+    - Consider libraries like [*automl*](https://github.com/automl) or [*TPOT*](http://epistasislab.github.io/tpot/),
+        to help with model selection. Results can depend on number
+        of iterations / time given for the algorithm to create pipelines
+        (A Cuda GPU can be helpful).
+    - Test smaller subsets of the independent variables.
+    - Analyze the prediction results and go back and forth between steps
+        listed under *Task No. 3*, if necessary.
+
+### Task No. 5 | Improve Results
+
+- Improve Results: 
     - Design a test harness to select from the models with the best scores from *Task No.
         3*:
         - Customize the training metric, if needed. E.g.,
@@ -93,11 +99,14 @@ task vary.
                 function to account for this.
         - Use hyperparameter optimization, where applicable to try and increase
             the scores from *Task No. 3*. Use Methods such as:
-                - Grid search
-                - Random Search
+            - Grid search
+            - Random Search
         - Use proper cross-validation methods, to be able to evaluate the model
             performance on for the model unseen data and to combat overfitting,
             if the case.
+        - Try ensembles of estimators together with custom weights for each
+            estimator in the ensemble.
+    - Go back and forth between tasks No. 2-4, as needed.
 
 
 
