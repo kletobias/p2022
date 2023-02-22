@@ -9,7 +9,17 @@ body{
   font-size: 1rem;
   color: var(--global-text-color);
 }
-
+.wrapper{
+  width: 1000px;
+  margin: 0 auto;
+}
+.home-article{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+h2.home-title{
+  padding: 15px 0;
+}
 hr {
   border-top: 1px solid var(--global-divider-color);
 }

@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col">
+      <h2 class="home-title">Latest Projects</h2>
+    </div>
+  </div>
+  <div class="row">
+    {%- for project in site.projects limit:3 -%}
+    <div class="col-md-4">
+      <div class="card">
+        {%- if project.img %}
+        {%- include figure.html
+          path=project.img
+          alt="project thumbnail" -%}
+        {%- endif %}
+        <div class="card-body">
+          <h2 class="card-title text-lowercase">{{ project.title }}</h2>
+          <p class="card-text">{{ project.description }}</p>
+
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
