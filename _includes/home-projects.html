@@ -7,6 +7,11 @@
   <div class="row">
     {%- for project in site.projects limit:3 -%}
     <div class="col-md-4">
+      {% if project.redirect -%}
+      <a href="{{ project.redirect }}">
+        {%- else -%}
+        <a href="{{ project.url | relative_url }}">
+          {%- endif %}
       <div class="card">
         {%- if project.img %}
         {%- include figure.html
@@ -19,6 +24,7 @@
 
         </div>
       </div>
+      </a>
     </div>
     {%- endfor %}
   </div>
