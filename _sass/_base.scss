@@ -10,7 +10,7 @@ body{
   color: var(--global-text-color);
 }
 .wrapper{
-  width: 1000px;
+  width: 750px;
   margin: 0 auto;
 }
 .home-article{
@@ -1234,9 +1234,6 @@ a.hero__button {
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
-}
-body#about{
-  background: #f9f9fc;
 }
 .article__tags .article__tag {
     position: relative;
