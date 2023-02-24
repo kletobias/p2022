@@ -38,15 +38,16 @@ The following list is tailored for tabular data.
 <!-- task vary. -->
 
 ## Task No. 1 | Define Problem
+
 1. Understand the fundamentals: Understand and characterize the problem.
     - *Goal: Get a better understanding of the goals of the project.*
-    - Understand the input data. E.g., 
-    - What are the independent and dependent variables?
-    - What do the values (rows) in each of the columns in the dataset
-        represent?
-    - What is the structure and size of the train/test dataset?
-    - How was the input data gathered?
-    - In which form is the input data given? (flat file, database table, etc.)
+    - Understand the input data. E.g.,:
+        - What are the independent and dependent variables?
+        - What do the values (rows) in each of the columns in the dataset
+            represent?
+        - What is the structure and size of the train/test dataset?
+        - How was the input data gathered?
+        - In which form is the input data given? (flat file, database table, etc.)
     - What is it, that the model has to predict in the end?
     - Evaluation metric:
         - What is the Evaluation metric?
@@ -63,7 +64,8 @@ The following list is tailored for tabular data.
             - Each column is a single variable.
             - Each row represents exactly one sample (also called: record or instance).
     - Create Visualizations that show:
-        - Univariate/bivariate distributions between variables.
+        - Univariate distributions of single variables.
+        - Bivariate distributions between variables.
         - Correlations between independent variables.
         - Review the skew of the distributions of each variable.
 
