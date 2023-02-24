@@ -1,36 +1,38 @@
 ---
 layout: cv
-title: Tobias Klein's CV
+title: CV Of Tobias Klein
 ---
-# Tobias Klein
+# CV Of Tobias Klein
 
 
 <div id="webaddress">
-<a href="unveil.nuggets@gmail.com">unveil.nuggets@gmail.com</a>
-| <a href="http://deep-learning-mastery.com">My Portfolio Website</a>
+Email: <a href="unveil.nuggets@gmail.com">unveil.nuggets@gmail.com</a><br>
+Portfolio Website: <a href="https://deep-learning-mastery.com">https://deep-learning-mastery.com</a><br>
+GitHub Profile: <a href="https://github.com/kletobias">https://github.com/kletobias</a>
 </div>
 
 
 ## Currently
 
-Participating in Machine Learning competitions and expanding my toolkit
-full-time.
+Participating in machine learning competitions and expanding my toolkit
+full-time is what I currently do.
 
 ### Specialized In Machine Learning
 
-**Solving Machine Learning Problems using Python** and an iterative process,
-that generally incorporates the following steps, possibly going back and forth
-between the steps:
+I use Python and an iterative process to solve machine learning problems. In
+general, that involves the following steps, possibly going back and forth
+between them. To learn more, please refer to the article [**The Tasks In Every
+Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
 
-1. Define the problem
+- Define the problem
     - Is it a regression problem
     - Is it a classification problem
     - Is it other higher order problem type
-2. Prepare Data
+- Prepare Data
     - Data Preprocessing
     - Feature Selection
     - Feature Engineering
-3. Models
+- Models
     - Candidate Model Selection
     - Hyperparameter Optimization (optional: depending on model)
     - Model Evaluation/Interpretation
@@ -41,6 +43,7 @@ between the steps:
 
 - German: Native
 - English: Bilingual Proficiency
+    - The most recent English proficiency test (Toefl IBT) was taken in 2019 with a score of 111/120.
 - Spanish: Elementary Proficiency
 
 ## Education
@@ -150,7 +153,7 @@ expressed in **RMSE**, are 190.68 for the **Lasso** and 115.39 for the **XGBoost
 Regressor**. Differences in complexity and interpretability between the models
 are discussed and associated with it, the strengths and weaknesses of the
 respective model are pointed out.<br>
-<strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Full Text (PDF)</a></strong><br>
+<strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Full Text (pdf)</a></strong><br>
 
 
 
