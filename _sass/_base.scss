@@ -9,7 +9,17 @@ body{
   font-size: 1rem;
   color: var(--global-text-color);
 }
-
+.wrapper{
+  width: 750px;
+  margin: 0 auto;
+}
+.home-article{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+h2.home-title{
+  padding: 15px 0;
+}
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
@@ -447,7 +457,7 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
@@ -1224,9 +1234,6 @@ a.hero__button {
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
-}
-body#about{
-  background: #f9f9fc;
 }
 .article__tags .article__tag {
     position: relative;
