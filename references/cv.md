@@ -47,16 +47,17 @@ between the steps:
 
 ### Higher Education
 
-`2009 - 2011` **Heinrich Heine University**, Düsseldorf<br>
+`2009 - 2011` **[Heinrich Heine University](https://www.jura.hhu.de/en/studying)**, Düsseldorf<br>
 - **Subject:** Law (Jura)<br>
 - **Optional Information:**
     - **Courses Completed**
-        - Zivilrecht: BGB AT, Schuldrecht AT & BT, Hausarbeit;
-        - Strafrecht: STGB AT I-II, Hausarbeit im Strafrecht, Übung im Strafrecht;
-        - Öffentliches Recht: Polizeirecht, Grundrechte, Allg. Verwaltungsrecht,
-        - Verwaltungsprozessrecht; 1. Teil Kurs im Angloamerikanischen Rechtbr>
+        - Zivilrecht: BGB AT, Schuldrecht AT & BT, Hausarbeit
+        - Strafrecht: STGB AT I-II, Hausarbeit im Strafrecht, Übung im Strafrecht
+        - Öffentliches Recht: Polizeirecht, Grundrechte, Allg. Verwaltungsrecht, Verwaltungsprozessrecht
+        - 1\. Teil Kurs im Angloamerikanischen Recht
 
-`2011 - 2016` **LMU/Freiburg University**, Munich/Freiburg i. Br.<br>
+`2011 - 2016` **[LMU](https://www.en.math.lmu.de/studium/fachstudium/studiengaenge/wima_bach_mathe/index.html)/[Freiburg University](https://www.math.uni-freiburg.de/lehre/studiengaenge/bsc-2021.html?l=en)**, Munich/Freiburg i. Br.<br>
+
 - **Subject:** Mathematics B.Sc.<br>
 - **Optional Information:**
     - **Courses Completed**
@@ -65,11 +66,11 @@ between the steps:
         - Stochastic | Grade: 4.0
         - Complex Analysis | Grade: 4.0
         - Futures And Options | Grade: 3.7
-        - Exercise In Numerics Using **C** To Implement Methods From Linear Algebra.
+        - Exercise In Numerics Using [**C**](https://en.wikipedia.org/wiki/C_(programming_language)) To Implement Methods From Linear Algebra.
 
 `2016 - 2019` **Freiburg University**, Freiburg i. Br.<br>
-- **Subject:** Economics Focused Business Administration (BWL Non-Profit &
-    Public Management)<br>
+- **Subject:** Economics Focused Business Administration ([BWL Non-Profit &
+    Public Management](https://www.studium.uni-freiburg.de/en/program-offerings/all-degree-programs/info/364?set_language=en) B.Sc.<br>
 - **Final Grade:** 1.6
 - **Bachelor Thesis:** 
     - **Title:** *'Data Mining: Hyperparameter Optimization For Real Estate Prediction Models'*
@@ -77,7 +78,7 @@ between the steps:
     - **Pages:** 69
     - **Grade:** 1.0
     - **Abstract:** See Section 'Bachelor Thesis' 
-    - <strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Link: Full Text (PDF)</a></strong><br><br>
+    - <strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Link: Full Text (pdf)</a></strong><br><br>
 - **Optional Information:**
     - **Table: Relevant Courses Completed & Grade**<br>
 
@@ -151,11 +152,9 @@ are discussed and associated with it, the strengths and weaknesses of the
 respective model are pointed out.<br>
 <strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Full Text (PDF)</a></strong><br>
 
-<!-- WARNING: Maybe outdated articles section, generate new one with latest changes
-    and no white space tags and categories!!! -->
-## Articles
 
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
+
+## Articles
 
 <p><H4>Automation Using A Test Harness For Deep Learning: Part 1</H4><strong>Description:</strong> How to create and use a custom test harness, that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.<br>                <strong>Tags:</strong>  ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']<br>                <strong>Category:</strong> <em>deep-learning</em> | <strong>Word Count:</strong>                2703 | <strong><a href="https://deep-learning-mastery.com/projects/1st_tm/">Full Article</a></strong><br>                <br><br></p>
 <p><H4>Automation Using A Test Harness For Deep Learning: Part 2</H4><strong>Description:</strong> This is Part 2 in the series, where we explore how the fastai deep learning library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, "male" and "female", that are assigned the gender of the model depicted in any of the images in the dataset.<br>                <strong>Tags:</strong>  ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']<br>                <strong>Category:</strong> <em>deep-learning</em> | <strong>Word Count:</strong>                3060 | <strong><a href="https://deep-learning-mastery.com/projects/2nd_tm/">Full Article</a></strong><br>                <br><br></p>
@@ -174,32 +173,4 @@ respective model are pointed out.<br>
 <p><H4>Deep Dive Tabular Data Pt. 6</H4><strong>Description:</strong> Kaggle Submission 1: Training RandomForestRegressor, fastai deep learning model using hyperparameter optimization techniques. Preprocessing of Kaggle test data.<br>                <strong>Tags:</strong>  ['data-preprocessing', 'fastai', 'hyperparameter-optimization', 'random-forest', 'tabular-data']<br>                <strong>Category:</strong> <em>tabular-data</em> | <strong>Word Count:</strong>                2647 | <strong><a href="https://deep-learning-mastery.com/projects/tabular_kaggle-6/">Full Article</a></strong><br>                <br><br></p>
 <p><H4>Deep Dive Tabular Data Pt. 7</H4><strong>Description:</strong> Kaggle Submission 2: tabular_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.<br>                <strong>Tags:</strong>  ['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_learner', 'xgboost-regressor']<br>                <strong>Category:</strong> <em>tabular-data</em> | <strong>Word Count:</strong>                3459 | <strong><a href="https://deep-learning-mastery.com/projects/tabular_kaggle-7/">Full Article</a></strong><br>                <br><br></p>
 <p><H4>The Math Behind "Stepping The Weights"</H4><strong>Description:</strong> In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.<br>                <strong>Tags:</strong>  ['deep-learning', 'math', 'ordinary-least-squares', 'partial-derivate', 'stochastic-gradient-descent']<br>                <strong>Category:</strong> <em>deep-learning</em> | <strong>Word Count:</strong>                1756 | <strong><a href="https://deep-learning-mastery.com/projects/theory_batch_gradient_descent/">Full Article</a></strong><br>                <br><br></p>
-
-<!-- ### Journals -->
-
-<!-- `1669` -->
-<!-- Newton Sir I, De analysi per æquationes numero terminorum infinitas. --> 
-
-<!-- `1669` -->
-<!-- Lectiones opticæ. -->
-
-<!-- etc. etc. etc. -->
-
-
-<!-- ## Occupation -->
-
-<!-- `1600` -->
-<!-- __Royal Mint__, London -->
-
-<!-- - Warden -->
-<!-- - Minted coins -->
-
-<!-- `1600` -->
-<!-- __Lucasian professor of Mathematics__, Cambridge University -->
-
-
-
-<!-- ### Footer
-
-Last updated: January 2023 -->
 
