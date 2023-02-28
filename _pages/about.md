@@ -87,4 +87,16 @@ category.
 
 [**fill missing values and categorical embeddings**]({% link _projects/tabular_kaggle-1.md %})<br>
 [**kaggle submission 1: training RandomForestRegressor and deep learning model**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/tabular_kaggle-7.md %})<br>
+[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/tabular_kaggle-7.md %})<br><br>
+
+<div class="wrapingimage">   
+<img src=    
+"https://www.javatpoint.com/images/logo/jtp_logo.png" height="100" width="100"  
+alt="image">    
+</div>   
+<p>   
+If we want to wrap the text around an image in Html document using Internal CSS then we have to follow the steps which are given below. Using these steps we can easily wrap a text.   
+Step 1: Firstly, we have to type the Html code in any text editor or open the existing Html file in the text editor in which we want to wrap the text.   
+Step 2: Now, we have to type the CSS code for aligning the image. So, we have to type the style tag in the head tag just after the title tag.   
+Step 3: And, then we have to define the various properties for wrapping the text around the image. So, we have to define a class.   
+</p>   
