@@ -26,7 +26,7 @@ full-time is what I currently do.
 
 I use Python and an iterative process to solve machine learning problems. In
 general, that involves the following steps, possibly going back and forth
-between them. To learn more, please refer to the article [**The Tasks In Every
+between them. To learn more, please refer to my article: [**The Tasks In Every
 Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
 
 - Define the problem
@@ -77,7 +77,7 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
 <br>
 ## Higher Education
 
-`2009 - 2011` **[Heinrich Heine University](https://www.jura.hhu.de/en/studying)**, Düsseldorf<br>
+`2009 - 2011` **Heinrich Heine University**, Düsseldorf<br>
 - **Subject:** Law (Jura)<br>
 - **Optional Information:**
     - **Courses Completed**
@@ -86,7 +86,7 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
         - Öffentliches Recht: Polizeirecht, Grundrechte, Allg. Verwaltungsrecht, Verwaltungsprozessrecht
         - 1\. Teil Kurs im Angloamerikanischen Recht
 
-`2011 - 2016` **[LMU](https://www.en.math.lmu.de/studium/fachstudium/studiengaenge/wima_bach_mathe/index.html)/[Freiburg University](https://www.math.uni-freiburg.de/lehre/studiengaenge/bsc-2021.html?l=en)**, Munich/Freiburg i. Br.<br>
+`2011 - 2016` **LMU/Freiburg University**, Munich/Freiburg i. Br.<br>
 
 - **Subject:** Mathematics B.Sc.<br>
 - **Optional Information:**
@@ -96,11 +96,10 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
         - Stochastic \| Grade: 4.0
         - Complex Analysis \| Grade: 4.0
         - Futures And Options \| Grade: 3.7
-        - Exercise In Numerics Using [**C**](https://en.wikipedia.org/wiki/C_(programming_language)) To Implement Methods From Linear Algebra.
+        - Exercise In Numerics Using **C** To Implement Methods From Linear Algebra.
 
 `2016 - 2019` **Freiburg University**, Freiburg i. Br.<br>
-- **Subject:** Economics Focused Business Administration ([BWL Non-Profit &
-    Public Management](https://www.studium.uni-freiburg.de/en/program-offerings/all-degree-programs/info/364?set_language=en) B.Sc.<br>
+- **Subject:** Economics Focused Business Administration (BWL Non-Profit & Public Management B.Sc.)<br>
 - **Final Grade:** 1.6
 - **Bachelor Thesis:**
     - **Title:** *'Data Mining: Hyperparameter Optimization For Real Estate Prediction Models'*
