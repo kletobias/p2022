@@ -131,6 +131,8 @@ collections:
     output: true
     permalink: /news/:path/
   projects:
+    defaults:
+      layout: post
     output: true
     permalink: /projects/:path/
 
@@ -211,7 +213,7 @@ jekyll-archives:
     year: '/projects/:year/'
     tag: '/projects/tag/:name/'
     category: '/projects/category/:name/'
-# display_tags: ['deep-learning', 'the basics', 'data visualization', 'tabular data', 'image data', 'kaggle', 'practical'] 
+# display_tags: ['deep-learning', 'the basics', 'data visualization', 'tabular data', 'image data', 'kaggle', 'practical']
 # this tags will be dispalyed on the front page of your blog
 
 # -----------------------------------------------------------------------------
