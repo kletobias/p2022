@@ -3013,4 +3013,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 float: left;
 margin: 30px 12px 3px 4px;
 border: 2px solid blue;
-}   
+}
+.home .distill d-article{
+  border-top: none !important;
+}
+.home .distill d-article h2{
+  border: none;
+}
+.hero{margin-top: 17px;}
