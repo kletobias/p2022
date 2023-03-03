@@ -26,7 +26,7 @@ full-time is what I currently do.
 
 I use Python and an iterative process to solve machine learning problems. In
 general, that involves the following steps, possibly going back and forth
-between them. To learn more, please refer to the article [**The Tasks In Every
+between them. To learn more, please refer to my article: [**The Tasks In Every
 Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
 
 - Define the problem
@@ -43,7 +43,7 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
     - Model Evaluation/Interpretation
     - Finalize Model
 
-
+<br>
 ## Language Proficiency
 
 - German: Native
@@ -51,11 +51,33 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
     - The most recent English proficiency test (Toefl IBT) was taken in 2019 with a score of 111/120.
 - Spanish: Elementary Proficiency
 
-## Education
+<br>
+## School
 
-### Higher Education
+`1993 - 1994` **Lincoln Elementary School**, Kampala, Uganda
 
-`2009 - 2011` **[Heinrich Heine University](https://www.jura.hhu.de/en/studying)**, Düsseldorf<br>
+`1994 - 1995` **Kindergarten**, Freiburg i. Br.
+
+`1995 - 1999` **Elementary School**, Zell a.H.
+
+`1999 - 2006` **High School**, Freiburg i. Br.
+
+`2006 - 2006` **Secondary School**, Whistler, Canada<br>
+ - Full-time mountain bike junior development program with participation in
+     races.
+
+`2006 - 2007` **High School**, Freiburg i. Br.
+
+`2007 - 2008` **High School**, Hamburg<br>
+- Graduated with Abitur.
+
+
+
+
+<br>
+## Higher Education
+
+`2009 - 2011` **Heinrich Heine University**, Düsseldorf<br>
 - **Subject:** Law (Jura)<br>
 - **Optional Information:**
     - **Courses Completed**
@@ -64,21 +86,20 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
         - Öffentliches Recht: Polizeirecht, Grundrechte, Allg. Verwaltungsrecht, Verwaltungsprozessrecht
         - 1\. Teil Kurs im Angloamerikanischen Recht
 
-`2011 - 2016` **[LMU](https://www.en.math.lmu.de/studium/fachstudium/studiengaenge/wima_bach_mathe/index.html)/[Freiburg University](https://www.math.uni-freiburg.de/lehre/studiengaenge/bsc-2021.html?l=en)**, Munich/Freiburg i. Br.<br>
+`2011 - 2016` **LMU/Freiburg University**, Munich/Freiburg i. Br.<br>
 
 - **Subject:** Mathematics B.Sc.<br>
 - **Optional Information:**
     - **Courses Completed**
-        - Linear Algebra I-II | Grades: {'I': 1.7, 'II': 2.3}
-        - Analysis I-III | Grades: {'I': 1.3, 'III': 1.7}
-        - Stochastic | Grade: 4.0
-        - Complex Analysis | Grade: 4.0
-        - Futures And Options | Grade: 3.7
-        - Exercise In Numerics Using [**C**](https://en.wikipedia.org/wiki/C_(programming_language)) To Implement Methods From Linear Algebra.
+        - Linear Algebra I-II \| Grades: {'I': 1.7, 'II': 2.3}
+        - Analysis I-III \| Grades: {'I': 1.3, 'III': 1.7}
+        - Stochastic \| Grade: 4.0
+        - Complex Analysis \| Grade: 4.0
+        - Futures And Options \| Grade: 3.7
+        - Exercise In Numerics Using **C** To Implement Methods From Linear Algebra.
 
 `2016 - 2019` **Freiburg University**, Freiburg i. Br.<br>
-- **Subject:** Economics Focused Business Administration ([BWL Non-Profit &
-    Public Management](https://www.studium.uni-freiburg.de/en/program-offerings/all-degree-programs/info/364?set_language=en) B.Sc.<br>
+- **Subject:** Economics Focused Business Administration (BWL Non-Profit & Public Management B.Sc.)<br>
 - **Final Grade:** 1.6
 - **Bachelor Thesis:**
     - **Title:** *'Data Mining: Hyperparameter Optimization For Real Estate Prediction Models'*
@@ -112,26 +133,6 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
 | Public Finance I                                                                                | 2.0       |
 | Public Finance II                                                                               | 1.0       |
 | Tax Management (Seminar)                                                                        | 1.3       |
-
-
-### School
-
-`1993 - 1994` **Lincoln Elementary School**, Kampala, Uganda
-
-`1994 - 1995` **Kindergarten**, Freiburg i. Br.
-
-`1995 - 1999` **Elementary School**, Zell a.H.
-
-`1999 - 2006` **High School**, Freiburg i. Br.
-
-`2006 - 2006` **Secondary School**, Whistler, Canada<br>
- - Full-time mountain bike junior development program with participation in
-     races.
-
-`2006 - 2007` **High School**, Freiburg i. Br.
-
-`2007 - 2008` **High School**, Hamburg<br>
-- Graduated with Abitur.
 
 
 ## Bachelor Thesis
