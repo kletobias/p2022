@@ -10,12 +10,15 @@ body{
   color: var(--global-text-color);
 }
 .wrapper{
-  width: 750px;
+  max-width: 770px;
   margin: 0 auto;
 }
 .home-article{
   padding-left: 15px;
   padding-right: 15px;
+}
+.home-latest{
+  margin: 20px 0;
 }
 h2.home-title{
   padding: 15px 0;

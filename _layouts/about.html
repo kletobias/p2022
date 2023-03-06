@@ -71,9 +71,7 @@
       <d-article>
         {{ content }}
       </d-article>
-      <div class="wrapper">
         {% include home-projects.html %}
-      </div>
     </div>
   </div>
 
@@ -83,9 +81,12 @@
 
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/common.js"></script>
+    {% include scripts/jquery.html %}
     {% include scripts/bootstrap.html %}
+    {% include scripts/masonry.html %}
+    {% include scripts/misc.html %}
+    {% include scripts/mathjax.html %}
     {% include scripts/analytics.html %}
-
 
   </body>
 </html>
