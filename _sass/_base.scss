@@ -73,9 +73,10 @@ blockquote {
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  caption-side: top;
 }
-
+caption{
+  caption-side: top !important;
+}
 // Card
 
 .card {
