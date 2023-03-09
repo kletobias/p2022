@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 2
-cv_pdf: example_pdf.pdf
+cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 ---
 
 # CV Of Tobias Klein
@@ -107,7 +107,7 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
     - **Pages:** 69
     - **Grade:** 1.0
     - **Abstract:** See Section 'Bachelor Thesis'
-    - <strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Link: Full Text (pdf)</a></strong><br><br>
+    - <strong>[**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})</strong><br><br>
 - **Optional Information:**
     - **Table: Relevant Courses Completed & Grade**<br>
 
@@ -159,7 +159,7 @@ expressed in **RMSE**, are 190.68 for the **Lasso** and 115.39 for the **XGBoost
 Regressor**. Differences in complexity and interpretability between the models
 are discussed and associated with it, the strengths and weaknesses of the
 respective model are pointed out.<br>
-<strong><a href="https://filehost1.s3.eu-central-1.amazonaws.com/kletobias_github_io/klein-2019-data_mining_hyperparameter_optimisation_for_real_estate_prediction_models.pdf">Full Text (pdf)</a></strong><br>
+<strong>[**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})</strong><br><br>
 
 
 ## Articles
