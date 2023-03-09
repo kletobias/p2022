@@ -74,7 +74,9 @@ blockquote {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-
+caption{
+  caption-side: top !important;
+}
 // Card
 
 .card {
