@@ -9,12 +9,12 @@ cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 
 # CV Of Tobias Klein
 
-
 <div id="webaddress">
-Email: <a href="unveil.nuggets@gmail.com">unveil.nuggets@gmail.com</a><br>
-Portfolio Website: <a href="https://deep-learning-mastery.com">https://deep-learning-mastery.com</a><br>
-GitHub Profile: <a href="https://github.com/kletobias">https://github.com/kletobias</a>
+<strong>Email:</strong> progress.unveiled@gmail.com<br>
+<strong>Portfolio Website:</strong> <a href="https://deep-learning-mastery.com">https://deep-learning-mastery.com</a><br>
+<strong>GitHub Profile:</strong> <a href="https://github.com/kletobias">https://github.com/kletobias</a>
 </div>
+
 
 <d-contents>
   <nav class="l-text figcaption">
