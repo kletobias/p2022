@@ -1,6 +1,7 @@
 from slugify import slugify
 import re
 import os
+import itertools
 
 indir='/Users/tobias/all_code/projects/portfolio-website-2022/_projects'
 files = os.listdir(indir)
@@ -18,21 +19,38 @@ def get_title_description(dir,files):
     for f in files:
         if f[-3:] == '.md':
             td[f[:-3]] = {}
-            md_files[f'{f[:-3]}']['old'].append(f[:-3])
-            # td[f[:-3]]['url'] = f'[Full Article]({host}{f[:-3]}/)'
-            # with open(os.path.join(dir,f),'r') as a:
-            #     article = a.readlines()
-            #     doc = nlp(pat_html.sub('',str(article)))
-            #     words = [token.text for token in doc if token.is_stop != True and token.is_punct != True]
-            #     td[f[:-3]]['word_count'] = len(words)
-            # with open(os.path.join(dir,f),'r') as ff:
-            #     for line in itertools.islice(ff,2,8):
-            #         ttl = patt.search(line)
-            #         if ttl != None:
-            #             ttls = patsub.sub(' ',ttl[1])
-            #             td[f[:-3]]["title"] = ttls
-            #         else:
-            #             continue
+            md_files[f'{f[:-3]}'] = {'old':[],'new':[]}
+            md_files[f'{f[:-3]}']['old'].append(f[['old'].append(f[:-3]):-3])
+            with open(os.path.join(dir,f),'r') as ff:
+                for line in itertools.islice(ff,2,8):
+                    ttl = patt.search(line)
+                    if ttl != None:
+                        md_files[f[:-3]]["new"].append(ttl[1])
+                    else:
+                        continue
+    return md_files
+
+
+md_files = get_title_description(indir,files)
+
+def change_old(dir=indir,md_files=md_files,files=files):
+    search_pat = []
+    for key in md_files.keys():
+        md_files[key]['slug'] = []
+        slg = slugify(md_files[key]['new'][0])
+        search_pat.append((md_files[key]['old'].value(),slg))
+        md_files[key]['slug'].append(slg)
+        with open(os.path.join(dir,md_files[key],'.md'),'w') as ff:
+            for old in search_pat:
+                for line in ff.readlines():
+                    ttl = re.sub(f'({old})',line)
+                    if ttl != None:
+                        md_files[f[:-3]]["new"].append(ttl[1])
+                    else:
+                        continue
+    print(md_files)
+
+change_old()
     # for k,v in link.items():
         # linkf.append(f'[{k}]({v})')
     # for k in sorted(td.keys()):
@@ -53,8 +71,4 @@ def get_title_description(dir,files):
             # f.write(item)
     # return cv_text_all
 
-td = get_title_description(dir,files)
-for item in td:
-    print()
-    print(item)
-    print()
+
