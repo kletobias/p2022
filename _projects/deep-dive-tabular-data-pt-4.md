@@ -24,13 +24,13 @@ comments: true
 
 # Series: Kaggle Competition *Deep Dive Tabular Data*
 <br>
-[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
 <br>
 
 # Part 4: Interpretation Using Advanced Statistical Visualizations
@@ -614,10 +614,10 @@ plt.show()
 
 Entire Series:
 
-[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>

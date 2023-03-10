@@ -26,13 +26,13 @@ comments: true
 
 # Series: Kaggle Competition - Deep Dive Tabular Data
 <br>
-[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
 <br>
 This series documents the process of importing raw tabular data from a CSV file,
 to submitting the final predictions on the Kaggle test set for the competition.
@@ -41,7 +41,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
 
 **Series: Kaggle Competition - Deep Dive Tabular Data**
 
-- [Deep Dive Tabular Data Pt. 1: Introduction]({% link _projects/tabular_kaggle-1.md %})
+- [Deep Dive Tabular Data Pt. 1: Introduction]({% link _projects/deep-dive-tabular-data-pt-1.md %})
 
 ```toc
   - Imports For The Series
@@ -68,7 +68,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
       - procs
 ```
 
-- [Deep Dive Tabular Data Pt. 2: Tree Based Models For Interpretability 1]({% link _projects/tabular_kaggle-2.md %})
+- [Deep Dive Tabular Data Pt. 2: Tree Based Models For Interpretability 1]({% link _projects/deep-dive-tabular-data-pt-2.md %})
 
 ```toc
     - Train & Validation Splits
@@ -77,7 +77,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
     - Feature Importance Metric Deep Dive Experiment
 ```
 
-- [Deep Dive Tabular Data Pt. 3: Tree Based Models For Interpretability 2]({% link _projects/tabular_kaggle-3.md %})
+- [Deep Dive Tabular Data Pt. 3: Tree Based Models For Interpretability 2]({% link _projects/deep-dive-tabular-data-pt-3.md %})
 
 ```toc
     - RandomForestRegressor (RFR) For Interpretation
@@ -93,7 +93,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
       - Interpretation Of RMSE Values
 ```
 
-- [Deep Dive Tabular Data Pt. 4]({% link _projects/tabular_kaggle-4.md %})
+- [Deep Dive Tabular Data Pt. 4]({% link _projects/deep-dive-tabular-data-pt-4.md %})
 
 ```toc
     - Dendrogram Visualization For Spearman Rank Correlations
@@ -110,14 +110,14 @@ to submitting the final predictions on the Kaggle test set for the competition.
 ```
 
 
-- [Deep Dive Tabular Data Pt. 5]({% link _projects/tabular_kaggle-5.md %})
+- [Deep Dive Tabular Data Pt. 5]({% link _projects/deep-dive-tabular-data-pt-5.md %})
 
 ```toc
     - Out-Of-Domain Problem
     - Identifying Out-Of-Domain Data
 ```
 
-- [Deep Dive Tabular Data Pt. 6]({% link _projects/tabular_kaggle-6.md %}): Creation Of The Kaggle Submission
+- [Deep Dive Tabular Data Pt. 6]({% link _projects/deep-dive-tabular-data-pt-6.md %}): Creation Of The Kaggle Submission
 
 ```toc
     - Creating Estimators Optimized For Kaggle
@@ -131,7 +131,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
     - Preprocessing Of The Kaggle Test Dataset
 ```
 
-- [Deep Dive Tabular Data Pt. 7]({% link _projects/tabular_kaggle-7.md %}): Optimization Routines & Final Submission
+- [Deep Dive Tabular Data Pt. 7]({% link _projects/deep-dive-tabular-data-pt-7.md %}): Optimization Routines & Final Submission
 
 ```toc
     - tabular_learner Optimization
@@ -2313,10 +2313,10 @@ save_pickle("top.pkl", to)
 
 Entire Series:
 
-[**Deep Dive Tabular Data Part 1**]({% link _projects/tabular_kaggle-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/tabular_kaggle-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/tabular_kaggle-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/tabular_kaggle-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/tabular_kaggle-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/tabular_kaggle-7.md %})<br>
+[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>

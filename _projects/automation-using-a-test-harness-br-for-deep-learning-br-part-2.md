@@ -44,7 +44,7 @@ images in the dataset.
 
 This article is the sequel to *Batch No. 1*, we look at the data logged during the testing of the first
 batch in the series. Everything leading up to where we start in this article,
-is found in the first article [**Part 1: Basic Automation For Deep Learning**]({% link _projects/1st_tm.md %}).
+is found in the first article [**Part 1: Basic Automation For Deep Learning**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %}).
 
 ### The Imports
 

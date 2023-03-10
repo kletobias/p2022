@@ -542,7 +542,7 @@ plt.show()
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_sim_hs/output_16_1.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_16_1.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -832,7 +832,7 @@ plt.show()
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_sim_hs/output_27_0.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_27_0.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -1040,7 +1040,7 @@ plt.show()
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_sim_hs/output_33_1.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_33_1.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -1092,7 +1092,7 @@ plt.show()
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_sim_hs/output_35_0.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_35_0.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -1170,7 +1170,7 @@ bundlesn = dust()
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_sim_hs/output_37_0.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_37_0.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

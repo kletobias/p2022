@@ -39,10 +39,10 @@ outputs are shortened for readability.
 
 #### Links To All Parts Of The Series
 
-[Data Preparation Series 1]({% link _projects/data_prep_1.md %})  
-[Data Preparation Series 2]({% link _projects/data_prep_2.md %})  
-[Data Preparation Series 3]({% link _projects/data_prep_3.md %})  
-[Data Preparation Series 4]({% link _projects/data_prep_4.md %})  
+[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
 
 ## Summary Of The Series
 
@@ -1185,7 +1185,7 @@ df.to_csv("/Volumes/data/df_first_cleaning.csv")
 ---
 <br>
 <br>
-[Data Preparation Series 1]({% link _projects/data_prep_1.md %})  
-[Data Preparation Series 2]({% link _projects/data_prep_2.md %})  
-[Data Preparation Series 3]({% link _projects/data_prep_3.md %})  
-[Data Preparation Series 4]({% link _projects/data_prep_4.md %})  
+[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
