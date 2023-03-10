@@ -16,18 +16,30 @@ Portfolio Website: <a href="https://deep-learning-mastery.com">https://deep-lear
 GitHub Profile: <a href="https://github.com/kletobias">https://github.com/kletobias</a>
 </div>
 
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#currently">Currently</a></div>
+    <div class="no-math"><a href="#toolkit">Toolkit</a></div>
+    <div class="no-math"><a href="#language-proficiency">Language Proficiency</a></div>
+    <div class="no-math"><a href="#school">School</a></div>
+    <div class="no-math"><a href="#higher-education">Higher Education</a></div>
+    <div class="no-math"><a href="#bachelor-thesis">Bachelor Thesis</a></div>
+    <div class="no-math"><a href="#portfolio-articles">Portfolio Articles</a></div>
+  </nav>
+</d-contents>
 
 ## Currently
 
-Participating in machine learning competitions and expanding my toolkit
-full-time is what I currently do.
+In my current position, I participate in machine learning competitions and
+expand my toolkit on a full-time basis.
 
 ### Specialized In Machine Learning
 
-I use Python and an iterative process to solve machine learning problems. In
+To solve machine learning problems, I use Python and an iterative approach. In
 general, that involves the following steps, possibly going back and forth
-between them. To learn more, please refer to my article: [**The Tasks In Every
-Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
+between them. For more information, see my article: [**The Tasks In Every Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
+
 
 - Define the problem
     - Is it a regression problem
@@ -44,6 +56,38 @@ Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/proj
     - Finalize Model
 
 <br>
+
+## Toolkit
+
+### Programming Languages
+
+| Name   | Experience   | Examples                                                                         |
+|--------|--------------|----------------------------------------------------------------------------------|
+| Bash   | Advanced     | Manage a Linux server from the command line using ssh, e.g., GPU cloud computing |
+| C++    | Basic        | Initialize variable, loops, 'cout', user input, vectors                          |
+| MySQL  | Intermediate | Writing standard queries, creating and altering tables                           |
+| Python | Expert       | Entire ML workflow utilizing custom functions, reproducible code, shell scripts  |
+| R      | Basic        | Tidy, ggplot2, Multivariate Regression                                           |
+
+### Python Toolkit
+
+| Name                       | Type    | Description                                 | Proficiency |
+|:---------------------------|---------|---------------------------------------------|------------:|
+| conda/pip/pyenv/virtualenv | Tools   | Package and Python environment management   |        7/10 |
+| fastai                     | Library | Deep Learning Library based on PyTorch      |        7/10 |
+| numpy                      | Library | Data Manipulation using Vectorization       |        6/10 |
+| pandas                     | Library | Tabular Data Manipulation                   |        8/10 |
+| pytorch                    | Library | Deep Learning Framework                     |        5/10 |
+| pyplot                     | Library | General Purpose Data Visualization          |        8/10 |
+| pytorch_tabular            | Library | Tabular Data Deep Learning based on PyTorch |        4/10 |
+| re                         | Library | Builtin regular-expressions library         |        8/10 |
+| scikit-learn               | Library | Multipurpose ML Library                     |        7/10 |
+| scipy                      | Library | Mainly used the scipy.stats module          |        4/10 |
+| seaborn                    | Library | Statistical Data Visualization              |        7/10 |
+| tpot                       | Library | Automated Machine Learning tool             |        6/10 |
+| xgboost (dmlc)             | Library | Regression and Classification ML model      |        8/10 |
+
+
 ## Language Proficiency
 
 - German: Native
@@ -162,7 +206,12 @@ respective model are pointed out.<br>
 <strong>[**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})</strong><br><br>
 
 
-## Articles
+## Portfolio Articles
+
+Listed below are the portfolio articles published on my website, accompanied by
+descriptions and tags, which provide a concise description of their content in
+terms of relevant search terms. Additionally, the article's category, word
+count, and link to the full text are included.
 
 <p><p><H3>Automation Using A Test Harness For Deep Learning: Part 1</H3></p><p><strong>Description:</strong> How to create and use a custom test harness, that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.<br><strong>Tags:</strong> ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']<br><strong>Category:</strong> <em>deep-learning</em> | <strong>Word Count:</strong> 2703 | <strong><a href="https://deep-learning-mastery.com/projects/1st_tm/">Full Article</a></strong></p><br><br><br></p>
 <p><p><H3>Automation Using A Test Harness For Deep Learning: Part 2</H3></p><p><strong>Description:</strong> This is Part 2 in the series, where we explore how the fastai deep learning library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, "male" and "female", that are assigned the gender of the model depicted in any of the images in the dataset.<br><strong>Tags:</strong> ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']<br><strong>Category:</strong> <em>deep-learning</em> | <strong>Word Count:</strong> 3060 | <strong><a href="https://deep-learning-mastery.com/projects/2nd_tm/">Full Article</a></strong></p><br><br><br></p>
