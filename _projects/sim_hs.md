@@ -445,12 +445,12 @@ plt.close("all")
 #### Inputs
 
 The following is a much better way to define the numbers needed for the
-simulation than is used in the original [loop based implementation](#loop-implementation).
-With a dictionary, the relevant input values are defined for the simulations.
-`trials` specifies the number of trials to simulate, each with the number of packs
-`packs`. `probs` gives the draw chances for each class. `cats` is used to
-transform the string rarity classes into integer ones. `dust` gives the dust value
-for each rarity class.
+simulation than is used in the original loop based implementation, described
+next. With a dictionary, the relevant input values are defined for the
+simulations. `trials` specifies the number of trials to simulate, each with the
+number of packs `packs`. `probs` gives the draw chances for each class. `cats`
+is used to transform the string rarity classes into integer ones. `dust` gives
+the dust value for each rarity class.
 
 
 ```python
