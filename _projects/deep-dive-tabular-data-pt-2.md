@@ -2,7 +2,7 @@
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 2'
 date: 2023-01-02
-description: 'Feature selection using model DecisionTreeRegressor from sklearn and the feature\_importances\_ method which is tested for deviations in its score.'
+description: 'Feature selection using model DecisionTreeRegressor from sklearn and the feature_importances_ method which is tested for deviations in its score.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['decision-tree-regressor', 'feature-importance', 'feature-selection', 'sklearn', 'tabular-data']
 category: ['tabular-data']
