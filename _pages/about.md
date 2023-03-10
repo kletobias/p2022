@@ -64,16 +64,16 @@ to train a machine learning model. Feature engineering is not the focus here,
 given that *clean data* is a prerequisite for this step. Below is a selection of
 articles I have written on the topic.
 
-[**cleaning a web scraped 47 column pandas dataframe part 3**]({% link _projects/data_prep_3.md %})<br>
-[**cleaning a web scraped 47 column pandas dataframe part 4**]({% link _projects/data_prep_4.md %})<br>
+[**cleaning a web scraped 47 column pandas dataframe part 3**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})<br>
+[**cleaning a web scraped 47 column pandas dataframe part 4**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})<br>
 [**advanced geospatial feature creation**]({% link _projects/advanced-geospatial-feature-creation.md %})<br>
 
 
 ### deep-learning
 
-[**the math behind \"stepping the weights\"**]({% link _projects/theory_batch_gradient_descent.md %})<br>
-[**automation using a test harness for deep learning: part 1**]({% link _projects/1st_tm.md %})<br>
-[**automation using a test harness for deep learning: part 2**]({% link _projects/2nd_tm.md %})<br>
+[**the math behind \"stepping the weights\"**]({% link _projects/the-math-behind-br-stepping-the-weights.md %})<br>
+[**automation using a test harness for deep learning: part 1**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %})<br>
+[**automation using a test harness for deep learning: part 2**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2.md %})<br>
 
 ### tabular-data
 
@@ -85,6 +85,6 @@ tabular data, feature engineering, cross-validation, or hyperparameter
 optimization, to name a few. Below is a selection of articles found under this
 category.
 
-[**fill missing values and categorical embeddings**]({% link _projects/tabular_kaggle-1.md %})<br>
-[**kaggle submission 1: training RandomForestRegressor and deep learning model**]({% link _projects/tabular_kaggle-6.md %})<br>
-[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/tabular_kaggle-7.md %})<br><br>
+[**fill missing values and categorical embeddings**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**kaggle submission 1: training RandomForestRegressor and deep learning model**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br><br>
