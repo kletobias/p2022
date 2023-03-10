@@ -41,13 +41,10 @@ images in the dataset.
 
 ## Batch No. 1
 
-TODO: link to article Part 1 on first line below.
 
 This article is the sequel to *Batch No. 1*, we look at the data logged during the testing of the first
 batch in the series. Everything leading up to where we start in this article,
-is found in the first article *Part 1: Basic Automation For Deep Learning*.
-
-TODO: Link to final website article posted URL here, for reference.
+is found in the first article [**Part 1: Basic Automation For Deep Learning**]({% link _projects/1st_tm.md %}).
 
 ### The Imports
 

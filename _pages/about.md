@@ -50,8 +50,7 @@ predictions are compared to other competitors.
 ### Python
 Python is the main programming language I use. I am proficient in MySQL for data
 import (using `sqlalchemy` to import data for example). You can find a detailed
-overview of Python libraries I use in the [Libraries I
-Use](TODO:link-to-about-page-libraries-i-use-section) section.
+overview of Python libraries I use in the [**Toolkit Section of the CV page**]({% link _pages/cv.md %})
 
 All articles found under [projects]({{ '/projects/' | relative_url }}) belong to one or more
 of the following categories.

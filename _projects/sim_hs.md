@@ -456,7 +456,6 @@ the dust value for each rarity class.
 ```python
 # order draw_chances values to create intervals for drawing mechanism
 inputs = {
-    # WARNING: change back to 1e6 and 40 packs at the end.
     "trials": np.int_(1e5),
     "packs": np.int_(40),
     "probs": {
