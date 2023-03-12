@@ -136,6 +136,10 @@ df
     }
 </style>
 <table border="1" class="dataframe">
+<caption><strong>Table 1</strong> Column <i>unique_setup</i> gives the unique
+setups whether there are one or two epochs of <i>fine_tune</i> for each of the
+setups. Further details for every setup, as well as performance metrics can be
+found in the corresponding columns.</caption>
   <thead>
     <tr style="text-align: right;">
       <th></th>
