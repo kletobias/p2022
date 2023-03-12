@@ -46,7 +46,7 @@ this is the case, then the coefficients that a model assigns to each
 independent variable $X_{i}$ is proportional (in case of a continuous variable
 $X_{i}$ and dependent variable $Y_{i}$) to the impact that the variable has on
 the dependent variable. Boolean variables can be used to describe other
-relationships between independent and dependent variable.. That is, if the model
+relationships between independent and dependent variable. That is, if the model
 does not suffer from Multicollinearity among other problems that can undermine
 this relationship.
 
@@ -85,9 +85,14 @@ plt.show()
 
 
 
-    
-![png](/blog/images/output_4_1.png)
-    
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/output_4_1.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Figure 1: The correlation between distributions S1 and S2.
+</div>
 
 
 As designed, the two samples S1 and S2 are positively correlated with one
