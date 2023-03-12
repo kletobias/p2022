@@ -453,10 +453,10 @@ df
 
 ## Observations From Looking At The DataFrame
 
-It becomes obvious, by looking at the DataFrame, that for 3 out of the 4 tested
-setups, that used *resnet18* as model ended up having an error_rate (on the
-validation set) larger than 0. The worst recorded error rate is given for the
-following configuration, in the output below.. We will come to the error rate
+It becomes obvious by looking at the DataFrame that for 3 out of the 4 tested
+setups that use *resnet18* as model, the error_rate (on the
+validation set) is larger than 0. The worst recorded error rate is given for the
+following configuration in the output below. We will come to the error rate
 for the *resnet34* configurations in a little.
 
 ```python
@@ -507,20 +507,17 @@ df.filter_on('error_rate > 0.008', complement=False)
 
 ## Grouping The Data
 
-With the DataFrame only having the essential columns now, the analysis can
-start. Pandas offers a method, that can be applied to any `pandas.DataFrame`
-and `pandas.Series` object for analysis.
+With the DataFrame only having the essential columns now, the analysis can start. Pandas offers a method that can be
+applied to any `pandas.DataFrame` and `pandas.Series` object for analysis.
 
-The first group call splits the data by unique values of the `model` column and
-returns the minimum value grouped by said unique values for each of the other
-columns in the DataFrame. The only columns of interest, given this groupby call,
-are the `error_rate` and the `valid_loss`.
+The first group call splits the data by distinct values of the `model` column. It returns the minimum value grouped by
+corresponding unique values for each of the other columns in the DataFrame. The only columns of interest, given this
+groupby call, are the `error_rate` and the `valid_loss`.
 
-It should be kept in mind, that input values used here come from a small sample,
-both in number of images in total and model combinations assessed. If anything
-we try to find correlations in the data, that would have to be tested using more
-experiments. Nonetheless, analyzing and looking for patterns, as done here, in
-the results is always possible.
+
+It should be kept in mind that the input values used here come from a small sample, both in number of images in total
+and model combinations assessed. Essentially, we look for correlations in the data, which would require further testing.
+Nonetheless, analyzing and looking for patterns, as done here, in the results is always possible.
 
 
 ```python
@@ -580,7 +577,6 @@ gb.median()
 </div>
 
 
-
 Interestingly, the median (to understand what it is and its difference to the
 average/mean metric: [Median - Wikipedia](https://en.wikipedia.org/wiki/Median))
 of `valid_loss` for both models is within the same order of magnitude. The `resnet34`
@@ -591,7 +587,7 @@ on the validation dataset is 0. That means, that there is no setup in which the
 *resnet34* was used, with an error rate other than 0. That is very intriguing,
 since it is the deeper model of the two and suggests that the added depth,
 equivalent to the added layers in this instance is beneficial to the model's
-performance..
+performance.
 
 Let us look at the *resnet34* in more detail then.
 
