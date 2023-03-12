@@ -1,12 +1,16 @@
 ---
 layout: distill
 title: 'Multicollinearity: What It Is & Measures To Spot It'
-date: 2022-05-06 06:00:00
+date: 2023-03-12
 description: 'Covariance and the Pearson correlation coefficient: How to spot multicollinearity between random variables.'
+img: 'assets/img/stats-sexy.webp'
 tags: ['covariance','multicollinearity','pearson-correlation-coefficient','random-variable','statistics']
-category: 'Statistics'
+category: ['statistics']
+authors: 'Tobias Klein'
 comments: true
 ---
+
+<br>
 
 ### Summary
 Two highly correlated distributions ($S1$, $S2$) are created
