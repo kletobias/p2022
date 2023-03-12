@@ -453,7 +453,7 @@ df
 It becomes obvious, by looking at the DataFrame, that for 3 out of the 4 tested
 setups, that used *resnet18* as model ended up having an error_rate (on the
 validation set) larger than 0. The worst recorded error rate is given for the
-following configuration, in the output below.. We will come to the error rate
+following configuration, in the output below. We will come to the error rate
 for the *resnet34* configurations in a little.
 
 ```python
@@ -588,7 +588,7 @@ on the validation dataset is 0. That means, that there is no setup in which the
 *resnet34* was used, with an error rate other than 0. That is very intriguing,
 since it is the deeper model of the two and suggests that the added depth,
 equivalent to the added layers in this instance is beneficial to the model's
-performance..
+performance.
 
 Let us look at the *resnet34* in more detail then.
 
