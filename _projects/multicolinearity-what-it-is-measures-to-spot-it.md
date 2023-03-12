@@ -9,7 +9,15 @@ category: ['statistics']
 authors: 'Tobias Klein'
 comments: true
 ---
-
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#creating-suitable-samples">Creating Suitable Samples</a></div>
+    <div class="no-math"><a href="#covariance">Covariance</a></div>
+    <div class="no-math"><a href="#pearson-correlation-coefficient">Pearson Correlation Coefficient</a></div>
+    <div class="no-math"><a href="#hypothesis-testing">Hypothesis Testing</a></div>
+  </nav>
+</d-contents>
 <br>
 
 ### Summary

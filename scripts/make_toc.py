@@ -63,6 +63,6 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
 #            toc.close()
 
 # make_toc(file='tocp.md',all=False,remove_previous=False)
-make_toc(all=False,file='/Users/tobias/all_code/projects/cv.md',
+make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/multicolinearity-what-it-is-measures-to-spot-it.md.md',
          remove_previous=False)
 
