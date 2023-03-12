@@ -580,7 +580,7 @@ gb.median()
 Interestingly, the median (to understand what it is and its difference to the
 average/mean metric: [Median - Wikipedia](https://en.wikipedia.org/wiki/Median))
 of `valid_loss` for both models is within the same order of magnitude. The `resnet34`
-still has the edge over the `resnet18` when it comes to the valid_loss.
+still has the edge over the `resnet18` when it comes to the `valid_loss`.
 
 Another interesting observation however is, that the median of the `error_rate`
 on the validation dataset is 0. That means, that there is no setup in which the
