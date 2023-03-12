@@ -2,7 +2,7 @@
 layout: distill
 title: 'Hearthstone: Euro To In-Game Currency Conversion'
 date: 2023-03-08
-description: 'With an introduction, that explains the fundamentals of the card game Hearthstone, this article simulates the dust value from opening one pack of cards. This makes it possible to quantify what a Hearthstone deck is worth in Euro.'
+description: 'With an introduction that explains the fundamentals of the card game Hearthstone, this article simulates the dust value from opening one pack of cards. This makes it possible to quantify what a Hearthstone deck is worth in Euro.'
 img: 'assets/img/stats-sexy.webp'
 tags: ['hearthstone', 'money-to-in-game-currency', 'research', 'simulation', 'statistics']
 category: ['statistics']
@@ -41,7 +41,7 @@ comments: true
        Just as many other games, Hearthstone uses a <i>loot box</i> system
        to monetize the game. The player can only buy card packs for the most
        part. These rarely contain the card(s) that the player actually wants.
-       There is however one universal in-game currency. The dust value, that
+       There is however one universal in-game currency. The dust value that
        each of the rarity classes has. Using hacker statistics, this article
        calculates the relationship between Euro spent and equivalent in-game
        dust value.
@@ -418,7 +418,7 @@ largest card pack bundle with 40 packs in each bundle.
 
 The term 'dusting' here refers to the act of *disenchanting* hearthstone cards.
 During the process of dusting a card, the card becomes permanently deleted from
-one's card collection. In return, one gets the dust value, that the card is
+one's card collection. In return, one gets the dust value that the card is
 worth. Please refer to *Table 2* for further details.
 
 ### Imports
@@ -838,7 +838,7 @@ plt.show()
 <div class="caption">
         Figure 2: Plot showing the PDFs of both implementations. The PDF of the
         NVI (<i>red</i>) is overlaid with the PDF of the LI (<i>teal</i>). One can tell
-        by the plot, that the two are almost identical. Both are the result of
+        by the plot that the two are almost identical. Both are the result of
         100,000 samples, each with 40 cards packs.
 </div>
     

@@ -36,7 +36,7 @@ comments: true
 
 With the dataloaders objects created for training, as well as for the final
 predictions the `tabular_learner` has to be optimized using a manual
-hyperparameter optimization routine. Given, that this dataset is relatively
+hyperparameter optimization routine. Given that this dataset is relatively
 small with less than 2000 rows, a 10 core CPU machine is enough for the
 optimizations applied here.
 
@@ -882,7 +882,7 @@ for i in setups:
 
 
 
-Final values for the tested parameters, that result in the lowest rmse value on
+Final values for the tested parameters that result in the lowest rmse value on
 the training data are found using the code below.
 
 
@@ -994,7 +994,7 @@ r_mse(ens_preds, y_val)
 ## XGBRegressor Optimization
 
 The `XGBRegressor` is a top contender when it comes to a tree ensemble based
-model, that can deliver predictions of the highest accuracy, having being used
+model that can deliver predictions of the highest accuracy, having being used
 in many competition winning submissions on Kaggle and other platforms in the
 past.
 
@@ -1016,13 +1016,13 @@ Functions created for the hyperparameter optimization are `RMSE` and
 `get_truncated_normal`.
 
 `get_truncated_normal` is a custom distribution based on the normal
-distribution, that ensures that none of its values are below or above a
+distribution that ensures that none of its values are below or above a
 specified value. Between the upper and lower limit, one can adjust the shape of
 the bell curve like value distribution.
 
-`RMSE` defines a custom scorer metric, that *sklearn* can use during training to
+`RMSE` defines a custom scorer metric that *sklearn* can use during training to
 evaluate the accuracy of the predictions made by the estimator during the
-optimization process. It is the metric, that Kaggle uses to evaluate the final
+optimization process. It is the metric that Kaggle uses to evaluate the final
 submission.
 
 The hyperparameter optimization used is `RandomizedSearchCV` from the *sklearn*
@@ -1033,7 +1033,7 @@ aspects from it.
 A grid search is a method where the user passes a grid with an exhaustive set of
 values to be tested to the algorithm as input. A set of values is passed on as
 input for the grid search algorithm, for each parameter to be optimised during
-the grid search. The underlying problem with the grid search is, that each
+the grid search. The underlying problem with the grid search is that each
 hyperparameter can have a large value range for its possible values. An example
 is a parameter with a continuous value range between $$0$$ and $$1$$. This range
 containing all $$\textbf{machine numbers}$$ between $$0$$ and $$1$$ could not be

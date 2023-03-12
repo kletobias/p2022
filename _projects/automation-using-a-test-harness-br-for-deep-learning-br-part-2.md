@@ -2,7 +2,7 @@
 layout: distill
 title: 'Automation Using A Test Harness<br>For Deep Learning:<br>Part 2'
 date: 2022-12-15
-description: 'This is Part 2 in the series, where we explore how the fastai deep learning library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, "male" and "female", that are assigned the gender of the model depicted in any of the images in the dataset.'
+description: 'This is Part 2 in the series, where we explore how the fastai deep learning library can be used to conduct structured empirical experiments on a novel and small dataset. The dataset consists of 850 images and an almost uniform distribution for the target labels. There are two labels in total, "male" and "female" that are assigned the gender of the model depicted in any of the images in the dataset.'
 img: 'assets/img/838338477938@+-67822330.jpg'
 tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']
 category: ['deep-learning']
@@ -36,7 +36,7 @@ This is *Part 2* in the series, where we explore how the fastai deep learning
 library can be used to conduct structured empirical experiments on a novel and
 small dataset. The dataset consists of 850 images and an almost uniform
 distribution for the target labels. There are two labels in total, 'male'
-and 'female', that are assigned the gender of the model depicted in any of the
+and 'female' that are assigned the gender of the model depicted in any of the
 images in the dataset.
 
 ## Batch No. 1
@@ -49,7 +49,7 @@ _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %}).
 
 ### The Imports
 
-We will need pandas to work with the tabular data, that is stored in
+We will need pandas to work with the tabular data that is stored in
 a CSV file. Pandas is needed for most of the analyzing done. One
 can find information on the commands used in the following, by looking at the
 pandas docs: [API reference — pandas 1.4.3 documentation](https://pandas.pydata.org/docs/reference/index.html)
@@ -89,7 +89,7 @@ import matplotlib.pyplot as plt
 
 ## Importing The CSV File
 
-The first thing to do, is to import the DataFrame, that holds the results from
+The first thing to do, is to import the DataFrame that holds the results from
 the first series of experiments that we conducted in the first article. Batch
 No. 1 is how we will refer to them in the following.
 
@@ -109,7 +109,7 @@ print(df.columns)
 
 Looking at the output of the `df.columns` command for the data from the first
 batch, we can see that there is one column named `Unnamed: 0`. This column is
-always the first one when importing any CSV file, that was exported to CSV using
+always the first one when importing any CSV file that was exported to CSV using
 `pandas.DataFrame.to_csv` without specifying `index=False`.
 
 ```python
@@ -334,7 +334,7 @@ complete thought, for the DataFrame to be ready for analysis.
 As can be seen by looking at the index of the DataFrame (very first column with
 integer values from 0 to 11), there are a total of 12 rows in the DataFrame
 right now. However, there were only 8 different setups that were created in
-total. The additional 4 rows come from the setups, that use a `fine_tune` value
+total. The additional 4 rows come from the setups that use a `fine_tune` value
 of 2. The first epoch of all setups with *fine_tune == 2* is of no interest to
 us, and so we only keep the second epoch for these setups. The results of the
 first epoch for these setups can not be compared to the first epoch of any setup
@@ -582,8 +582,8 @@ average/mean metric: [Median - Wikipedia](https://en.wikipedia.org/wiki/Median))
 of `valid_loss` for both models is within the same order of magnitude. The `resnet34`
 still has the edge over the `resnet18` when it comes to the `valid_loss`.
 
-Another interesting observation however is, that the median of the `error_rate`
-on the validation dataset is 0. That means, that there is no setup in which the
+Another interesting observation however is that the median of the `error_rate`
+on the validation dataset is 0. That means that there is no setup in which the
 *resnet34* was used, with an error rate other than 0. That is very intriguing,
 since it is the deeper model of the two and suggests that the added depth,
 equivalent to the added layers in this instance is beneficial to the model's
@@ -613,12 +613,12 @@ gb
 
 
 
-The output shows, that a validation percentage of 40 percent caused a higher
+The output shows that a validation percentage of 40 percent caused a higher
 loss on the validation set, compared to the lower and default 20 percent value.
 The difference is one order of magnitude. That is the only difference between
 valid_pct of 0.2 and 0.4.
 
-Another observation worth mentioning is, that a `fine_tune` value of two as
+Another observation worth mentioning is that a `fine_tune` value of two as
 opposed to one, gives a slightly lower loss on the validation set. The
 difference however is within the same order of magnitude and therefore this
 finding might not be confirmed when conducting further empirical experiments.
@@ -647,8 +647,8 @@ to mind.
 In general, we try to get an idea of how the models' performance will be on
 unseen data, try to challenge it by using cross validation techniques.
 
-While there is no solution, that can rule out all of these uncertainties, there
-is something, that can be tested given this dataset.
+While there is no solution that can rule out all of these uncertainties, there
+is something that can be tested given this dataset.
 
 Test different seeds for the `RandomSplitter` parameter, used in the initialization
 of the `DataBlock` object. A seed of 42 was used throughout the experiments,
@@ -679,7 +679,7 @@ fastai deep learning library.
 [fastai - Hyperparam schedule](https://docs.fast.ai/callback.schedule.html#learner.fine_tune)
 
 
-For batch 2, we only need two of the libraries, that we imported for batch 1
+For batch 2, we only need two of the libraries that we imported for batch 1
 earlier. Please see the beginning of this article for descriptions of the
 imported libraries.
 
@@ -1197,7 +1197,7 @@ overall.
 
 Overall, the values in the array show that the deeper *resnet34* model has a
 lower median and mean value in three out of the four logged cases. The only
-occurrence where this is not true, is the setup, that uses `split_seed = 23`.
+occurrence where this is not true, is the setup that uses `split_seed = 23`.
 This could hint at the train/test split being an important element for the
 models' performance on unseen data. It could negatively affect the models'
 performance on out of sample data. This concern was mentioned earlier already
@@ -1206,7 +1206,7 @@ uncertainty surrounding the model's performance on unseen data, data that is not
 part of this data set (neither in the train, nor the test split). Overall, both
 models perform extremely well, regardless of the values for split_seed.
 
-Testing even more values for split_seed would be something, that could be tested
+Testing even more values for split_seed would be something that could be tested
 in the pursuit of us generating enough data, to be able to use probabilistic
 reasoning, to quantify the uncertainty using probabilistic measures. E.g., *re
 sampling*, *kernel density estimation*, *Bayesian probability*.
@@ -1214,12 +1214,12 @@ sampling*, *kernel density estimation*, *Bayesian probability*.
 
 ## The Worst Accuracy: 99.3 Percent
 
-This binary image classification problem showed, that both models, both
+This binary image classification problem showed that both models, both
 pretrained variants of the *ResNet* architecture are capable of at least nearly
 flawless and often even completely flawless performance on the test set.
 
 The 34 layer deep variant outclassed its 18 layer deep brother in three out of
-the four cases. It was the `split_seed`, that made the difference in the single
+the four cases. It was the `split_seed` that made the difference in the single
 instance, where the 18 layer *ResNet* version edged out the 34 layer deep
 version.
 
@@ -1248,11 +1248,11 @@ gb[("error_rate", "mean")].apply(lambda x: 1 - x)
 
 
 
-It shows, that even the worst performing model has an accuracy greater 99% on
+It shows that even the worst performing model has an accuracy greater 99% on
 the test data.
 
-The performance of the models was so good, that there was not much, that could
-be optimized. Nonetheless, the testing showed, that the choice of how to split
+The performance of the models was so good that there was not much that could
+be optimized. Nonetheless, the testing showed that the choice of how to split
 the data into train and test split could be an issue, when the model has to
 predict out of sample images. Solutions to try, in order to be able quantify the
 likelihood of either of the two models performing in a certain way on unseen
@@ -1264,7 +1264,7 @@ data was discussed at the end of section: **Grouped By `split_seed` And
 
 In *Batch No. 1* we covered everything, from loading the images into a
 `DataBlock` object, to the creation of a `dataloaders` object and then
-initializing a `vision_learner` object, that is ready for the transfer learning
+initializing a `vision_learner` object that is ready for the transfer learning
 process. The transfer learning was done by using method `fine_tune`.
 
 All unique parameter combinations were calculated and each one was saved as a
@@ -1274,8 +1274,8 @@ At this point, the focus was on creating two test harnesses:
 
 - *input_harness*
 
-The first harness, has dictionary keys for each parameter, that is tested during
-the structured empirical experiments. The values for each parameter, that is
+The first harness has dictionary keys for each parameter that is tested during
+the structured empirical experiments. The values for each parameter that is
 tested are given as elements of a list for each key.
 
 - *output_harness*

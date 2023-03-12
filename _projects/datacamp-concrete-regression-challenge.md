@@ -188,7 +188,7 @@ We split independent variables and the dependent variable into train and test da
 By creating a function that does this for us, we make the code more reproducible
 and more robust against changes in the inputs. It also makes it easier for us to
 change the train/test ratio without having to add more code to do so. It works
-for any `pandas.DataFrame`, that has the dependent column specified as a
+for any `pandas.DataFrame` that has the dependent column specified as a
 DataFrame.
 
 
@@ -260,7 +260,7 @@ special case where ordinary least squares linear regression fails and Lasso is
 used instead, is the following. Consider $$X$$ as a matrix $$X \in \mathbb{R}^{n
 \times p}$$ with the number of rows given by $$n$$ (number of observations) and
 the number of columns given by $$p$$ (number of regressors). Lasso is frequently
-used when there are far more regressors than there are observations, that is
+used when there are far more regressors than there are observations that is
 if $$p \gg n$$. As with a general regression model, the assumption is that the
 observations are either independent or that the $$y_i$$s are conditionally
 independent given the $$x_{ij}$$s.
@@ -322,7 +322,7 @@ final_params(indep, coeffs, intercept)
 
 The first part of the question is answered using `.groupby`, a powerful pandas
 data grouping method.
-We only select the columns mentioned in the first part of the question, that
+We only select the columns mentioned in the first part of the question that
 is columns `age` and `strength`. We group by age, which automatically sorts
 the `DataFrameGroupBy` object by the keys of the column we grouped by.
 Conveniently, the first five rows are the durations we are supposed to compute

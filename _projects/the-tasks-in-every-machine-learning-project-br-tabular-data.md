@@ -48,7 +48,7 @@ The following list is tailored for tabular data.
         - What is the structure and size of the train/test dataset?
         - How was the input data gathered?
         - In which form is the input data given? (flat file, database table, etc.)
-    - What is it, that the model has to predict in the end?
+    - What is it that the model has to predict in the end?
     - Evaluation metric:
         - What is the Evaluation metric?
         - Or what are the candidates for the evaluation metric, given the problem?
@@ -82,7 +82,7 @@ The following list is tailored for tabular data.
         - Fill missing values using a fitting fill strategy.
         - Do datatype conversions where necessary. E.g., Convert categorical
             data given as string datatype to integer datatype.
-        - Get a first benchmark using a model, that has little requirements on the
+        - Get a first benchmark using a model that has little requirements on the
             input data that can be interpreted well. E.g., [RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor) or [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)
             - Start with feature selection, using [*feature\_importances\_*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor.feature_importances_) or in the
                 case of high cardinality features possibly [*permutation\_importance*](https://scikit-learn.org/stable/modules/generated/sklearn.inspection.permutation_importance.html#sklearn.inspection.permutation_importance).
@@ -93,7 +93,7 @@ The following list is tailored for tabular data.
     - Transform distributions of the variables, where necessary. E.g., log
         transform, binning, normalizing, creating different *views* of the data.
     - Consider categorical embeddings, especially if using a deep learning
-        model, that can utilize the added information.
+        model that can utilize the added information.
     - Consider libraries like [*automl*](https://github.com/automl) or [*TPOT*](http://epistasislab.github.io/tpot/),
         to help with model selection. Results can depend on number
         of iterations / time given for the algorithm to create pipelines
@@ -125,6 +125,6 @@ The following list is tailored for tabular data.
 
 - Finalize the model.
 - Make final predictions.
-- Document the process, that led to the final results.
+- Document the process that led to the final results.
 - Present your work and explain how the final solution solves the problem given
     at the beginning.

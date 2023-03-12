@@ -62,10 +62,10 @@ The hyperparameter optimization for each of them is:
 So far, the focus has been on fitting estimators for interpretability and not
 for the lowest rmse value. The kaggle competition we want to submit our final
 predictions to however only scores each submission based on rmse value on the
-test set and nothing else. This makes it necessary, that we try to create
-estimators, that are the result of hyperparameter tuning, starting with few
+test set and nothing else. This makes it necessary that we try to create
+estimators that are the result of hyperparameter tuning, starting with few
 iterations where we check the resulting rmse values and building up to using as
-many iterations, that our hardware can handle within a reasonable duration of no
+many iterations that our hardware can handle within a reasonable duration of no
 more than 5 minutes give or take or stop adding more iterations to the hyper
 parameter optimization procedure, if rmse values stop improving despite
 increasing the number of iterations.
@@ -74,7 +74,7 @@ increasing the number of iterations.
 
 Using a manually created test harness, the rmse values for each iteration on the
 training and validation set are appended to list `m_rmsel` and `m_rmselv`
-respectively and it is these lists, that are returned by the function.
+respectively and it is these lists that are returned by the function.
 
 
 ```python
@@ -193,7 +193,7 @@ grouped_opt.iloc[:5, :]
 
 To avoid using the wrong parameter combination, one that is not the optimal one
 for the given execution of the code, we assign the values for the optimal number
-of `n_estimators` and `max_samples` directly by the index values, that hold the
+of `n_estimators` and `max_samples` directly by the index values that hold the
 optimal parameter values in of `grouped_opt`.
 
 Function `rff` will fit a `RandomForestRegressor` with the optimal parameter
@@ -293,7 +293,7 @@ dfnn_t = tl(dfnn_t)
 
 Applying the `log` function to the dependent variable `saleprice`.
 
-Only use the columns, that were left in the dataset after analyzing the
+Only use the columns that were left in the dataset after analyzing the
 contribution of each of the columns in the previous section.
 
 
@@ -395,7 +395,7 @@ dfnn_tf.sample(n=3, random_state=seed)
 
 
 
-Verify, that the number of columns in `dfnn_tf` is correct.
+Verify that the number of columns in `dfnn_tf` is correct.
 
 
 ```python
@@ -422,7 +422,7 @@ for i in range(2, 101):
 ```
 
 Looking at the above output, and the fact that it is hard to find a column in
-the dataset, that can be clearly identified as having continuous values, only
+the dataset that can be clearly identified as having continuous values, only
 columns with more than 100 unique values are assigned as being continuous. The
 final continuous columns are printed below. The output has the format.
 
@@ -508,7 +508,7 @@ dfnn_tf[catnn].nunique().sort_values(ascending=False)
 
 
 #### Run TabularPandas Function
-Since none of the boolean columns, that indicate whether there was or wasn't a
+Since none of the boolean columns that indicate whether there was or wasn't a
 missing value in a row of a column are present in the final training dataset, we
 drop these columns from the created tabular object below. Doing this now, helps
 us in making the training and test data compatible, if the test data has missing

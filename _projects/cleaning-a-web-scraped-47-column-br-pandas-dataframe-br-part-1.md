@@ -30,7 +30,7 @@ comments: true
 
 ## Reading In The Input Data
 
-The input data is split into 3 csv files, that together capture all rental
+The input data is split into 3 csv files that together capture all rental
 listings that were online and within the boundaries of the city of Hamburg at
 the time of scraping the data. The source was a large German rental listing site
 called 'Immoscout24'. [ImmoScout24 -
@@ -39,7 +39,7 @@ official brand name and URL.
 
 Various features were extracted from the listings through the use of webscraping
 and it is the main objective at this stage to clean and construct a tidy
-DataFrame, that is ready for the following stages. A brief overview of the
+DataFrame that is ready for the following stages. A brief overview of the
 following stages is given below.
 
 - Feature Engineering - Adding location based features.
@@ -64,7 +64,7 @@ holds the data of all three is created and duplicate rows are dropped.  The
 command used to drop any possibly duplicate rows is `df.drop_duplicates()`
 without any specifying further parameters as to the subset of columns to
 consider when determining, if two rows are identical. Like that, only such rows
-are dropped, that have identical values for all variables found in the dataset.
+are dropped that have identical values for all variables found in the dataset.
 This was mainly done to get rid of overlapping page ranges from the scraping
 part and also to get rid of duplicate listings on the website.
 
@@ -85,7 +85,7 @@ df = df.drop_duplicates()
 ## First Look At The DataFrame
 
 To get a first look at the newly created DataFrame `df`, one can choose between
-multiple tools in the pandas library. It is assumed, that the Dataframe is named
+multiple tools in the pandas library. It is assumed that the Dataframe is named
 `df` in the following, as a couple of the tools, the pandas library has to
 offer, are described and links to the documentation page of each command are
 added for more detail on how each command works.
@@ -120,7 +120,7 @@ added for more detail on how each command works.
 ##### Description
 The command `df.head()`returns the first 5 rows of the DataFrame by default, if
 no parameters are specified by the user. Using the parameter *n*, one can
-specify the number of rows, that get returned. Needless to say, rows returned
+specify the number of rows that get returned. Needless to say, rows returned
 will always start at the first index value and include the following *n-1* rows.
 
 ##### Example
@@ -403,7 +403,7 @@ df.head(n=3) # Includes index values [0:2]
 ##### Description
 The command `df.tail()` is the counterpart to `df.head()`, it returns the last 5
 rows of the DataFrame by default, if no parameters are specified by the user.
-Using the parameter *n*, one can specify the number of rows, that get returned.
+Using the parameter *n*, one can specify the number of rows that get returned.
 Needless to say, rows returned will always end with the row at the last index
 value and include the preceding *n-1* rows.
 
@@ -579,20 +579,20 @@ df.tail()
 The command `df.columns` does one thing and one thing well, one might say. It
 returns a list of strings, the list of the columns of the DataFrame. Its output
 can be iterated through, in order to select subsets of all columns. An iteration
-can be done in the form of a list comprehension, that makes use of conditional
-clauses for example. It also helps one find problematic column names, that need
+can be done in the form of a list comprehension that makes use of conditional
+clauses for example. It also helps one find problematic column names that need
 to be changed in order to qualify as tidy. The output of it also helps one get
 an overview of all the columns names and therefore is a starting point for
 dropping certain columns and renaming the columns, so they follow an easy to
 remember and precise naming pattern.
 
 ##### Example
-Below, the set of columns of the DataFrame are printed. One can see, that there
+Below, the set of columns of the DataFrame are printed. One can see that there
 are two types of patterns found in the names of the columns.
 
-1. The first set of columns originates from values found in listings, that are visible to the visitor. These ones have
+1. The first set of columns originates from values found in listings that are visible to the visitor. These ones have
    no prefix attached to them and they all have German names.
-2. Columns in the second set have the prefix 'json\_' added to them. This comes from the fact, that they were sourced
+2. Columns in the second set have the prefix 'json\_' added to them. This comes from the fact that they were sourced
    from a *script tag* found in the raw *HTML* code of each listing. The inner *HTML* of these *script tags* consisted
    of key-value pairs using a *json* like formatting. It was not machine readable though. The names of these columns
    were in English already and only the 'json\_' prefix was added afterwards.
@@ -631,7 +631,7 @@ following line of code:
 df = df1.append([df2, df3], ignore_index=True)
 ```
 
-The `ignore_index=True` part was important to make sure, that the range indexes
+The `ignore_index=True` part was important to make sure that the range indexes
 of each of the appended DataFrames `df2` and `df3` would not simply get stacked
 on top of the index of `df1`. Would that have happened the resulting index would
 have been unusable, since there would not have been a monotonously increasing
@@ -642,7 +642,7 @@ In the example it is shown what the resulting index of the final DataFrame would
 have been, if parameter * ignore_index* would not have been specified at all
 (`df_index_1`) and what it would have been, given `ignore_index=False`
 (`df_index_2`). The resulting index is the same in both cases and it is
-important, that one knows exactly how the index of any DataFrame looks like, in
+important that one knows exactly how the index of any DataFrame looks like, in
 order to be able to manipulate and clean it. The resulting range index of the
 DataFrame, given `ignore_index=True` is used in the input statement shows all
 the qualities a simple range index should have.
@@ -684,7 +684,7 @@ print('The resulting index, if True is used:\n %s\n ' % df.index)
 
 ##### Description
 
-The command `df.describe()` gives summary statistics for all columns, that are
+The command `df.describe()` gives summary statistics for all columns that are
 of a numerical data type (*dtype*) by default. In the default case, the
 following statistics are included in the output for each included column. The
 following notation will be used from this point onwards: $$np.nan$$ stands for
@@ -757,13 +757,13 @@ df.dtypes
     dtype: object
 
 
-From the output one can see, that there only 2 columns that exclusively hold
+From the output one can see that there only 2 columns that exclusively hold
 numerical data and thus have a numerical * data type* (*dtype*). All other
 columns have mixed *dtypes*, so pandas labels them as having dtype 'object'. In
 the following, all columns will be checked and their dtypes might change in the
 process of cleaning them.
 
-With the information, that only 2 columns have a numerical dtype, calling
+With the information that only 2 columns have a numerical dtype, calling
 `df.describe()` with no further parameters specified, will print the summary
 statistics listed above only for those two columns. See the output below, for
 more details.
@@ -835,13 +835,13 @@ the listing on the website.
   $$\neg np.nan$$ of type int64, there are no floating type numbers to be found in the column. We gained this information
   by running `df['anz_schlafzimmer'].value_counts()`, which prints a 2 column table. In the first column, all unique
   values in the data series are listed. For each of them, the count is given in the same row, second column of the
-  table. $$np.nan$$ are excluded. This knowledge helps one to understand, that the mean $$\bar{x} \approx 1.58$$ signals,
+  table. $$np.nan$$ are excluded. This knowledge helps one to understand that the mean $$\bar{x} \approx 1.58$$ signals,
   that there are many listings that have two or less bedrooms.
 - **std:** Standard Deviation for the distribution of all $$\neg np.nan$$ in the data series is $$\approx 0.75$$. This gives
   the the one sigma interval, defined as $$\bar{x} \pm \sigma$$ with the standard deviation as $$\sigma$$.
 - **min:** The minimum is 0, which is equivalent to no bedroom, as declared in the listing.
 - **25%:** The 25% quantile reaches 1 bedroom already, so $$P(X \le 1) \le 0.25$$.
-- **50%:** The value, that splits the data in two equally sized parts is 1 bedroom.
+- **50%:** The value that splits the data in two equally sized parts is 1 bedroom.
 - **75%:** The 75% quantile is found at 2 bedrooms. Together with the value for the 25% quantile it is possible to
   calculate the interquartile range (**IQR**), which is given by $$Q_3 - Q_1 \equiv 2 - 1 = 1$$.
 - **max:** The maximum value for the number of bedrooms found in the data series is 8.
@@ -906,7 +906,7 @@ df.count().sample(4,random_state=seed)
 #### `df.nunique()`
 
 ##### Description
-Returns an integer value, that gives the number of unique values in the data
+Returns an integer value that gives the number of unique values in the data
 frame or of a subset of columns in the `df`. It does not return the unique
 values themselves.
 
@@ -980,7 +980,7 @@ df.filter(items=['lift','str']).sample(4,random_state=seed)
 </table>
 
 
-Example 2 - Using `df.filter()` to select all columns, that have the prefix 'json\_' in their names.
+Example 2 - Using `df.filter()` to select all columns that have the prefix 'json\_' in their names.
 
 ```python
 df.filter(regex='^json', axis=1).sample(4,random_state=seed)
@@ -1111,12 +1111,12 @@ Allows one to randomly sample from a DataFrame or `pandas.Series`. It was used
 several times in the examples so far, in order to give a better glimpse of the
 data in the `df`. Alternatives would have been, among others, `df.head()` and
 `df.tail()`. The main reason `df.sample()` was preferred over these alternatives
-is the reason, that by using `df.sample()` one gets a subset of rows or columns
-of the data frame, that are not constricted to either being at the very
+is the reason that by using `df.sample()` one gets a subset of rows or columns
+of the data frame that are not constricted to either being at the very
 beginning of the index in the case of `df.head()` or at the very end of the
-index, if `df.tail()` is used. The subset, that `df.sample()` produces might not
+index, if `df.tail()` is used. The subset that `df.sample()` produces might not
 have anything over the ones produced by `df.head()` or `df.tail()`, since it is
-a random sample after all. It is advised to specify a value for a *seed*, that
+a random sample after all. It is advised to specify a value for a *seed* that
 is used used whenever any kind of random element is part of command. In the case
 of `df.sample()`, one can pass a random seed in several different ways. Here,
 only a integer value was needed (`seed = 42`), as defined along the imports

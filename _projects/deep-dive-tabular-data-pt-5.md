@@ -30,7 +30,7 @@ comments: true
 # Part 5: Out-Of-Domain Problem
 
 A series of 45 linear values for the x-axis is created and a corresponding series
-of y-values, that projects each x-axis value to its identity and adds some noise
+of y-values that projects each x-axis value to its identity and adds some noise
 to each projected value using values from sampling a Normal Distribution.
 
 
@@ -100,8 +100,8 @@ m_lin = XGBRegressor().fit(xslins[:35], ylins[:35])
 ```
 
 Scatter plot of data points used for training, plus final five values in
-`xslins`, that were omitted in the training data using different colored dots
-and predicted values for all points in `xslins`. Notice, that the predictions
+`xslins` that were omitted in the training data using different colored dots
+and predicted values for all points in `xslins`. Notice that the predictions
 for the omitted values are all too low. The model can only make predictions
 within the range of what it has seen for the dependent variable during training.
 This is an example of an extrapolation problem.
@@ -143,8 +143,8 @@ the `RandomForestRegressor` estimator works and the `XGBRegressor` as well in
 this regard. All it does is average the predictions of several trees
 (`nestimators`) for each sample in the training data. Each tree averages the
 values of the dependent variable for all samples in a leaf. This problem can
-lead to predictions on so called *out-of-domain data*, that are systematically
-too low. One has to ensure, that the validation set does not contain such data.
+lead to predictions on so called *out-of-domain data* that are systematically
+too low. One has to ensure that the validation set does not contain such data.
 
 ## Identifying *Out-Of-Domain Data*
 
@@ -227,7 +227,7 @@ fi.iloc[:5, :]
 m = rf(xs_final, y)
 print(f"Original m_rmse value is: {m_rmse(m,valid_xs_final,valid_y)}")
 # #### Features To Drop
-# The columns, that can be dropped while increasing the accuracy are `garagearea`
+# The columns that can be dropped while increasing the accuracy are `garagearea`
 # and `garageyrblt`, if only one of them is dropped. There is no information for
 # what the accuracy is, if both are dropped together. We test the three cases
 # below to decide what the best choice is.
@@ -292,7 +292,7 @@ print(m_rmse(m, valid_xs_final.drop(bf, axis=1), valid_y))
     0.14009
 
 
-It is confirmed, that using the current value for `random_state`, the
+It is confirmed that using the current value for `random_state`, the
 independent variable `garagearea` can be dropped while the `m_rmse` value even
 decreases on the test set by doing so. Therefore, the independent part of the
 train and validation data is updated, variable `garagearea` is dropped in both.

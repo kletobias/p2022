@@ -46,17 +46,17 @@ outputs are shortened for readability.
 
 ## Summary Of The Series
 
-- A DataFrame is given as input, that contains 47 columns at the beginning.
+- A DataFrame is given as input that contains 47 columns at the beginning.
 - Dimensionality Reduction is performed on the columns, to filter and only keep relevant columns.
 - The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
 - Unique values of each column give the basis for the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly used to extract cell contents, that hold the valid data.
+- Regular Expressions (**regex**) are mostly used to extract cell contents that hold the valid data.
 - Regex are also used to replace invalid character patterns with valid ones.
 - Validation of the values, after cleaning is performed using regex patterns.
 - New `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
 
 ## Preparations for the Batch Operations
-The unique values are calculated for all columns, that are still to be cleaned and give the basis for the regex patterns used in the following steps to clean these remaining columns. The output with all the unique values is truncated for readability.
+The unique values are calculated for all columns that are still to be cleaned and give the basis for the regex patterns used in the following steps to clean these remaining columns. The output with all the unique values is truncated for readability.
 
 
 ```python
@@ -526,7 +526,7 @@ df = (
 The columns with counterparts are specified and the columns without the `json_`
 prefix are overwritten by the identical values of their `json_` counterparts,
 after the unique values for each column pair are checked for differing values.
-The columns with a  `json_` prefix have values, that need less cleaning compared
+The columns with a  `json_` prefix have values that need less cleaning compared
 to the ones found in the non-json prefix columns, hence the values found in the
 `json_` columns are kept.
 
@@ -692,7 +692,7 @@ df.to_csv("/Volumes/data/export_ddmmyyyy_white_space.csv")
 
 ## Final Validation Of Unique Values
 We print once more the unique values for the columns in the DataFrame, to check
-for any errors. No column shows signs of messy data anymore, that lets us create
+for any errors. No column shows signs of messy data anymore that lets us create
 new encoded columns with factorized categorical values.
 
 
@@ -952,7 +952,7 @@ df.info()
     memory usage: 2.5+ MB
 
 
-We drop all non `json_` columns, that have a `json_` counterpart and replace
+We drop all non `json_` columns that have a `json_` counterpart and replace
 them by their respective `json_` counterparts.
 
 
@@ -1064,10 +1064,10 @@ We reorder the columns with dtype `categorical` to be at the beginning of the
 columns in `df.columns`, to make sub-setting of the columns during the *feature
 selection* and *model evaluation* phases. The *NaN*
 values in the dtype `categorical` columns are replaced with `no_information`.
-The reason being, that rows with recognized *NaN* values get excluded from the
+The reason being that rows with recognized *NaN* values get excluded from the
 factorization process and are replaced by `-1`. At this point, we like to keep
 the option of using the missing values as a categorical group of its own. The
-group, that contains all listings where no information is given for.
+group that contains all listings where no information is given for.
 
 
 ```python
@@ -1167,7 +1167,7 @@ df.filter(regex=r'_enc').info()
 ## The Next Steps
 This marks the end of the initial cleaning of the tabular data from the web
 scraping part. The next steps are:
-- Create a machine learning pipeline with reproducible steps. A pipeline, that includes removal of missing values or imputation of missing values among other data preprocessing steps that might be needed.
+- Create a machine learning pipeline with reproducible steps. A pipeline that includes removal of missing values or imputation of missing values among other data preprocessing steps that might be needed.
 - Create stratified *k*-fold cross validation splits and a train and test set.
 - Try different scaling algorithms after the split on the independent variables and feature elimination techniques.
 - Decide whether prediction accuracy is the key metric for this project or model interpretability.

@@ -31,14 +31,14 @@ dataset is the 'Video Game Sales' dataset, hosted on kaggle and can be found
 here: [*Video Games Dataset*](https://www.kaggle.com/datasets/gregorut/videogamesales)
 
 ## Import Using sqlalchemy
-The import works for any database, that library `sqlalchemy` supports and for
+The import works for any database that library `sqlalchemy` supports and for
 which a *connector* library exists for Python. MySQL offers a native solution
 for importing text files into a MySQL database, called
 [**mysqlimport**](https://dev.mysql.com/doc/refman/8.0/en/mysqlimport.html).
 
 ### create_engine function
 Central to this approach, is the `create_engine` function from `sqlalchemy`, as
-well as `sqlalchemy.types`, which has the destination data types, that the input
+well as `sqlalchemy.types`, which has the destination data types that the input
 data has to be converted to.
 
 ### mysql.connector & Pandas
@@ -386,7 +386,7 @@ There are several [*Arithmetic
 operators*](https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html)
 in MySQL one can use. This is an example of calculating the difference between
 `NA_Sales` and `EU_Sales`, renaming the resulting column with the `AS` operator
-to `"SD"`. Using MySQL operator `WHERE` to add the condition, that we only want
+to `"SD"`. Using MySQL operator `WHERE` to add the condition that we only want
 rows returned where `NA_Sales` is smaller `EU_Sales`. The results are grouped
 by unique `Platform` value.
 
@@ -432,7 +432,7 @@ FROM vgs;
 ```
 
 ## Conclusion
-This article highlighted a way, that one can use `Python` along some of it's
+This article highlighted a way that one can use `Python` along some of it's
 powerful libraries for data access and manipulation to import any flat file,
 that pandas can read into a MySQL database instance. sqlalchemy is capable of
 far more than just creating and mapping data types to match the ones of a

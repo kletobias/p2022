@@ -2,7 +2,7 @@
 layout: distill
 title: 'Automation Using A Test Harness<br>For Deep Learning:<br>Part 1'
 date: 2022-12-04
-description: 'How to create and use a custom test harness, that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.'
+description: 'How to create and use a custom test harness that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.'
 img: 'assets/img/838338477938@+-67822330.jpg'
 tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']
 category: ['deep-learning']
@@ -21,7 +21,7 @@ comments: true
 
 # Part 1: Basic Automation For Deep Learning
 
-**How to create and use a custom test harness, that automates many steps of the
+**How to create and use a custom test harness that automates many steps of the
 deep learning testing process. It lowers GPU idle time, lets one build more
 models, test more parameter combinations in less time. The
 [*fastai*](https://www.fast.ai/) library for deep learning is used throughout this
@@ -65,7 +65,7 @@ import re
 ### Path variable
 
 
-Creating the `Path` variable, that leads to the directory where the images are
+Creating the `Path` variable that leads to the directory where the images are
 in. The `Path` variable has the class `PosixPath`, a path type found
 in `pathlib` Python library, [*pathlib Documentation*](https://pathlib.readthedocs.io/en/pep428/index.html#concrete-paths).
 
@@ -106,22 +106,22 @@ there are images where each one holds an iPhone in front of them and takes
 selfies.
 
 There was no active image selection from my part and no image processing, apart
-from the raw conversion and the square crop, that was applied the same way to
+from the raw conversion and the square crop that was applied the same way to
 all images.
 
 The dataset has many 'setup' shots, where I adjusted the aperture, shutter
-speed and power of the strobe I used. As a result, there are images, that are
+speed and power of the strobe I used. As a result, there are images that are
 overexposed by two or even three stops, e.g., as can be seen in the center image
 of the grid below (**Image[1]**). A large portion of the image suffers from *clipping*. Images
 that are overexposed by that much have areas in the image, where all pixel
-values are completely white, that means in RGB values $$(255,255,255)$$.
+values are completely white that means in RGB values $$(255,255,255)$$.
 
-For the deep learning model, that means, that it has less raw input information
+For the deep learning model that means that it has less raw input information
 for these images, when only looking at the information that can gained directly
 from a pixel.
 
 These areas could end up being very valuable for the deep learning model, if
-there is a certain pattern to be found in these over exposed areas, that is
+there is a certain pattern to be found in these over exposed areas that is
 useful for classifying the images in 'male' model and 'female' model.
 
 **Image[1]**
@@ -132,10 +132,10 @@ useful for classifying the images in 'male' model and 'female' model.
     </div>
 </div>
 <div class="caption">
-        Image 1 - 9 random sample images, that show images of both categories. The applied
+        Image 1 - 9 random sample images that show images of both categories. The applied
         crop turns each image into a square image and its length is equal to the
         smaller dimension of the original image. The image in the center of the
-        grid shows, that 'setup shots', where the power of the strobe was
+        grid shows that 'setup shots', where the power of the strobe was
         adjusted for example, were included as well. Several images depict the
         model holding a cell phone.
 </div>
@@ -144,14 +144,14 @@ useful for classifying the images in 'male' model and 'female' model.
 
 
 All images are found inside the 'male_female' directory, a subdirectory of the
-'datasets' directory. From the filenames, that were printed out, the structure
+'datasets' directory. From the filenames that were printed out, the structure
 used to attach the correct label to each image can be seen. For this binary
 image classification problem, the filenames contain the target label.
 
-- Images depicting the male model have filenames, that start with 'male_model'.
-- Images depicting the female model have filenames, that start with 'female_model'.
+- Images depicting the male model have filenames that start with 'male_model'.
+- Images depicting the female model have filenames that start with 'female_model'.
 
-The variable `fname` is assigned to the list of images, that contains all
+The variable `fname` is assigned to the list of images that contains all
 images. `fname` saved the `Path` variable, and not only the filename +
 extension. The next step separates the filename from its path and splits the
 images into two groups, the target labels 'female' and 'male'.
@@ -181,18 +181,18 @@ for nn in fname:
 ### Working With Matched Portions
 
 
-A `dict` dd is creating, that has to keys: `ff` for found female and `fm` for
-found male. Both are assigned an empty list, that appends the filename +
+A `dict` dd is creating that has to keys: `ff` for found female and `fm` for
+found male. Both are assigned an empty list that appends the filename +
 extension for each match.
 
 The regular expression uses `re.search`, a function found in the standard Python
 library [*re*](https://docs.python.org/3/library/re.html#). The main reason for
-this is that `re.search` returns a `match object`, that makes it easy to work
+this is that `re.search` returns a `match object` that makes it easy to work
 with the matched strings. In this case `f` was assigned as the match object. If
 `f` is of type `None`, no filename was appended to either of the dictionary
 keys.
 
-If `type(f) != None` is true, then `f` holds capture groups 1 and 2, that by
+If `type(f) != None` is true, then `f` holds capture groups 1 and 2 that by
 design will hold:
 
 - `f.group(1)`: the entire filename + the extension.
@@ -213,7 +213,7 @@ print(dd["ff"][0:5])
     ['female_model--2.png', 'female_model-.png', 'female_model-1882.png', 'female_model-1883.png', 'female_model-1884.png']
 
 
-Analogously a sample of the items, that get labeled 'male'.
+Analogously a sample of the items that get labeled 'male'.
 
 
 ```python
@@ -223,7 +223,7 @@ print(dd["fm"][0:5])
     ['male_model--10.png', 'male_model--2.png', 'male_model--3.png', 'male_model--4.png', 'male_model--5.png']
 
 
-The lengths of the lists, that hold the values to each of the two dictionary
+The lengths of the lists that hold the values to each of the two dictionary
 keys, are printed out to show the class distribution between the two classes.
 
 The output below shows that the distribution between the classes is close to 50%
@@ -260,14 +260,14 @@ The `DataBlock` is created using the following items:
 - `splitter` is set to `RandomSplitter` using `seed=42` for reproducible train,
   validation splits across multiple executions.
 - Finally, `get_y` specifies the method used to label all the images in the
-  dataset, that the model will predict for each image. `RegexLabeller` does
+  dataset that the model will predict for each image. `RegexLabeller` does
   exactly the same, as what was done using `re.search`. It is really 'the exact
   same', since it uses `re.search` by default. `"name"` will cause it to use the
   filename as the string to match using the specified pattern.
 
 
 The portion of the pattern used to label the images is the beginning of the
-filename, that can either be `female` or `male`. Because of the precedence rule,
+filename that can either be `female` or `male`. Because of the precedence rule,
 that is applied during a regex search, like the one here, the ordering of the
 characters to match is important. If `male` was put before `female`, like
 so `r"(male|female)_model-[^.]*\.png$"`, there would be no matches for female at
@@ -290,7 +290,7 @@ mf = DataBlock(
 ### Checking The DataBlock For Problems
 
 Using the `summary` method on the newly created `DataBlock` to check for any
-errors, that might be present.
+errors that might be present.
 
 
 *The output of this command was included, since it gives insight into what steps
@@ -379,7 +379,7 @@ dls = mf.dataloaders(path, valid_pct=0.4)
 
 For this article, the following combinations of `model`, `valid_pct` and
 `fine_tune` were assessed. That meant, given 2 possible settings for each
-variable, that a total of 8 configurations had to be tested. The metric used, is
+variable that a total of 8 configurations had to be tested. The metric used, is
 the `error_rate` for all setups.
 
 **Table[1]**
@@ -397,7 +397,7 @@ the `error_rate` for all setups.
 
 ### Error Rate: What It Measures
 
-The error rate measures the fraction of the predictions made by the model, that
+The error rate measures the fraction of the predictions made by the model that
 are not correct. It takes the absolute number of incorrect predictions and
 divides them by the total number of predictions. If the result is supposed to be
 in percent, then the fracture has to be multiplied by 100. In the fastai
@@ -412,10 +412,10 @@ $$
 ### Detailed Construction Of The Test Harness
 
 
-Given, that 8 different configurations in total have to be tested and logged
+Given that 8 different configurations in total have to be tested and logged
 (more on that later), it certainly is feasible to log everything manually.
 However, specifying each configuration manually and not logging the results
-using a single DataFrame, that can append any number of structured empirical
+using a single DataFrame that can append any number of structured empirical
 experiments, is neither scalable, nor reproducible. To create and log structured
 empirical experiments, a test harness is simply the best option.
 
@@ -427,10 +427,10 @@ either **ResNet34** or **ResNet18** in this case.
 
 `fine_tune` - The number of epochs used for transfer learning of the pretrained
 model. This excludes the initial training epoch, where only the final layers are
-trained, and all other layers are frozen. In this case, that is either 1 or 2
+trained, and all other layers are frozen. In this case that is either 1 or 2
 epoch(s).
 
-`valid_pct` - Sets the percentage of the dataset, that is not used for training,
+`valid_pct` - Sets the percentage of the dataset that is not used for training,
 but only for validation. Given the relatively low total image count in this
 dataset, it is of interest to see what the results are using the default
 valid_pct of 0.2 are compared to a valid_pct of 0.4, double the default
@@ -446,7 +446,7 @@ CrossEntropyLoss' for all configurations.
 `error_rate` - The metric chosen to assess the model on the validation set,
 using a *metric designed for human consumption*.
 
-I chose to create a test harness, that automatically creates each configuration
+I chose to create a test harness that automatically creates each configuration
 specified in the `harness_input` dictionary. It also logs the most important
 training values for each configuration. That is, the loss function and metric
 and saves it in a dictionary `harness_output`, which at the end is automatically
@@ -470,14 +470,14 @@ In detail, the call to vision_learner looks as follows:
 learn=vision_learner(dls,setup[0],metrics=error_rate,cbs=[TrainEvalCallback,Recorder])
 ```
 
-The dictionary `harness_input` has keys for all input parameters, that will be
+The dictionary `harness_input` has keys for all input parameters that will be
 tested and logged. Not all of its keys are used in this article. It is important
 not to wrap the values for `harness['model']` in quotes, e.g.,
 `models.resnet34`. The value is recognized as being a PyTorch function and will
 be accepted, when passed to the `vision_learner` creation.
 `input_harness['valid_pct']` has a list of values for the `valid_pct` parameter,
 that should all be tested. `harness_input['fine_tune']` specifies the number of
-epochs, that should be used for training, after the initial fit one cycle epoch.
+epochs that should be used for training, after the initial fit one cycle epoch.
 
 
 
@@ -501,18 +501,18 @@ harness_input['fine_tune']= [1,2]
 To rigorously test each parameter, only one parameter should be changed at a
 time.
 
-That means, that two out of the three parameters will remain the same from one
+That means that two out of the three parameters will remain the same from one
 setup to the next one. This description does not take into account ordering, but
 it gives the idea behind this empirical testing scheme. It guarantees that all
 three element long parameter combination tuples get tested.
 
 The math behind calculating all combinations for any given number of parameters
-$$m$$, that have a number of unique parameter values given by $$p_{i}$$, for the
+$$m$$ that have a number of unique parameter values given by $$p_{i}$$, for the
 $$i_{th}$$ out of the total $$m$$ parameters. Which can be interpreted as a
 vector of length $$m$$, with each element the total number of parameter values
 for one of the parameters: $$\langle p_{1},..,p_{m}\rangle$$
 
-Then, the total number of combinations, that have to be tested is given by:
+Then, the total number of combinations that have to be tested is given by:
 
 $$\mathrm{number\, of\, combinations}:=\prod_{i=1}^m p_{i}$$
 
@@ -554,11 +554,11 @@ setups[0][2]
 
 
 
-The output for each setup is logged in a dictionary, that has *keys* for all
+The output for each setup is logged in a dictionary that has *keys* for all
 parameters that are logged.
 
-For each of the 8 setups, one row per epoch is used. With the setups, that use 2
-epochs using 2 rows. A column, that shows, which setup and epoch the other
+For each of the 8 setups, one row per epoch is used. With the setups that use 2
+epochs using 2 rows. A column that shows, which setup and epoch the other
 columns belong to, is added in the form of column `unique_setup`.
 
 The regular expressions used to match the exact name of the model was necessary,
@@ -567,7 +567,7 @@ characters as well. E.g., see the `setups[0]` sample output above. The regular
 expressions used to capture the valid_pct and fine_tune strings could have been
 replaced with the actual values for these two parameters, using `setup[1]` and
 `setup[2]` as its values. I prefer the added flexibility that might come in
-handy, when using this logging framework on other problems. If it shows, that
+handy, when using this logging framework on other problems. If it shows that
 there is no benefit to using regular expressions for this, then the direct
 assignment will be used instead.
 
@@ -627,7 +627,7 @@ for setup in setups:
     </div>
 </div>
 <div class="caption">
-        Image[2]: Changes in the loss function. Plot shows, that additional parameters
+        Image[2]: Changes in the loss function. Plot shows that additional parameters
         need to be specified, in order to make this plot of any use.
 </div>
 
@@ -808,22 +808,22 @@ df
 
 ## Summary & Next Steps
 
-The fastai library holds some incredibly powerful tools, that can be easily used
+The fastai library holds some incredibly powerful tools that can be easily used
 to create production ready models. It was only because of the pretrained models,
-that the fastai library has to offer, that a model could be created, that in
+that the fastai library has to offer that a model could be created that in
 almost all the tested setups has an impeccable error_rate of 0 on the validation
 dataset.
 
 In this article, we went from raw images, to creating a
-`Path` object, that points at the image files. Using the `RegexLabeller`, we
+`Path` object that points at the image files. Using the `RegexLabeller`, we
 labeled the images by extracting the labels from the filenames. With that, we
 first created a DataBlock and from that a dataloaders object.
 
-This made it possible for us to instantiate a vision_learner object, that used
+This made it possible for us to instantiate a vision_learner object that used
 one of two **ResNet** architecture variants. The list of setups was created, setups
 were built and logged. At this point we have a *tidy* DataFrame with all the
 logged data.
 
 In *Part 2*, we analyze the logged data in the DataFrame and build more
-combinations (*Batch No. 2*) to answer our questions, that we have after
+combinations (*Batch No. 2*) to answer our questions that we have after
 analyzing the DataFrame with the results of *Batch No. 1*.

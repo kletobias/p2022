@@ -408,14 +408,14 @@ that are classified as being high cardinality. This is regardless of whether
 they are of type object (strings and numerical characters are found in the
 values.) or numerical.
 
-- `id`: Is a standard integer range index, that likely increases monotonously by
+- `id`: Is a standard integer range index that likely increases monotonously by
    row and might have unique values for each building in the dataset.
 - `mssubclass`: Gives the building class. It looks like a categorical column,
    with numerical classes.
 - `mszoning`: Is the general zoning classification of a building and it looks
 - like a categorical column with string classes.
-- `lotfrontage`: Gives the street frontage, that each building has towards a
-   street. This is measured by taking the horizontal distance, that is
+- `lotfrontage`: Gives the street frontage that each building has towards a
+   street. This is measured by taking the horizontal distance that is
    perpendicular to the side of the street and that measures the length that the
    side of the house facing the street shares with the street.
 - `lotarea`: Gives lot size of the property in square feet.
@@ -499,7 +499,7 @@ train.iloc[:, :3].sample(n=5, random_state=seed)
 
 
 A custom function takes ten columns of a DataFrame `df` as input, defined by
-the lower limit `ll`, upper limit `ul` and a cutoff, that limits the output of
+the lower limit `ll`, upper limit `ul` and a cutoff that limits the output of
 the unique values to columns with less than the integer specified in parameter
 `ll`.
 
@@ -1543,7 +1543,7 @@ out.update(auq(train, 70, 80, 8))
 
 ## Visualizing Missing Values
 
-The `missingno` library offers a powerful visualization tool, that helps us
+The `missingno` library offers a powerful visualization tool that helps us
 understand better which columns have missing values, how many and in which rows
 they are found.
 
@@ -1652,7 +1652,7 @@ get an idea of which columns are correlated in terms of their rows with
 missing values.
 
 Using the plot, we can investigate the following, in order to see if there is
-a pattern present for each column, that has many missing values. While 'many
+a pattern present for each column that has many missing values. While 'many
 missing values' is by no means a criterium to go by when filling missing
 values, there is no *fits all* type of solution when it comes to dealing with
 missing values.
@@ -1660,7 +1660,7 @@ missing values.
 #### Default Strategy
 
 Let me explain why and how I determine which columns to manually fill, using
-*custom* fill values, that are not the median of all non-missing values found in
+*custom* fill values that are not the median of all non-missing values found in
 a column, if the column is of type *numerical* or the mode in case of a string
 column.
 
@@ -1670,7 +1670,7 @@ I like to use as little preprocessing as possible before training the first
 model, just enough that the data is ready for the model to be trained on. That
 way I get a first benchmark early. Most of the time I use a tree based model,
 that lets me evaluate the relative feature importances of the columns among
-other metrics, that I look at.
+other metrics that I look at.
 Only after this first iteration, will I think about if using custom fill values
 is likely to payoff in bettering the accuracy score, more than all the other
 preprocessing steps that could be added instead.
@@ -1679,11 +1679,11 @@ preprocessing steps that could be added instead.
 
 For this article, in order to show how I would deal with the columns that have
 missing values, we look at the ones, where rows with missing values actually
-don't mean, that the value is missing - is unknown. This happens frequently,
+don't mean that the value is missing - is unknown. This happens frequently,
 when the data is not properly collected for that feature with missing values.
 E.g., column `poolqc`, which stands for 'pool quality'.
 
-We create the function `bivar`, that accepts two columns of a DataFrame,
+We create the function `bivar` that accepts two columns of a DataFrame,
 `related_col` and `missing_col` and returns the unique values for the pair of
 the two columns, only using the rows where `missing_col` has missing values.
 
@@ -1699,9 +1699,9 @@ def bivar(related_col, missing_col):
 
 ##### Case: A Category Is Missing
 
-The output for `poolarea` and `poolqc` shows, that only rows with missing values
+The output for `poolarea` and `poolqc` shows that only rows with missing values
 in `poolqc` are found, if and only if column `poolarea` has value 0 in the same
-row. A value of 0 means, that the listing has no pool and therefore no `poolqc`.
+row. A value of 0 means that the listing has no pool and therefore no `poolqc`.
 The values are not missing in this case, instead a new class should be added to
 the ones present in the column. It could be something like 'no_pool'.
 
@@ -1770,7 +1770,7 @@ train.lotfrontage.unique()
 
 
 
-For variable `fence`, I would use the mode, since there is no indication, that
+For variable `fence`, I would use the mode, since there is no indication that
 the `nan` values are not just missing values.
 
 
@@ -1785,23 +1785,23 @@ train.fence.unique()
 
 
 
-The examples cover many of the cases, that can happen and show for each of the
+The examples cover many of the cases that can happen and show for each of the
 most common types how I would fill the missing values. A more in-depth analysis
 and a custom fill strategy can be necessary, if the particular column is of high
 importance and therefore justifies a complex filling strategy.
 
 ## Categorical Embeddings
 
-The goal is to create categorical embeddings, that will transform the
+The goal is to create categorical embeddings that will transform the
 categorical string variables into ordered categorical type columns. For this, we
-are looking for columns whose unique values have an inherent order, that we can
+are looking for columns whose unique values have an inherent order that we can
 use to make the transformation using the `pandas` library. While categorical
 embeddings don't make a difference for tree ensembles, they do for deep learning
-models, that unlike tree based models can make use of the added information
+models that unlike tree based models can make use of the added information
 given by categorical embeddings for categorical variables.
 
 ### Find Candidate Columns
-The output below shows, that there are three types of data types currently
+The output below shows that there are three types of data types currently
 assigned to the columns of `train`. The ones with dtype `object` are the ones we
 focus on here in the following step.
 
@@ -1825,7 +1825,7 @@ _, _ = guc(train, p=True)
 
 
 The function below returns a dictionary of column name and list of unique values
-for all columns, that have less than `ul` unique values and that are of type
+for all columns that have less than `ul` unique values and that are of type
 'object' by default. The input parameters can be altered to filter for columns
 with less or more number of unique values than the default value and one can
 look for other column data types as well.
@@ -1898,8 +1898,8 @@ ddc
 
 
 
-The output of the function shows, that there are many columns, that could be
-good candidates for categorical embeddings. We look for ones, that have a clear
+The output of the function shows that there are many columns that could be
+good candidates for categorical embeddings. We look for ones that have a clear
 inherent ordering and that can be batch processed.
 
 ### Criteria
@@ -1908,9 +1908,9 @@ Using the output of the function above, the unique values of all columns of type
 more time finding additional columns with ordered values of type `object` or
 also including columns with unique values of other types, e.g., see the output
 of the `can` function above. The goal here was to find several columns that meet
-this criteria, that can be batch processed without the need to individually set
+this criteria that can be batch processed without the need to individually set
 the ordered categorical dtype for each column, since the unique values of the
-columns don't share close to the same set of unique values, that all follow the
+columns don't share close to the same set of unique values that all follow the
 same order.
 
 ### Unique Values
@@ -2002,7 +2002,7 @@ manually doing all the preprocessing. In this case, we use function
 `TabularPandas` ([*TabularPandas
 Documentation*](https://docs.fast.ai/tabular.core.html#tabularpandas)) from
 library `fastai`, which is a convenient wrapper around several preprocessing
-functions, that transform a DataFrame.
+functions that transform a DataFrame.
 
 
 ```python
@@ -2036,7 +2036,7 @@ are already of type ordered categorical. The documentation can be found here:
 value by default. One can find its documentation following this link:
 [*FillMissing Documentation*](https://docs.fast.ai/tabular.core.html#fillmissing).
 Another transformation it does is add a new column for every column with missing
-values, that indicates for each row in the dataset whether the value in that
+values that indicates for each row in the dataset whether the value in that
 column was filled or not. It does so by adding a boolean type column for every
 column with missing values. E.g., see the output of the command below.
 

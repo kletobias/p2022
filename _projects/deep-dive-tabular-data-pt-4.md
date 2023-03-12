@@ -42,9 +42,9 @@ prerequisites in terms of the relationships between the features, e.g., a linear
 relationship, the rank correlation is used to calculate the correlations. The
 final plot applies the same color to features whose rank correlation values are
 close to each other. On the x-axis, one can see the strength of the correlation,
-with close to zero indicating, that the assumed linear relationship between the
+with close to zero indicating that the assumed linear relationship between the
 features in this group is one of no consistent change. Values close to one
-indicate a close to perfect monotonic relationship. $$H_0$$ is, that each variable
+indicate a close to perfect monotonic relationship. $$H_0$$ is that each variable
 pair is uncorrelated.
 
 
@@ -79,7 +79,7 @@ cluster_columns(xs_imp)
 
 #### Conclusion
 
-The output shows, that variable `garagetype` and `exterqual` are assumed to have
+The output shows that variable `garagetype` and `exterqual` are assumed to have
 a high similarity and are the two columns with the strongest assumed linear
 relationship among the features found in `xs_imp`.
 
@@ -136,7 +136,7 @@ get_oob(xs_imp,'xs_imp')
 The oob score for `xs_imp` is slightly lower than the one for `xs`. Considering,
 that there are 83 columns in `xs` and 21 in `xs_imp`, the slight decrease in the
 oob score shows that most of the difference in features between the two is made
-up of columns, that don't decrease the rmse of the model on the training data.
+up of columns that don't decrease the rmse of the model on the training data.
 
 
 ```python
@@ -157,7 +157,7 @@ get_oob(xs,'xs')
 
 
 The two columns `garagetype` and `exterqual` are dropped and the oob score is
-computed using the remaining features in `xs_imp`. One notices, that the
+computed using the remaining features in `xs_imp`. One notices that the
 oob_score is lower for the case where only one of the two features is dropped
 and higher if both are dropped together. Accounting for this, both features are
 dropped together.
@@ -288,7 +288,7 @@ df_oob
 ## New Train & Validation Sets Using Resulting Feature Set
 
 The resulting Datasets have the two features removed. These two datasets are the
-new baseline datasets, that all of the following models are fitted/evaluated on.
+new baseline datasets that all of the following models are fitted/evaluated on.
 
 
 ```python
@@ -507,11 +507,11 @@ can be found here: [*partial_dependence
 Documentation*](https://scikit-learn.org/stable/modules/partial_dependence.html).
 The plot is like an individual conditional expectation plot, which lets one
 calculate the dependence between the dependent variable and any subset of the
-independent variables. Four columns, that have shown several times, that they
+independent variables. Four columns that have shown several times that they
 are of high importance for the predictions of the dependent variable are chosen
 and their partial dependence plots are created.
 
-The output shows, that `overallqual` and `yearbuilt` show a high correlation with
+The output shows that `overallqual` and `yearbuilt` show a high correlation with
 the dependent variable. Not only that though, the plot also shows how the
 assumed change in the value of the dependent variable, $$\frac{\partial \mathrm{saleprice}}{\partial x_{i}}\,\,\mathrm{for}\,\,\mathrm{i}\, \in \{\mathrm{overallqual},\, \mathrm{grlivarea},\, \mathrm{garagecars},\, \mathrm{yearbuilt}\}$$
 

@@ -50,11 +50,11 @@ calculate how long a listing was listed for on the platform
 
 ## Summary Of The Series
 
-- A DataFrame is given as input, that contains 47 columns at the beginning.
+- A DataFrame is given as input that contains 47 columns at the beginning.
 - Dimensionality Reduction is performed on the columns, to filter and only keep relevant columns.
 - The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
 - Unique values of each column give the basis for the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly used to extract cell contents, that hold the valid data.
+- Regular Expressions (**regex**) are mostly used to extract cell contents that hold the valid data.
 - Regex are also used to replace invalid character patterns with valid ones.
 - Validation of the values, after cleaning is performed using regex patterns.
 - New `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
@@ -189,20 +189,20 @@ print(bb)
 
 ## Creating The GPS Column
 
-To be able to utilize the Latitude and Longitude values, that we have in the
+To be able to utilize the Latitude and Longitude values that we have in the
 dataset, we need to create a tuple consisting of the two variables. The result
 should look like this for all valid pairs: `(lng,lat)`. In order for a tuple of
 this form to be recognized as a valid GPS value, we need to be able to apply the
 `.apply(Point)` method to all values and get no errors during the application.
 
-We start by checking for problematic rows. Rows, that need attention are the
+We start by checking for problematic rows. Rows that need attention are the
 following:
 
 - Rows that only have one valid value in the subset `df[['lng','lat']]`
 - Rows with missing values in both columns 'lng' and 'lat'
 
 
-The output shows, that all rows for the two columns are the same, in terms of
+The output shows that all rows for the two columns are the same, in terms of
 whether a row has a missing or valid value. With this information, we can save
 the index values of the rows with missing values for the subset latitude and
 longitude, so we can drop the rows with missing values in the gps column without
@@ -226,7 +226,7 @@ df[["lng", "lat"]].isna().value_counts()
 The method above is to be preferred over the one below, which creates lists for
 both columns `lng` and `lat`, with the index values of the rows with *NaN*
 values. It then compares the index values stored in `lngna` and `latna`
-elementwise. The `assert` function is used to confirm, that the elements in both
+elementwise. The `assert` function is used to confirm that the elements in both
 lists are all equal.
 
 
@@ -262,7 +262,7 @@ df.drop(lngna, inplace=True, axis=0)
 ```
 
 ### Drop Rows That Contain *NaN* Values
-We drop rows, that have *NaN* values in the `lng` and `lat` columns. Around 3000
+We drop rows that have *NaN* values in the `lng` and `lat` columns. Around 3000
 rows where dropped as a result.
 
 
@@ -330,7 +330,7 @@ df["gps"] = df["gps"].apply(Point)
 ```
 
 ### Getting A Quick Look At The Finished GPS Column
-The `gps` column looks as expected, and we can see, that its dtype is correct as well:
+The `gps` column looks as expected, and we can see that its dtype is correct as well:
 
 `Name: gps, dtype: object <class 'shapely.geometry.point.Point'>`
 
@@ -372,7 +372,7 @@ df[['gps']].info()
 We drop more columns, after the creation of the `gps` column. `street_number`
 (street and number of a listing) are not needed anymore, since all listings have
 a valid pair of longitude and latitude coordinates associated with them. `floor
-space` is a variable, that has 827 non-missing values and around 91.2% of rows
+space` is a variable that has 827 non-missing values and around 91.2% of rows
 have missing values. This ratio between valid and missing values is too large to
 be imputed in this case. The column is therefore dropped.
 
@@ -383,7 +383,7 @@ df.drop(columns=["street_number", "floor_space"], inplace=True)
 ```
 
 ## Date Listed & Date Unlisted Columns
-For the columns, that give information about when a listing was published and
+For the columns that give information about when a listing was published and
 unpublished on the rental platform the needed cleaning steps are identical.
 Therefore, not all steps are explicitly described for both columns.  The values
 need to be converted to dtype datetime, so the entire column can be assigned
@@ -464,7 +464,7 @@ print(ppr)
 The time listed column is created calculating the difference between the
 `date_unlisted` and `date_listed` columns. The result is the `time_listed`
 column, which has type `timedelta64[ns]`. We truncate the timedelta values in
-this column to only show the days, that the listing was online, since our data
+this column to only show the days that the listing was online, since our data
 only includes the day a listing was listed/unlisted.
 
 

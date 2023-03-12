@@ -2,7 +2,7 @@
 layout: distill
 title: 'The Math Behind<br>"Stepping The Weights"'
 date: 2023-01-12
-description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics, that this optimization algorithm is derived of.'
+description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics that this optimization algorithm is derived of.'
 img: 'assets/img/838338477938@+-67822330.jpg'
 tags: ['deep-learning', 'math', 'ordinary-least-squares', 'partial-derivate', 'stochastic-gradient-descent']
 category: ['deep-learning']
@@ -28,7 +28,7 @@ comments: true
 **Stochastic Gradient Descent in detail.**
 
 In this article we highlight a key concept in the Stochastic Gradient Descent
-and explore the basics, that this optimization algorithm is derived of. These
+and explore the basics that this optimization algorithm is derived of. These
 terms and concepts are covered in this article, among others.
 
 1. The components of a univariate linear function (a straight line).
@@ -45,8 +45,8 @@ applications and also in general applications of statistical modeling for
 example.<br>
 <br>
 Looking at it as a mathematical function, it is a single straight line. A linear
-function therefore, that only has two real-values parameters $$w_{0},\,w_{1}$$.
-$$w_{0}$$ is the parameter, that specifies the intercept of the function, while
+function therefore that only has two real-values parameters $$w_{0},\,w_{1}$$.
+$$w_{0}$$ is the parameter that specifies the intercept of the function, while
 $$w_{1}$$ specifies the slope of the regression line. These parameters are called
 **weights**. In addition to these parameters, there is the independent variable,
 oftentimes referred to as $$x$$ and $$x_{i}\,i\, \in \mathit{I}$$, if referring to
@@ -60,7 +60,7 @@ $$h_{w}(\,x)\, =\, w_{1}x\,+\,w_{0}$$
 
 This function is optimized by the linear regression algorithm, e.g., given $$n$$
 training points in the *x,y* plane. **Linear Regression** finds the best fit for
-$$h_{w}$$, given these data. The only values, that it can change are the ones of
+$$h_{w}$$, given these data. The only values that it can change are the ones of
 $$w_{0}$$ and $$w_{1}$$, in order to minimize the empirical loss.<br>
 
 ## Minimizing The $$L_{2}$$ Loss
@@ -68,7 +68,7 @@ $$w_{0}$$ and $$w_{1}$$, in order to minimize the empirical loss.<br>
 If the noise of the dependent variable $$y_{j}$$ is normally distributed, then
 using a squared-error loss function will be the most likely type to find the
 best values for $$w_{0}$$ and $$w_{1}$$, *that linear regression is capable of
-finding.* We assume, that the noise of the dependent variable is normally
+finding.* We assume that the noise of the dependent variable is normally
 distributed and use $$L_{2}$$ as loss function. We sum over all the training
 values:
 
@@ -206,13 +206,13 @@ df_indep = df["Size"].to_numpy()
 df_dep = df["Price"].to_numpy()
 ```
 
-We create a linear regression model, that uses ordinary least squares for
+We create a linear regression model that uses ordinary least squares for
 optimization by minimizing $$\mathit{L}_{2}$$, using the implementation in
 the `sklearn` machine learning library. `reg.score` gives the global minimum for
-the $$\mathit{L}_{2}$$ loss, that one achieves using the optimal values
+the $$\mathit{L}_{2}$$ loss that one achieves using the optimal values
 for `reg.coef_` and `reg.intercept_`. $$\mathit{L}_{2}$$ is defined for a single
 training example, using `pred` for the model's prediction and `dep` for the value
-of the dependent variable, that the model tries to predict using the independent
+of the dependent variable that the model tries to predict using the independent
 variable and the parameters:
 
 $$\mathit{L}_{2}(\,\mathit{pred},\mathit{dep})\, =\, (\,\mathit{pred}\, -\, \mathit{dep})^2$$
@@ -252,7 +252,7 @@ print(
     while 64553.68328966276 is the optimal value for the intercept.
 
 
-The function `hw` is a generic univariate linear regression function, that makes
+The function `hw` is a generic univariate linear regression function that makes
 the code more reproducible.
 
 
@@ -412,8 +412,8 @@ w0_solve(df_indep, df_dep)
 
 
 
-The optimal values for $$w_{0}$$ and $$w_{1}$$, that we gained from solving manually
-are the same as the ones, that `LinearRegression` calculated for the two
+The optimal values for $$w_{0}$$ and $$w_{1}$$ that we gained from solving manually
+are the same as the ones that `LinearRegression` calculated for the two
 parameters. This is confirmed using `np.allclose`.
 
 
@@ -448,7 +448,7 @@ training process.
 
 
 The starting point for the Gradient Descent is any point in the weight space.
-Here, that is a point in the $$(\,w_{0},w_{1})\,$$ plane. One then computes an
+Here that is a point in the $$(\,w_{0},w_{1})\,$$ plane. One then computes an
 estimate of the gradient and moves along the steepest gradient, during each
 step. This is repeated, until convergence is reached, which is not guaranteed in
 general. The point, on which convergence is reached can be a local minimum loss
@@ -530,7 +530,7 @@ The aim is to minimize the sum of the individual losses.
 
 
 The equations for updating the weights are applied after each batch. A batch
-consists of a specified number of training examples, that are loaded into memory
+consists of a specified number of training examples that are loaded into memory
 at once. The **batch gradient descent** for univariate linear regression updates
 the weights after each batch. It is computationally expensive, since it sums
 over all $$N$$ training examples for every step and there may be many steps, until
@@ -543,7 +543,7 @@ in the training set, then the step is called an **epoch**.
 
 The **stochastic gradient descent** or **SGD** is a faster variant. It randomly
 picks a small subset of training examples at each step, and updates the weights
-using the equation under heading 'Single Training Example'. It is common, that
+using the equation under heading 'Single Training Example'. It is common that
 the SGD selects a **minibatch** of $$m$$ out of the $$N$$ examples. E.g., Given
 $$N=1\mathit{e}4$$ and the minibatch size of $$m=1\mathit{e}2$$, the difference in
 order of magnitude between $$N$$ and $$m$$ is 2, which equals a factor of 100 times
@@ -571,7 +571,7 @@ that given a minibatch of $$m=100$$ training examples and a batch size of
 $$N=10000$$, the denominator, using $$N$$ examples for each step is
 $$\sqrt{10000}\,=\,100$$, while for the minibatch it is $$\sqrt{100}\,=\,10$$.
 
-That means, that the SGD trades being 100 times less computationally expensive
+That means that the SGD trades being 100 times less computationally expensive
 with a 10 times larger standard error for this example.
 
 
@@ -582,7 +582,7 @@ with a 10 times larger standard error for this example.
 
 
 In this article, we started by introducing the function of a univariate linear
-regression model and explored its $$L_{2}$$ loss function. We learned, that it is
+regression model and explored its $$L_{2}$$ loss function. We learned that it is
 always convex in the case of $$L_{2}$$ being the loss function by plotting the
 loss surface. We went on to optimize it, using the ordinary least squares
 algorithm, and by hand as well. We did this by forming the partial derivatives

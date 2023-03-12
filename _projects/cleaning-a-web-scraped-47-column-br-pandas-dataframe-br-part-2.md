@@ -37,11 +37,11 @@ outputs are shortened for readability.
 
 ## Summary Of The Series
 
-- A DataFrame is given as input, that contains 47 columns at the beginning.
+- A DataFrame is given as input that contains 47 columns at the beginning.
 - Dimensionality Reduction is performed on the columns, to filter and only keep relevant columns.
 - The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
 - Unique values of each column give the basis for the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly used to extract cell contents, that hold the valid data.
+- Regular Expressions (**regex**) are mostly used to extract cell contents that hold the valid data.
 - Regex are also used to replace invalid character patterns with valid ones.
 - Validation of the values, after cleaning is performed using regex patterns.
 - New `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
@@ -66,17 +66,17 @@ A value we alter, compared to its default value is the following:
 
 `na_values=['np.nan','[]']`
 
-In addition to the new label (`np.nan`) for missing values, that we applied at
-the end of the previous step we can see, that '[]' marks missing values in any
+In addition to the new label (`np.nan`) for missing values that we applied at
+the end of the previous step we can see that '[]' marks missing values in any
 of the columns, with a 'json\_' prefix. By marking '[]' values as *NaN* values
 we can skip a lot of column by column reassignments later for missing values,
 not recognized as such. The '[]', marking missing values, comes from the design
-of the web scraping algorithm, that appended an empty list, if there was no
+of the web scraping algorithm that appended an empty list, if there was no
 value for a variable.
 
 The names of most of the columns are changed, in order for column names to be
 English. Names of columns with boolean values are altered to mark these columns
-with only boolean values. Columns without a `json_` prefix, that have a `json_`
+with only boolean values. Columns without a `json_` prefix that have a `json_`
 counterpart have their names aligned with the one of their counterpart.
 
 
@@ -124,28 +124,28 @@ df = (
             .rename_column("json_petsAllowed", "json_bpets_allowed")
             .rename_column("json_lift", "json_belevator")
             .clean_names()  # make all column names lower-case, replace space with underscore.
-            .remove_empty()  # Drop rows, that only have missing values.
+            .remove_empty()  # Drop rows that only have missing values.
 )
 ```
 
 ## Checking Data Types Of The Columns
 
-The output shows us, that only 2 columns are of type numeric. After the cleaning
+The output shows us that only 2 columns are of type numeric. After the cleaning
 process, the columns will all have the correct **data type (dtype)**. The dtype,
-of the cleaned values in each column. All columns, that have a json prefix and a
+of the cleaned values in each column. All columns that have a json prefix and a
 counterpart amongst the non json columns, are likely to hold the same data as
 their counterparts. The columns with a json prefix were mainly scraped to
 validate the data in their counterparts. The goal is to be efficient in
 comparing `json_`, non `json_` column values.
 
 Some columns will not have their 'correct' dtypes assigned to them in this
-article. This comes from the fact, that to assign certain dtypes there must not
+article. This comes from the fact that to assign certain dtypes there must not
 be any missing values present for all rows of the column. We do not impute any
 missing values here, nor do we drop a large amount of rows, to get a DataFrame
 without any missing values. Except for the Longitude (`lng`) and Latitude(`lng`)
 columns, as they are some of the most important columns in the dataset.
 
-The reason being, that we have no knowledge in regard to the 'correct'
+The reason being that we have no knowledge in regard to the 'correct'
 replacement value for any of the missing values. Which of the techniques is used
 to impute missing data, is tied to the model choice and the results that a model
 delivers, given the applied imputation method.
@@ -270,10 +270,10 @@ checked, which boolean columns have valid values, 2 unique values. These have
 certain characteristics, as shown below.
 
 - One value that marks the absence of the variable the column represents, e.g. 0, 'n', 'no'.
-- The second value, that shows, that the variable is present for a given record or row in the dataset. E.g. 1, 'y', 'yes'.
+- The second value that shows that the variable is present for a given record or row in the dataset. E.g. 1, 'y', 'yes'.
 - Both will be converted to a numerical value, if the dtype differs from numerical (`int64`).
 
-Columns, that are dropped, looking at the output from the following cells, are:  
+Columns that are dropped, looking at the output from the following cells, are:  
 
 - `json_electricitybaseprice` & `json_electricitykwhprice`  
 
@@ -395,8 +395,8 @@ df.drop(columns=[col for col in fv if col != "json_telekomdownloadspeed"], inpla
 
 ## Has Fitted Kitchen - Bool
 
-The value, generated from scraping the visible listing might suggest, that about
-4000 missing values are found in this column. However, one can argue, that there
+The value, generated from scraping the visible listing might suggest that about
+4000 missing values are found in this column. However, one can argue that there
 is reason to look at it differently. The `json_bfitted_kitchen` values show, how
 the company the that runs the immoscout24 portal thinks of it. The json data is
 not visible to the visitor, it summarizes the listings values and holds many
@@ -404,16 +404,16 @@ more that are not visible to the visitor.
 
 They have assigned the boolean value of 'no' (`n`) to the missing values found
 in the `bfitted_kitchen` column. If one substitutes the missing values with the
-values in the `json_bfitted_kitchen` column, that have the same row index, the
+values in the `json_bfitted_kitchen` column that have the same row index, the
 columns are the same.  Another reason not to drop the column is that a listing
-with a fitted kitchen will usually be a value adding feature, that increases the
+with a fitted kitchen will usually be a value adding feature that increases the
 market value of the listing compared to listings without a fitted kitchen. The
-reason being, that a listing without a fitted kitchen will typically mean, that
+reason being that a listing without a fitted kitchen will typically mean that
 the tenant will have to buy a kitchen for the apartment. The costs of buying a
-kitchen are high, plus the fact, that a kitchen is often custom-made to fit the
+kitchen are high, plus the fact that a kitchen is often custom-made to fit the
 space of the specific kitchen and thus can not be moved to another apartment.
 
-This gives enough reason to fill the rows, that have missing values in
+This gives enough reason to fill the rows that have missing values in
 `bfitted_kitchen` with '0' - does not have a fitted kitchen.
 
 ### Comparing Values of `bfitted_kitchen` and `json_bfitted_kitchen`
@@ -422,7 +422,7 @@ The show the same value count for listing has a fitted kitchen. The number of
 *NaN* values in column `bfitted_kitchen` is equivalent to the value count of
 value `['"obj_hasKitchen":"n"']` in the `json_bfitted_kitchen` column. We use
 the values of `json_bfitted_kitchen` to fill the missing values in column
-`bfitted_kitchen`. We will see, that all no row in `bfitted_kitchen` has an
+`bfitted_kitchen`. We will see that all no row in `bfitted_kitchen` has an
 *NaN* value anymore.
 
 
@@ -446,7 +446,7 @@ print(
 
 ## Has Elevator - Bool
 
-With the same reasoning, that led to the decision to not drop the `bfitted_kitchen` column, the missing values in the elevator colum are replaced with 0.
+With the same reasoning that led to the decision to not drop the `bfitted_kitchen` column, the missing values in the elevator colum are replaced with 0.
 
 
 ```python
@@ -506,7 +506,7 @@ output below shows. The `total_rent` column needs similar cleaning steps as
 
 
 
-There are 2352 rows in the `auxiliary_costs` column, that have character classes
+There are 2352 rows in the `auxiliary_costs` column that have character classes
 other than:
 - digit: [0-9] or [\d] comma: [,] or ',' period: [.] or '\\.'
 
@@ -545,7 +545,7 @@ lov
 
 
 
-No string values, that represent missing values, but label 'keine Angabe', which
+No string values that represent missing values, but label 'keine Angabe', which
 is equivalent to *NaN*. This only became obvious after the cleaning steps, since
 all alphabetic characters were dropped during the cleaning, leaving rows with
 'keine Angabe' entries empty. Pandas in turn assigned *NaN* values to these
@@ -574,7 +574,7 @@ lov
 
 
 
-No rows, that don't have at least one numerical value.
+No rows that don't have at least one numerical value.
 
 
 ```python
@@ -653,15 +653,15 @@ value.
 ### Detailed Cleaning Steps For Total Rent And Auxiliary Costs
 
 Next up is the actual cleaning procedure for columns `auxiliary_costs` and
-`total_rent`. The problem with these variables is, that it is unknown, which of
+`total_rent`. The problem with these variables is that it is unknown, which of
 the following optional variables, the ones inside `[]` are factored in at all or
 to what degree:
 
 $$\mathrm{total\,\, rent} = \mathrm{base \,\,rent} + \mathrm{auxiliary \,\,costs} + [\mathrm{heating \,\,costs} + \mathrm{X}]$$
 
-$$\mathrm{X}$$ stands for several costs, that might or might not be factored in.
+$$\mathrm{X}$$ stands for several costs that might or might not be factored in.
 These variables will likely not make it to the machine learning stage, since
-there is a high chance, that they are correlated with the dependent variable
+there is a high chance that they are correlated with the dependent variable
 `base_rent`. For now, we shall simply be efficient in cleaning them and further
 structured exploration will tell how to proceed with these two variables.
 
@@ -671,7 +671,7 @@ structured exploration will tell how to proceed with these two variables.
 The cleaning steps are illustrated by the example of `total_rent`. The steps
 apply to the `auxiliary_costs` column as well, see the code below.  We start by
 looking at its value counts, to get an idea of what regex pattern are needed to
-transform it into a column, that has dtype `float`. The rows, that need most
+transform it into a column that has dtype `float`. The rows that need most
 cleaning are ones, with entries like this: `1.050  (zzgl. Heizkosten)`. Things
 that need attention are:
 - Drop any spaces, be it `\s` or `\t` in any number, anywhere.
@@ -740,7 +740,7 @@ df = (
 
 ### Dealing With Newly Created Missing Values
 The cleaning process introduced around 200 missing values in the
-`auxiliary_costs` column, that were not recognized as such by *pandas*, prior to
+`auxiliary_costs` column that were not recognized as such by *pandas*, prior to
 cleaning.
 
 
@@ -764,7 +764,7 @@ the numbers in this set: $$\{0,1\}$$.
 y = df['auxiliary_costs'].isna().tolist()
 ```
 
-We get confirmation, that there were missing values in the `auxiliary_costs`
+We get confirmation that there were missing values in the `auxiliary_costs`
 column before cleaning. We only found these by going through the list of unique
 values in that column earlier. After the removal of any alphabetic characters in
 the column, value 'keine Angabe' was replaced with *NaN* by pandas. As mentioned
@@ -872,7 +872,7 @@ print(bb)
 We validate the non-missing data in `auxiliary_costs` with a regex pattern.
 
 Validation of values is done by checking the format of all entries in the
-`df['auxiliary_costs']` column, that are not `np.nan` values.  All rows with
+`df['auxiliary_costs']` column that are not `np.nan` values.  All rows with
 valid data pass the validation.
 
 

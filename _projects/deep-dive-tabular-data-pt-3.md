@@ -34,7 +34,7 @@ comments: true
 
 ### Create Root Mean Squared Error Metric For Scoring Models
 
-Given, that the kaggle competition we want to submit our final predictions uses
+Given that the kaggle competition we want to submit our final predictions uses
 a *root mean squared error* as scoring metric, we create this metric for all
 future scoring of predictions.
 
@@ -79,7 +79,7 @@ m_rmse(m, valid_xs, valid_y)
 
 ### Custom Function To Create And Fit A RFR Estimator
 
-A function, that creates a `RandomForestRegressor` estimator and fits it using
+A function that creates a `RandomForestRegressor` estimator and fits it using
 the training data. Its output is the fitted estimator.
 
 
@@ -221,13 +221,13 @@ We want to answer the following question:
 - How confident are we in our predictions using a particular row of data?
 
 One can visualize the distribution of the standard deviation of the predictions
-over all estimators for each sample in the validation dataset. Given, that
+over all estimators for each sample in the validation dataset. Given that
 estimator was trained on a subset of maximum 500 samples, the standard deviation
 can be relatively large for certain estimator sample combinations in the
 validation set. The average over all 30 base estimators however generalizes the
 final value for each sample in the validation set again and can be interpreted
 as the confidence in the predictions of the model for each sample. E.g., a
-low/high standard deviation for a particular sample means, that the spread in
+low/high standard deviation for a particular sample means that the spread in
 the predicted sale price across all estimators is low/high and thus, the
 confidence of the model in the prediction is high/low.
 
@@ -274,7 +274,7 @@ by the `feature_importances_` method. The underlying metric is the Gini
 importance metric, as mentioned earlier.
 
 #### Compute Feature Importance Scores
-A function is created, that calculates the feature importances and returns a
+A function is created that calculates the feature importances and returns a
 sorted DataFrame.
 
 
@@ -426,7 +426,7 @@ len(to_keep)
 
 ### New Training Set xs_imp After Feature Elimination
 
-`xs_imp`/`valid_xs_imp` is the subset of `xs`/`valid_xs` with the columns, that
+`xs_imp`/`valid_xs_imp` is the subset of `xs`/`valid_xs` with the columns that
 are in `to_keep`.
 
 

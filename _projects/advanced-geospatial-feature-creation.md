@@ -45,7 +45,7 @@ In this article, we start by importing data of all the stations of two main type
 - U-Bahn (*In the following: subway*)
 - S-Bahn (*In the following: suburban train*)
 
-Using this data, the goal is to create the following features, that will be added to the list of features for every listing found in the core dataset.
+Using this data, the goal is to create the following features that will be added to the list of features for every listing found in the core dataset.
 - The GPS coordinates, as a tuple of latitude and longitude, using the format decimal degrees (*DD*).
 - Use boolean columns to mark if the station is for subway, or for suburban trains or both.
 
@@ -55,7 +55,7 @@ Once, the new features are created, the tabular data with the new features is ex
 
 
 ## Importing The Flat Files
-We create a `Path` variable `data`, that holds the path to the location where the flat files are found at.
+We create a `Path` variable `data` that holds the path to the location where the flat files are found at.
 
 
 ```python
@@ -64,7 +64,7 @@ base = Path(base)
 data = Path.joinpath(base, "data")
 ```
 
-We import two flat files. Each one holds to some degree data, that can only be found in it and that is needed to build the final public transport geospatial feature set. `c_ubahn` holds the data for all subway stops and `c_sbahn` for all suburban train stops. `low_memory=False` is added, to make sure, that pandas evaluates all rows of the DataFrame during each calculation and transformation and not just a small subset of all rows.
+We import two flat files. Each one holds to some degree data that can only be found in it and that is needed to build the final public transport geospatial feature set. `c_ubahn` holds the data for all subway stops and `c_sbahn` for all suburban train stops. `low_memory=False` is added, to make sure that pandas evaluates all rows of the DataFrame during each calculation and transformation and not just a small subset of all rows.
 
 
 ```python
@@ -120,8 +120,8 @@ c_ubahn.columns, c_sbahn.columns
 
 
 ## Defining A Custom Function For Cleaning
-Since there are two DataFrames, that need the same cleaning steps, we save some
-time defining a function, that we hand a DataFrame as input, and that returns
+Since there are two DataFrames that need the same cleaning steps, we save some
+time defining a function that we hand a DataFrame as input, and that returns
 the cleaned DataFrame. The cleaning steps it does are:
 - Rename column 'bahnhof_kurzel_karte' to 'station'.
 - Drop all columns except the renamed column 'station'.
@@ -147,7 +147,7 @@ dfu = drop_sort(c_ubahn)
 dfs = drop_sort(c_sbahn)
 ```
 
-Check the columns of the newly created DataFrames to verify, that only column 'station' is still there.
+Check the columns of the newly created DataFrames to verify that only column 'station' is still there.
 
 
 ```python
@@ -164,7 +164,7 @@ dfu.columns, dfs.columns
 Print the first five rows of each DataFrame to get a better understanding of its
 structure and what regular expression is needed for each, to extract the station
 name and the GPS coordinates from the 'station' column. One can see from the
-first 5 rows already, that two different regular expressions are needed for to
+first 5 rows already that two different regular expressions are needed for to
 extract the values from each one.
 
 
@@ -399,10 +399,10 @@ dfu.loc[:, ["station", "name"]]
 
 
 ## Extract Entire Coordinate Pairs
-Given, that the coordinates have format *DMS* in the input files, regular
+Given that the coordinates have format *DMS* in the input files, regular
 expressions are used to extract the entire coordinate pair for each station.
 After looking at the value range for the *minute* component across all rows,
-there can only be one value for the minute component, that is *53*. The pattern
+there can only be one value for the minute component that is *53*. The pattern
 matches and captures everything until the last capital *O*, which there is only
 one, which marks the end of one complete coordinate pair.
 
@@ -415,7 +415,7 @@ dfs["gps"] = dfs["station"].str.extract(five, expand=False)
 ```
 
 ## Check For Missing Values
-For the subway stations, there are no missing values in the GPS column. Which means, that the capture group extracted something for all rows.
+For the subway stations, there are no missing values in the GPS column. Which means that the capture group extracted something for all rows.
 
 
 ```python
@@ -508,9 +508,9 @@ dfs[dfs.gps.isna() == True]
 
 
 ## Fill Missing Values
-The missing values are for stations at 'Hauptbahnhof' and 'Wandsbeker Chaussee'. We look for other stations at these locations, that have GPS values. Their GPS coordinates should be close to those of the missing stations.
+The missing values are for stations at 'Hauptbahnhof' and 'Wandsbeker Chaussee'. We look for other stations at these locations that have GPS values. Their GPS coordinates should be close to those of the missing stations.
 
-No other entries, apart from the two rows with missing GPS coordinates are found in the suburban train stations DataFrame. Next, we try to find rows in the subway stations DataFrame, that have valid GPS coordinates for the two stations.
+No other entries, apart from the two rows with missing GPS coordinates are found in the suburban train stations DataFrame. Next, we try to find rows in the subway stations DataFrame that have valid GPS coordinates for the two stations.
 
 
 ```python
@@ -648,7 +648,7 @@ dfu[["lat", "lng"]] = dfu["gps"].str.split(",", expand=True)
 dfs[["lat", "lng"]] = dfs["gps"].str.split(",", expand=True)
 ```
 
-The output below verifies for the first five entries of the `lat` and `lng` columns, that each coordinate pair has structure (**Latitude, Longitude**) coordinate values.
+The output below verifies for the first five entries of the `lat` and `lng` columns that each coordinate pair has structure (**Latitude, Longitude**) coordinate values.
 
 
 ```python
@@ -712,11 +712,11 @@ dfu[['lat','lng']].head()
 
 
 
-All lines of the `lat` and `lng` columns should have the correct value pairs, that is `lat` values should always start with digits *53* and end with a capital *N*, while values in the `lng` column should either start with digits *10* or digit *9* and always end with a capital *O*.
+All lines of the `lat` and `lng` columns should have the correct value pairs that is `lat` values should always start with digits *53* and end with a capital *N*, while values in the `lng` column should either start with digits *10* or digit *9* and always end with a capital *O*.
 
 The actual verification is done, once the values are converted to *DD* format, since the effort to verify the values is much smaller compared to doing it in the current state, before the conversion.
 
-Before defining the function to convert the GPS coordinates from *DMS* to *DD* format, we look at one row in the latitude and longitude columns of both DataFrames. The structure of the values looks identically in both, that means that there should be no need to define two separate conversion functions, one should suffice.
+Before defining the function to convert the GPS coordinates from *DMS* to *DD* format, we look at one row in the latitude and longitude columns of both DataFrames. The structure of the values looks identically in both that means that there should be no need to define two separate conversion functions, one should suffice.
 
 
 ```python
@@ -746,7 +746,7 @@ prev(dfs)
     longitude component looks like  10° 5′ 38″ O
 
 
-In order to convert the GPS values from *DMS* to *DD*, we define functions, that will do the conversion for us. We test the output of the function to make sure the output is as expected.
+In order to convert the GPS values from *DMS* to *DD*, we define functions that will do the conversion for us. We test the output of the function to make sure the output is as expected.
 
 
 ```python
@@ -778,7 +778,7 @@ print(f"{parse_dms(dfs.lat[4])}")
     53.53
 
 
-All rows in the `lat` and `lng` columns are stripped of any remaining whitespace, if there is any to be found. This is done prior to the `parse_dms` function being applied, since the regex pattern might fail to match all relevant parts of the coordinates, if there was any whitespace to be found, that was not accounted for.
+All rows in the `lat` and `lng` columns are stripped of any remaining whitespace, if there is any to be found. This is done prior to the `parse_dms` function being applied, since the regex pattern might fail to match all relevant parts of the coordinates, if there was any whitespace to be found that was not accounted for.
 
 
 ```python
@@ -788,7 +788,7 @@ dfs["lng"] = dfs["lng"].str.strip()
 dfs["lat"] = dfs["lat"].str.strip()
 ```
 
-The custom conversion function `parse_dms` is applied to all rows in the `lat` and `lng` columns of both DataFrames respectively and the results are saved in new columns, that share the same suffix `_dd`, alias for *decimal degrees* format. The reason for creating these new columns, is that we want to be able to compare the values before and after the conversion in each row of the DataFrames.
+The custom conversion function `parse_dms` is applied to all rows in the `lat` and `lng` columns of both DataFrames respectively and the results are saved in new columns that share the same suffix `_dd`, alias for *decimal degrees* format. The reason for creating these new columns, is that we want to be able to compare the values before and after the conversion in each row of the DataFrames.
 
 
 ```python
@@ -799,9 +799,9 @@ dfs["lng_dd"] = dfs["lng"].apply(lambda x: parse_dms(x))
 ```
 
 ## Final Verification Of The GPS Coordinates
-In order to verify, that the coordinates are valid for all rows of the `lat_dd` and `lng_dd` columns in both DataFrames, a custom function is used to check both DataFrames.
+In order to verify that the coordinates are valid for all rows of the `lat_dd` and `lng_dd` columns in both DataFrames, a custom function is used to check both DataFrames.
 
-The function takes a pandas DataFrame as input. It compiles two regular expression pattern at runtime. The patterns both match from the start of each entry till the end of it. They match all valid digits that can occur before the decimal seperator and match any digit, any number of times after the decimal seperator, until the end of each entry. Using `$` makes sure, that only digits are found in each row until the end of each value.
+The function takes a pandas DataFrame as input. It compiles two regular expression pattern at runtime. The patterns both match from the start of each entry till the end of it. They match all valid digits that can occur before the decimal seperator and match any digit, any number of times after the decimal seperator, until the end of each entry. Using `$` makes sure that only digits are found in each row until the end of each value.
 
 
 ```python
@@ -827,7 +827,7 @@ vf(dfs)
 ```
 
 ## Creating The Final GPS Column
-Using the `assign` function from the pandas library, a new column `gps_dd` is created. Its values are tuples of GPS coordinates for each subway and suburban train station found in the data. This step is needed in order to apply the `Point` conversion from the `shapely.geometry` module. This conversion makes it possible to integrate the features created here into the listings data in the core dataset. It enables us to compute distances between listings and any station found in the two datasets processed here. The ability to compute distances between features gives a powerful tool, that can enhance the results we get from interpreting a tree based model in the later stages of this project for example.
+Using the `assign` function from the pandas library, a new column `gps_dd` is created. Its values are tuples of GPS coordinates for each subway and suburban train station found in the data. This step is needed in order to apply the `Point` conversion from the `shapely.geometry` module. This conversion makes it possible to integrate the features created here into the listings data in the core dataset. It enables us to compute distances between listings and any station found in the two datasets processed here. The ability to compute distances between features gives a powerful tool that can enhance the results we get from interpreting a tree based model in the later stages of this project for example.
 
 
 ```python
@@ -839,7 +839,7 @@ dfu = dfu.assign(
 )
 ```
 
-Applying the `Point` conversion can throw a lot of errors, that would require us to look at all the previous steps and carefully apply the transformations again possibly. The documentation of the `shapely` library has been the best source of knowledge for me to find answers to problems encountered when trying to apply the `Point` conversion.
+Applying the `Point` conversion can throw a lot of errors that would require us to look at all the previous steps and carefully apply the transformations again possibly. The documentation of the `shapely` library has been the best source of knowledge for me to find answers to problems encountered when trying to apply the `Point` conversion.
 
 
 ```python
@@ -1128,4 +1128,4 @@ dfs.to_csv("../data/s-bahn_final.csv")
 dfu.to_csv("../data/u-bahn_final.csv")
 ```
 
-These are the steps for creating new geospatial features, that are completely independent of the ones in the core dataset scraped from www.immobilienscout24.de . In the following steps, these features will be integrated into the core dataset and used to create new features for each listing found in the core dataset.
+These are the steps for creating new geospatial features that are completely independent of the ones in the core dataset scraped from www.immobilienscout24.de . In the following steps, these features will be integrated into the core dataset and used to create new features for each listing found in the core dataset.

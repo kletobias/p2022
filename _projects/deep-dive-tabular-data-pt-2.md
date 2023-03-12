@@ -51,7 +51,7 @@ valid_xs, valid_y = to.valid.xs, to.valid.y
 
 ## Sklearn DecisionTreeRegressor
 
-The first model used is a simple decision tree model, that we will use to see
+The first model used is a simple decision tree model that we will use to see
 what columns and values the model uses to create the splits. Plus, we like to
 see the order of the splits that the model chooses. From library `scikit-learn`
 we use the `DecisionTreeRegressor` model ([*DecisionTreeRegressor
@@ -61,7 +61,7 @@ Documentation*](https://scikit-learn.org/stable/modules/generated/sklearn.tree.D
 
 Since we are looking for eliminate irrelevant variables (features), we tell it
 to only consider at maximum 40 of the 80 columns when deciding which feature is
-the best one to use for the next split. The model must not create leaves, that
+the best one to use for the next split. The model must not create leaves that
 have less than 50 samples for the final split. The model is fit using the train
 split we created earlier.
 
@@ -147,7 +147,7 @@ dtreeviz(
 A reason why tree based models are one of the best model types when it comes to
 understanding the model and the splits a fitted model created lies in the fact,
 that there is a good infrastructure for this type of model when it comes to
-libraries and functions created for that purpose. That and the fact, that this
+libraries and functions created for that purpose. That and the fact that this
 type of model has a transparent and fairly easy to understand structure. The
 tree based models we use for understanding are ones, where the tree or the trees
 in the case of the `RandomForestRegressor` are intentionally kept weak. This is
@@ -155,7 +155,7 @@ not necessarily the case for the `DecisionTreeRegressor` model, since without
 limiting the number of splits, there is no mechanism to limit the size of the
 final tree. While the size of the `DecisionTreeRegressor` can be limited by use
 of its parameters to combat overfitting, it is the `RandomForestRegressor`
-model, that is the preferred model from the two when it comes to the
+model that is the preferred model from the two when it comes to the
 `feature_importances_` metric. A metric used for *feature selection* and for
 understanding the relative importance that each feature has. Both models feature
 this method.
@@ -184,7 +184,7 @@ fi = dict(zip(train.columns.tolist(), m.feature_importances_))
 Using the feature importances values, we can set a lower limit for the feature
 importance score. All features with a feature importance lower than the
 threshold are dropped from the `train` dataset and saved as a new DataFrame for
-illustration purposes. Only the ones are kept, that a features importance score
+illustration purposes. Only the ones are kept that a features importance score
 larger zero. The result is a subset of 11 columns of the original 80 columns.
 
 
@@ -259,13 +259,13 @@ fipl
 It was unclear, whether the order from most important feature to the ones with a
 feature importance score of zero according to the `feature_importances_` method
 changes between executions, using the same parameters and data to train the
-`DecisionTreeRegressor` estimator. Changes in the subset of columns, that have a
+`DecisionTreeRegressor` estimator. Changes in the subset of columns that have a
 feature importance score larger zero led to inconsistencies and ultimately
 errors when the same code was executed repeatedly. This was observed while using
-the same `random_state` seed to ensure, that the output of functions generating
+the same `random_state` seed to ensure that the output of functions generating
 and using pseudo random numbers stayed the same across different executions.
 
-Another possibility is, that the feature importance scores change and ultimately
+Another possibility is that the feature importance scores change and ultimately
 reorder the ranking of the columns based on these scores in some cases. These
 deviations might however be the result of changes in the model parameters by the
 user between executions, rather than returning differing values across multiple
@@ -284,7 +284,7 @@ of the `DecisionTreeRegressor` in this case. Using 1000 iterations will not only
 give a mean feature importance score $\hat{\mu}$ for each feature that is much
 closer to the true mean $\mu$, but also a value for the standard deviation
 $\hat{\sigma}$ for the sample. The following function does just that and creates
-two summary plots, that visualize the final results and answers the research
+two summary plots that visualize the final results and answers the research
 question.
 
 In summary, the output shows that in this instance, there is no change in the
