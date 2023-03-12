@@ -42,19 +42,20 @@ images in the dataset.
 ## Batch No. 1
 
 
-This article is the sequel to *Batch No. 1*, we look at the data logged during the testing of the first
-batch in the series. Everything leading up to where we start in this article,
-is found in the first article [**Part 1: Basic Automation For Deep Learning**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %}).
+This article is the sequel to *Batch No. 1*. Here we look at the data logged during the testing of the first
+batch in the series. Everything leading up to where we start in this article
+is found in the first article [**Part 1: Basic Automation For Deep Learning**]({% link
+_projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %}).
 
 ### The Imports
 
-In this article, we will need pandas to work with the tabular data, that is stored in
-a CSV file. Pandas is needed for most of the analyzing done in this article. One
-can find information on the commands used in this article, by looking at the
+We will need pandas to work with the tabular data, that is stored in
+a CSV file. Pandas is needed for most of the analyzing done. One
+can find information on the commands used in the following, by looking at the
 pandas docs: [API reference — pandas 1.4.3 documentation](https://pandas.pydata.org/docs/reference/index.html)
 
-The `pyjanitor` library (imported as `janitor`) adds *quality of life
-improvements* in the form of convenient wrappers for common pandas functions and
+The `pyjanitor` library (imported as `janitor`) adds quality of life
+improvements in the form of convenient wrappers for common pandas functions and
 methods. These are mainly used for cleaning tabular data stored in a
 `pandas.DataFrame` or `pandas.Series`.
 
@@ -62,12 +63,12 @@ The pyjanitor library does so, by using *method chaining*, inspired by the `R`
 package called *janitor*. Follow the link, for more information, including the
 docs of this library: [pyjanitor documentation](https://pyjanitor-devs.github.io/pyjanitor/)
 
-From matplotlib, we need pyplot. Pyplot is the general tool for plotting and
+From matplotlib, we import pyplot. Pyplot is a general tool for plotting and
 visualizing data in Python. The docs can be found here:
 [API Reference — Matplotlib 3.5.2 documentation](https://matplotlib.org/stable/api/index)
 
 Various parts of the `fastai` library are used throughout the following. One can
-find its docs, following this link: [fastai - Welcome to fastai](https://docs.fast.ai/)
+find its docs following this link: [fastai - Welcome to fastai](https://docs.fast.ai/)
 
 
 ```python
@@ -106,13 +107,10 @@ print(df.columns)
 
 ## Initial Look At The DataFrame
 
-Looking at the output of the `df.columns` command for the data in the first
+Looking at the output of the `df.columns` command for the data from the first
 batch, we can see that there is one column named `Unnamed: 0`. This column is
 always the first one when importing any CSV file, that was exported to CSV using
-`pandas.DataFrame.to_csv` without specifying `index=False`. E.g., in the output
-below, one can see, that the `Unnamed: 0` column is the first column of the
-imported DataFrame.
-
+`pandas.DataFrame.to_csv` without specifying `index=False`.
 
 ```python
 df
@@ -320,7 +318,7 @@ values for learning rate (`lr`) are the default value of 0.001.
 `train_loss` is not needed, since we are only interested in the performance of
 the model on the validation set, not on the training set. The loss on the
 validation set after each epoch relative to the error rate on the validation set
-are what we are interested in.
+is what we are interested in.
 
 
 ```python
@@ -328,7 +326,7 @@ df = df.remove_columns(column_names=["Unnamed: 0", "unique_setup", "lr", "train_
 ```
 
 The result is a leaner version of the initial `df`. There is one more step to
-complete thought, for the DataFrame to be ready for the analysis.
+complete thought, for the DataFrame to be ready for analysis.
 
 ## Dropping Rows That Are Not Needed
 
@@ -372,6 +370,7 @@ df
     }
 </style>
 <table border="1" class="dataframe">
+<caption><strong>Table 2</strong> A slimmer version of Table 1.</caption>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1068,7 +1067,7 @@ df
 The steps taken to create the DataFrame used to analyze the results are, in this
 order:
 
-1. Only use a subset of columns: `df[["split_seed","model","error_rate"]]` .The
+1. Only use a subset of columns: `df[["split_seed","model","error_rate"]]`. The
    output is a DataFrame again.
 
 2. Group the remaining 'error_rate' column by 'split_seed' and 'model'.
