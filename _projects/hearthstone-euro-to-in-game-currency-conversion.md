@@ -69,7 +69,7 @@ study's findings are discussed as well.
 
 2\. What is the ADV per card pack?<br>
 3\. Show that the distribution of the ADV converges against a normal
-distribution $$N(\mu_{N},\sigma_{N})$$ with $$\mu_{N}\,=\hat{\mu}$$ and
+distribution $N(\mu_{N},\sigma_{N})$ with $$\mu_{N}\,=\hat{\mu}$$ and
 $$\sigma_{N}\,=\,\hat{\sigma}$$, $$\hat{\mu}$$ and $$\hat{\sigma}$$ being the
 empirical mean and standard deviation from the simulation, as stated by the
 central limit theorem.<br>

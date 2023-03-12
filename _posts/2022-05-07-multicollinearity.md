@@ -166,7 +166,7 @@ means that the scale of the random variables or the difference in scale do not
 affect its value. The sign of $r$ is the same as for $cov$, a difference is that
 it is normed to the domain of $[-1,1]$ 
 
-unlike the $cov$ which returned a value of ~375.65 for our example.
+Unlike the $cov$ which returned a value of ~375.65 for our example.
 
 
 
