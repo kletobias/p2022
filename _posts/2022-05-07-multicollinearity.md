@@ -27,8 +27,8 @@ with each other.<br>
 Covariance and the Pearson Correlation Coefficient: How to Spot
 Multicollinearity between random variables.<br>
 <br>
-Multicollinearity is a statistical concept, that describes the phenomenon of
-several independent variables, that are part of a multiple regression model, are
+Multicollinearity is a statistical concept that describes the phenomenon of
+several independent variables that are part of a multiple regression model, are
 linearly correlated with each other.  In this article we mention two metrics,
 that can be used to test for collinearity between two random variables. The
 metrics work on a per-pair or independent variables basis and so can be
@@ -42,12 +42,12 @@ Multiple linear regression models are often used for their easy to explain
 relationship between the independent variables and the dependent variable. One
 important metric when describing this relationship is, whether the impact of an
 independent variable on the dependent variable is statistically significant. If
-this is the case, then the coefficients, that a model assigns to each
+this is the case, then the coefficients that a model assigns to each
 independent variable $X_{i}$ is proportional (in case of a continuous variable
 $X_{i}$ and dependent variable $Y_{i}$) to the impact that the variable has on
 the dependent variable. Boolean variables can be used to describe other
 relationships between independent and dependent variable.. That is, if the model
-does not suffer from Multicollinearity among other problems, that can undermine
+does not suffer from Multicollinearity among other problems that can undermine
 this relationship.
 
 
@@ -91,12 +91,12 @@ plt.show()
 
 
 As designed, the two samples S1 and S2 are positively correlated with one
-another, as visualized in the scatter plot. It must be said, that all the
+another, as visualized in the scatter plot. It must be said that all the
 methods mentioned in this article only explain the linear part of the
 statistical relationship between random variables.
 
 ## Covariance
-To quantify the relationship between to variables, that have a linear
+To quantify the relationship between to variables that have a linear
 relationship, the empirical covariance is often used. It is calculated as the
 average of the product between the values from each sample, where the values
 have been centered (had their means subtracted). The calculation of the sample
@@ -126,7 +126,7 @@ cv
 
 
 
-The covariance matrix values of ~375.65 show, that there is a strong positive
+The covariance matrix values of ~375.65 show that there is a strong positive
 correlation between S1 and S2. A strong sign for Multicollinearity between the
 two distributions. This would have to be addressed before training a linear
 regression model, among others for example. Given the design, there was no
@@ -160,9 +160,9 @@ The domain of $r$ is $[-1,1]$, with:
 The plot of the values of two random variables ranges from close to a line with
 a negative slope, to close to a line with a positive slope. Values of $r\le-0.5$
 and $r\ge0.5$ tend to signal a strong correlation in the respective direction.
-One of the good characteristics, that $r$ has, is that its value does not
+One of the good characteristics that $r$ has, is that its value does not
 change, if the random variables are subjected to a linear transformation.  That
-means, that the scale of the random variables or the difference in scale do not
+means that the scale of the random variables or the difference in scale do not
 affect its value. The sign of $r$ is the same as for $cov$, a difference is that
 it is normed to the domain of $[-1,1]$ 
 
@@ -200,7 +200,7 @@ else:
     There is correlation between the two, given threshold alpha=0.05 on a one-tailed test.
 
 
-The results show, that the positive linear relationship between the random
+The results show that the positive linear relationship between the random
 variables S1 and S2 was confirmed by $r$. The two metrics $r$ and $cov$ gave
 correct predictions in regard to the correlation.
 

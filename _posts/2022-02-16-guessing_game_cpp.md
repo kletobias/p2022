@@ -9,7 +9,7 @@ comments: true
 ---
 
 # Guess The Correct Integer Between 1-100
-The user must guess what the integer is, that the program picked beforehand. For
+The user must guess what the integer is that the program picked beforehand. For
 every wrong guess, the user gets a hint saying if the input was too high or too
 low until the correct number is guessed.
 

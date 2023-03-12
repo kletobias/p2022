@@ -18,12 +18,12 @@ any search engine:
 >	information need.
 
 
-**In other words:** Return hits to the user, that give him the information he
+**In other words:** Return hits to the user that give him the information he
 was looking for with his query.
 
-This is an up to date list of the 'basic' google *search operators*, that are
+This is an up to date list of the 'basic' google *search operators* that are
 *working* in 2022. Since these make up most of the search operators or even
-all, that one *should* know in order to make their *google searches* more
+all that one *should* know in order to make their *google searches* more
 efficient and more relevant, these operators will be simply be called search
 operators in the following. There have been quite big changes to the names of
 a number of operators in this list over the last year. That is part of why I
@@ -32,7 +32,7 @@ decided to write this post.
 In this post I will introduce and give examples of how each search operator can
 be used in the search field of [google.com](http://google.com) and any country
 specific extension of google search as well. Since the search operators can be
-Combined with each other in a query, there are many combinations, that I won't
+Combined with each other in a query, there are many combinations that I won't
 be able to include in this post. What I try to do, is show the basic usage for
 each of the search parameters and try to give ideas of how they can be combined
 to return search results that are relevant to the user. There is one very
@@ -76,7 +76,7 @@ caveats to this statement though), as quoted from this [*Stack Overflow* questio
 
 {% include figure.html path="assets/img/single-vs-double-quotes.png" class="img-fluid rounded z-depth-1" %}
 
-`"<search term>"` Forces google to only return hits, that contain the exact
+`"<search term>"` Forces google to only return hits that contain the exact
 match `<search term>`. The syntax is:
 
 
@@ -108,7 +108,7 @@ The option 'without any quotation marks', might work, if what someone is
 searching, is a topic that generally is well separated from other topics. This
 is close to what is called a partition in Mathematics, a set whose intersections
 with other sets are all empty.
-In reality, especially when using a search engine like google, that is rarely
+In reality, especially when using a search engine like google that is rarely
 the case. In the image below one can see that there are roughly 23 million
 results for the query without any quotations. The top result, in this instance,
 is a good example for what can happen when the google search algorithm is
@@ -122,7 +122,7 @@ leeway, the hits featured on the first page of the list of results should be
 critically assessed for relevancy and quality. These two things should always be
 checked for, for any hit, but even more so in this scenario.
 
-The actual query, that was sent is shown below and the total of close to 23
+The actual query that was sent is shown below and the total of close to 23
 million results are shown in the following image.
 
 
@@ -134,13 +134,13 @@ The query, where no quotation marks were used.
 
 {% include figure.html path="assets/img/no_quotations.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-    Not using any quotation marks, not even for a sub part of the multi word query returns nearly 23 million hits and no top hit, that clearly shows, that it should be the top hit for a broad variety of people.
+    Not using any quotation marks, not even for a sub part of the multi word query returns nearly 23 million hits and no top hit that clearly shows that it should be the top hit for a broad variety of people.
 </div>
 
 The last scenario is the one where several words with white space in-between
 them are used to give google more flexibility in how it is allowed to combine
 the individual blocks in the query. In this case, 'how to walk 10000 steps a
-day' was tried/used as a common enough phrase, that should not be too specific
+day' was tried/used as a common enough phrase that should not be too specific
 or too narrow to yield a healthy amount of results.
 
 ```text
@@ -151,15 +151,15 @@ The query, where two parts were put into seperate pairs of quotation marks.
 
 {% include figure.html path="assets/img/split_two_quoted_parts.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
-    The number of hits shows, that only 11300 matches were found.
-    Needless to say, that there is a huge difference in order of magnitude between
+    The number of hits shows that only 11300 matches were found.
+    Needless to say that there is a huge difference in order of magnitude between
     this and the queru without any parenthesis in the number of returned
     hits.
 </div>
 
 It often comes down to a loop consisting of:
 
-**1\.** Writing a search query, that summarizes what one is looking for.<br>
+**1\.** Writing a search query that summarizes what one is looking for.<br>
 <br>
 That initial search query largely comes from the gut and only avoids common
 pitfalls, creates a better initial query, as the technical knowledge
@@ -207,7 +207,7 @@ We run this query in the [google.com](https://google.com) search field:
 most reliable generation "E36" OR "E46" OR "E90" "3 series"
 ```
 
-We do get [relevant hits with it, that look
+We do get [relevant hits with it that look
 promising.](https://www.google.com/search?q=most+reliable+generation+%22E36%22+OR+%22E46%22+OR+%22E90%22+%223+series%22&client=firefox-b-d&biw=1413&bih=1080&tbs=qdr%3Ay&ei=ydveYaHlDZHTkgXmx4SgAg&ved=0ahUKEwjh7azprKz1AhWRqaQKHeYjASQQ4dUDCA0&uact=5&oq=most+reliable+generation+%22E36%22+OR+%22E46%22+OR+%22E90%22+%223+series%22&gs_lcp=Cgdnd3Mtd2l6EAMyBQghEKABOgcIABBHELADOgcIIRAKEKABOgQIIRAVSgQIQRgASgQIRhgAUMUNWNcwYJkzaAFwAngAgAGpAYgByQmSAQMzLjiYAQCgAQHIAQjAAQE&sclient=gws-wiz)
 
 {% include figure.html path="assets/img/article-about-which-3-series-is-was-the-most-reliable-historically.png" class="img-fluid rounded z-depth-1" %}
@@ -272,9 +272,9 @@ marks around what is to be excluded non optional. E.g.,<br>
 
 These work without parenthesis:<br>
 
-Exclude results, that have the word `iMusic` in them, since `iMusic` has a built
-in equalizer (and apple support pages tell customers, that this is the only
-equalizer needed on Mac. A caveat is, that it only works while using `iMusic`.
+Exclude results that have the word `iMusic` in them, since `iMusic` has a built
+in equalizer (and apple support pages tell customers that this is the only
+equalizer needed on Mac. A caveat is that it only works while using `iMusic`.
 Like that, I found a system-wide free alternative on Github.<br>
 <br>
 
@@ -311,13 +311,13 @@ parenthesis, the dash in `USB-C` would throw the google search algorithm off.<br
 ### Fill `*`
 
 <br>
-The `*` acts as a wild card, that will match any word or phrase.<br>
+The `*` acts as a wild card that will match any word or phrase.<br>
 <br>
 
 #### Example `*`
 
 <br>
-Let's say, that one remembers hearing something about U.S. Census, but never
+Let's say that one remembers hearing something about U.S. Census, but never
 really understood what it is. One could send a query like this:<br>
 <br>
 
@@ -326,7 +326,7 @@ Census *
 ```
 
 <br>
-Which would show this as the top hit. Out of over **4 Billion** results, that
+Which would show this as the top hit. Out of over **4 Billion** results that
 top hit gives the right information<br>.
 <br>
 {% include figure.html path="assets/img/u-s-census-bureau-search-results.png" class="img-fluid rounded z-depth-1" %}
@@ -351,7 +351,7 @@ price is in. The use of quotation marks around the price term, can help keep
 results relevant. Quotation marks do not escape the operators special meaning in
 the search, as I tested. The following all gave the exact same results. I tried
 it with a few other *price terms* to add some more qualitative evidence to my
-observation. There were no results found, that suggest that this search operator
+observation. There were no results found that suggest that this search operator
 can be escaped by use of quotation marks either.<br>
 
 ```text
@@ -377,7 +377,7 @@ $5 lunch manhattan
 ```
 
 <br>
-With the haircuts, there were a lot of unrelated results, that already were
+With the haircuts, there were a lot of unrelated results that already were
 missing `haircut` after a few results down the list. Many coupon matches for
 haircuts meant I had to exclude coupons like this `-` coupon.<br>
 There were also matches with 9.99 Pounds, which had to be excluded by means of
@@ -436,7 +436,7 @@ methods.<br>
 indexed by google.<br>
 <br>
 This can be useful, if a web page is down for some reason or if there has been
-recent changes to the content of that web page, that one wants to be able to
+recent changes to the content of that web page that one wants to be able to
 ignore when viewing the page. Things like the deletion of media or articles,
 that one wants to visit again, after they have been deleted from the web
 page.<br>
@@ -450,14 +450,14 @@ cache:https://www.backblaze.com/blog/how-long-do-disk-drives-last/
 
 Nothing much has changed on the web page in the example, so the cached and the
 current version of this article will be the same. Another use case can be when
-using a VPN connection, that makes one have an IP address, that is banned from
+using a VPN connection that makes one have an IP address that is banned from
 accessing the URL one is trying to open. An earlier, cached by google, version
 of the URL one is trying to visit will be accessible regardless of the ban.<br>
 
 
 ### `filetype`
 
-This operator is very powerful, if one is looking for content, that can be
+This operator is very powerful, if one is looking for content that can be
 downloaded and searched using the direct URL of the actual file.
 Below is a, as of 2022, [complete list of supported file types, directly from
 google.](https://support.google.com/webmasters/answer/35287?hl=en)<br>
@@ -523,7 +523,7 @@ The syntax of **filetype** with pdf as example, is:<br>
 <br>
 `filetype:pdf`.
 <br>
-Whenever one is looking for an actual file and not content on a web page, that
+Whenever one is looking for an actual file and not content on a web page that
 can not be downloaded this operator comes in handy.<br>
 
 #### Example `filetype`
@@ -558,7 +558,7 @@ The **related** operator has the syntax:<br>
 
 The latter in the case of a `<search term>` with spaces in between.<br>
 <br>
-It is a proprietary google operator in the sense, that it is unknown what is
+It is a proprietary google operator in the sense that it is unknown what is
 related in the eyes of the algorithm.
 Use it, if the results are good is what I would suggest.<br>
 
@@ -596,12 +596,12 @@ on every instance, where it is called. Syntax is:<br>
 `allintitle:<search term 1> <search term 2> ...`
 <br>
 One does not need to add quotation marks around any of the search terms
-following the **allintitle** operator. The algorithm will assume, that they all
+following the **allintitle** operator. The algorithm will assume that they all
 have to be part of the title.<br>
 
 #### Example `allintitle`
 
-Running the following query only resulted in one result. This goes to show, that
+Running the following query only resulted in one result. This goes to show that
 the operator only accepts exact matches.<br>
 
 

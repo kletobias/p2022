@@ -25,7 +25,7 @@ printed to `stout`.
 using namespace std;
 
 int main() {
-    string str1 = "To be or not to be, that is the question";
+    string str1 = "To be or not to be that is the question";
     string str2 = "only ";
     string str3 = str1.substr(6,12);
     str1.insert(32, str2);

@@ -2,7 +2,7 @@
 layout: distill
 title: 'How To Import CSV Files Into MySQL Using Python And Pandas.'
 date: 2022-04-01 06:32:00
-description: 'There is no functionality built into MySQL, that lets one import CSV data directly into a database, in the form of a table. pandas can be used to import CSV files from within Python, into a table of a database.'
+description: 'There is no functionality built into MySQL that lets one import CSV data directly into a database, in the form of a table. pandas can be used to import CSV files from within Python, into a table of a database.'
 tags: ['import csv data','mysql','mysql-connector-python','pandas','sqlalchemy']
 category: 'MySQL'
 comments: true
@@ -10,13 +10,13 @@ comments: true
 
 # Using Pandas To Import CSV Data Into MySQL
 
-Using pandas, one can import any data type, that pandas can read and create a DataFrame
+Using pandas, one can import any data type that pandas can read and create a DataFrame
 object from. The full list of possible input file types can be found here: [IO tools (text, CSV, HDF5, …) — pandas documentation](https://pandas.pydata.org/docs/user_guide/io.html#io-tools-text-csv-hdf5).  
 In the following, only **CSV** data will be mentioned, but everything applies to all the file types mentioned in the link above, once a `pandas.DataFrame` object has been created.
 
 ## What Problem Does The Solution Solve?
 
-There is no functionality built into **MySQL**, that lets one import **CSV** data directly into a database, in the form of a table. pandas can be used to import CSV files from within Python, into a table of a database.
+There is no functionality built into **MySQL** that lets one import **CSV** data directly into a database, in the form of a table. pandas can be used to import CSV files from within Python, into a table of a database.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ pip install mysql-connector-python
 ## Importing The Data
 
 The following is a step-by-step walk through of how the end-to-end import of any CSV file into a MySQL database can
-look like. It is assumed, that the database is hosted locally and `localhost` is used as hostname. It can be replaced by
+look like. It is assumed that the database is hosted locally and `localhost` is used as hostname. It can be replaced by
 the URL of the database.
 
 ### Import Of The Python Packages
