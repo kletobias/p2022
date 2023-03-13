@@ -8,6 +8,7 @@ tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optim
 category: ['deep-learning']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
 <d-contents>
@@ -128,7 +129,7 @@ df
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
@@ -364,7 +365,7 @@ df
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
@@ -475,7 +476,7 @@ df.filter_on('error_rate > 0.008', complement=False)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
@@ -535,7 +536,7 @@ gb.median()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }
@@ -664,7 +665,7 @@ changed during the testing of *batch no. 2* and its results analyzed.
 
 The following links lead to the documentation pages of the most important
 objects and callbacks used throughout this article. They are all part of the
-fastai deep learning library. 
+fastai deep learning library.
 
 **DataBlock**
 [fastai - Data block tutorial](https://docs.fast.ai/50_tutorial.datablock.html#building-a-datablock-from-scratch)
@@ -713,7 +714,7 @@ df
     .dataframe tbody tr th {
         vertical-align: top;
     }
-    
+
     .dataframe thead th {
         text-align: right;
     }

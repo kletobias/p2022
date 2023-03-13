@@ -4,7 +4,8 @@
     <div class="wrapper">
       <h2 class="home-latest">Latest Projects</h2>
       <div class="grid">
-        {% for project in site.projects limit:3 %}
+        {%- assign categorized_projects = site.projects | where: "featured", true -%}
+        {% for project in categorized_projects limit:3 %}
         {% include projects.html %}
         {% endfor %}
       </div>

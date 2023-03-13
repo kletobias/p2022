@@ -8,6 +8,7 @@ tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optim
 category: ['deep-learning']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
 <d-contents>
