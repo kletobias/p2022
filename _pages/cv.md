@@ -32,14 +32,21 @@ cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 ## Currently
 
 In my current position, I participate in machine learning competitions and
-expand my toolkit on a full-time basis.
+expand my toolkit on a full-time basis. My focus is on mastering deep learning
+algorithms using PyTorch to solve machine learning problems with unstructured
+data mainly, e.g., image date, video data or unstructured text, but also to
+compare the results with results from using tree based models for structured
+data, e.g., tabular data.
 
 ### Specialized In Machine Learning
 
-To solve machine learning problems, I use Python and an iterative approach. In
-general, that involves the following steps, possibly going back and forth
-between them. For more information, see my article: [**The Tasks In Every Machine Learning Project: Tabular Data**](https://deep-learning-mastery.com/projects/steps-tabular/).
-
+I use Python and an iterative approach to solve machine learning problems. There
+are generally several steps involved, possibly going back and forth between
+them. See my article: [**The Tasks In Every Machine Learning Project: Tabular
+Data**](https://deep-learning-mastery.com/projects/steps-tabular/) for more
+information. The approach I take is similar to what is taught in Stanford
+University's [Practical Machine Learning](https://c.d2l.ai/stanford-cs329p/)
+course. 
 
 - Define the problem
     - Is it a regression problem
@@ -50,43 +57,50 @@ between them. For more information, see my article: [**The Tasks In Every Machin
     - Feature Selection
     - Feature Engineering
 - Models
-    - Candidate Model Selection
-    - Hyperparameter Optimization (optional: depending on model)
-    - Model Evaluation/Interpretation
-    - Finalize Model
+    - Candidate model selection
+    - Hyperparameter optimization (optional: depending on model)
+    - Model evaluation/interpretation (challenge: estimate model performance on unseen data)
+    - Finalize model
+    - Present the solution
 
 <br>
 
 ## Toolkit
 
-### Programming Languages
+### Overview
 
-| Name   | Experience   | Examples                                                                         |
-|--------|--------------|----------------------------------------------------------------------------------|
-| Bash   | Advanced     | Manage a Linux server from the command line using ssh, e.g., GPU cloud computing |
-| C++    | Basic        | Initialize variable, loops, 'cout', user input, vectors                          |
-| MySQL  | Intermediate | Writing standard queries, creating and altering tables                           |
-| Python | Expert       | Entire ML workflow utilizing custom functions, reproducible code, shell scripts  |
-| R      | Basic        | Tidy, ggplot2, Multivariate Regression                                           |
+| Name                             | Experience   | Examples                                                                         |
+|----------------------------------|--------------|----------------------------------------------------------------------------------|
+| AWS Redshift, S3, Sagemaker, EC2 | Basic        | Working knowledge of the listed AWS services                                     |
+| Bash                             | Advanced     | Manage a Linux server from the command line using ssh, e.g., GPU cloud computing |
+| C++                              | Basic        | Initialize variable, loops, 'cout', user input, vectors                          |
+| Git                              | Advanced     | I use git in all my projects                                                     |
+| Lambda Cloud                     | Intermediate | Training a deep learning model in the cloud using CUDA GPUs over ssh             |
+| MySQL                            | Intermediate | Writing standard queries, creating and altering tables                           |
+| Paperspace                       | Intermediate | Training a deep learning model in the cloud using CUDA GPUs over ssh             |
+| Python                           | Expert       | Entire ML workflow utilizing custom functions, reproducible code, shell scripts  |
+| R                                | Basic        | Tidy, ggplot2, Multivariate Regression                                           |
 
 ### Python Toolkit
 
-| Name                       | Type    | Description                                 | Proficiency |
-|:---------------------------|---------|---------------------------------------------|------------:|
-| conda/pip/pyenv/virtualenv | Tools   | Package and Python environment management   |        7/10 |
-| fastai                     | Library | Deep Learning Library based on PyTorch      |        7/10 |
-| numpy                      | Library | Data Manipulation using Vectorization       |        6/10 |
-| pandas                     | Library | Tabular Data Manipulation                   |        8/10 |
-| pytorch                    | Library | Deep Learning Framework                     |        5/10 |
-| pyplot                     | Library | General Purpose Data Visualization          |        8/10 |
-| pytorch_tabular            | Library | Tabular Data Deep Learning based on PyTorch |        4/10 |
-| re                         | Library | Builtin regular-expressions library         |        8/10 |
-| scikit-learn               | Library | Multipurpose ML Library                     |        7/10 |
-| scipy                      | Library | Mainly used the scipy.stats module          |        4/10 |
-| seaborn                    | Library | Statistical Data Visualization              |        7/10 |
-| tpot                       | Library | Automated Machine Learning tool             |        6/10 |
-| xgboost (dmlc)             | Library | Regression and Classification ML model      |        8/10 |
-
+| Name                       | Type      | Description                                 | Proficiency |
+|:---------------------------|-----------|---------------------------------------------|------------:|
+| conda/pip/pyenv/virtualenv | Tools     | Package and Python environment management   |        7/10 |
+| fastai                     | Library   | Deep Learning Library based on PyTorch      |        7/10 |
+| numpy                      | Library   | Data Manipulation using Vectorization       |        6/10 |
+| pandas                     | Library   | Tabular Data Manipulation                   |        8/10 |
+| pyplot                     | Library   | General Purpose Data Visualization          |        8/10 |
+| pytorch                    | Library   | Deep Learning Framework                     |        5/10 |
+| pytorch_tabular            | Library   | Tabular Data Deep Learning based on PyTorch |        4/10 |
+| re                         | Library   | Builtin regular-expressions library         |        8/10 |
+| scikit-learn               | Library   | Multipurpose ML Library                     |        7/10 |
+| scipy                      | Library   | Mainly used the scipy.stats module          |        4/10 |
+| spacy                      | Library   | Basic knowledge of preprocessing NLP data   |        3/10 |
+| seaborn                    | Library   | Statistical Data Visualization              |        7/10 |
+| subprocess                 | Library   | Extending Python into the shell             |        6/10 |
+| tpot                       | Library   | Automated Machine Learning tool             |        6/10 |
+| web scraping               | Technique | Web scraping using Requests and BS4         |        8/10 |
+| xgboost (dmlc)             | Library   | Regression and Classification ML model      |        8/10 |
 
 ## Language Proficiency
 
