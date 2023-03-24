@@ -31,12 +31,12 @@ cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 
 ## Currently
 
-In my current position, I participate in machine learning competitions and
-expand my toolkit on a full-time basis. My focus is on mastering deep learning
-algorithms using PyTorch to solve machine learning problems with unstructured
-data mainly, e.g., image date, video data or unstructured text, but also to
-compare the results with results from using tree based models for structured
-data, e.g., tabular data.
+Currently, I take part in machine learning competitions and expand my toolkit on
+a full-time basis. Using PyTorch, I intend to master deep learning algorithms
+for solving machine learning problems involving unstructured data. This includes
+images, videos, or unstructured text. For structured data, such as tabular data,
+I already use deep learning models during model selection. I am comparing the
+predictions and interpretability with those from tree-based models.
 
 ### Specialized In Machine Learning
 
