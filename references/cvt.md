@@ -1,12 +1,3 @@
----
-layout: cv
-permalink: /cv/
-title: CV
-nav: true
-nav_order: 2
-cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
----
-
 # CV Of Tobias Klein
 
 <div id="webaddress">
@@ -16,19 +7,20 @@ cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 <strong>GitHub Profile:</strong> <a href="https://github.com/kletobias">https://github.com/kletobias</a>
 </div>
 
+<br>
 
-<d-contents>
-  <nav class="l-text figcaption">
-  <h3>Contents</h3>
-    <div class="no-math"><a href="#currently">Currently</a></div>
-    <div class="no-math"><a href="#toolkit">Toolkit</a></div>
-    <div class="no-math"><a href="#language-proficiency">Language Proficiency</a></div>
-    <div class="no-math"><a href="#school">School</a></div>
-    <div class="no-math"><a href="#higher-education">Higher Education</a></div>
-    <div class="no-math"><a href="#bachelor-thesis">Bachelor Thesis</a></div>
-    <div class="no-math"><a href="#list-of-portfolio-articles">List Of Portfolio Articles</a></div>
-  </nav>
-</d-contents>
+## Table Of Contents
+* [Current Position](#current-position)
+  * [Specialized In Machine Learning](#specialized-in-machine-learning)
+* [Toolkit](#toolkit)
+  * [Overview](#overview)
+  * [Python Toolkit](#python-toolkit)
+* [Language Proficiency](#language-proficiency)
+* [School](#school)
+* [Higher Education](#higher-education)
+* [Bachelor Thesis](#bachelor-thesis)
+  * [Data Mining - Hyperparameter Optimization For Real Estate Prediction Models](#data-mining---hyperparameter-optimization-for-real-estate-prediction-models)
+* [List Of Portfolio Articles](#list-of-portfolio-articles)
 
 ## Current Position
 
@@ -204,7 +196,8 @@ course.
 
 ## Bachelor Thesis
 
-### Data Mining: Hyperparameter Optimization For Real Estate Prediction Models
+### Data Mining - Hyperparameter Optimization For Real Estate Prediction Models
+
 <strong>Abstract:</strong><br>
 Combining a highly scalable and customisable process,
 with very accurate prediction results using machine learning models, is what
@@ -226,7 +219,7 @@ expressed in **RMSE**, are 190.68 for the **Lasso** and 115.39 for the **XGBoost
 Regressor**. Differences in complexity and interpretability between the models
 are discussed and associated with it, the strengths and weaknesses of the
 respective model are pointed out.<br>
-<strong>[**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})</strong><br><br>
+<strong>[**Full Text (pdf)**](https://deep-learning-mastery.com/assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf)</strong><br><br>
 
 
 ## List Of Portfolio Articles
