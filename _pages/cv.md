@@ -20,7 +20,7 @@ cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#currently">Currently</a></div>
+    <div class="no-math"><a href="#current-position">Current Position</a></div>
     <div class="no-math"><a href="#toolkit">Toolkit</a></div>
     <div class="no-math"><a href="#language-proficiency">Language Proficiency</a></div>
     <div class="no-math"><a href="#school">School</a></div>
