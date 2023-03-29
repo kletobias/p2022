@@ -30,7 +30,10 @@ A predictive modeling machine learning project can be divided into six main
 tasks. The tasks listed below are part of the *prototyping* process (as
 described using Python), not the production process, which is often handled
 using a *faster* implementation of the final model written in *C++* for example.
-The following list is tailored for tabular data.
+The following list is tailored for tabular data. The approach I take is similar
+to what is taught in Stanford University's [Practical Machine
+Learning](https://c.d2l.ai/stanford-cs329p/) course. 
+
 <!-- You can find the tasks for image and more generally unstructured data in the -->
 <!-- article **The Six Tasks In Every ML Project: Unstructured Data** -->
 <!-- _projects/steps-unstructured.md. There is no difference between structured -->
