@@ -35,11 +35,11 @@ can be adjusted according to your needs.
 ## The Script
 
 ```python
-import os
-from time import strftime
-from slugify import slugify
-import subprocess
+from os import listdir
 from pathlib import Path
+from slugify import slugify
+from subprocess import run
+from time import strftime
 
 
 # Base Path
@@ -50,13 +50,13 @@ def create_new_article(base=base,name=None,date=None,date_in_fname=False):
     """Function to create a new directory for the new article,
     three synced jupytext files with extensions: ipynb, py, md """
 
-    # default for date is None, which means the current date is used. Use a
+    # default for date is `None`, which means the current date is used. Use a
     # string value for a different date.
     if type(date) == str:
         date = date
     else:
         date=strftime("%Y-%m-%d")
-    # Instructions for the case using user input for name of new article
+    # Print instructions for the case using user input for name of new article.
     print("""
 
 Enter the name of the article you want to create with or without spaces. Input
@@ -71,14 +71,14 @@ expected, if non English alphanumeric characters are used.
     elif name == None:
         name = slugify(input("Name: "))
 
-    # Print the name entered by the user
+    # Print the (cleaned) name entered by the user.
     print(f'Name is: {name}')
 
-    # Define complete name of new directory using `date` and `name`
+    # Define complete name of new directory using `date` and `name`.
     article_dir = Path(base,f"{date}-{name}/")
 
     # Create new directory for article to be written. Will throw an error, if it
-    # already exists
+    # already exists.
     article_dir.mkdir()
 
     # Use touch to create an empty markdown file for jupytext. Will throw an
@@ -95,10 +95,10 @@ expected, if non English alphanumeric characters are used.
     # `# %%` as markers for code cells and `# %% [markdown]` for markdown cells.
     # The markdown file created earlier is used for the markdown version of the
     # notebook. Using --sync on the .ipynb file will sync all three versions.
-    subprocess.run([f'jupytext --set-formats ipynb,py:percent,md {article_file}'],shell=True)
+    run([f'jupytext --set-formats ipynb,py:percent,md {article_file}'],shell=True)
 
     # Check output
-    print(f'\n {os.listdir(article_dir)} \n')
+    print(f'\n {listdir(article_dir)} \n')
 
 create_new_article(date_in_fname=True)
 ```
