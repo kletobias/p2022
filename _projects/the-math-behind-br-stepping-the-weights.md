@@ -115,7 +115,7 @@ df.sample(n=10)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -337,7 +337,6 @@ that has to be solved, fulfills $$w_{opt}\, =\, \mathrm{Min}\,\mathit{Loss}_{w}(
 \,h_{w})\,$$. The sum $$\sum_{j=1}^{N}\,(\,y_{j}\, - (\,w_{1}x_{j}\, + w_{0})\,)
 ^2$$ is minimized, when its partial derivatives with respect to $$w_{0}$$ and $$w_
 {1}$$ are zero.
-
 $$
 \begin{aligned}&\frac{\partial{h_{w}}}{\partial{w_{0}}}\, \sum_{j=1}^{N}\, (\,y_{j} - (\, w_
 {1}x_{j}\, + w_{0})\,)^2 \,= 0 \\
@@ -459,7 +458,7 @@ following:
 ### Gradient Descent: Step
 
 
-For each $$w_{i}$$ in $$\mathbb{w}$$ do for each step:
+For each weight $$w_{i}$$ in the set of all weights $$\mathbb{w}$$, do for each step:
 
 $$w_{i} = w_{i}\, - \alpha \frac{\partial}{\partial w_{i}}\, \mathit{Loss}(
 \,\mathbb{w})\,$$
