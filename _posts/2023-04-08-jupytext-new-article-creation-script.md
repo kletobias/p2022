@@ -49,14 +49,10 @@ def create_new_article(base=base,name=None,date=None,date_in_fname=False):
 
     """Function to create a new directory for the new article,
     three synced jupytext files with extensions: ipynb, py, md """
-<<<<<<< HEAD
-    # default for date is None, which means the current date is used.
-    if date == str:
-=======
+
     # default for date is None, which means the current date is used. Use a
     # string value for a different date.
     if type(date) == str:
->>>>>>> 2dee348e (New blog post jupytext-new-article-creation-script)
         date = date
     else:
         date=strftime("%Y-%m-%d")
@@ -70,11 +66,7 @@ expected, if non English alphanumeric characters are used.
     """)
     # User input for parameter name (default) or set a value by passing a string
     # value for parameter name. 
-<<<<<<< HEAD
-    if name == str:
-=======
     if type(name) == str:
->>>>>>> 2dee348e (New blog post jupytext-new-article-creation-script)
         name = slugify(name)
     elif name == None:
         name = slugify(input("Name: "))
