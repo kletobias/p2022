@@ -54,7 +54,7 @@ The hyperparameter optimization for each of them is:
         - `lr` (learning rate) - values tested depend on `lr_find` output.
         - `epochs` Number of epochs to train.
 - `XGBRegressor`
-    - `RandomizedSearchCV` with 1400 iterations and 8 fold cross-validation for each from *sklearn* using a parameter distribution dictionary.
+    - `RandomizedSearchCV` with 1400 iterations and 8-fold cross-validation for each from *sklearn* using a parameter distribution dictionary.
     - For details, see section 'XGBRegressor Optimization'.
 
 ## Creating Estimators Optimized For Kaggle
@@ -66,15 +66,15 @@ test set and nothing else. This makes it necessary that we try to create
 estimators that are the result of hyperparameter tuning, starting with few
 iterations where we check the resulting rmse values and building up to using as
 many iterations that our hardware can handle within a reasonable duration of no
-more than 5 minutes give or take or stop adding more iterations to the hyper
-parameter optimization procedure, if rmse values stop improving despite
+more than 5 minutes give or take or stop adding more iterations to the
+hyperparameter optimization procedure, if rmse values stop improving despite
 increasing the number of iterations.
 
 ## RandomForestRegressor Optimization
 
 Using a manually created test harness, the rmse values for each iteration on the
 training and validation set are appended to list `m_rmsel` and `m_rmselv`
-respectively and it is these lists that are returned by the function.
+respectively, and it is these lists that are returned by the function.
 
 
 ```python
@@ -245,7 +245,7 @@ While dropping `garagearea` resulted in a slightly higher accuracy using
 `RandomForestRegressor` on the validation set, the increase was marginal. Let's
 see what the results are using neural networks.
 
-The original csv files are imported and we show how to apply the preprocessing
+The original csv files are imported, and we show how to apply the preprocessing
 steps using the `TabularPandas` function from the *fastai* library.
 
 Creating the DataFrames for fitting the deep learning model.

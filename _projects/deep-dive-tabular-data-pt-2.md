@@ -160,7 +160,7 @@ model that is the preferred model from the two when it comes to the
 understanding the relative importance that each feature has. Both models feature
 this method.
 
-#### Feature Importances Relative Metric
+#### Feature Importance Relative Metric
 
 From the *scikit-learn* website, one gets the following definition for the
 `feature_importances_` attribute:
@@ -274,8 +274,8 @@ executions without any interactions by the user.
 To answer this question, an experiment is conducted where 1000
 `DecisionTreeRegressor` estimators are trained and the `feature_importances_`
 method is used to get and log the feature importance score for each feature
-during each of the 1000 samples. The results are then averaged and the standard
-deviation is calculated for each feature over the 2000 samples.
+during each of the 1000 samples. The results are then averaged, and the standard
+deviation calculated for each feature over the 2000 samples.
 
 With the results, one can answer the research question of whether the
 `feature_importances_` method itself is prone to generating inconsistent feature
@@ -396,3 +396,4 @@ Entire Series:
 [**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
 [**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
 [**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
+

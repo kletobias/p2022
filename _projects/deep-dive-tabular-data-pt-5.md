@@ -138,7 +138,7 @@ plt.ylabel('y-Axis')
     
 
 
-Why does this happen one might ask. The reason lies within the structure of how
+Why does this happen one might ask? The reason lies within the structure of how
 the `RandomForestRegressor` estimator works and the `XGBRegressor` as well in
 this regard. All it does is average the predictions of several trees
 (`nestimators`) for each sample in the training data. Each tree averages the

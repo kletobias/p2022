@@ -18,44 +18,39 @@ any search engine:
 >	information need.
 
 
-**In other words:** Return hits to the user that give him the information he
-was looking for with his query.
+This means that the user should receive hits that provide the information that
+he or she is searching for.
 
-This is an up to date list of the 'basic' google *search operators* that are
-*working* in 2022. Since these make up most of the search operators or even
-all that one *should* know in order to make their *google searches* more
-efficient and more relevant, these operators will be simply be called search
-operators in the following. There have been quite big changes to the names of
-a number of operators in this list over the last year. That is part of why I
-decided to write this post.
+The following is an up-to-date list of 'basic' Google search operators in 2022.
+Because these search operators make up most of the search operators, or even all
+that one needs to know to make their Google searches more efficient and more
+relevant, they will simply be called search operators. The names of a number of
+operators on this list have changed quite a bit over the last year. This is one
+of the reasons I decided to write this post.
 
-In this post I will introduce and give examples of how each search operator can
-be used in the search field of [google.com](http://google.com) and any country
-specific extension of google search as well. Since the search operators can be
-Combined with each other in a query, there are many combinations that I won't
-be able to include in this post. What I try to do, is show the basic usage for
-each of the search parameters and try to give ideas of how they can be combined
-to return search results that are relevant to the user. There is one very
-important caveat about using any google search operator:
+I will demonstrate how each search operator can be used in the search field of
+[google.com](http://google.com) and any country-specific extension of Google
+search as well. Since the search operators can be combined in a query, there are
+many combinations that I cannot include in this post. My goal is to show the
+basic usage of each search parameter and suggest how they can be combined to
+produce relevant search results. Using any Google search operator comes with one
+very important caveat:
 
-> The search operators always have to be written in English in order to be
-> invoked. One can specify their value in another language though.
+> It is always necessary to write the search operators in English in order to
+> invoke them. It is possible to specify their value in another language,
+> however.
 
-**Disclaimer:** In some examples the time frame for how old results are allowed
-to be is set to 1 year. This can be seen in the examples with images showing the
-result list. This is chosen, as oftentimes results older than one year are
-irrelevant by now. The exception to this are queries that specify something that
-is not of a timely manner. This can be for example *stack overflow* questions
-and answers or topics that have relevant matches further back in the past,
-newspaper articles for example. This is mainly relevant for the reproducibility
-of the results from the examples I use throughout this post.
+The time frame for how old results can be in some examples is set to one year.
+The examples with images showing the result list illustrate this. Results older
+than one year are often irrelevant by now, so we chose this option. A query that
+specifies something that is not of a timely nature is an exception to this rule.
+It can be for example stack overflow questions and answers or topics that have
+relevant matches in the past, such as newspaper articles. This is mainly
+relevant for reproducibility of results from the examples I use in this post. 
 
-## Google Search Operators List  <br>
+## Google Search Operators List <br>
 
 #### Exact Match `""`
-
-
-
 
 This is probably the single most powerful operator. It takes some practice to
 find the line between narrowing down the hits google returns too much and the
@@ -65,7 +60,7 @@ returned hits not being specific enough.
 > return to ones query, is that the order of returned hits is generally the
 > most important metric to use when checking results. If the order is good
 > enough, e.g., the first 3 results on the first page are all highly relevant,
-> then it does not matter if the total of returned hits is 20 or 20.000.000.
+> then it does not matter if the total of returned hits is 20 or 20,000,000.
 > However, an increase in the number of results in the order of magnitude as in
 > the previous example, can make finding the 'correct ordering' of the returned
 > results much harder.
@@ -84,7 +79,7 @@ match `<search term>`. The syntax is:
 
 The quotation marks have to be immediately before and after the end of the
 search term or immediately before the first word and immediately after the last
-word in a multi word search term.
+word in a multi-word search term.
 Spaces between words are allowed, as long as they are supposed to be matched
 exactly as well. The following examples show the effect that various uses of
 the quotation marks have on how restrictive the query is for the web search
@@ -111,13 +106,13 @@ with other sets are all empty.
 In reality, especially when using a search engine like google that is rarely
 the case. In the image below one can see that there are roughly 23 million
 results for the query without any quotations. The top result, in this instance,
-is a good example for what can happen when the google search algorithm is
+is a good example for what can happen when the Google search algorithm is
 allowed to *use a little bit more of its magic*.
 The top result comes from the URL **https//organizingmoms.com**. I have never
 heard of this site and certainly not in regard to 'How to Get to 10.000 Steps a
 Day' fitness plans. I do not intend on taking any credit away from them, nor do
 I say that the hit is not a good top result.
-What I am trying to say, is that when one gives the google search algorithm some
+What I am trying to say, is that when one gives the Google search algorithm some
 leeway, the hits featured on the first page of the list of results should be
 critically assessed for relevancy and quality. These two things should always be
 checked for, for any hit, but even more so in this scenario.
@@ -147,7 +142,7 @@ or too narrow to yield a healthy amount of results.
 "plan" "how to walk 10000 steps a day"
 ```
 
-The query, where two parts were put into seperate pairs of quotation marks.
+The query, where two parts were put into separate pairs of quotation marks.
 
 {% include figure.html path="assets/img/split_two_quoted_parts.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
@@ -173,7 +168,7 @@ satisfactory or one finds out that google is of little help in finding the
 information one is looking for in the particular case.
 
 While it is a relevant subject, optimizing by experimenting with surrounding
-various parts of a query with  parenthesis, the quality of the results from
+various parts of a query with parenthesis, the quality of the results from
 using it can often be very volatile. That is why, in the following, the focus is
 on the actual google search operators.
 
@@ -183,7 +178,7 @@ on the actual google search operators.
 
 ### Logical `OR`
 
-Acts as a logical OR and therefore will allow google to return all hits, where
+Acts as a logical OR and therefore will allow Google to return all hits, where
 `<search term 1>` or `<search term 2>` have a match and as such, where both search
 terms are matched as well.
 
