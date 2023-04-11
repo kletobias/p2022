@@ -43,7 +43,7 @@ from time import strftime
 
 
 # Base Path
-base = Path('/Users/tobias/all_code/projects/python_projects/portfolio_articles/_posts/')
+base = Path('/Users/writer/blog/posts/')
 
 def create_new_article(base=base,name=None,date=None,date_in_fname=False):
 
@@ -85,10 +85,10 @@ expected, if non English alphanumeric characters are used.
     # error, if it already exists.
     if date_in_fname == True:
         article_file = article_dir.joinpath(f'{date}-{name}.md')
-        article_file.touch(mode=0o644)
+        article_file.touch(mode=0o751)
     else:
         article_file = article_dir.joinpath(f'{name}.md')
-        article_file.touch(mode=0o644)
+        article_file.touch(mode=0o751)
 
     # Run jupytext command line tool via subprocess to do the setup.
     # jupytext will create three files, a jupyter-notebook, a python file using
