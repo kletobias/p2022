@@ -85,10 +85,10 @@ expected, if non English alphanumeric characters are used.
     # error, if it already exists.
     if date_in_fname == True:
         article_file = article_dir.joinpath(f'{date}-{name}.md')
-        article_file.touch(mode=0o755)
+        article_file.touch(mode=0o644)
     else:
         article_file = article_dir.joinpath(f'{name}.md')
-        article_file.touch(mode=0o755)
+        article_file.touch(mode=0o644)
 
     # Run jupytext command line tool via subprocess to do the setup.
     # jupytext will create three files, a jupyter-notebook, a python file using
