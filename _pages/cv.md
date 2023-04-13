@@ -295,7 +295,7 @@ them suitable for learners at various stages of their machine learning journey.
 
 ### Advanced Geospatial Feature Creation
 
-**Description:** Delve into the extensive cleaning and transformation of tabular data to create geospatial features, resulting in clean GPS values as "Point" objects in decimal degrees format, and the extraction of all subway and suburban train station names in Hamburg, Germany.
+**Description:** Delve into the extensive cleaning and transformation of tabular data to create geospatial features, resulting in clean GPS values as "Point" objects in decimal degrees format, and the extraction of all subway and suburban train station names in Hamburg, Germany.  
 **Tags:** `['data-cleaning', 'data-transformation', 'geospatial-feature-creation', 'regular-expression', 'shapely', 'tabular-data']`  
 **Category:** _data-preprocessing_ \| **Word Count:** 3777 \| **[Full Article](https://deep-learning-mastery.com/projects/advanced-geospatial-feature-creation/)**
 
