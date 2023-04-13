@@ -53,11 +53,15 @@ def get_title_description(dir,files):
             td[f[:-3]] = {}
             md_files.append(f[:-3])
             td[f[:-3]]['url'] = f'[Full Article]({host}{f[:-3]}/)'
+
+            # open file and use spacy to get count of words
             with open(os.path.join(dir,f),'r') as a:
                 article = a.readlines()
                 doc = nlp(pat_html.sub('',str(article)))
                 words = [token.text for token in doc if token.is_stop != True and token.is_punct != True]
                 td[f[:-3]]['word_count'] = len(words)
+
+            # open file and search for matches using the regex patterns
             with open(os.path.join(dir,f),'r') as ff:
                 for line in itertools.islice(ff,2,8):
                     ttl = patt.search(line)
