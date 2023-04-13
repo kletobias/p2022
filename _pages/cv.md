@@ -293,27 +293,27 @@ them suitable for learners at various stages of their machine learning journey.
 
 ### Automation Using A Test Harness For Deep Learning: Part 1
 
-**Description:** Discover how to create and utilize a custom test harness that automates many aspects of the deep learning testing process, reducing GPU idle time and enabling the development and assessment of more models and parameter combinations in less time. This article employs the fastai library for deep learning.
-**Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']`  
-**Category:** _deep-learning_ \| **Word Count:** 2703 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1/)**<br>
+- **Description:** Discover how to create and utilize a custom test harness that automates many aspects of the deep learning testing process, reducing GPU idle time and enabling the development and assessment of more models and parameter combinations in less time. This article employs the fastai library for deep learning.
+- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']`  
+- **Category:** _deep-learning_ \| **Word Count:** 2703 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1/)**<br>
 
 ### Automation Using A Test Harness For Deep Learning: Part 2
 
-**Description:** In Part 2 of this series, explore how the fastai deep learning library can be employed to conduct structured empirical experiments on a novel, small dataset consisting of 850 images with a nearly uniform distribution of target labels, "male" and "female".
-**Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']`  
-**Category:** _deep-learning_ \| **Word Count:** 3068 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2/)**
+- **Description:** In Part 2 of this series, explore how the fastai deep learning library can be employed to conduct structured empirical experiments on a novel, small dataset consisting of 850 images with a nearly uniform distribution of target labels, "male" and "female".
+- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']`  
+- **Category:** _deep-learning_ \| **Word Count:** 3068 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2/)**
 
 ### Cleaning a Web Scraped 47 Column Pandas DataFrame Part 1
 
-**Description:** In this Data Preparation Series, discover the powerful tools available in the pandas library for exploring and manipulating tabular data efficiently.
-**Tags:** `['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']`  
-**Category:** _data-preprocessing_ \| **Word Count:** 3508 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1/)**
+- **Description:** In this Data Preparation Series, discover the powerful tools available in the pandas library for exploring and manipulating tabular data efficiently.
+- **Tags:** `['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']`  
+- **Category:** _data-preprocessing_ \| **Word Count:** 3508 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1/)**
 
 ### Cleaning a Web Scraped 47 Column Pandas DataFrame Part 2
 
-**Description:** Enhance your string data cleaning skills using the pyjanitor module and method chaining for more efficient and streamlined data processing.
-**Tags:** `['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']`  
-**Category:** _data-preprocessing_ \| **Word Count:** 3263 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2/)**
+- **Description:** Enhance your string data cleaning skills using the pyjanitor module and method chaining for more efficient and streamlined data processing.
+- **Tags:** `['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']`  
+- **Category:** _data-preprocessing_ \| **Word Count:** 3263 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2/)**
 
 ### Cleaning a web scraped 47 Column Pandas DataFrame Part 3
 
