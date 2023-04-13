@@ -54,7 +54,7 @@ skillset.
 Utilizing Python and a systematic approach, I tackle complex machine learning
 challenges by adhering to a comprehensive multi-step process, as illustrated in
 my article [**The Tasks In Every Machine Learning Project: Tabular
-Data**](https://deep-learning-mastery.com/projects/steps-tabular/). This
+Data**](https://deep-learning-mastery.com/projects/the-tasks-in-every-machine-learning-project-br-tabular-data/). This
 methodology is in accordance with the esteemed Stanford University's [Practical
 Machine Learning](https://c.d2l.ai/stanford-cs329p/) course. The crucial steps
 encompass:
@@ -180,11 +180,11 @@ machine learning and technical areas
 
 - **Major:** Mathematics B.Sc.
 - **Completed Courses:**
-    - Linear Algebra I-II | Grades: {'I': 1.7, 'II': 2.3}
-    - Analysis I-III | Grades: {'I': 1.3, 'III': 1.7}
-    - Stochastic | Grade: 4.0
-    - Complex Analysis | Grade: 4.0
-    - Futures And Options | Grade: 3.7
+    - Linear Algebra I-II \| Grades: {'I': 1.7, 'II': 2.3}
+    - Analysis I-III \| Grades: {'I': 1.3, 'III': 1.7}
+    - Stochastic \| Grade: 4.0
+    - Complex Analysis \| Grade: 4.0
+    - Futures And Options \| Grade: 3.7
     - Exercise in Numerics: Implementing Linear Algebra methods using C
 
 `2016 - 2019` **Freiburg University**, Freiburg i. Br., Germany
@@ -197,7 +197,7 @@ machine learning and technical areas
     - **Pages:** 69
     - **Grade:** 1.0
     - **Abstract:** See Section 'Bachelor Thesis'
-    - [**Full Text (pdf)**\]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})
+    - [**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})
 - **Relevant Completed Courses & Grades:**
 
 | **Course**                                                                                   | **Grade** |
@@ -288,119 +288,119 @@ them suitable for learners at various stages of their machine learning journey.
 ### Advanced Geospatial Feature Creation
 
 - **Description:** Delve into the extensive cleaning and transformation of tabular data to create geospatial features, resulting in clean GPS values as "Point" objects in decimal degrees format, and the extraction of all subway and suburban train station names in Hamburg, Germany.
-- **Tags:** `['data-cleaning', 'data-transformation', 'geospatial-feature-creation', 'regular-expression', 'shapely', 'tabular-data']`
-- **Category:** _data-preprocessing_ | **Word Count:** 3777 | **[Full Article](https://deep-learning-mastery.com/projects/advanced-geospatial-feature-creation/)**
+- **Tags:** `['data-cleaning', 'data-transformation', 'geospatial-feature-creation', 'regular-expression', 'shapely', 'tabular-data']`  
+- **Category:** _data-preprocessing_ \| **Word Count:** 3777 \| **[Full Article](https://deep-learning-mastery.com/projects/advanced-geospatial-feature-creation/)**
 
 ### Automation Using A Test Harness For Deep Learning: Part 1
 
 - **Description:** Discover how to create and utilize a custom test harness that automates many aspects of the deep learning testing process, reducing GPU idle time and enabling the development and assessment of more models and parameter combinations in less time. This article employs the fastai library for deep learning.
-- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']`
-- **Category:** _deep-learning_ | **Word Count:** 2703 | **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1/)**
+- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']`  
+- **Category:** _deep-learning_ \| **Word Count:** 2703 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1/)**<br>
 
 ### Automation Using A Test Harness For Deep Learning: Part 2
 
 - **Description:** In Part 2 of this series, explore how the fastai deep learning library can be employed to conduct structured empirical experiments on a novel, small dataset consisting of 850 images with a nearly uniform distribution of target labels, "male" and "female".
-- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']`
-- **Category:** _deep-learning_ | **Word Count:** 3068 | **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2/)**
+- **Tags:** `['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']`  
+- **Category:** _deep-learning_ \| **Word Count:** 3068 \| **[Full Article](https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2/)**
 
 ### Cleaning a Web Scraped 47 Column Pandas DataFrame Part 1
 
 - **Description:** In this Data Preparation Series, discover the powerful tools available in the pandas library for exploring and manipulating tabular data efficiently.
-- **Tags:** `['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']`
-- **Category:** _data-preprocessing_ | **Word Count:** 3508 | **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1/)**
+- **Tags:** `['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']`  
+- **Category:** _data-preprocessing_ \| **Word Count:** 3508 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1/)**
 
 ### Cleaning a Web Scraped 47 Column Pandas DataFrame Part 2
 
 - **Description:** Enhance your string data cleaning skills using the pyjanitor module and method chaining for more efficient and streamlined data processing.
-- **Tags:** `['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']`
-- **Category:** _data-preprocessing_ | **Word Count:** 3263 | **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2/)**
+- **Tags:** `['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']`  
+- **Category:** _data-preprocessing_ \| **Word Count:** 3263 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2/)**
 
 ### Cleaning a web scraped 47 Column Pandas DataFrame Part 3
 
 **Description:** Dive into extensive data cleaning and validation while creating a valid GPS column from longitude and latitude columns using the geometry object Point.  
 **Tags:** `['data-validation', 'dtype-timedelta64','geospatial-feature-engineering', 'pandas', 'tabular-data']`  
-**Category:** _data-preprocessing_ | **Word Count:** 2403 | **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3/)**
+**Category:** _data-preprocessing_ \| **Word Count:** 2403 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3/)**
 
 ### Cleaning a web scraped 47 Column Pandas DataFrame Part 4
 
 **Description:** Master extensive data cleaning and validation using regular expressions, and learn how to batch process multiple columns of tabular data using pandas, pyjanitor, and the re library.  
 **Tags:** `['batch-processing', 'data-validation', 'pandas', 'regular-expressions', 'tabular-data']`  
-**Category:** _data-preprocessing_ | **Word Count:** 4257 | **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4/)**
+**Category:** _data-preprocessing_ \| **Word Count:** 4257 \| **[Full Article](https://deep-learning-mastery.com/projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4/)**
 
 ### Datacamp Concrete Regression Challenge
 
 **Description:** Explore the notebook created to solve the Datacamp Concrete Regression Challenge within an hour, featuring detailed explanations and an in-depth look into the workings of the Lasso regression model.  
 **Tags:** `['cross-validation', 'lasso-regression', 'math', 'multivariate-regression', 'regression-analysis']`  
-**Category:** _tabular-data_ | **Word Count:** 1162 | **[Full Article](https://deep-learning-mastery.com/projects/datacamp-concrete-regression-challenge/)**
+**Category:** _tabular-data_ \| **Word Count:** 1162 \| **[Full Article](https://deep-learning-mastery.com/projects/datacamp-concrete-regression-challenge/)**
 
 ### Deep Dive Tabular Data Pt. 1
 
 **Description:** This article explores preprocessing techniques for an 80-feature dataset, including visualizing missing values, strategies for filling missing values, and using categorical embeddings for improved model performance.  
 **Tags:** `['categorical-embeddings', 'data-preprocessing', 'fastai', 'fill-strategies', 'tabular-data']`  
-**Category:** _tabular-data_ | **Word Count:** 5389 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-1/)**
+**Category:** _tabular-data_ \| **Word Count:** 5389 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-1/)**
 
 ### Deep Dive Tabular Data Pt. 2
 
 **Description:** Learn how to perform feature selection using DecisionTreeRegressor from the sklearn library and analyze the reliability of the feature importances method by testing for score deviations.  
 **Tags:** `['decision-tree-regressor', 'feature-importance', 'feature-selection', 'sklearn', 'tabular-data']`  
-**Category:** _tabular-data_ | **Word Count:** 1895 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-2/)**
+**Category:** _tabular-data_ \| **Word Count:** 1895 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-2/)**
 
 ### Deep Dive Tabular Data Pt. 3
 
 **Description:** Discover how to use RandomForestRegressor and feature importances to evaluate model performance by leveraging out-of-bag error.  
 **Tags:** `['feature-importance', 'feature-selection', 'out-of-bag-error', 'random-forest', 'tabular-data']`  
-**Category:** _tabular-data_ | **Word Count:** 1407 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-3/)**
+**Category:** _tabular-data_ \| **Word Count:** 1407 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-3/)**
 
 ### Deep Dive Tabular Data Pt. 4
 
 **Description:** Enhance your model interpretation skills with advanced statistical visualizations such as dendrograms, Spearman rank correlation, partial dependence plots, and assessing the impact of independent variables on predictions.  
 **Tags:** `['dendrogram', 'partial-dependence', 'spearman-rank-correlation', 'tabular-data', 'treeinterpreter']`  
-**Category:** _tabular-data_ | **Word Count:** 1663 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-4/)**
+**Category:** _tabular-data_ \| **Word Count:** 1663 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-4/)**
 
 ### Deep Dive Tabular Data Pt. 5
 
 **Description:** Understand the out-of-domain problem, its significance, and learn how to identify and tackle it for improved model accuracy.  
 **Tags:** `['feature-importance', 'model-accuracy', 'out-of-domain-problem', 'random-forest', 'tabular-data']`  
-**Category:** _tabular-data_ | **Word Count:** 1086 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-5/)**
+**Category:** _tabular-data_ \| **Word Count:** 1086 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-5/)**
 
 ### Deep Dive Tabular Data Pt. 6
 
 **Description:** Prepare for your first Kaggle submission by training a RandomForestRegressor and a fastai deep learning model using hyperparameter optimization techniques, and preprocess Kaggle test data for improved results.  
 **Tags:** `['data-preprocessing', 'fastai', 'hyperparameter-optimization', 'random-forest', 'tabular-data']`  
-**Category:** _tabular-data_ | **Word Count:** 2707 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-6/)**
+**Category:** _tabular-data_ \| **Word Count:** 2707 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-6/)**
 
 ### Deep Dive Tabular Data Pt. 7
 
 **Description:** In this Kaggle Submission 2, learn how to optimize a tabular_learner deep learning estimator using manual hyperparameter optimization and apply an XGBRegressor with RandomizedSearchCV for continuous parameter distribution sampling.  
 **Tags:** `['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_learner', 'xgboost-regressor']`  
-**Category:** _tabular-data_ | **Word Count:** 3515 | **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-7/)**
+**Category:** _tabular-data_ \| **Word Count:** 3515 \| **[Full Article](https://deep-learning-mastery.com/projects/deep-dive-tabular-data-pt-7/)**
 
 ### Hearthstone: Euro To In-Game Currency Conversion
 
 **Description:** This article provides an overview of the popular card game Hearthstone, and demonstrates a simulation technique to estimate the dust value from opening one pack of cards. By doing so, it enables the conversion of a Hearthstone deck's worth from in-game currency to Euros.  
 **Tags:** `['hearthstone', 'money-to-in-game-currency', 'research', 'simulation', 'statistics']`  
-**Category:** _statistics_ | **Word Count:** 4007 | **[Full Article](https://deep-learning-mastery.com/projects/hearthstone-euro-to-in-game-currency-conversion/)**
+**Category:** _statistics_ \| **Word Count:** 4007 \| **[Full Article](https://deep-learning-mastery.com/projects/hearthstone-euro-to-in-game-currency-conversion/)**
 
 ### Multicollinearity: What It Is & Measures To Spot It
 
 **Description:** This article delves into the concept of multicollinearity, illustrating how to identify it using covariance and the Pearson correlation coefficient among random variables.  
 **Tags:** `['covariance','multicollinearity','pearson-correlation-coefficient','random-variable','statistics']`  
-**Category:** _statistics_ | **Word Count:** 815 | **[Full Article](https://deep-learning-mastery.com/projects/multicolinearity-what-it-is-measures-to-spot-it/)**
+**Category:** _statistics_ \| **Word Count:** 815 \| **[Full Article](https://deep-learning-mastery.com/projects/multicolinearity-what-it-is-measures-to-spot-it/)**
 
 ### MySQL Queries Using An AWS Redshift MySQL Database
 
 **Description:** Learn how to leverage Python and Pandas to import CSV files into a MySQL database hosted on AWS using Redshift. The article also guides you through formulating basic MySQL queries to extract the desired data.  
 **Tags:** `['mysql', 'AWS', 'pandas', 'tabular-data', 'query']`  
-**Category:** _tabular-data_ | **Word Count:** 1982 | **[Full Article](https://deep-learning-mastery.com/projects/mysql-queries-using-an-aws-redshift-mysql-database/)**
+**Category:** _tabular-data_ \| **Word Count:** 1982 \| **[Full Article](https://deep-learning-mastery.com/projects/mysql-queries-using-an-aws-redshift-mysql-database/)**
 
 ### The Math Behind "Stepping The Weights"
 
 **Description:** This article explores the fundamental concept behind the Stochastic Gradient Descent optimization algorithm, delving into the mathematical foundations that drive its operation.  
 **Tags:** `['deep-learning', 'math', 'ordinary-least-squares', 'partial-derivate', 'stochastic-gradient-descent']`  
-**Category:** _deep-learning_ | **Word Count:** 1756 | **[Full Article](https://deep-learning-mastery.com/projects/the-math-behind-br-stepping-the-weights/)**
+**Category:** _deep-learning_ \| **Word Count:** 1756 \| **[Full Article](https://deep-learning-mastery.com/projects/the-math-behind-br-stepping-the-weights/)**
 
 ### The Tasks In Every Machine Learning Project: Tabular Data
 
 **Description:** Gain insights into the six essential tasks involved in every machine learning project when working with structured data.  
 **Tags:** `['predictive-modeling', 'hyperparameter-optimization', 'reproducable-code', 'tabular-data', 'feature-engineering']`  
-**Category:** _tabular-data_ | **Word Count:** 583 | **[Full Article](https://deep-learning-mastery.com/projects/the-tasks-in-every-machine-learning-project-br-tabular-data/)**
+**Category:** _tabular-data_ \| **Word Count:** 583 \| **[Full Article](https://deep-learning-mastery.com/projects/the-tasks-in-every-machine-learning-project-br-tabular-data/)**

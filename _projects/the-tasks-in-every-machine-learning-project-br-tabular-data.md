@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: 'The Tasks In Every Machine Learning Project:<br>Tabular Data'
+title: 'The Tasks In Every Machine Learning Project:<br>Structured Data'
 date: 2023-02-21
 description: 'The six tasks in every machine learning project with structured data.'
 img: 'assets/img/838338477938@+-398898935.jpg'
@@ -23,7 +23,7 @@ comments: true
   </nav>
 </d-contents>
 
-# The Six Tasks In Every Machine Learning Project: Tabular Data
+# The Six Tasks In Every Machine Learning Project: Structured Data
 
 ## Summary
 A predictive modeling machine learning project can be divided into six main
