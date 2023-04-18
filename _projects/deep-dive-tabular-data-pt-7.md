@@ -13,7 +13,7 @@ comments: true
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div class="no-math"><a href="#optimization-of-tabular_learner">Optimization of tabular_learner</a></div>
-    <div class="no-math"><a href="#xgbregressor-optimization">XGBRegressor Optimization</a></div>
+    <div class="no-math"><a href="#optimization-of-xgbregressor">Optimization of XGBRegressor</a></div>
     <div class="no-math"><a href="#three-model-ensemble">Three Model Ensemble</a></div>
     <div class="no-math"><a href="#kaggle-submission">Kaggle Submission</a></div>
   </nav>
@@ -202,7 +202,7 @@ r_mse(ens_preds, y_val)
 
 
 
-## XGBRegressor Optimization
+## Optimization of XGBRegressor
 
 The `XGBRegressor` is a highly competitive tree ensemble-based model that has
 demonstrated superior predictive accuracy in numerous Kaggle and other platform
