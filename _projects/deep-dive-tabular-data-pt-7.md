@@ -446,7 +446,7 @@ plt.show()
 </div>
 <div class="caption">
 <strong>Figure:</strong> Bivariate distribution of the predicted sale price. Using the
-predictions from the ninth submission as references, labeled 'SalePrice09' and the ones from this submission, as 'SalePrice'. One can see, that the predictions from this submission are capped at approximately \$100.000, while the distribution of 'SalePrice09' has values larger \$450.000.
+predictions from the ninth submission as references, labeled 'SalePrice09' and the ones from this submission, as 'SalePrice'. One can see, that the predictions from this submission are capped at approximately \$100.000, while the distribution of 'SalePrice09' extends much further upwards, and has values greater \$450.000.
 </div>
     
 
