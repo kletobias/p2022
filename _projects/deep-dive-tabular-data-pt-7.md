@@ -474,9 +474,3 @@ Entire Series:<br>
 [**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
 [**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
 <br>
-
-
-## References
-
-[1]:Caruana, R., Niculescu-Mizil, A., Crew, G., & Ksikes, A. (2004). Ensemble selection from libraries of models. Proceedings of the 21st International Conference on Machine Learning (ICML-04), 18, 18."
-[2]:"Hastie, T., Tibshirani, R., & Friedman, J. H. (2009). The elements of statistical learning: data mining, inference, and prediction. Springer Science & Business Media."
