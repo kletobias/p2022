@@ -8,7 +8,7 @@ dirs= {
     }
 
 # The pattern to search for
-pattern = r'("/Users/tobias/(?:[^/]+/)*)[^/]+/?(?:"$|$)'
+pattern = r'(["\']/Users/tobias/(?:[^/]+/)*)[^/]+/?(?:["\']|$)'
 
 # A regular expression object for the pattern
 regex = re.compile(pattern,re.I)
