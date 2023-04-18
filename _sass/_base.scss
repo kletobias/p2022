@@ -4,6 +4,7 @@
 
 // Typography
 
+ // body font size is 16px if 1rem and rem 16px as well
 body{
   font-family: var(--global-font);
   font-size: 1rem;
@@ -704,14 +705,14 @@ d-article h4{
 }
 @media (min-width: 1024px){
 d-article {
-    font-size: 1.2rem !important;
-    line-height: 1.7em;
+    font-size: 0.875rem !important;
+    line-height: 1.5em;
 }
 }
 d-article d-contents nav a {
     border-bottom: none !important;
     font-weight: normal !important;
-    font-size: 1.2rem !important;
+    font-size: 0.75rem !important;
     cursor: pointer !important;
 }
 d-article d-contents{
@@ -789,7 +790,7 @@ pre code.hljs {
   overflow-x: auto;
   padding: 1em;
   font-family: "Red Hat Mono", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 code.hljs {
