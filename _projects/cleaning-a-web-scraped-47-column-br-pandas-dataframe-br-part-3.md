@@ -38,41 +38,37 @@ outputs are shortened for readability.
 
 ## Summary Of This Article
 
-Creation of a valid gps column for the records, by joining the
-longitude and latitude columns together using geometry object `Point` from
-library `shapely.geometry`. It lays the foundation for assigning from the
-dataset completely independent geospatial features to the listings. Features
-that prove significant for the prediction of variable 'base_rent' in the later
-stages of the process. Further, a dtype `timedelta64[ns]` column is created
-using `datetime64[ns]` type columns 'date_listed' and 'date_unlisted' to
-calculate how long a listing was listed for on the platform
-'immoscout24.de'.<br>
+In order to create the GPS column, the longitude and latitude columns are joined
+together using geometry object `Point` from library `shapely.geometry`. This
+enables completely independent geospatial features to be assigned to listings
+from the dataset. A set of features that are significant for predicting variable
+'base_rent' later on in the process. Furthermore, the data from the
+'date_listed' and 'date_unlisted' columns is calculated to determine how long a
+listing has been on 'immoscout24.de'.
 
 ## Summary Of The Series
 
 - A DataFrame is given as input that contains 47 columns at the beginning.
-- Dimensionality Reduction is performed on the columns, to filter and only keep relevant columns.
+- Dimensionality Reduction is performed on the columns, to filter and keep relevant columns.
 - The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
-- Unique values of each column give the basis for the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly used to extract cell contents that hold the valid data.
-- Regex are also used to replace invalid character patterns with valid ones.
-- Validation of the values, after cleaning is performed using regex patterns.
-- New `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
+- Unique values of each column determine the steps needed to clean the columns.
+- Regular Expressions (**regex**) are mostly employed to extract cell contents that hold valid data.
+- Regex also replace invalid character patterns with valid ones.
+- Validation of the values after cleaning is performed using regex patterns.
+- The `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
 
 
 ## Heating Costs
 
-Looking at `df.heating_costs.value_counts()`, we see that the heating costs are
-often included in the auxiliary costs. For 4047 rows, which is around
-$$\frac{1}{3}$$ of all rows, it only states that heating costs are included in the
-auxiliary without any numerical value. On average, heating costs should be
-around the same for listings with one of the major heating types and similar
-isolation and using normalized area inside a listing (given in $$m^{2}$$). Hamburg
-is close to the Northern Sea and therefore the winters in Hamburg are generally
-mild. There certainly is no continental climate, where heating make up a higher
-percentage of the total rent.
+Based on df.heating_costs.value_counts(), we can see that heating costs are
+often included in auxiliary costs. There is no numerical value for 4047 rows,
+which is around $$\frac{1}{3}$$ of all rows. Listings with one of the major
+heating types and similar isolation should have similar heating costs (given in
+$$m^{2}$$). Because Hamburg is located near the Northern Sea, its winters are
+generally mild. Certainly, Hamburg's climate isn't continental, where heating
+accounts for a higher percentage of rent.
 
-The column is therefore dropped.
+Therefore, the column is removed. 
 
 
 ```python
@@ -103,12 +99,11 @@ df.drop(labels=["heating_costs"], axis=1, inplace=True)
 
 ## Latitude
 
-This column is one of the most important ones in the dataset together with the
-Longitude column. Together they give the exact GPS coordinates for most of the
-listings. This spacial information will be joined with from the dataset
-independent external geospatial based information. Together these will lay the
-foundation for the most influential features used to train the *XGBoost* and *
-Lasso Regression* models.
+Together with the Longitude column, this column is one of the most important in
+the dataset. For most listings, they provide GPS coordinates. In addition to
+this spatial data, external geospatial information will be added from the
+dataset that is independent of the dataset. *XGBoost* and *Lasso Regression* models
+will be trained using these features together. 
 
 ```python
 df.lat.value_counts().sample(10, random_state=seed)
@@ -132,13 +127,15 @@ df.lat.value_counts().sample(10, random_state=seed)
 
 
 ### Cleaning Of Longitude And Latitude Columns
-A look at a sample of the values found in the Latitude column, shows that they
-most likely all follow the same pattern and thus can be easily converted to
-floating point numbers. Generally, the `json_` columns are much easier to clean,
-than the values from the visible features on the URL of the listing. For the
-following cases, the `pandas.Series.str.extract()` function is the tool of
-choice.  No difference in the number of unique values before and after the
-cleaning for both columns is found.
+
+Taking a look at a sample of the values in the Latitude column, it appears they
+all follow the same pattern, and can therefore be easily converted to floating
+point numbers. There is no doubt that the values from these columns are much
+easier to clean than values from those from the visible features in the URL. The
+`pandas.Series.str.extract()` function can be used in the following cases.  Both
+columns have the same number of unique values before and after cleaning.
+
+
 
 
 ```python

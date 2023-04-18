@@ -1032,7 +1032,7 @@ aspects from it.
 
 A grid search is a method where the user passes a grid with an exhaustive set of
 values to be tested to the algorithm as input. A set of values is passed on as
-input for the grid search algorithm, for each parameter to be optimised during
+input for the grid search algorithm, for each parameter to be optimized during
 the grid search. The underlying problem with the grid search is that each
 hyperparameter can have a large value range for its possible values. An example
 is a parameter with a continuous value range between $$0$$ and $$1$$. This range
@@ -1059,7 +1059,7 @@ by `get_truncated_normal`) during each iteration and can therefore cover a wider
 range of values for each parameter, while using increments as small as the
 number of iterations passed allow it to use for sampling.
 
-1400 iterations are used, each one using a 8 fold cross-validation and
+1400 iterations are used, each one using an 8-fold cross-validation and
 `enable_categorical=True` is passed. The tree method is the default. At the end,
 the best estimator is assigned to variable `best` and the rmse on the validation
 set is printed out using estimator `best`.

@@ -384,7 +384,7 @@ tl(train)
 We look at a sample of the training data, in order to get a better idea of how
 the data in this dataset is given. There are 81 columns in this dataset and
 therefore we will need to look several slices of the set of columns in order
-to analyse the data in each column.
+to analyze the data in each column.
 
 
 ```python
@@ -412,7 +412,7 @@ values.) or numerical.
    row and might have unique values for each building in the dataset.
 - `mssubclass`: Gives the building class. It looks like a categorical column,
    with numerical classes.
-- `mszoning`: Is the general zoning classification of a building and it looks
+- `mszoning`: Is the general zoning classification of a building, and it looks
 - like a categorical column with string classes.
 - `lotfrontage`: Gives the street frontage that each building has towards a
    street. This is measured by taking the horizontal distance that is
@@ -1908,7 +1908,7 @@ Using the output of the function above, the unique values of all columns of type
 more time finding additional columns with ordered values of type `object` or
 also including columns with unique values of other types, e.g., see the output
 of the `can` function above. The goal here was to find several columns that meet
-this criteria that can be batch processed without the need to individually set
+this criterium that can be batch processed without the need to individually set
 the ordered categorical dtype for each column, since the unique values of the
 columns don't share close to the same set of unique values that all follow the
 same order.
@@ -2119,7 +2119,7 @@ on the threshold (`max_card`) passed for the maximum number of unique values
 that a column may have to still be classified as being categorical. In this
 case, since the preprocessing is only used to train tree ensemble models, there
 is no added information for the model, if we tell it that there are continuous,
-as well as categorical variables. This is will change later, when we train a
+as well as categorical variables. This will change later, when we train a
 neural network, there the distinction is relevant.
 
 `train_s`, `valid_s` are assigned the output of function `RandomSplitter` which

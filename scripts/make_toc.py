@@ -5,6 +5,7 @@ import subprocess
 import numpy as np
 import time
 import glob
+from slugify import slugify
 
 # Use True for Tobias machine, False for Ashish machine.
 tobias = True
@@ -42,13 +43,14 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
             mc2 = re.sub(r'<br>',' ',mc2)
             mc2 = re.sub(r'\*','',mc2)
             h2c2nd.append(mc2)
-            mc1 = re.sub(r'\w',lambda m: m[0].lower(),mc2)
-            #mc1 = re.sub(r'([^.:a-z0-9&_])','-',mc1)
-            mc1 = re.sub(r'(\s+)','-',mc1)
-            mc1 = re.sub(r'([&.:!;@()/\\*|])','',mc1)
-#            mc1 = re.sub(r'-{2,}','-',mc1)
-            mc1 = re.sub(r'(\d)\.(\d)','\1\2',mc1)
-#            mc1 = re.sub(r'_','-',mc1)
+            #mc1 = re.sub(r'\w',lambda m: m[0].lower(),mc2)
+            ##mc1 = re.sub(r'([^.:a-z0-9&_])','-',mc1)
+            #mc1 = re.sub(r'(\s+)','-',mc1)
+            #mc1 = re.sub(r'([&.:!;@()/\\*|])','',mc1)
+##            mc1 = re.sub(r'-{2,}','-',mc1)
+            #mc1 = re.sub(r'(\d)\.(\d)','\1\2',mc1)
+##            mc1 = re.sub(r'_','-',mc1)
+            mc1 = slugify(mc2)
             h2c1st.append(mc1)
         cf = fname[n][:-3]
         with open(f'{adir[:-10]}scripts/{dt}-toc-output-{cf}.html','w+') as toc:
@@ -63,6 +65,6 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
 #            toc.close()
 
 # make_toc(file='tocp.md',all=False,remove_previous=False)
-make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/multicolinearity-what-it-is-measures-to-spot-it.md.md',
+make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/the-tasks-in-every-machine-learning-project-br-unstructured-data.md',
          remove_previous=False)
 

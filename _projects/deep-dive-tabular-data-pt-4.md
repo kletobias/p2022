@@ -36,7 +36,7 @@ comments: true
 # Part 4: Interpretation Using Advanced Statistical Visualizations
 ## Dendrogram Visualization For Spearman Rank Correlations
 
-With the *scipy* library, one can create a dendrogram using the features in the
+With the *scipy* library, one can create a Dendrogram using the features in the
 training set. Using the Spearman rank correlation ($$\rho$$), which does not have any
 prerequisites in terms of the relationships between the features, e.g., a linear
 relationship, the rank correlation is used to calculate the correlations. The
@@ -113,7 +113,7 @@ def get_oob(df,n:str,l=l):
     return m.oob_score_
 ```
 
-The baseline oob  score for `xs_imp`.
+The baseline oob score for `xs_imp`.
 
 
 ```python
@@ -288,7 +288,7 @@ df_oob
 ## New Train & Validation Sets Using Resulting Feature Set
 
 The resulting Datasets have the two features removed. These two datasets are the
-new baseline datasets that all of the following models are fitted/evaluated on.
+new baseline datasets that all the following models are fitted/evaluated on.
 
 
 ```python
@@ -543,7 +543,7 @@ ax = plot_partial_dependence(
 
 ## Tree Interpreter
 
-A plot using `treeinterpreter` from treeinterpreter and we try to answer the
+A plot using `treeinterpreter` from treeinterpreter, and we try to answer the
 question:
 
 - For predicting with a particular row of data, what were the most important
