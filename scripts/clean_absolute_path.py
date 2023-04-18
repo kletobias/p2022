@@ -8,13 +8,13 @@ dirs= {
     }
 
 # The pattern to search for
-pattern = r'(["\']/Users/tobias/(?:[^/]+/)*)[^/]+/?(?:["\']|$)'
+pattern = r'(["\']/Users/tobias/(?:[^/]+/)*)([^/]+/?)(?:["\']|$)'
 
 # A regular expression object for the pattern
 regex = re.compile(pattern,re.I)
 
 # The string to replace the pattern with
-replacement_base = "/path//to//destination//"
+replacement_base = "/path/to/destination/"
 
 for i in [os.path.join(dirs['base'],dirs[k]) for k in dirs.keys() if k != "base"]:
     os.chdir(i)
@@ -38,7 +38,9 @@ for i in [os.path.join(dirs['base'],dirs[k]) for k in dirs.keys() if k != "base"
                         new_line = line
                         for match in regex.finditer(line):
                             excluded_part = match.group(1)
+                            print(f'excluded_part \n {excluded_part} \n')
                             replacement = replacement_base + excluded_part
+                            print(f'replacement \n {replacement} \n')
                             new_line = new_line.replace(match.group(0), replacement)
                         new_lines.append(new_line)
                     # Join the lines back into a single string
