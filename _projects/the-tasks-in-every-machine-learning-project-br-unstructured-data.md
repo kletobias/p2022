@@ -8,6 +8,7 @@ tags: ['predictive-modeling', 'hyperparameter-optimization', 'workflow-outline',
 category: ['deep-learning']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 <br>
 <d-contents>
