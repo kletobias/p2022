@@ -2,7 +2,7 @@
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 7'
 date: 2023-01-07
-description: 'Kaggle Submission 2: tabular\_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.'
+description: 'Kaggle Submission 2: tabular_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_learner', 'xgboost-regressor']
 category: ['tabular-data']
@@ -1015,10 +1015,21 @@ Documentation*](https://xgboost.readthedocs.io/en/stable/python/python_api.html#
 Functions created for the hyperparameter optimization are `RMSE` and
 `get_truncated_normal`.
 
-`get_truncated_normal` is a custom distribution based on the normal
+`get_truncated_normal` is a custom continuous distribution based on the normal
 distribution that ensures that none of its values are below or above a
 specified value. Between the upper and lower limit, one can adjust the shape of
-the bell curve like value distribution.
+the bell curve like value distribution. It is important to use sampling with
+replacement when possible, so that the algorithm is not limited by the
+decreasing number of values to sample from. Further, it is highly recommended to
+use continuous distributions to sample from for continuous parameters, as stated
+in the documentation:
+
+> If all parameters are presented as a list, sampling without replacement is
+> performed. If at least one parameter is given as a distribution, sampling with
+> replacement is used. It is highly recommended to use continuous distributions
+> for continuous parameters.<br>
+> 
+> [sklearn.model_selection.RandomizedSearchCV - documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
 
 `RMSE` defines a custom scorer metric that *sklearn* can use during training to
 evaluate the accuracy of the predictions made by the estimator during the
@@ -1035,34 +1046,36 @@ values to be tested to the algorithm as input. A set of values is passed on as
 input for the grid search algorithm, for each parameter to be optimized during
 the grid search. The underlying problem with the grid search is that each
 hyperparameter can have a large value range for its possible values. An example
-is a parameter with a continuous value range between $$0$$ and $$1$$. This range
-containing all $$\textbf{machine numbers}$$ between $$0$$ and $$1$$ could not be
+is a parameter with a continuous value range between $0$ and $1$. This range
+containing all $\textbf{machine numbers}$ between $0$ and $1$ could not be
 tested in a grid search, as there are too many values in this range. Oftentimes
 only a small subset of all hyperparameters in a model and only a small subset of
 the respective value ranges for each parameter are of relevance for the value of
 the evaluation metric. However, the number of models can still become extremely
-high. Consider $$15$$ hyperparameters and for illustration purposes assume each
-one has $$40$$ possible values. If a $$5$$ fold cross validation is used to
-evaluate the models, the total number of models to build is given by $$15 \cdot
-40 \cdot 5 = 3000$$. To put it into perspective, with an estimated time of
-$$0.68$$ seconds that it takes to build one model on the here used machine, to
-build all $$3000$$ models would take $$3000 \cdot 0.68 = 34
-\;\mathrm{minutes}$$. While more computational power in the form of better
+high. Consider $15$ hyperparameters and for illustration purposes assume each
+one has $40$ possible values. If a $5$ fold cross validation is used to
+evaluate the models, the total number of models to build is given by $15 \cdot
+40 \cdot 5 = 3000$. To put it into perspective, with an estimated time of
+$0.68$ seconds that it takes to build one model on the here used machine, to
+build all $3000$ models would take $3000 \cdot 0.68 = 34
+\;\mathrm{minutes}$. While more computational power in the form of better
 hardware is a solution up to a certain point, using one of the following methods
 can be comparably more efficient. Considering these weaknesses of the grid
 search procedure, there are alternatives available and given the number and
 value range for each parameter included in the hyperparameter optimization, a
 random search is chosen over a grid search.
 
-Random search samples from the distribution passed for each parameter (specified
-by `get_truncated_normal`) during each iteration and can therefore cover a wider
-range of values for each parameter, while using increments as small as the
-number of iterations passed allow it to use for sampling.
+Random search samples from the distributions passed for each parameter, given by
+the values of the `param_dist` dictionary. During each iteration and can
+therefore cover a wider range of values for each parameter, while using
+increments as small as the number of iterations passed allow it to use for
+sampling.
 
 1400 iterations are used, each one using an 8-fold cross-validation and
-`enable_categorical=True` is passed. The tree method is the default. At the end,
-the best estimator is assigned to variable `best` and the rmse on the validation
-set is printed out using estimator `best`.
+`enable_categorical=True` is passed, given the embedded categorical variables.
+At the end, the best estimator is assigned to
+variable `best` and the RMSE on the validation set is printed out using
+estimator `best`.
 
 
 ```python
