@@ -136,11 +136,11 @@ estimator is trained using the entire training set. See [*RandomForestRegressor
 Documentation*](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
 
 Given that each base base estimator was trained with a maximum of 500 samples or
-~43% of all training samples, it is likely that the average of the *rmse* over the predictions
+~43% of all training samples, it is likely that the average of the *RMSE* over the predictions
 for the samples in the validation dataset is more volatile for a low number of
 estimators, and is less volatile as additional base estimators are added one by
 one, until all 30 are used and their predictions are averaged. We expect the
-value for the average rmse over all 30 base estimators to be equal to the rmse
+value for the average RMSE over all 30 base estimators to be equal to the RMSE
 value we got when executing `m_rmse(m, valid_xs, valid_y)`.
 
 
@@ -149,17 +149,17 @@ x=len(xs)
 pct = np.ceil((500/x)*100)
 print(f'Percentage of samples each base estimator uses of the training data: {pct}\n')
 preds = np.stack([t.predict(valid_xs) for t in m.estimators_])
-print(f'The mean rmse over all trees on the validation dataset is: {r_mse(preds.mean(0), valid_y)}')
+print(f'The mean RMSE over all trees on the validation dataset is: {r_mse(preds.mean(0), valid_y)}')
 ```
 
     Percentage of samples each base estimator uses of the training data: 43.0
     
-    The mean rmse over all trees on the validation dataset is: 0.13605
+    The mean RMSE over all trees on the validation dataset is: 0.13605
 
 
 ### RFR - Average RMSE By Number Of Estimators
 
-Visualization of the average rmse value, by number of estimators added.
+Visualization of the average RMSE value, by number of estimators added.
 
 
 ```python
@@ -199,7 +199,7 @@ error*, as seen below. It is a metric one can use in addition to
 > The out-of-bag error is the mean error on each training sample, using only the trees
 > whose training subset did not include that particular sample.
 
-The value for the rmse, only using out-of-bag samples is higher than the rmse
+The value for the RMSE, only using out-of-bag samples is higher than the RMSE
 on the training and validation set, which was expected.
 
 
@@ -269,7 +269,7 @@ plt.show()
 
 The dataset used here has 80 independent variables, of which most are assigned
 0, which means that their respective contribution, relative to the other
-features in terms of lowering the overall *rmse* value is non-existent, judging
+features in terms of lowering the overall *RMSE* value is non-existent, judging
 by the `feature_importances_` method. The underlying metric is the Gini
 importance metric, as mentioned earlier.
 
@@ -448,7 +448,7 @@ We want to answer this question:
 
 - How do predictions change, as we drop subsets of the features?
 
-The rmse values for the predictions on the training and validation dataset.
+The RMSE values for the predictions on the training and validation dataset.
 
 
 ```python
@@ -464,9 +464,9 @@ m_rmse(m, xs_imp, y), m_rmse(m, valid_xs_imp, valid_y)
 
 ### Interpretation Of RMSE Values
 
-The rmse values for the smaller feature set are worse compared to the ones using
+The RMSE values for the smaller feature set are worse compared to the ones using
 all features. In this case, this is a problem, given that kaggle scores our
-submission only on the rmse value of the test set. In reality, this might be
+submission only on the RMSE value of the test set. In reality, this might be
 different. A model has to predict the sale price for houses it has never seen
 and not only on the kaggle test set. The predictions might be more robust and
 easier to interpret, given a smaller set of features.
