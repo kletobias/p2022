@@ -2,18 +2,19 @@
 layout: distill
 title: 'Deep Dive Tabular Data Pt. 7'
 date: 2023-01-07
-description: 'Kaggle Submission 2: tabular\_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.'
+description: 'Kaggle Submission 2: tabular_learner deep learning estimator optimized using manual hyperparameter optimization. XGBRegressor using RandomizedSearchCV and sampling from continuous parameter distributions.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_learner', 'xgboost-regressor']
 category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#tabular_learner-optimization">tabular_learner Optimization</a></div>
-    <div class="no-math"><a href="#xgbregressor-optimization">XGBRegressor Optimization</a></div>
+    <div class="no-math"><a href="#optimization-of-tabular_learner">Optimization of tabular_learner</a></div>
+    <div class="no-math"><a href="#optimization-of-xgbregressor">Optimization of XGBRegressor</a></div>
     <div class="no-math"><a href="#three-model-ensemble">Three Model Ensemble</a></div>
     <div class="no-math"><a href="#kaggle-submission">Kaggle Submission</a></div>
   </nav>
@@ -32,49 +33,27 @@ comments: true
 
 # Part 7: Optimization Routines & Final Submission
 
-## tabular_learner Optimization
+## Optimization of tabular_learner
 
-With the dataloaders objects created for training, as well as for the final
-predictions the `tabular_learner` has to be optimized using a manual
-hyperparameter optimization routine. Given that this dataset is relatively
-small with less than 2000 rows, a 10 core CPU machine is enough for the
-optimizations applied here.
+In order to achieve the best possible performance from the `tabular_learner`
+model, a manual hyperparameter optimization routine is applied using the
+dataloaders objects created for training and final predictions. Since this
+dataset is relatively small, with less than 2000 rows, a 10 core CPU machine is
+sufficient for the optimization process.
 
-The initial step is to call method `lr_find` on the `tabular_learner` object, so
-the value range for parameter `lr` can be specified. Since the training set is
-small, overfitting occurred quickly and a small value for `lr` showed to work
-best in this case. Values in list `linspace` were tested. Epochs were tested in
-increments of 5 between 20 and 40. Early testing showed that this range produces
-relatively consistent rmse values on the validation set.
+The first step in the optimization routine is to use the `lr_find` method to
+identify the optimal learning rate (`lr`) value for the model. Given the small
+size of the training set, overfitting occurred quickly, and it was found that a
+small value for `lr` worked best in this case. To determine the range of values
+for `lr`, the `linspace` function was used to test a range of values. Epochs
+were tested in increments of 5 between 20 and 40. Early testing showed that this
+range produces relatively consistent RMSE values on the validation set, allowing
+for a more targeted and efficient hyperparameter search process.
 
 
 ```python
 learn.lr_find()
 ```
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
 
 
 
@@ -91,7 +70,7 @@ learn.lr_find()
     </div>
 </div>
 <div class="caption">
-        
+<strong>Figure:</strong> Learning rate finder visualization.
 </div>
     
 
@@ -115,774 +94,7 @@ for i in setups:
 ```
 
 
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-
-
-
-
-
-
-
-Final values for the tested parameters that result in the lowest rmse value on
+Final values for the tested parameters that result in the lowest RMSE value on
 the training data are found using the code below.
 
 
@@ -895,7 +107,6 @@ dfopt
 ```
 
     0.132921
-
 
 
 
@@ -915,6 +126,7 @@ dfopt
     }
 </style>
 <table border="1" class="dataframe table-responsive">
+<caption><strong>Table:</strong> Five best values for metric RMSE, by Learning rate, and number of epochs.</caption>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -972,7 +184,7 @@ therefore an ensemble of models can potentially achieve better predictions over
 the entire set of rows compared to the predictions of the individual models in
 the ensemble.
 
-This simple ensemble resulted in the lowest rmse value recorded so far on the
+This simple ensemble resulted in the lowest RMSE value recorded so far on the
 validation set.
 
 
@@ -991,78 +203,72 @@ r_mse(ens_preds, y_val)
 
 
 
-## XGBRegressor Optimization
+## Optimization of XGBRegressor
 
-The `XGBRegressor` is a top contender when it comes to a tree ensemble based
-model that can deliver predictions of the highest accuracy, having being used
-in many competition winning submissions on Kaggle and other platforms in the
-past.
+The `XGBRegressor` is a highly competitive tree ensemble-based model that has
+demonstrated superior predictive accuracy in numerous Kaggle and other platform
+competitions. To achieve the best performance from this model, careful
+hyperparameter tuning is required during the fitting process, which should be
+complemented with robust cross-validation techniques to prevent overfitting on
+the training data.
 
-In order to get the most out of this model, one has to use hyperparameter tuning
-during the fitting process together with strong cross-validation techniques to
-keep the estimator from overfitting on the training data during the optimization
-process.
+The hyperparameter optimization procedure is carried out using the parameters
+specified in the *dmlc XGBoost* version of the model. For a comprehensive list
+of parameters and their descriptions, please refer to the [*dmlc XGBoost Parameter Documentation*](https://xgboost.readthedocs.io/en/stable/parameter.html). The
+*Scikit-Learn API*, which can also be found in the documentation ([*Scikit-Learn XGBoost API Documentation*](https://xgboost.readthedocs.io/en/stable/python/python_api.html#module-xgboost.sklearn)),
+is utilized in the code below.
 
-The parameters used here during the hyperparameter optimization procedure are
-the ones used in the *dmlc XGBoost* version of the model. The full list of
-parameters, as well as descriptions for each one can be found in the [*dmlc
-XGBoost Parameter
-Documentation*](https://xgboost.readthedocs.io/en/stable/parameter.html). The
-code below uses the *Scikit-Learn API*, found in the docs as well([*Scikit-Learn
-XGBoost API
-Documentation*](https://xgboost.readthedocs.io/en/stable/python/python_api.html#module-xgboost.sklearn))
+To facilitate hyperparameter optimization, we have developed two functions:
+`RMSE` and `get_truncated_normal`. `get_truncated_normal` is a custom continuous
+distribution derived from the normal distribution, which ensures that none of
+its values exceed a specified value range. By adjusting the distribution's bell
+curve shape, the value distribution can be fine-tuned between the upper and
+lower limits. It is advisable to use sampling with replacement to prevent the
+algorithm from being restricted by a dwindling pool of values to sample from.
+Moreover, it is highly recommended to use continuous distributions to sample
+from for continuous parameters, as mentioned in the documentation:
 
-Functions created for the hyperparameter optimization are `RMSE` and
-`get_truncated_normal`.
+> If all parameters are presented as a list, sampling without replacement is
+> performed. If at least one parameter is given as a distribution, sampling with
+> replacement is used. It is highly recommended to use continuous distributions
+> for continuous parameters.
+> 
+> [*sklearn.model_selection.RandomizedSearchCV - Documentation*](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
 
-`get_truncated_normal` is a custom distribution based on the normal
-distribution that ensures that none of its values are below or above a
-specified value. Between the upper and lower limit, one can adjust the shape of
-the bell curve like value distribution.
+`RMSE` defines a custom scorer metric that can be used by *sklearn* to evaluate
+the estimator's predictive accuracy during the optimization process. This metric
+is also the standard evaluation metric used by Kaggle for final submissions.
 
-`RMSE` defines a custom scorer metric that *sklearn* can use during training to
-evaluate the accuracy of the predictions made by the estimator during the
-optimization process. It is the metric that Kaggle uses to evaluate the final
-submission.
+The `RandomizedSearchCV` function from the *sklearn* library is used for
+hyperparameter optimization. This function is a variation of the more general
+method called *random search*. Although it shares some similarities with the
+*grid search* method, it differs in several key aspects.
 
-The hyperparameter optimization used is `RandomizedSearchCV` from the *sklearn*
-library. It is a variation of the general method called *random search*. It
-shares some characteristics with method *grid search*, but differs in a few key
-aspects from it.
+Compared to grid search, which requires the user to pass an exhaustive set of
+values to be tested for each parameter to the algorithm, random search is less
+restrictive. It samples from the distributions passed for each parameter, given
+by the values of the `param_dist` dictionary, during each iteration. As a
+result, random search can cover a wider range of values for each parameter and
+use increments as small as the number of iterations passed allows for sampling.
 
-A grid search is a method where the user passes a grid with an exhaustive set of
-values to be tested to the algorithm as input. A set of values is passed on as
-input for the grid search algorithm, for each parameter to be optimized during
-the grid search. The underlying problem with the grid search is that each
-hyperparameter can have a large value range for its possible values. An example
-is a parameter with a continuous value range between $$0$$ and $$1$$. This range
-containing all $$\textbf{machine numbers}$$ between $$0$$ and $$1$$ could not be
-tested in a grid search, as there are too many values in this range. Oftentimes
-only a small subset of all hyperparameters in a model and only a small subset of
-the respective value ranges for each parameter are of relevance for the value of
-the evaluation metric. However, the number of models can still become extremely
-high. Consider $$15$$ hyperparameters and for illustration purposes assume each
-one has $$40$$ possible values. If a $$5$$ fold cross validation is used to
-evaluate the models, the total number of models to build is given by $$15 \cdot
-40 \cdot 5 = 3000$$. To put it into perspective, with an estimated time of
-$$0.68$$ seconds that it takes to build one model on the here used machine, to
-build all $$3000$$ models would take $$3000 \cdot 0.68 = 34
-\;\mathrm{minutes}$$. While more computational power in the form of better
-hardware is a solution up to a certain point, using one of the following methods
-can be comparably more efficient. Considering these weaknesses of the grid
-search procedure, there are alternatives available and given the number and
-value range for each parameter included in the hyperparameter optimization, a
-random search is chosen over a grid search.
+One of the weaknesses of the grid search procedure is that each hyperparameter
+can have a large value range for its possible values, such as a continuous value
+range between $0$ and $1$. This range containing all possible machine numbers
+between $0$ and $1$ cannot be tested in a grid search, as there are too many
+values in this range. Additionally, the number of models to build during grid
+search can become extremely high even for a small subset of hyperparameters,
+making the process computationally expensive. For example, with $15$
+hyperparameters and $40$ possible values for each, using a $5$-fold
+cross-validation would require building $3000$ models, which takes approximately
+$34$ minutes with a time of $0.68$ seconds per model on the machine used in this
+case.
 
-Random search samples from the distribution passed for each parameter (specified
-by `get_truncated_normal`) during each iteration and can therefore cover a wider
-range of values for each parameter, while using increments as small as the
-number of iterations passed allow it to use for sampling.
-
-1400 iterations are used, each one using an 8-fold cross-validation and
-`enable_categorical=True` is passed. The tree method is the default. At the end,
-the best estimator is assigned to variable `best` and the rmse on the validation
-set is printed out using estimator `best`.
+To address these issues, random search is chosen over grid search for
+hyperparameter optimization. In this implementation, $1400$ iterations are used,
+each with an $8$-fold cross-validation, and `enable_categorical=True` is passed
+to account for the categorical variables. The best estimator is then assigned to
+variable `best`, and the RMSE on the validation set is printed out using
+estimator `best`.
 
 
 ```python
@@ -1108,9 +314,26 @@ print(f"{val_score} val_score")
 
 
 ## Three Model Ensemble
-An ensemble consisting of `tabular_learner`, `RandomForestRegressor` and
-`XGBRegressor` is tested using equal weights for each one. The results beat the
-previous ones and this ensemble is used in the final submission.
+
+Ensembling is a widely used technique in machine learning that combines multiple
+models to improve the overall predictive performance. One common way to weigh
+the predictions of the ensemble members is by assigning equal weights to each
+model<d-footnote>Caruana, R., Niculescu-Mizil, A., Crew, G., & Ksikes, A.
+(2004). Ensemble selection from libraries of models. Proceedings of the 21st
+International Conference on Machine Learning (ICML-04), 18, 18.</d-footnote> ,
+as in the case of using a $\frac{1}{3}$, $\frac{1}{3}$, $\frac{1}{3}$ weighting
+for regression problems. This approach has been used successfully in various
+competitions, including Kaggle, where it has been found to improve predictive
+accuracy.<d-footnote>Hastie, T., Tibshirani, R., & Friedman, J. H. (2009). The
+elements of statistical learning: data mining, inference, and prediction.
+Springer Science & Business Media.</d-footnote>
+
+An ensemble approach combining `tabular_learner`, `RandomForestRegressor`, and
+`XGBRegressor` is implemented to further improve the performance of the model.
+Each model is given equal weight in the ensemble, and the results exceed those
+achieved by individual models. As a result, this ensemble is used in the final
+submission, achieving even higher accuracy than the previously employed
+approaches.
 
 
 ```python
@@ -1127,24 +350,23 @@ r_mse(ens_preds2, y_val)
 
 ## Kaggle Submission
 
-Function `val_pred` takes a dataloader and the three estimators optimized in the
-previous sections as inputs and 
-
-Since the rmse of the predictions is lowest when only using `XGBRegressor` and
-`RandomForestRegressor`, only these two are used for the final predictions
+The `val_pred` function takes a dataloader and the three optimized estimators as
+inputs and generates predictions using all three models. However, since the RMSE
+of the predictions is found to be lowest when only using `XGBRegressor` and
+`RandomForestRegressor`, these two models are chosen for the final predictions
 submitted to Kaggle.
 
-The exponential function is applied to the predictions of each estimator before
-adding them together and dividing them by three. This re-transforms them. In
-this form the predictions can be added to a DataFrame under a new column
-`SalePrice` and exported as CSV file.
+To re-transform the predictions before adding them together and dividing by
+three, the exponential function is applied to the predictions of each estimator.
+The resulting predictions can then be added to a DataFrame under a new column
+`SalePrice` and exported as a CSV file.
 
-Finally, since this submission turned out to be worse than the best one I had
-submitted prior, the predictions of the best one to that point was imported and
-the bivariate distribution of the dependent variable was plotted and compared.
-The best submission is *9* and so `SalePrice09` gives the predictions of this
-submission.
-
+Upon analyzing the results of the Kaggle submission, it was found to be worse
+than the best one submitted previously. To identify potential reasons for this,
+the predictions of the best submission thus far were imported, and a bivariate
+distribution of the dependent variable was plotted and compared. The best
+submission corresponds to `SalePrice09`, and the predictions of this submission are
+labeled as `SalePrice` in the following figures.
 
 ```python
 def val_pred(tonn_vfs_dl,m2,best,learn):
@@ -1155,8 +377,8 @@ def val_pred(tonn_vfs_dl,m2,best,learn):
         print(type(i),len(i),i.shape)
     preds_ens_final = (np.exp(to_np(predsnn.squeeze())) + np.exp(predsrf) + np.exp(predsxgb)) /3
     print(preds_ens_final.shape,preds_ens_final[:4])
-    df_sub=pd.read_csv('/Users/tobias/all_code/projects/python_projects/kaggle/my_competitions/kaggle_competition_house_prices/data/sample_submission.csv')
-    df_sub9=pd.read_csv('/Users/tobias/all_code/projects/python_projects/kaggle/my_competitions/kaggle_competition_house_prices/data/submission_9.csv')
+    df_sub=pd.read_csv('../data/sample_submission.csv')
+    df_sub9=pd.read_csv('../data/submission_9.csv')
     df_sub9 = (
         df_sub9
         .rename_column('SalePrice','SalePrice09')
@@ -1201,13 +423,12 @@ print(df_sub_comp.columns)
     </div>
 </div>
 <div class="caption">
-        
-</div>
+<strong>Figure:</strong> Histogram of the absolute value of the differences in
+predicted sale price compared to submission 09</div>
     
 
 
     Index(['SalePrice', 'SalePrice09', 'diff', 'predsrf', 'predsxgb'], dtype='object')
-
 
 
 ```python
@@ -1225,7 +446,8 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        
+<strong>Figure:</strong> Bivariate distribution of the predicted sale price. Using the
+predictions from the ninth submission as references, labeled 'SalePrice09' and the ones from this submission, as 'SalePrice'. One can see, that the predictions from this submission are capped at approximately \$100.000, while the distribution of 'SalePrice09' extends much further upwards, and has values greater \$450.000.
 </div>
     
 
@@ -1238,7 +460,8 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        
+<strong>Figure:</strong> Predictions by model contributing to the final ensemble
+predictions. <i>predsrf</i>: RandomForestRegressor, <i>predsxgb</i>: XGBRegressor, and for the ensemble as <i>diff</i> (including the neural network model). Predictions made by all contributing models are systematically too low.
 </div>
     
 

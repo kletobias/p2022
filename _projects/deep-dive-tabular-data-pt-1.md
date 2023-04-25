@@ -122,7 +122,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
 ```toc
     - Creating Estimators Optimized For Kaggle
     - RandomForestRegressor Optimization
-      - Final RandomForestRegressor rmse Values
+      - Final RandomForestRegressor RMSE Values
     - tabular_learner - Deep Learning Model
       - Testing Of Different Values For Parameter max_card
       - Run TabularPandas Function

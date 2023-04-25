@@ -65,6 +65,6 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
 #            toc.close()
 
 # make_toc(file='tocp.md',all=False,remove_previous=False)
-make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/the-tasks-in-every-machine-learning-project-br-unstructured-data.md',
+make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/deep-dive-tabular-data-pt-5.md',
          remove_previous=False)
 

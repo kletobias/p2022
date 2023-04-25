@@ -86,7 +86,7 @@ relationship among the features found in `xs_imp`.
 ## Dendrogram Findings Applied
 
 To test what the impact of dropping even more features from `xs_imp`, on the
-rmse on the training set is, we look at the *out-of-bag error* (oob). The features
+RMSE on the training set is, we look at the *out-of-bag error* (oob). The features
 tested are `garagetype` and `exterqual`, since they showed to be the two
 features with the highest pair correlation in the training set.
 
@@ -136,7 +136,7 @@ get_oob(xs_imp,'xs_imp')
 The oob score for `xs_imp` is slightly lower than the one for `xs`. Considering,
 that there are 83 columns in `xs` and 21 in `xs_imp`, the slight decrease in the
 oob score shows that most of the difference in features between the two is made
-up of columns that don't decrease the rmse of the model on the training data.
+up of columns that don't decrease the RMSE of the model on the training data.
 
 
 ```python

@@ -8,6 +8,7 @@ tags: ['hearthstone', 'money-to-in-game-currency', 'research', 'simulation', 'st
 category: ['statistics']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 <br>
 <br>

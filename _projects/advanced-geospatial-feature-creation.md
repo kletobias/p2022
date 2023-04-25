@@ -8,7 +8,7 @@ tags: ['data-cleaning', 'data-transformation', 'geospatial-feature-creation', 'r
 category: ['data-preprocessing']
 authors: 'Tobias Klein'
 comments: true
-featured: true
+featured: false
 ---
 <d-contents>
   <nav class="l-text figcaption">

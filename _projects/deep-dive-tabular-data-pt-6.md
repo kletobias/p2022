@@ -60,19 +60,19 @@ The hyperparameter optimization for each of them is:
 ## Creating Estimators Optimized For Kaggle
 
 So far, the focus has been on fitting estimators for interpretability and not
-for the lowest rmse value. The kaggle competition we want to submit our final
-predictions to however only scores each submission based on rmse value on the
+for the lowest RMSE value. The kaggle competition we want to submit our final
+predictions to however only scores each submission based on RMSE value on the
 test set and nothing else. This makes it necessary that we try to create
 estimators that are the result of hyperparameter tuning, starting with few
-iterations where we check the resulting rmse values and building up to using as
+iterations where we check the resulting RMSE values and building up to using as
 many iterations that our hardware can handle within a reasonable duration of no
 more than 5 minutes give or take or stop adding more iterations to the
-hyperparameter optimization procedure, if rmse values stop improving despite
+hyperparameter optimization procedure, if RMSE values stop improving despite
 increasing the number of iterations.
 
 ## RandomForestRegressor Optimization
 
-Using a manually created test harness, the rmse values for each iteration on the
+Using a manually created test harness, the RMSE values for each iteration on the
 training and validation set are appended to list `m_rmsel` and `m_rmselv`
 respectively, and it is these lists that are returned by the function.
 
@@ -222,9 +222,9 @@ def rff(
     ).fit(xs, y)
 ```
 
-#### Final RandomForestRegressor rmse Values
+### Final RandomForestRegressor RMSE Values
 
-Executing function `rff` we get the rmse values for the fitted estimator.
+Executing function `rff` we get the RMSE values for the fitted estimator.
 
 
 ```python
@@ -409,7 +409,7 @@ len(dfnn_tf.columns)
 
 
 
-#### Testing Of Different Values For Parameter max_card
+### Testing Of Different Values For Parameter max_card
 
 Values in the range between 2 and 100 are tested. Output is hidden, for
 readability.
@@ -507,7 +507,7 @@ dfnn_tf[catnn].nunique().sort_values(ascending=False)
 
 
 
-#### Run TabularPandas Function
+### Run TabularPandas Function
 Since none of the boolean columns that indicate whether there was or wasn't a
 missing value in a row of a column are present in the final training dataset, we
 drop these columns from the created tabular object below. Doing this now, helps
@@ -527,7 +527,7 @@ tonn = TabularPandas(
 )
 ```
 
-#### Create Dataloaders Object
+### Create Dataloaders Object
 
 The dataloaders object holds all training and validation sets with the
 preprocessed TabularPandas object as input.
@@ -547,7 +547,7 @@ y.min(), y.max()
 
 
 
-Calculate the rmse value using the data sets from the dataloaders function.
+Calculate the RMSE value using the data sets from the dataloaders function.
 
 
 ```python
@@ -562,7 +562,7 @@ m_rmse(m2, x_nnt, y), m_rmse(m2, x_val_nnt, y_val)
 
 
 
-#### Create tabular_learner estimator
+### Create tabular_learner estimator
 
 Create the `tabular_learner` object using the dataloaders object from
 the previous step. The range of the independent variable `saleprice` is adjusted
@@ -610,7 +610,7 @@ dfnn_vf.info()
     memory usage: 185.8+ KB
 
 
-Looking at the first 5 rows.
+Looking at a random sample containing 5 rows of the DataFrame.
 
 
 ```python
