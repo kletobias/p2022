@@ -2,9 +2,11 @@
 permalink: /robots.txt
 ---
 User-agent: *
-Disallow:
+Disallow: /references/
+Disallow: /scripts/
 
 user-agent: Googlebot
-Disallow:
+Disallow: /references/
+Disallow: /scripts/
 
 Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
