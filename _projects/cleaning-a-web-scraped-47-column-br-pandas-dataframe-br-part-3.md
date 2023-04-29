@@ -230,7 +230,7 @@ lists are all equal.
 ```python
 lngna = list(df[df["lng"].isna()].index)
 latna = list(df[df["lat"].isna()].index)
-assert lngna == lngna
+assert lngna == latna
 ```
 
 ## Creation Of The GPS Column 1/3
