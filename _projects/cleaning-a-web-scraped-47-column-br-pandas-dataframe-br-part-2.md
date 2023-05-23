@@ -3,7 +3,7 @@ layout: distill
 title: 'Cleaning a web scraped 47 Column<br>Pandas DataFrame<br>Part 2'
 date: 2022-01-11
 description: 'More efficient string data cleaning by using the pyjanitor module and method chaining.'
-img: 'assets/img/838338477938@+-3948324823.jpg'
+img: 'assets/img/838338477938@+-3948324823-data-cleansing.webp'
 tags: ['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']
 category: ['data-preprocessing']
 comments: true

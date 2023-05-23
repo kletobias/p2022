@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 
 hero_area:
-  intro: "Hi I'm Tobias Klein."
+  intro: "Hi, I'm Tobias Klein."
   job: "Machine Learning Expert, Data Scientist"
   description: "I spend a lot of time building machine learning solutions"
   btn-text: "Find out more about my skills."
@@ -22,7 +22,7 @@ hero_area:
   profile-image: "assets/img/profile.jpeg"
 
 author_profile:
-  title: "Predictive modeling is where I excel at."
+  title: "<i>Predictive modeling is where I excel at</i>."
   description: ""
 
 social-links:
@@ -32,60 +32,42 @@ social-links:
   linkedin: "https://www.linkedin.com/in/deep-learning-mastery/"
 ---
 
-## README.md
+## Welcome
 
-On this website you can learn more about my skills in the field of machine
-learning.
+> Embracing the power of predictive modeling, I meld data and
+innovation, to unravel patterns today for actionable insights tomorrow, paving
+the way to a future steered by foresight and proactive decision-making.
 
-### Overview
-The overall idea behind this website is to lower transaction costs by
-transparently including my code and descriptions for every step I take in every
-article posted on this website.<br> Writing reproducible Python code is an
-important aspect for me, along with often using [kaggle
-datasets](https://www.kaggle.com/datasets) as input and [kaggle
-competitions](https://www.kaggle.com/competitions) for reference scores and real
-life machine learning problems.
-Entering kaggle competitions provides great feedback on how good one's model
-predictions are compared to other competitors.
+### The Concept
 
-### Python
-Python is the main programming language I use. I am proficient in MySQL for data
-import (using `sqlalchemy` to import data for example). You can find a detailed
-overview of Python libraries I use in the [**Toolkit Section of the CV page**]({% link _pages/cv.md %})
+This site stands for openness and simplicity. It presents my work in an easy-to-understand manner, showing the work I've done from start to finish. I use Python for creating reusable solutions, and often engage with [Kaggle datasets](https://www.kaggle.com/datasets) and [competitions](https://www.kaggle.com/competitions) to test and compare my work.
 
-All articles found under [projects]({{ '/projects/' | relative_url }}) belong to one or more
-of the following categories.
+### The Tools
 
+I mainly use Python, with strong skills in MySQL for bringing in data (using `sqlalchemy`). You can see a complete list of the Python tools I use on the [**Toolkit Section of the CV page**]({% link _pages/cv.md %}).
 
-### data-preprocessing
+Look at the [projects]({{ '/projects/' | relative_url }}) page to see a variety of my work.
 
-Articles in this category have a strong focus on transforming *messy tabular
-data*, that does not meet the minimum requirements in order to be used as input
-to train a machine learning model. Feature engineering is not the focus here,
-given that *clean data* is a prerequisite for this step. Below is a selection of
-articles I have written on the topic.
+### Data Preprocessing
 
-[**cleaning a web scraped 47 column pandas dataframe part 3**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})<br>
-[**cleaning a web scraped 47 column pandas dataframe part 4**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})<br>
-[**advanced geospatial feature creation**]({% link _projects/advanced-geospatial-feature-creation.md %})<br>
+Projects in this group show my ability to make *disorderly tabular data* clean and ready for machine learning. Some of the works that explain this skill include:
 
+- [**Cleaning a web scraped 47 column pandas dataframe: Part 3**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})
+- [**Cleaning a web scraped 47 column pandas dataframe: Part 4**]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})
+- [**Advanced Geospatial Feature Creation**]({% link _projects/advanced-geospatial-feature-creation.md %})
 
-### deep-learning
+### Deep Learning
 
-[**the math behind \"stepping the weights\"**]({% link _projects/the-math-behind-br-stepping-the-weights.md %})<br>
-[**automation using a test harness for deep learning: part 1**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %})<br>
-[**automation using a test harness for deep learning: part 2**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2.md %})<br>
+Here, you'll find my high-level work in deep learning. They cover both theory and practice:
 
-### tabular-data
+- [**The Math behind \"Stepping the Weights\"**]({% link _projects/the-math-behind-br-stepping-the-weights.md %})
+- [**Automation using a Test Harness for Deep Learning: Part 1**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %})
+- [**Automation using a Test Harness for Deep Learning: Part 2**]({% link _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2.md %})
 
-The articles in this category can partially overlap with the ones in the
-data-preprocessing category in the way, that data cleaning is mentioned as well.
-Apart from the potential overlap, the content of these articles can be about any
-step in the machine learning process. E.g., using a deep learning model on
-tabular data, feature engineering, cross-validation, or hyperparameter
-optimization, to name a few. Below is a selection of articles found under this
-category.
+### Tabular Data
 
-[**fill missing values and categorical embeddings**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
-[**kaggle submission 1: training RandomForestRegressor and deep learning model**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
-[**kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br><br>
+This group contains a mix of works that deal with many parts of the machine learning process, like cleaning data, creating features, applying deep learning models to table data, checking with cross-validation, and tweaking with hyperparameter optimization. You might like to see:
+
+- [**Fill missing values and categorical embeddings**]({% link _projects/deep-dive-tabular-data-pt-1.md %})
+- [**Kaggle submission 1: Training RandomForestRegressor and Deep Learning model**]({% link _projects/deep-dive-tabular-data-pt-6.md %})
+- [**Kaggle submission 2: XGBoost Regressor - RandomSearchCV**]({% link _projects/deep-dive-tabular-data-pt-7.md %})
