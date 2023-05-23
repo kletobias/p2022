@@ -146,7 +146,7 @@ between them. For more information, see my article: [**The Tasks In Every Machin
 
 | **Course**                                                                                      | **Grade** |
 |-------------------------------------------------------------------------------------------------|-----------|
-| Bachelor Thesis<br>'Data Mining: Hyperparameter Optimization for Real Estate Prediction Models' | 1.0       |
+| Bachelor\'s Thesis<br>'Data Mining: Hyperparameter Optimization for Real Estate Prediction Models' | 1.0       |
 | Business Intelligence                                                                           | 1.3       |
 | Econometrics                                                                                    | 1.0       |
 | Electives in Non-Profit Management                                                              | 2.3       |
@@ -168,7 +168,7 @@ between them. For more information, see my article: [**The Tasks In Every Machin
 | Tax Management (Seminar)                                                                        | 1.3       |
 
 
-## Bachelor Thesis
+## Bachelors Thesis
 
 ### Data Mining: Hyperparameter Optimization For Real Estate Prediction Models
 <strong>Abstract:</strong><br>

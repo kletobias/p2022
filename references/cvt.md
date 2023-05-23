@@ -18,7 +18,7 @@
 * [Language Proficiency](#language-proficiency)
 * [School](#school)
 * [Higher Education](#higher-education)
-* [Bachelor Thesis](#bachelor-thesis)
+* [BachelorBachelor#39;s Thesis](#bachelor-thesis)
   * [Data Mining - Hyperparameter Optimization For Real Estate Prediction Models](#data-mining---hyperparameter-optimization-for-real-estate-prediction-models)
 * [List Of Portfolio Articles](#list-of-portfolio-articles)
 
@@ -160,19 +160,19 @@ course.
 `2016 - 2019` **Freiburg University**, Freiburg i. Br.<br>
 - **Subject:** Economics Focused Business Administration (BWL Non-Profit & Public Management B.Sc.)<br>
 - **Final Grade:** 1.6
-- **Bachelor Thesis:**
+- **BachelorBachelor#39;s Thesis:**
     - **Title:** *'Data Mining: Hyperparameter Optimization For Real Estate Prediction Models'*
     - **Written Using:** *Latex* & *Python*
     - **Pages:** 69
     - **Grade:** 1.0
-    - **Abstract:** See Section 'Bachelor Thesis'
+    - **Abstract:** See Section 'BachelorBachelor#39;s Thesis'
     - <strong>[**Full Text (pdf)**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})</strong><br><br>
 - **Optional Information:**
     - **Table: Relevant Courses Completed & Grade**<br>
 
 | **Course**                                                                                      | **Grade** |
 |-------------------------------------------------------------------------------------------------|-----------|
-| Bachelor Thesis<br>'Data Mining: Hyperparameter Optimization for Real Estate Prediction Models' | 1.0       |
+| BachelorBachelor#39;s Thesis<br>'Data Mining: Hyperparameter Optimization for Real Estate Prediction Models' | 1.0       |
 | Business Intelligence                                                                           | 1.3       |
 | Econometrics                                                                                    | 1.0       |
 | Electives in Non-Profit Management                                                              | 2.3       |
@@ -194,7 +194,7 @@ course.
 | Tax Management (Seminar)                                                                        | 1.3       |
 
 
-## Bachelor Thesis
+## BachelorBachelor#39;s Thesis
 
 ### Data Mining - Hyperparameter Optimization For Real Estate Prediction Models
 
