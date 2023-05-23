@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: 'Data Mining: Real-Estate Prediction Models and Problem-Solving in Action'
+title: 'Video Data Mining: Real-Estate Prediction Models and Problem-Solving in Action'
 date: 2023-05-09
 description: 'In the current era of data-driven decision making, understanding the intricacies of data extraction, cleansing, validation, and enrichment is a valuable asset for businesses across all sectors.'
 img: 'assets/img/838338477938@+-791693336-video.webp'
@@ -9,6 +9,7 @@ tags: ['etl', 'data-extraction',
 category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
 
