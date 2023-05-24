@@ -28,7 +28,7 @@ author_profile:
 social-links:
   twitter: "https://www.kaggle.com/kletobias"
   github: "https://github.com/kletobias"
-  youtube: "https://www.youtube.com/@summarizingthingsdatascien3325"
+  youtube: "https://www.youtube.com/channel/UCthSK9IGcwA8U7obnXECG4w"
   linkedin: "https://www.linkedin.com/in/deep-learning-mastery/"
 ---
 
