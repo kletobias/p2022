@@ -104,13 +104,13 @@ steps, which may include:
 | Skill                       | Category   | Description                          | Proficiency |
 | ---                         | ---        | ---                                  | ---         |
 | Environment Management      | Tools      | conda, pip, pyenv, virtualenv        | 7/10        |
-| Deep Learning               | Libraries  | fastai, PyTorch, pytorch_tabular     | 5-7/10      |
+| Deep Learning               | Libraries  | fastai, PyTorch, pytorch_tabular     | 6-8/10      |
 | Data Manipulation           | Libraries  | numpy, pandas                        | 6-8/10      |
 | Data Visualization          | Libraries  | pyplot, seaborn                      | 7-8/10      |
 | Machine Learning            | Libraries  | scikit-learn, xgboost (dmlc)         | 7-8/10      |
 | Natural Language Processing | Libraries  | spacy                                | 3/10        |
 | Regular Expressions         | Libraries  | re                                   | 8/10        |
-| Statistics                  | Libraries  | scipy (primarily scipy.stats module) | 4/10        |
+| Statistics                  | Libraries  | scipy (primarily scipy.stats module) | 7/10        |
 | Web Scraping                | Techniques | Requests and Beautiful Soup 4 (BS4)  | 8/10        |
 | Automated Machine Learning  | Libraries  | tpot                                 | 6/10        |
 | Shell Integration           | Libraries  | subprocess                           | 6/10        |
