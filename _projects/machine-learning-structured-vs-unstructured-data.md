@@ -23,6 +23,13 @@ comments: true
 
 # Optimal Machine Learning Models for Structured vs Unstructured Data: A Comparative Analysis
 
+## Video
+
+This is the video version of this article, as found on my YouTube channel:
+
+<iframe width="660" height="415" src="https://www.youtube.com/embed/0nWHOFsYxY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br>
+
 ## Structured data
 
 Structured data is data that has a high degree of organization and is easily searchable by simple, straightforward search engine algorithms or other search operations. It refers to data that is stored in databases, in a fixed field within a record or file. Examples include data in relational databases, such as spreadsheets, or can be anything from a name, a digital reading, a date, or a fact <d-footnote>Chen, M., Mao, S., & Liu, Y. (2014). Big Data: A Survey. Mobile Networks and Applications, 19(2), 171–209. https://doi.org/10.1007/s11036-013-0489-0</d-footnote>.

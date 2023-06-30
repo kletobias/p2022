@@ -67,6 +67,7 @@ transformed into actionable insights.
 
 ## Video
 
+This is the video version of this article, as found on my YouTube channel:
 
 <iframe width="660" height="415"
 src="https://www.youtube-nocookie.com/embed/95_aIW4-F2s" title="YouTube video
