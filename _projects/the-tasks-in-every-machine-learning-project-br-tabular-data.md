@@ -5,7 +5,7 @@ date: 2023-02-21
 description: 'The six tasks in every machine learning project with structured data.'
 img: 'assets/img/838338477938@+-398898935-workflow.webp'
 tags: ['predictive-modeling', 'hyperparameter-optimization', 'reproducable-code', 'tabular-data', 'feature-engineering']
-category: ['tabular-data']
+category: ['machine-learning-concepts']
 authors: 'Tobias Klein'
 comments: true
 ---

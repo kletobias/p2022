@@ -5,7 +5,7 @@ date: 2023-04-13
 description: 'The six tasks in every machine learning project with unstructured data.'
 img: 'assets/img/838338477938@+-398898935-workflow.webp'
 tags: ['predictive-modeling', 'hyperparameter-optimization', 'workflow-outline', 'unstructured-data', 'feature-engineering']
-category: ['deep-learning']
+category: ['machine-learning-concepts']
 authors: 'Tobias Klein'
 comments: true
 featured: true

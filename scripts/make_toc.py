@@ -65,5 +65,5 @@ def make_toc(remove_previous=False, file=None,adir=projects_dir,all=False):
 #            toc.close()
 
 # make_toc(file='tocp.md',all=False,remove_previous=False)
-make_toc(all=False,file='/Users/tobias/all_code/projects/portfolio-website-2022/_projects/video-data-mining-real-estate-prediction-models-and-problem-solving-in-action.md', remove_previous=False)
+make_toc(all=True,remove_previous=True)
 
