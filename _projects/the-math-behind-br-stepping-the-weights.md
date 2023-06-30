@@ -579,7 +579,6 @@ with a 10 times larger standard error for this example.
 
 ## Summary
 
-
 In this article, we started by introducing the function of a univariate linear
 regression model and explored its $$L_{2}$$ loss function. We learned that it is
 always convex in the case of $$L_{2}$$ being the loss function by plotting the
@@ -594,3 +593,4 @@ updates the weights during each step. We calculated the partial derivatives for
 the parameters and used them to show how the weights are updated during each
 step. The stochastic gradient descent was introduced and compared to the batch
 gradient descent.
+<br><br><br>

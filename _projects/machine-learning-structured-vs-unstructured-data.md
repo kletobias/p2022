@@ -50,3 +50,4 @@ For structured data, traditional machine learning algorithms like Linear Regress
 
 ### Models for unstructured data
 On the other hand, unstructured data is often best processed with deep learning models. Convolutional Neural Networks (CNNs) are commonly used for image and video data. Recurrent Neural Networks (RNNs), particularly those with Long Short-Term Memory (LSTM) or Gated Recurrent Unit (GRU) cells, are typically used for sequential data like text or time series<d-footnote>Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press. http://www.deeplearningbook.org</d-footnote>. These models can process the complex, non-tabular nature of unstructured data and extract hierarchical features.
+<br><br><br><br>
