@@ -14,6 +14,7 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
+    <div class="no-math"><a href="#video">Video</a></div>
     <div class="no-math"><a href="#structured-data">Structured data</a></div>
     <div class="no-math"><a href="#unstructured-data">Unstructured data</a></div>
     <div class="no-math"><a href="#differences">Differences</a></div>
