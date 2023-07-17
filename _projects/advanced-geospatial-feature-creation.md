@@ -14,6 +14,7 @@ featured: false
   <nav class="l-text figcaption">
   <h3>Contents</h3>
     <div class="no-math"><a href="#summary">Summary</a></div>
+    <div class="no-math"><a href="#the-steps">The Steps</a></div>
     <div class="no-math"><a href="#import-the-flat-files">Import The Flat Files</a></div>
     <div class="no-math"><a href="#initial-cleaning">Initial Cleaning</a></div>
     <div class="no-math"><a href="#define-a-custom-function-for-cleaning">Define A Custom Function For Cleaning</a></div>
@@ -54,7 +55,7 @@ The imported data is transformed and features are extracted using regular expres
 
 Once, the new features are created, the tabular data with the new features, then is exported as flat files for integration with the main dataset.
 
-## Flow Chart
+## The Steps
 
 The following is a flow chart showing the steps used to create the new features from the imported Wikipedia data.
 
