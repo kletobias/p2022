@@ -52,8 +52,21 @@ Using this data, the goal is to create the following features that will be added
 
 The imported data is transformed and features are extracted using regular expressions and the pandas library, to create tidy columns for the new features. All data is made compatible with the main dataset, by converting the location data of the subway and suburban train stops found in the imported flat files from degrees, minutes, and seconds (*DMS*) to *DD*
 
-Once, the new features are created, the tabular data with the new features is exported as flat files for integration with the main dataset.
+Once, the new features are created, the tabular data with the new features, then is exported as flat files for integration with the main dataset.
 
+## Flow Chart
+
+The following is a flow chart showing the steps used to create the new features from the imported Wikipedia data.
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/svg/advanced-feature-creation-mermaid-chart.svg" title="flow-chart-of-cleaning-steps" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Figure 1 shows the cleaning steps, to create the new features for each listing. They are: 1. Direct distance from each listing to closest subway station. 2. Direct distance from each listing to closest suburban train station. Distance is calculated by using the Python implementation of the haversine function.
+</div>
 
 ## Importing The Flat Files
 We create a `Path` variable `data` that holds the path to the location where the flat files are found at.
@@ -121,6 +134,11 @@ c_ubahn.columns, c_sbahn.columns
 
 
 ## Defining A Custom Function For Cleaning
+
+All columns, except 'bahnhof_kurzel_karte' are of no interest to us, since they
+do not contain the GPS information for a given station. This is true for both,
+the underground and suburban train station CSV data.
+
 Since there are two DataFrames that need the same cleaning steps, we save some
 time defining a function that we hand a DataFrame as input, and that returns
 the cleaned DataFrame. The cleaning steps it does are:

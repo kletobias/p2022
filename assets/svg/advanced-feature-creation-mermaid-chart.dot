@@ -1,0 +1,22 @@
+digraph G {
+    node [shape=box];
+    A [label="Flat File"]
+    B [label="DataFrame as df"]
+    C [label="Clean names in df.columns"]
+    D [label="Only keep column\n'bahnhof_kurzel_karte'"]
+    E [label="Split string data in remaining column"]
+    F [label="Name of station"]
+    G [label="gps values in format DMS"]
+    H [label="gps data is compatible with core data"]
+    I [label="Export as csv"]
+
+    A -> B [label="import using Pandas"]
+    B -> C
+    C -> D [label="Extract GPS data"]
+    D -> E
+    E -> F [label="Save to column"]
+    E -> G [label="Save to column"]
+    G -> H [label="Convert DMS format to DD"]
+    F -> I [label="Export for Feature Creation"]
+    H -> I [label="Export for Feature Creation"]
+}
