@@ -4,7 +4,7 @@ title: 'Accelerating Tar Archive Creation with Parallel Execution'
 date: 2023-09-05  
 description: 'Unveiling a Python wrapper script that leverages multi-threading for swift archive creation. The script employs pgiz to perform parallel execution, speeding up the tar archive creation process.'  
 tags: ['tar', 'archive', 'subprocess', 'pigz', 'multi-threading']  
-category: 'Python'  
+category: 'scripting'  
 comments: true
 ---
 
