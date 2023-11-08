@@ -475,7 +475,7 @@ layer.
 ### Single Training Example
 
 
-We calculate the partial derivatives, using the chain rule, and a single sample
+We calculate the partial derivatives, using the chain rule, and a single pair
 of independent and dependent variable $$(x,y)$$.
 
 $$\frac{\partial}{\partial w_{i}}\mathit{Loss}(\,\mathbb{w})\, = \,
@@ -485,7 +485,7 @@ $$\frac{\partial}{\partial w_{i}}\mathit{Loss}(\,\mathbb{w})\, = \,
 The partial derivative was not specified for the 'inner function', since it
 depends on which of the two $$w$$ parameters is parsimoniously derived.
 
-The parcial derivatives to $$w_{0}$$, respectively $$w_{1}$$ are the following:
+The partial derivatives to $$w_{0}$$, $$w_{1}$$ are the following:
 
 $$\frac{\partial}{\partial w_{0}}(\,y - (\,w_{1}x + w_{0})\,)\, =
 \frac{\partial}{\partial w_{0}} (\,y - w_{1}x - w_{0})\, =\, -1$$
