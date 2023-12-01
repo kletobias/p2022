@@ -14,7 +14,7 @@ comments: true
 ## Introduction
 In Python, assertions are a convenient way to ensure that a condition holds true at a specific point in a program. When an assertion fails, it raises an `AssertionError`, halting the execution. However, the default error message may not provide enough context to understand which condition failed, especially in complex tests with multiple assertions. 
 
-This post will demonstrate how to add custom messages to assertions for better debugging, using a Python test function as an example.
+This post will demonstrate how to add custom messages to assertions for better debugging, using a test function from the [OpenAI Whisper repository](https://github.com/openai/whisper), which is not my own code and is released under the MIT license.
 
 ## The Original Code
 Consider the following test function which uses multiple assertions:
@@ -120,6 +120,3 @@ def test_transcribe(model_name: str):
 ## Conclusion
 Adding custom messages to assertions is a simple yet effective way to make your Python tests more robust and maintainable. It aids in quick debugging and ensures that your test suite remains a reliable component of the development process.
 
----
-
-Remember to replace `YYYY-MM-DD` with the actual date of the post. This format provides a clear, informative, and reader-friendly way to enhance Python assertions for better debugging.
