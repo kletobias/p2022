@@ -927,6 +927,7 @@ dfu
     }
 </style>
 <table border="1" class="dataframe">
+<caption><strong>Table 4:</strong> Simulation Statistics by Category (N = 20,000,000)</caption>
   <thead>
     <tr style="text-align: right;">
       <th></th>
