@@ -434,7 +434,7 @@ import time
 
 plt.style.use("science")
 from statsmodels.distributions.empirical_distribution import ECDF
-from scipy.stats import norm
+from scipy import stats
 
 seed(42)
 plt.ion()
@@ -547,7 +547,7 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Figure 1: First look at the absolute frequency of the ADV value, as
+        <strong>Figure 1:</strong> First look at the absolute frequency of the ADV value, as
         produced by the NVI.
 </div>
     
@@ -661,8 +661,8 @@ iterated. The outer most loop over `onet` loops over each trial. With the next o
 looping over each pack opened in each trial (`draws_onet`). The inner most loop
 then loops over the opening of the five cards in every pack (`rows[:]`).
 
-For each random number that represents one drawn card in a pack of five cards,
-it is evaluated which of the intervals it lies within and the corresponding
+Each random number that represents one drawn card in a pack of five cards,
+is evaluated as to which of the intervals it lies within and the corresponding
 rarity class and dust value is appended to a list. There are lists for each
 loop and lists `all_packs`, `all_dust` hold these values for the entire
 simulation.
@@ -838,7 +838,7 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Figure 2: Plot showing the PDFs of both implementations. The PDF of the
+        <strong>Figure 2:</strong> Plot showing the PDFs of both implementations. The PDF of the
         NVI (<i>red</i>) is overlaid with the PDF of the LI (<i>teal</i>). One can tell
         by the plot that the two are almost identical. Both are the result of
         100,000 samples, each with 40 cards packs.
@@ -987,7 +987,7 @@ Conversely, the simulation with 40 packs per trial and 100,000 trials, which is
 the maximum purchasable quantity at the time of writing, closely approximates a
 normal distribution with equivalent mean and standard deviation.
 
-According to the Central Limit Theorem, as sample sizes increase, the sample
+According to the Central Limit Theorem (CLT), as sample sizes increase, the sample
 means should distribute normally, converging on the population mean and
 standard deviation. In the largest simulation run on a local M1 chip-based
 Apple machine, 100,000 trials consisted of 40 packs with 5 cards each, totaling
@@ -1010,7 +1010,7 @@ packs: int = 40
 trials: int = 100_000
 
 # Normal distribution range setup
-dist: norm = norm(mu, li_std)
+dist: norm = stats.norm(mu, li_std)
 low_end: int = int(np.ceil(dist.ppf(0.0001)))
 high_end: int = int(np.ceil(dist.ppf(0.9999)))
 x_vals: np.ndarray = np.arange(low_end, high_end, 0.5)
@@ -1028,110 +1028,7 @@ ax.set_xlim(low_end, high_end)
 ax.legend(loc="best", fontsize=10)
 plt.show()
 
-print(f"The current mu, sigma have values {mu:.2f} and {li_std:.2f} respectively.")
-```
-
-    The current mu, sigma have values 257.08 and 34.92 respectively.
-
-
-
-    
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_33_1.png" title="" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-        Figure 3: The PDFs of both implementations are overlaid and compared to
-        the PDF of a Normal distribution with the same mean and standard
-        deviation.
-</div>
-    
-
-
-The ECDF plots for both implementations plotted together with the CDF of the
-theoretical Normal distribution described above, gives a clearer picture as to
-where the differences are found between the theoretical Normal distribution and
-the inseparable simulation ECDF functions.
-
-
-```python
-# create the ECDF plot for the average dust per trial Random Variable
-ecdf = ECDF(dust_avg_t)
-ecdf_np = ECDF(np_mu_trial)
-# The first value in ecdf.x is -inf, which pyplot does not like.
-# So the first value in ecdf.x and ecdf.y is dropped to keep their lengths the same.
-ecdf.x = ecdf.x[1:]
-ecdf.y = ecdf.y[1:]
-ecdf_np.x = ecdf_np.x[1:]
-ecdf_np.y = ecdf_np.y[1:]
-
-# using mu and sigma from above as parameters for the theoretical distribution
-dist2 = norm.rvs(mu, li_std, 20000000)
-dist2s = np.sort(dist2)
-ecdf_n = np.arange(1, len(dist2s) + 1) / len(dist2s)
-plt.close("all")
-fig, ax = plt.subplots(1, 1, figsize=(12, 10), constrained_layout=True)
-plt.title(
-    f"Theoretical CDF from μ, σ from packs,trials:\n{packs},{trials:,} and ECDF ",
-    fontsize=14,
-)
-ax.plot(dist2s, ecdf_n, color="blue", alpha=0.8, label="Theoretical CDF")
-ax.plot(ecdf.x, ecdf.y, color="#FC5A50", alpha=0.8, label="ECDF for-loop")
-ax.plot(ecdf_np.x, ecdf_np.y, color="#08877d", alpha=0.8, label="ECDF Numpy")
-ax.set_ylabel("CDF")
-ax.set_xlabel("Average Dust per Trial")
-ax.set_xlim(130, 410)
-plt.legend(loc="best")
-plt.show()
-```
-
-
-    
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_35_0.png" title="Figure 4" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-        Figure 4: Using the Normal distribution from Figure 3, as well as the
-        empirical distributions found by the simulations, their ECDF functions
-        are compared to the CDF of the Normal distribution. The plot shows in
-        detail where the three functions differ.
-</div>
-    
-
-
-
-```python
-mu = dust_avg_all_trials
-li_std = np.std(dust_avg_t)
-dist = norm(mu, li_std)
-low_end = int(np.ceil(dist.ppf(0.0001)))
-high_end = int(np.ceil(dist.ppf(0.9999)))
-x_vals = [x for x in np.arange(low_end, high_end, 0.5)]
-y_vals = [dist.pdf(x) for x in x_vals]
-
 print(f"The current mu, sigma have values {mu} and {li_std} respectively.")
-
-fig, ax = plt.subplots(1, 1, figsize=(18.5, 12.5))
-plt.title(f"Histogram from packs,trials: {packs},{trials:,}", fontsize=14)
-ax.hist(dust_avg_t, density=True, bins=200, label="LI Density Dust per Trial")
-ax.hist(np_mu_trial, density=True, bins=200, label="NVI Density Dust per Trial")
-ax.plot(
-    x_vals,
-    y_vals,
-    color="#850859",
-    alpha=0.7,
-    label="PDF-Normal w/ $μ$ and $σ$ from Simulation",
-)
-# ax.axvline(x=np.min(dust_avg_t), color="y", linestyle="dotted", label="min of μ")
-# ax.axvline(x=np.max(dust_avg_t), color="r", linestyle="dotted", label="max of μ")
-ax.set_ylabel("Relative Frequency")
-ax.set_xlabel("Average Dust Per Trial")
-ax.set_xlim(low_end, high_end)
-ax.legend(loc="best", fontsize=10)
-plt.show()
 ```
 
     The current mu, sigma have values 257.0840275 and 34.91854175261681 respectively.
@@ -1145,17 +1042,14 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Figure 3: The PDFs of both implementations are overlaid and compared to
-        the PDF of a Normal distribution with the same mean and standard
-        deviation.
+        <strong>Figure 3:</strong> The overlaid PDFs of both simulation implementations compared to the PDF of a Normal distribution with identical mean and standard deviation.
 </div>
     
 
 
-The ECDF plots for both implementations plotted together with the CDF of the
-theoretical Normal distribution described above, gives a clearer picture as to
-where the differences are found between the theoretical Normal distribution and
-the inseparable simulation ECDF functions.
+The ECDF plots provide a visual comparison between the empirical distributions
+from the simulations and the theoretical CDF of the normal distribution,
+highlighting the differences.
 
 
 ```python
@@ -1197,12 +1091,194 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Figure 4: Using the Normal distribution from Figure 3, as well as the
-        empirical distributions found by the simulations, their ECDF functions
-        are compared to the CDF of the Normal distribution. The plot shows in
-        detail where the three functions differ.
+    <strong>Figure 4:</strong> The ECDF plots for both implementations alongside the theoretical CDF of the Normal distribution, elucidating the distinctions between the empirical and theoretical distributions.
 </div>
     
+
+Given the distinctions between the ECDF and theoretical CDF, the question remains whether the sample means from the simulation are normally distributed or not. To complement the visual analysis done so far, we perform the following statistical tests:
+
+1. [Shapiro-Wilk Test](https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test)
+2. [Kolmogorov-Smirnov Test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
+3. [Anderson-Darling Test](https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test)
+
+<br>
+
+```python
+def shapiro_wilk_test(np_mu_trial):
+    stat, p_value = stats.shapiro(np_mu_trial)
+    print(f'Shapiro-Wilk Test: Statistics={stat:.3f}, p-value={p_value:.3f}\n')
+    if p_value > 0.05:
+        print('\tSample looks Gaussian (fail to reject H0)\n')
+    else:
+        print('\tSample does not look Gaussian (reject H0)\n')
+
+
+def kolmogorov_smirnov_test(data):
+    # Compare with a normal distribution with the same mean and std as the data
+    norm_dist = stats.norm(loc=np.mean(data), scale=np.std(data))
+    stat, p_value = stats.kstest(data, norm_dist.cdf)
+    print(f'Kolmogorov-Smirnov Test: Statistics={stat:.3f}, p-value={p_value:.3f}\n')
+    if p_value > 0.05:
+        print('\tSample looks Gaussian (fail to reject H0)\n')
+    else:
+        print('\tSample does not look Gaussian (reject H0)\n')
+
+
+def anderson_darling_test(data):
+    result = stats.anderson(data)
+    print('Anderson-Darling Test:\n')
+    print(f'\tStatistic: {result.statistic:.3f}')
+    for i in range(len(result.critical_values)):
+        sl, cv = result.significance_level[i], result.critical_values[i]
+        if result.statistic < cv:
+            print(f'\tAt the significance level {sl}, data looks Gaussian (fail to reject H0).')
+        else:
+            print(f'\tAt the significance level {sl}, data does not look Gaussian (reject H0).')
+
+
+# Run tests
+shapiro_wilk_test(np_mu_trial)
+kolmogorov_smirnov_test(np_mu_trial)
+anderson_darling_test(np_mu_trial)
+```
+
+    Shapiro-Wilk Test: Statistics=0.994, p-value=0.000
+    
+    	Sample does not look Gaussian (reject H0)
+    
+    Kolmogorov-Smirnov Test: Statistics=0.023, p-value=0.000
+    
+    	Sample does not look Gaussian (reject H0)
+    
+    Anderson-Darling Test:
+    
+    	Statistic: 115.166
+    	At the significance level 15.0, data does not look Gaussian (reject H0).
+    	At the significance level 10.0, data does not look Gaussian (reject H0).
+    	At the significance level 5.0, data does not look Gaussian (reject H0).
+    	At the significance level 2.5, data does not look Gaussian (reject H0).
+    	At the significance level 1.0, data does not look Gaussian (reject H0).
+
+
+    scipy/stats/_morestats.py:1800: UserWarning: p-value may not be accurate for N > 5000.
+      warnings.warn("p-value may not be accurate for N > 5000.")
+
+
+The provided distribution delineates the probabilities for various outcomes,
+such as 'legendary', 'epic', 'rare', and 'common', within each individual
+draw. This discrete probability distribution forms the basis for the
+simulation, where each of the five draws within a pack is presumed
+independent and adheres to the specified distribution, thus constituting the
+aggregate distribution of these draws.
+
+Notably, the individual draw distribution does not exhibit
+normality—evidenced by the asymmetrical probabilities heavily biased towards
+'common' outcomes. Nonetheless, the CLT assures that
+the distribution of sample means will approximate a normal distribution as
+the sample size burgeons, provided the draws are independent and identically
+distributed (i.i.d.) with a finite variance.
+
+In the simulations under discussion, each trial encompasses 40 packs with 5
+cards each, translating to each sample mean being derived from 200 individual
+draws. According to the CLT, as the number of draws (n) escalates, the
+sampling distribution of the sample mean should converge towards a normal
+distribution, irrespective of the initial distribution's shape, assuming the
+i.i.d. condition and a finite variance are satisfied.
+
+The probability distribution at hand implies a finite variance, hence the CLT
+is applicable. Yet, the skewness and kurtosis intrinsic to the original
+distribution may slow the convergence of the sample mean towards normality.
+The pronounced skewness—manifest in the high probability of 'common'
+outcomes—suggests that a greater number of draws might be necessary for the
+sampling distribution of the sample mean to present as normally distributed.
+
+Statistical tests rejecting normality in this context may stem from multiple
+factors:
+
+1. **Skewness of the Original Distribution**: The marked skewness indicates
+  that 200 draws may not suffice for the distribution of sample means to
+  manifest normality as posited by the CLT. See "Skewed Dust Distribution"
+  plot below.
+
+2. **Sensitivity of Normality Tests**: Given an extensive sample size, tests
+  for normality are prone to heightened sensitivity, flagging minor deviations
+  from normality that might be statistically, but not practically, significant.
+
+3. **Interdependence of Draws**: Should there be a dependence between draws,
+  such as a 'common' draw influencing subsequent probabilities within the same
+  pack, this would contravene the i.i.d. premise essential for the CLT.
+
+Acknowledging these nuances, it remains plausible for the sample mean to
+approximate a normal distribution. However, the skewness of the underlying
+distribution may necessitate a sample size exceeding 200 draws for such
+normality to be evident. Furthermore, the large sample size may amplify the
+normality tests' sensitivity. In scenarios where normality tests are
+imperative, such as in hypothesis testing or confidence interval
+construction, alternative approaches like bootstrap methods or other
+non-parametric resampling techniques might be employed, which do not hinge on
+the presumption of normality.
+
+
+```python
+def probs_by_dust_value(
+    cats: Dict[str, int], probs: Dict[str, float], dust: Dict[str, int]
+) -> Dict[List[str], List[float]]:
+    """
+    Merges categories with the same dust value and sums their probabilities.
+
+    Args:
+    cats (Dict[str, int]): Dictionary of categories and their corresponding identifiers.
+    probs (Dict[str, float]): Dictionary of categories and their probabilities.
+    dust (Dict[str, int]): Dictionary of categories and their dust values.
+
+    Returns:
+    Tuple[List[str], List[float]]: Merged categories and their corresponding summed probabilities.
+    """
+    dust_to_cats = {}
+    for cat in cats:
+        dust_val = dust[cat]
+        if dust_val not in dust_to_cats:
+            dust_to_cats[dust_val] = (str(dust_val), probs[cat])
+        else:
+            existing_cat, existing_prob = dust_to_cats[dust_val]
+            dust_to_cats[dust_val] = (existing_cat, existing_prob + probs[cat])
+
+    categories_merged = [val[0] for val in dust_to_cats.values()]
+    probs_merged = [val[1] for val in dust_to_cats.values()]
+    dict_merged = dict(zip(categories_merged, probs_merged))
+    sorted_dict = dict(sorted(dict_merged.items(), key=lambda item: item[1]))
+
+    return sorted_dict
+
+
+cat_probs_merged = probs_by_dust_value(inputs["cats"], inputs["probs"], inputs["dust"])
+categories_merged, probs_merged = cat_probs_merged.keys(), cat_probs_merged.values()
+
+plt.close("all")
+fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+
+categories = categories_merged
+y_vals = probs_merged
+ax.bar(
+    categories, y_vals, label="Distribution of Categories", color="#08877d", alpha=0.8
+)
+ax.set_title("Skewed Dust Distribution")
+ax.set_ylabel("Probability of Drawing (Difference in Magnitude)")
+ax.set_xlabel("Unique Dust Categories")
+ax.set_xticklabels(categories, rotation=45)
+ax.set_yscale('log')
+plt.show()
+```
+
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_12_1.png" title="Skewed Dust Distribution" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        <strong>Figure 5:</strong> The skewness in the distribution of dust values is displayed in a bar plot. The scale on the y-axis is logarithmic, to highlight the differences in order of magnitude between the unique dust categories.
+</div>
 
 
 ## Research Question 4 - Conclusion
@@ -1273,7 +1349,7 @@ euro_to_dust(bundles,mu)
     </div>
 </div>
 <div class="caption">
-        Figure 5: The plot shows the linear money spent to equivalent dust value
+        <strong>Figure 6:</strong> The plot shows the linear money spent to equivalent dust value
         functions for the 4 card pack bundles on sale in-game. Not every value
         on the x-axis can be used as input, as only multiples of a single card
         pack bundle are available for purchase. In general, every linear
