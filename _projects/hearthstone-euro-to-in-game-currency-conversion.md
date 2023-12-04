@@ -790,9 +790,10 @@ print(f"The scalar using the most recent executions is: {m}")
 
 
 ### Simulation Size
-It takes the LI ~23 seconds to simulate the drawing of 20,000,000 cards. Despite
-the fact that the NVI always outperforms the LI, it is the NVI that should be
-considered when simulating large numbers of pack openings.
+It takes the [LI ~23 seconds to simulate the drawing of 20,000,000 cards](#li-call-function). Given
+the fact that the [NVI always outperforms the LI](#nvi-call-function), it is
+the NVI that should be considered when simulating large numbers of pack
+openings.
 
 ### ADV Value And Distribution Comparison
 The final ADV value over all trials is close to the same for both. Not only is
@@ -1093,7 +1094,7 @@ plt.show()
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_35_0.png" title="" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects_hearthstone-euro-to-in-game-currency-conversion/output_35_0.png" title="Figure 4" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -1131,7 +1132,6 @@ It is worth noting that the ADV value is less stable for simulations with
 fewer card packs per trial and as a result the standard deviation will be
 higher for those as well.
 
-
 ```python
 bundles = {
     "2": {"qnt": 2, "p": 3},
@@ -1139,33 +1139,32 @@ bundles = {
     "15": {"qnt": 15, "p": 20},
     "40": {"qnt": 40, "p": 50},
 }
-# import matplotlib.pyplot as plt
-# import numpy as np
-# plt.style.use('science')
-# plt.ion()
-# plt.close('all')
 
-# mu =254
-def dust(bundles=bundles, adv=mu):
-    fig, ax = plt.subplots(1,1,figsize=(12,10))
+def euro_to_dust(bundles,mu) -> None:
+    fig, ax = plt.subplots(1, 1, figsize=(12, 10))
     ax = plt.subplot(111)
     for key in bundles.keys():
         bundles[key]["x_vals"] = [
             x + 1 for x in range(200) if (x + 1) % bundles[key]["p"] == 0
         ]
-        bundles[key]["y_vals"] = [((y+1) * mu * bundles[key]['qnt']) for y in
-                                  np.arange(len(bundles[key]["x_vals"]))]
-        ax.plot(bundles[key]['x_vals'],bundles[key]['y_vals'],label=f"{bundles[key]['qnt']} pack bundle")
+        bundles[key]["y_vals"] = [
+            ((y + 1) * mu * bundles[key]["qnt"])
+            for y in np.arange(len(bundles[key]["x_vals"]))
+        ]
+        ax.plot(
+            bundles[key]["x_vals"],
+            bundles[key]["y_vals"],
+            label=f"{bundles[key]['qnt']} pack bundle",
+        )
     ax.legend(loc="best")
-    ax.set_title(f'Euro To Hearthstone Dust Value Plot')
+    ax.set_title(f"Euro To Hearthstone Dust Value Plot")
     ax.set_xlabel("Euro Spent On Card Pack Bundles")
     ax.set_ylabel("Dust Equivalent")
     plt.grid(which="major")
     plt.show()
 
-    return bundles
 
-bundlesn = dust()
+euro_to_dust(bundles,mu)
 ```
 
 
