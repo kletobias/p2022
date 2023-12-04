@@ -1003,37 +1003,35 @@ employs the simulation's mean and standard deviation.
 
 
 ```python
-mu = dust_avg_all_trials
-li_std = np.std(dust_avg_t)
-dist = norm(mu, li_std)
-low_end = int(np.ceil(dist.ppf(0.0001)))
-high_end = int(np.ceil(dist.ppf(0.9999)))
-x_vals = [x for x in np.arange(low_end, high_end, 0.5)]
-y_vals = [dist.pdf(x) for x in x_vals]
+# Given simulation data
+mu: float = dust_avg_all_trials  # Empirical mean
+li_std: float = np.std(dust_avg_t)  # Empirical standard deviation
+packs: int = 40
+trials: int = 100_000
 
-print(f"The current mu, sigma have values {mu} and {li_std} respectively.")
+# Normal distribution range setup
+dist: norm = norm(mu, li_std)
+low_end: int = int(np.ceil(dist.ppf(0.0001)))
+high_end: int = int(np.ceil(dist.ppf(0.9999)))
+x_vals: np.ndarray = np.arange(low_end, high_end, 0.5)
+y_vals: np.ndarray = dist.pdf(x_vals)
 
-fig, ax = plt.subplots(1, 1, figsize=(18.5, 12.5))
-plt.title(f"Histogram from packs,trials: {packs},{trials:,}", fontsize=14)
+# Plotting the histogram and PDF
+fig, ax = plt.subplots(figsize=(18.5, 12.5))
+plt.title(f"Histogram from packs,trials: {packs}, {trials:,}", fontsize=14)
 ax.hist(dust_avg_t, density=True, bins=200, label="LI Density Dust per Trial")
 ax.hist(np_mu_trial, density=True, bins=200, label="NVI Density Dust per Trial")
-ax.plot(
-    x_vals,
-    y_vals,
-    color="#850859",
-    alpha=0.7,
-    label="PDF-Normal w/ $μ$ and $σ$ from Simulation",
-)
-# ax.axvline(x=np.min(dust_avg_t), color="y", linestyle="dotted", label="min of μ")
-# ax.axvline(x=np.max(dust_avg_t), color="r", linestyle="dotted", label="max of μ")
+ax.plot(x_vals, y_vals, color="#850859", alpha=0.7, label="PDF-Normal with μ and σ from Simulation")
 ax.set_ylabel("Relative Frequency")
 ax.set_xlabel("Average Dust Per Trial")
 ax.set_xlim(low_end, high_end)
 ax.legend(loc="best", fontsize=10)
 plt.show()
+
+print(f"The current mu, sigma have values {mu:.2f} and {li_std:.2f} respectively.")
 ```
 
-    The current mu, sigma have values 257.0840275 and 34.91854175261681 respectively.
+    The current mu, sigma have values 257.08 and 34.92 respectively.
 
 
 
