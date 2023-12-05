@@ -16,13 +16,36 @@ def read_lines_with_pattern(filename: str, pattern: re.Pattern) -> Optional:
     try:
         with open(filename, "r") as file:
             return tuple(
-                pattern.search(line)[0] for line in file if pattern.search(line)
+                pattern.search(line)[1] for line in file if pattern.search(line)
             )
     except OSError as e:
         print(f"Error reading file {filename}: {e}")
         return None
 
 
+def name_pairs(original: str, updated: str) -> Dict[str, str]:
+    """
+    Create a dictionary mapping old filenames to new filenames.
+
+    Args:
+    original (str): File Path to the file with the original filenames.
+    updated (str): File Path to the file with the updated filenames.
+
+    Returns:
+    Dict[str, str]: Dictionary where the keys are the original names and values are the updated names.
+    """
+    h3_pattern = re.compile(r'^###\s(.+)')
+    
+    original_h3 = read_lines_with_pattern(original,h3_pattern)
+    updated_h3 = read_lines_with_pattern(updated, h3_pattern)
+
+    if original_h3 is None or updated_h3 is None:
+        return {}
+
+    return(dict(zip(original_h3, updated_h3)))
+
+
+# %%
 # def name_pairs(original: str, updated: str) -> Dict:
 #     """
 #     Get old and new file names and create dictionary from them.
