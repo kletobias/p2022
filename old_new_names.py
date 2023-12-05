@@ -45,4 +45,13 @@ def name_pairs(original: str, updated: str) -> Dict[str, str]:
     return(dict(zip(original_h3, updated_h3)))
 
 
+original = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/original.md"
+updated = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/updated.md"
 
+pairs_dict = name_pairs(original,updated)
+
+for key, value in pairs_dict.items():
+    print('\n')
+    print(key)
+    print(value)
+    print('\n\n')
