@@ -3,8 +3,11 @@ import re
 from typing import List, Dict
 
 # Constants
-DIR = "/path/to/markdown/files/"  # Replace with your actual directory
 EXPORT_FILE = "exported_article_details.md"
+ROOT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/"
+EXPORT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/"
+# Input file
+INPUT_UPDATED = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/input/updated.md"
 
 # Regular Expressions to identify sections
 PATT_TITLE = re.compile(r"^### (.+)$", re.MULTILINE)
