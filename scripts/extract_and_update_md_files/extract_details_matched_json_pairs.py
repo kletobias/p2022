@@ -11,6 +11,8 @@ EXPORT_JSON = "exported_article_details.json"
 EXPORT_JSON_PATH = os.path.join(EXPORT_DIR, EXPORT_JSON)
 # old_title:new_title mappings
 TITLE_MAPPING_JSON_FILE = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/export_old_new_name_pairs/old_new_names.json"
+# output file that leaves original file untouched as backup
+FILE_TO_WRITE = os.path.join(EXPORT_DIR,"old_new_mapping.json")
 
 def pretty_print_dict_items(dict_name: dict) -> None:
     """
@@ -29,7 +31,7 @@ def pretty_print_dict_items(dict_name: dict) -> None:
         pp.pprint(value)
         print()  # For an extra line after each item
 
-def update_json_with_original_titles(file_to_write: str, title_mapping_file_path: str) -> None:
+def update_json_with_original_titles(EXPORT_JSON_PATH: str, FILE_TO_WRITE: str, title_mapping_file_path: str) -> None:
     """Opens the file with the extracted markdown details to accompany the updated titles.
     And the file containing the original title and replaces the current keys with the original name
     . Makes the original key, a child node of the new key for each file.
@@ -47,13 +49,12 @@ def update_json_with_original_titles(file_to_write: str, title_mapping_file_path
             updated_articles[original_title] = articles[updated_title]
             updated_articles[original_title]['updated_title'] = updated_title
 
-    # for key, value in updated_articles.items():
-    #     print(f"\n Key: {key}")
-    #     print(f" Value: {value}\n")
-
     pretty_print_dict_items(updated_articles)
 
+    with open(FILE_TO_WRITE,'w') as f:
+        json.dump(updated_articles,f, ensure_ascii=False, indent=4)
+    
 
 
     
-update_json_with_original_titles(EXPORT_JSON_PATH,TITLE_MAPPING_JSON_FILE)
+update_json_with_original_titles(EXPORT_JSON_PATH,FILE_TO_WRITE,TITLE_MAPPING_JSON_FILE)
