@@ -1,15 +1,16 @@
 import os
 import re
-from typing import List, Dict
+import json
+from typing import Dict
 
 # Constants
-EXPORT_FILE = "exported_article_details.md"
-ROOT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/"
+INPUT_UPDATED = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/input"
 EXPORT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/"
-# Input file
-INPUT_UPDATED = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/input/updated.md"
+EXPORT_JSON = "exported_article_details.json"
+EXPORT_JSON_PATH = os.path.join(EXPORT_DIR, EXPORT_JSON)
 
 # Regular Expressions to identify sections
+PATT_ARTICLE = re.compile(r"^### .+\n\n- \*\*Description:\*\* .+\n- \*\*Tags:\*\* .+\n- \*\*Category:\*\* .+\n", re.MULTILINE)
 PATT_TITLE = re.compile(r"^### (.+)$", re.MULTILINE)
 PATT_DESCRIPTION = re.compile(r"- \*\*Description:\*\* (.+)")
 PATT_TAGS = re.compile(r"- \*\*Tags:\*\* \['(.+)'\]")
@@ -17,37 +18,37 @@ PATT_CATEGORY = re.compile(r"- \*\*Category:\*\* _(.+)_")
 PATT_WORD_COUNT = re.compile(r"\*\*Word Count:\*\* (\d+)")
 PATT_FULL_ARTICLE = re.compile(r"\*\*\[Full Article\]\((.+)\)\*\*")
 
-def extract_details(content: str) -> Dict[str, str]:
+def extract_details(content: str) -> Dict[str, Dict[str, str]]:
     """Extracts article details from markdown content."""
-    details = {
-        'title': PATT_TITLE.search(content).group(1) if PATT_TITLE.search(content) else "",
-        'description': PATT_DESCRIPTION.search(content).group(1) if PATT_DESCRIPTION.search(content) else "",
-        'tags': PATT_TAGS.search(content).group(1) if PATT_TAGS.search(content) else "",
-        'category': PATT_CATEGORY.search(content).group(1) if PATT_CATEGORY.search(content) else "",
-        'word_count': PATT_WORD_COUNT.search(content).group(1) if PATT_WORD_COUNT.search(content) else "",
-        'full_article': PATT_FULL_ARTICLE.search(content).group(1) if PATT_FULL_ARTICLE.search(content) else ""
-    }
-    return details
+    articles = {}
+    for article in PATT_ARTICLE.findall(content):
+        title = PATT_TITLE.search(article).group(1) if PATT_TITLE.search(article) else ""
+        description = PATT_DESCRIPTION.search(article).group(1) if PATT_DESCRIPTION.search(article) else ""
+        tags = PATT_TAGS.search(article).group(1) if PATT_TAGS.search(article) else ""
+        category = PATT_CATEGORY.search(article).group(1) if PATT_CATEGORY.search(article) else ""
+        word_count = PATT_WORD_COUNT.search(article).group(1) if PATT_WORD_COUNT.search(article) else ""
+        full_article = PATT_FULL_ARTICLE.search(article).group(1) if PATT_FULL_ARTICLE.search(article) else ""
 
-def format_article_details(details: Dict[str, str]) -> str:
-    """Formats the extracted details into the desired Markdown format."""
-    return (f"### {details['title']}\n\n"
-            f"- **Description:** {details['description']}\n"
-            f"- **Tags:** ['{details['tags']}']\n"
-            f"- **Category:** _{details['category']}_ | **Word Count:** {details['word_count']} | **[Full Article]({details['full_article']})**\n\n")
+        articles[title] = {
+            'description': description,
+            'tags': tags.split("', '"),
+            'category': category,
+            'word_count': int(word_count),
+            'full_article': full_article
+        }
+    return articles
 
-def export_article_details(directory: str, export_file: str) -> None:
-    """Exports article details for all markdown files in a directory."""
-    exported_content = ""
-    for filename in os.listdir(directory):
+def export_article_details_as_json(input_dir: str, export_json_path: str) -> None:
+    """Exports article details as a JSON file."""
+    all_articles = {}
+    for filename in os.listdir(input_dir):
         if filename.endswith(".md"):
-            with open(os.path.join(directory, filename), 'r', encoding='utf-8') as file:
+            with open(os.path.join(input_dir, filename), 'r', encoding='utf-8') as file:
                 content = file.read()
-                article_details = extract_details(content)
-                formatted_details = format_article_details(article_details)
-                exported_content += formatted_details
+                articles_details = extract_details(content)
+                all_articles.update(articles_details)
 
-    with open(export_file, 'w', encoding='utf-8') as file:
-        file.write(exported_content)
+    with open(export_json_path, 'w', encoding='utf-8') as json_file:
+        json.dump(all_articles, json_file, indent=4)
 
-export_article_details(DIR, EXPORT_FILE)
+export_article_details_as_json(INPUT_UPDATED, EXPORT_JSON_PATH)
