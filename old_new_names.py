@@ -1,6 +1,6 @@
 import os
 import re
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional
 
 
 def read_lines_with_pattern(filename: str, pattern: re.Pattern) -> Optional:
@@ -42,11 +42,13 @@ def name_pairs(original: str, updated: str) -> Dict[str, str]:
     if original_h3 is None or updated_h3 is None:
         return {}
 
+
+
     return(dict(zip(original_h3, updated_h3)))
 
-
-original = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/original.md"
-updated = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/updated.md"
+root_dir = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/update_file_details/"
+original = os.path.join(root_dir,"original.md")
+updated = os.path.join(root_dir,"updated.md")
 
 pairs_dict = name_pairs(original,updated)
 
