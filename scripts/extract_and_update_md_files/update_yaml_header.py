@@ -1,6 +1,7 @@
+from typing import Dict, Tuple, List
 import os
 import re
-from typing import Dict, Tuple, List
+import yaml
 
 
 # Constants
@@ -52,5 +53,30 @@ def load_json_from_file(file_path: str) -> dict:
         print(f"Error loading JSON from file: {e}")
         return {}
 
-# loaded_data = load_json_from_file(file_path=TITLE_MAPPING_JSON_FILE)
 
+def process_markdown_file(title_mapping_file_path: str, file_path: str) -> str:
+    loaded_data = load_json_from_file(title_mapping_file_path)
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+
+    # Locate the yaml header
+    if lines[0].strip() != '---':
+        return "" # Not a valid YAML header
+    header_end_idx = lines.index('---\n', 1)
+    yaml_content = ''.join(lines[1:header_end_idx])
+
+    # Parse YAML
+    header = yaml.safe_load(yaml_content)
+
+    # Update title if present in TITLE_MAPPING_JSON_FILE
+    old_title = header.get('title','').replace('<br>', ' ').strip('\'"')
+
+    new_title = loaded_data.get(old_title,'updated_title')
+    header['title'] = new_title
+
+    # Serialize and rebuild file content
+    updated_yaml = yaml.safe_dump(header, default_flow_style=False)
+    updated_content = '---\n' + updated_yaml + '---\n' + ''.join(lines[header_end_idx + 1:])
+
+    return updated_content
