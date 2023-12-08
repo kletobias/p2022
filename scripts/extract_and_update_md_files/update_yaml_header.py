@@ -13,6 +13,22 @@ def create_export_file_paths(input_dir: str, export_dir: str) -> List[str]:
 
     return [os.path.join(export_dir,export_file_name) for export_file_name in export_file_names]
 
-export_paths = create_export_file_paths(DIR,EXPORT_DIR)
+def write_string_to_file(file_path: str, string_content: str) -> None:
+    """
+    Write a string to a text file.
 
-print(export_paths)
+    Args:
+    file_path (str): The path to the file where the string should be written.
+    string_content (str): The string content to write to the file.
+
+    Returns:
+    None
+    """
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(string_content)
+    except Exception as e:
+        print(f"Error writing to file: {e}")
+
+# write_string_to_file(file_path='path_to_file.txt', string_content=your_string_variable)
+
