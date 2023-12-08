@@ -53,8 +53,6 @@ def update_json_with_original_titles(EXPORT_JSON_PATH: str, FILE_TO_WRITE: str, 
 
     with open(FILE_TO_WRITE,'w') as f:
         json.dump(updated_articles,f, ensure_ascii=False, indent=4)
-    
 
 
-    
 update_json_with_original_titles(EXPORT_JSON_PATH,FILE_TO_WRITE,TITLE_MAPPING_JSON_FILE)
