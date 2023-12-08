@@ -1,0 +1,115 @@
+{
+    "Advanced Geospatial Feature Creation": {
+        "description": "Demonstrates my expertise in data cleaning and transformation for generating geospatial features. The process involves converting raw GPS data into decimal degrees format and identifying key transportation hubs in Hamburg, Germany.",
+        "tags": [
+            "data-cleaning",
+            "data-transformation",
+            "geospatial-feature-creation",
+            "regular-expression",
+            "shapely",
+            "tabular-data"
+        ],
+        "category": "data-preprocessing",
+        "word_count": 3779,
+        "full_article": "https://deep-learning-mastery.com/projects/advanced-geospatial-feature-creation/",
+        "updated_title": "Advanced Geospatial Feature Creation"
+    },
+    "Automation Using A Test Harness For Deep Learning: Part 1": {
+        "description": "Outlines the development and application of a custom test harness to optimize deep learning testing workflows. This approach enhances GPU utilization and accelerates model building and parameter testing, using the fastai library.",
+        "tags": [
+            "binary-classification",
+            "deep-learning",
+            "fastai",
+            "hyperparameter-optimization",
+            "learning-rate",
+            "loss-function",
+            "stochastic-gradient-descent"
+        ],
+        "category": "deep-learning",
+        "word_count": 2706,
+        "full_article": "https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1/",
+        "updated_title": "Automation Using A Test Harness For Deep Learning: Part 1"
+    },
+    "Automation Using A Test Harness For Deep Learning: Part 2": {
+        "description": "Continuation of the series, delving into empirical experimentation using fastai on a unique dataset. This segment focuses on handling a small dataset with 850 images and two target labels, demonstrating advanced image data handling and classification skills.",
+        "tags": [
+            "binary-classification",
+            "deep-learning",
+            "fastai",
+            "hyperparameter-optimization','image-data"
+        ],
+        "category": "deep-learning",
+        "word_count": 3059,
+        "full_article": "https://deep-learning-mastery.com/projects/automation-using-a-test-harness-br-for-deep-learning-br-part-2/",
+        "updated_title": "Automation Using A Test Harness For Deep Learning: Part 2"
+    },
+    "Cleaning a web scraped 47 Column Pandas DataFrame Part 1": {
+        "description": "This article showcases my expertise in using pandas for advanced data exploration. It focuses on analyzing a 47-column dataset, providing insights into leveraging pandas for complex tabular data management.",
+        "tags": [
+            "data-exploration",
+            "advanced-pandas",
+            "data-analysis",
+            "tabular-data"
+        ],
+        "category": "data-preprocessing",
+        "word_count": 3508,
+        "full_article": "https://deep-learning-mastery.com/projects/mastery-in-pandas-in-depth-data-exploration-part-1/",
+        "updated_title": "Mastery in Pandas: In-Depth Data Exploration, Part 1"
+    },
+    "Cleaning a web scraped 47 Column Pandas DataFrame Part 2": {
+        "description": "Demonstrates my proficiency with pyjanitor in streamlining string data cleaning. This installment details method chaining and advanced string manipulation techniques for optimizing data preprocessing.",
+        "tags": [
+            "data-cleaning",
+            "pyjanitor",
+            "string-manipulation",
+            "method-chaining",
+            "pandas"
+        ],
+        "category": "data-preprocessing",
+        "word_count": 3265,
+        "full_article": "https://deep-learning-mastery.com/projects/pyjanitor-proficiency-efficient-string-data-cleaning-part-2/",
+        "updated_title": "PyJanitor Proficiency: Efficient String Data Cleaning, Part 2"
+    },
+    "Cleaning a web scraped 47 Column Pandas DataFrame Part 3": {
+        "description": "Highlights my skills in geospatial data engineering using pandas. This part focuses on cleaning, validating, and creating GPS data columns by merging longitude and latitude fields into Point geometry objects.",
+        "tags": [
+            "geospatial-data",
+            "data-validation",
+            "GPS-data-creation",
+            "pandas",
+            "geometry-manipulation"
+        ],
+        "category": "data-preprocessing",
+        "word_count": 2372,
+        "full_article": "https://deep-learning-mastery.com/projects/geospatial-engineering-in-pandas-creating-valid-gps-columns-part-3/",
+        "updated_title": "Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3"
+    },
+    "Cleaning a web scraped 47 Column Pandas DataFrame Part 4": {
+        "description": "Showcases advanced techniques in data cleaning and validation, using batch processing with pandas and regular expressions. It exemplifies how to handle large volumes of tabular data efficiently.",
+        "tags": [
+            "advanced-data-cleaning",
+            "batch-processing",
+            "pandas",
+            "regular-expressions",
+            "data-validation"
+        ],
+        "category": "data-preprocessing",
+        "word_count": 4259,
+        "full_article": "https://deep-learning-mastery.com/projects/advanced-data-cleaning-and-validation-batch-processing-with-pandas-part-4/",
+        "updated_title": "Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4"
+    },
+    "Datacamp Concrete Regression Challenge": {
+        "description": "This article documents my approach to the Datacamp Concrete Challenge, completed within an hour. It offers detailed explanations for each step, emphasizing my proficiency with the Lasso regression model in a time-constrained environment.",
+        "tags": [
+            "time-efficient-analysis",
+            "lasso-regression-expertise",
+            "mathematical-insights",
+            "multivariate-regression",
+            "regression-analysis"
+        ],
+        "category": "tabular-data",
+        "word_count": 1162,
+        "full_article": "https://deep-learning-mastery.com/projects/expert-analysis-in-lasso-regression-the-datacamp-concrete-challenge/",
+        "updated_title": "Expert Analysis in Lasso Regression: The Datacamp Concrete Challenge"
+    }
+}
