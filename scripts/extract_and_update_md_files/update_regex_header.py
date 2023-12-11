@@ -97,6 +97,23 @@ def write_string_to_file(file_path: str, string_content: str) -> None:
 # End Subheader write_string_to_file }}}
 
 
+def extract_values_from_nested_dict(nested_dict: dict, target_key: str) -> Dict:
+    """Extract values from a nested dictionary based on a target key.
+
+    Args:
+        nested_dict (dict): The dictionary to extract the values under the target key, if found.
+        target_key (str): The key to match from another dictionary.
+
+    Returns:
+        dict: A dictionary of values extracted from the child of the matched key, or an empty dictionary if the key is not found.
+    """
+
+    if target_key in nested_dict:
+        return nested_dict[target_key]
+    else:
+        return {}
+
+
 # Regular Expressions to identify sections
 PATT_ARTICLE = re.compile(r"^### .+\n\n- \*\*Description:\*\* .+\n- \*\*Tags:\*\* .+\n- \*\*Category:\*\* .+\n", re.MULTILINE)
 PATT_TITLE = re.compile(r"^### (.+)$", re.MULTILINE)
