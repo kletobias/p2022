@@ -53,6 +53,8 @@ def load_json_from_file(file_path: str) -> dict:
         print(f"Error loading JSON from file: {e}")
         return {}
 
+# --- Subheader: write_string_to_file --- {{{
+
 def write_string_to_file(file_path: str, string_content: str) -> None:
     """
     Write a string to a text file.
@@ -69,6 +71,8 @@ def write_string_to_file(file_path: str, string_content: str) -> None:
             f.write(string_content)
     except Exception as e:
         print(f"Error writing to file: {e}")
+
+# End Subheader write_string_to_file }}}
 
 
 def process_markdown_file(title_mapping_file_path: str, file_path: str) -> str:
