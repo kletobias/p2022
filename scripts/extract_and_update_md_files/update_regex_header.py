@@ -35,10 +35,10 @@ def write_string_to_file(file_path: str, string_content: str) -> None:
 # write_string_to_file(file_path='path_to_file.txt', string_content=your_string_variable)
 
 # Constants
-INPUT_UPDATED = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/input"
-EXPORT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/"
-EXPORT_JSON = "exported_article_details.json"
-EXPORT_JSON_PATH = os.path.join(EXPORT_DIR, EXPORT_JSON)
+# INPUT_UPDATED = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/input"
+# EXPORT_DIR = "/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/"
+# EXPORT_JSON = "exported_article_details.json"
+# EXPORT_JSON_PATH = os.path.join(EXPORT_DIR, EXPORT_JSON)
 
 
 def export_article_details_as_json(input_dir: str, export_json_path: str) -> None:
@@ -54,7 +54,7 @@ def export_article_details_as_json(input_dir: str, export_json_path: str) -> Non
     with open(export_json_path, 'w', encoding='utf-8') as json_file:
         json.dump(all_articles, json_file, indent=4)
 
-export_article_details_as_json(INPUT_UPDATED, EXPORT_JSON_PATH)
+# export_article_details_as_json(INPUT_UPDATED, EXPORT_JSON_PATH)
 
 def load_json_from_file(file_path: str) -> dict:
     """
@@ -146,39 +146,60 @@ def extract_details(content: str) -> Dict[str, Dict[str, str]]:
 
 
 def process_markdown_file(title_mapping_file_path: str, file_path: str) -> str:
+    # Updated header data for all keys
     loaded_data = load_json_from_file(title_mapping_file_path)
+    for key in loaded_data:
+        print(loaded_data[key]['tags'])
 
+    # Markdown article file path
     with open(file_path, 'r', encoding='utf-8') as file:
-        lines = file.read()
+        lines = file.readlines()
+        print(lines[:10])
 
+    old_header_values = {}
+    old_header_values['title_current_file'] = lines[2]
+    assert lines[2].startswith("title"), "Line 2 does not start with title"
+    old_header_values['description_current_file'] = lines[4]
+    assert lines[4].startswith("description"), "Line 4 does not start with description"
+    old_header_values['tags_current_file'] = lines[6]
+    assert lines[6].startswith("tags"), "Line 6 does not start with tags"
+    old_header_values['category_current_file'] = lines[7]
+    assert lines[7].startswith("category"), "Line 7 does not start with category"
 
-    articles = extract_details(lines)
-    # Locate the yaml header
-    if lines[0].strip() != '---':
-        return "" # Not a valid YAML header
-    header_end_idx = lines.index('---\n', 1)
-    yaml_content = ''.join(lines[1:header_end_idx])
+    line_numbers = [2,4,6,7]
+    print(old_values)
+    # articles = extract_details(lines)
 
-    # Parse YAML
-    header = yaml.safe_load(yaml_content)
-    # print(f"header {header}")
+    # for idx, old_values in zip(line_numbers, old_header_values.values()):
+    #     new_line = 
 
-    # Update title if present in TITLE_MAPPING_JSON_FILE
-    old_title = header.get('title','').replace('<br>', ' ').strip('\'"')
-    print(old_title)
-#    new_title = loaded_
+    
+    # # Locate the yaml header
+    # if lines[0].strip() != '---':
+    #     return "" # Not a valid YAML header
+    # header_end_idx = lines.index('---\n', 1)
+    # yaml_content = ''.join(lines[1:header_end_idx])
 
-    new_title = loaded_data.get(old_title,old_title)
-    print(new_title)
-    header['title'] = new_title
+    # # Parse YAML
+    # header = yaml.safe_load(yaml_content)
+    # # print(f"header {header}")
 
-    # Serialize and rebuild file content
-    updated_yaml = yaml.safe_dump(header, default_flow_style=False,sort_keys=False)
-    print(f"updated_yaml \n {updated_yaml} \n")
-    write_string_to_file(file_path=os.path.join("/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/updated_yaml_header/","updated_yaml.md"), string_content=updated_yaml)
-    updated_content = '---\n' + updated_yaml + '---\n' + ''.join(lines[header_end_idx + 1:])
+    # # Update title if present in TITLE_MAPPING_JSON_FILE
+    # old_title = header.get('title','').replace('<br>', ' ').strip('\'"')
+    # print(old_title)
+# #    new_title = loaded_
 
-    return updated_content
+    # new_title = loaded_data.get(old_title,old_title)
+    # print(new_title)
+    # header['title'] = new_title
+
+    # # Serialize and rebuild file content
+    # updated_yaml = yaml.safe_dump(header, default_flow_style=False,sort_keys=False)
+    # print(f"updated_yaml \n {updated_yaml} \n")
+    # write_string_to_file(file_path=os.path.join("/Users/tobias/all_code/projects/portfolio-website-2022/scripts/extract_and_update_md_files/export/updated_yaml_header/","updated_yaml.md"), string_content=updated_yaml)
+    # updated_content = '---\n' + updated_yaml + '---\n' + ''.join(lines[header_end_idx + 1:])
+
+    # return updated_content
 
 
 def create_export_file_paths(input_dir: str, export_dir: str) -> List[str]:
@@ -197,4 +218,5 @@ def export_updated_markdown_files(input_dir: str, export_dir: str, title_mapping
 #            print(updated_content[0:500])
             
     
-export_updated_markdown_files(DIR,EXPORT_DIR,TITLE_MAPPING_JSON_FILE)
+# export_updated_markdown_files(DIR,EXPORT_DIR,TITLE_MAPPING_JSON_FILE)
+process_markdown_file(os.path.join(DIR,'automation-using-a-test-harness-br-for-deep-learning-br-part-2.md'),TITLE_MAPPING_JSON_FILE)
