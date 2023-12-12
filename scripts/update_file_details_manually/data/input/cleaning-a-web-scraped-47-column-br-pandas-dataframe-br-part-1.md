@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Cleaning a web scraped 47 Column<br>Pandas DataFrame<br>Part 1'
+title: 'Mastery in Pandas: In-Depth Data Exploration, Part 1'
 date: 2021-01-10
-description: 'Data Preparation Series: Exploring Tabular Data With pandas: An Overview Of Available Tools In The pandas Library.'
+description: 'This article showcases my expertise in using pandas for advanced data exploration. It focuses on analyzing a 47-column dataset, providing insights into leveraging pandas for complex tabular data management.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
-tags: ['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']
+tags: ["data-exploration", "advanced-pandas", "data-analysis", "tabular-data"]
 category: ['data-preprocessing']
 comments: true
 
@@ -17,7 +17,7 @@ comments: true
   </nav>
 </d-contents>
 
-# From Webscraping Data<br>To Tidy Pandas DataFrame
+# Mastery in Pandas: In-Depth Data Exploration, Part 1
 
 ### Cleaning The Data! Series.<br>Part 1/4
 
