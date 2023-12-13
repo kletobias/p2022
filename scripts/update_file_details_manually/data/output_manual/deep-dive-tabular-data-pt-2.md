@@ -2,7 +2,7 @@
 layout: distill
 title: 'Decision Tree Feature Selection Methodology, Part 2'
 date: 2023-01-02
-description: 'Detailed exploration of feature selection using sklearn's DecisionTreeRegressor. It includes testing the reliability of the feature_importances_ method.'
+description: 'Detailed exploration of feature selection using sklearn\'s DecisionTreeRegressor. It includes testing the reliability of the feature_importances_ method.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['decision-tree-analysis', 'feature-selection-techniques', 'sklearn', 'model-evaluation', 'tabular-data']
 category: ['tabular-data']
