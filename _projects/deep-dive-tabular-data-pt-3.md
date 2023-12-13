@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Deep Dive Tabular Data Pt. 3'
+title: 'RandomForestRegressor Performance Analysis, Part 3'
 date: 2023-01-03
-description: 'RandomForestRegressor using feature_importances_ and out-of-bag error to asses model performance.'
+description: 'In-depth analysis of RandomForestRegressor, focusing on feature importance and out-of-bag error as key performance indicators.'
 img: 'assets/img/838338477938@+-791693336.jpg'
-tags: ['feature-importance', 'feature-selection', 'out-of-bag-error', 'random-forest', 'tabular-data']
+tags: ['performance-analysis', 'random-forest-optimization', 'model-evaluation', 'feature-importance', 'tabular-data']
 category: ['tabular-data']
 authors: 'Tobias Klein'
 comments: true
@@ -20,17 +20,15 @@ comments: true
 
 # Series: Kaggle Competition - Deep Dive Tabular Data
 
-[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
+[**Advanced Missing Value Analysis in Tabular Data, Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Decision Tree Feature Selection Methodology, Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**RandomForestRegressor Performance Analysis, Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Statistical Interpretation of Tabular Data, Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Addressing the Out-of-Domain Problem in Feature Selection, Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Kaggle Challenge Strategy: RandomForestRegressor and Deep Learning, Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Hyperparameter Optimization in Deep Learning for Kaggle, Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
 
-# Part 3: Tree Based Models For Interpretability 2
-
-## RandomForestRegressor (RFR) For Interpretation
+# RandomForestRegressor Performance Analysis, Part 3
 
 ### Create Root Mean Squared Error Metric For Scoring Models
 
@@ -512,10 +510,10 @@ plot_fi(rf_feat_importance(m, xs_imp))
 
 Entire Series:
 
-[**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
-[**Deep Dive Tabular Data Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
-[**Deep Dive Tabular Data Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
-[**Deep Dive Tabular Data Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
-[**Deep Dive Tabular Data Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
-[**Deep Dive Tabular Data Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
-[**Deep Dive Tabular Data Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
+[**Advanced Missing Value Analysis in Tabular Data, Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+[**Decision Tree Feature Selection Methodology, Part 2**]({% link _projects/deep-dive-tabular-data-pt-2.md %})<br>
+[**RandomForestRegressor Performance Analysis, Part 3**]({% link _projects/deep-dive-tabular-data-pt-3.md %})<br>
+[**Statistical Interpretation of Tabular Data, Part 4**]({% link _projects/deep-dive-tabular-data-pt-4.md %})<br>
+[**Addressing the Out-of-Domain Problem in Feature Selection, Part 5**]({% link _projects/deep-dive-tabular-data-pt-5.md %})<br>
+[**Kaggle Challenge Strategy: RandomForestRegressor and Deep Learning, Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
+[**Hyperparameter Optimization in Deep Learning for Kaggle, Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
