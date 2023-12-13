@@ -4,7 +4,7 @@ title: 'Mastery in Pandas: In-Depth Data Exploration, Part 1'
 date: 2021-01-10
 description: 'This article showcases my expertise in using pandas for advanced data exploration. It focuses on analyzing a 47-column dataset, providing insights into leveraging pandas for complex tabular data management.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
-tags: ["data-exploration", "advanced-pandas", "data-analysis", "tabular-data"]
+tags: ['data-exploration', 'advanced-pandas', 'data-analysis', 'tabular-data']
 category: ['data-preprocessing']
 comments: true
 
@@ -12,6 +12,7 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
+    <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
     <div class="no-math"><a href="#reading-in-the-input-data">Reading In The Input Data</a></div>
     <div class="no-math"><a href="#first-look-at-the-dataframe">First Look At The DataFrame</a></div>
   </nav>
@@ -19,14 +20,22 @@ comments: true
 
 # Mastery in Pandas: In-Depth Data Exploration, Part 1
 
-### Cleaning The Data! Series.<br>Part 1/4
+## Summary Of The Series
 
-#### Links To All Parts Of The Series
+> This series demonstrates my deep expertise in pandas and pyjanitor for advanced data exploration and cleaning. In Part 1, "[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %}),” a 47-column dataset is analyzed to showcase complex tabular data management. Dimensionality reduction techniques are applied to retain only relevant columns. Part 2, "[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %}),” leverages pyjanitor's method chaining syntax to enhance the speed and efficiency of string data cleaning. The focus is on unique column values to guide the cleaning steps.
+
+> Regular expressions (regex) are extensively used in Part 4, "[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %}),” for extracting and validating cell contents, replacing invalid patterns with valid ones. Additionally, this part emphasizes handling large volumes of tabular data through batch processing. Part 3, "[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %}),” highlights the creation and validation of `Point` geometry `gps` columns by merging longitude and latitude fields into GPS data columns. The series culminates with the creation of new `timedelta64[ns]` `time_listed` and `gps` columns, illustrating advanced data cleaning and validation techniques.
+
+---
+
+### Links To All Parts Of The Series
 
 [Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
 [PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
 [Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
 [Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+
+---
 
 ## Reading In The Input Data
 
@@ -1133,6 +1142,7 @@ they can be used in projects.
 ---
 <br>
 <br>
+
 [Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
 [PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
 [Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
