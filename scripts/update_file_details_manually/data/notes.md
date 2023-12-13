@@ -1,4 +1,7 @@
-## Header Part 1 of the series
+Using the following json data, only use the top level keys for the title of each article, and `description`, `tags`, `category` to update the summary that is found in each article near the top.
+
+
+## Header Part 1-4 of the series
 
 ```json
 {
