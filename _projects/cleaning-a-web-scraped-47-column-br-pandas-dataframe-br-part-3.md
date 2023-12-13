@@ -1,17 +1,17 @@
 ---
 layout: distill
-title: 'Cleaning a web scraped 47 Column<br>Pandas DataFrame<br>Part 3'
+title: 'Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3'
 date: 2022-01-11
-description: 'Extensive cleaning and validation and creation of a valid GPS column from the records, by joining the longitude and latitude columns together using geometry object Point.'
+description: 'Highlights my skills in geospatial data engineering using pandas. This part focuses on cleaning, validating, and creating GPS data columns by merging longitude and latitude fields into Point geometry objects.'
 img: 'assets/img/838338477938@+-3948324823-data-cleansing.webp'
-tags: ['data-validation', 'dtype-timedelta64','geospatial-feature-engineering', 'pandas', 'tabular-data']
+tags: ['geospatial-data', 'data-validation', 'GPS-data-creation', 'pandas', 'geometry-manipulation']
 category: ['data-preprocessing']
 comments: true
 ---
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#summary-of-this-article">Summary Of This Article</a></div>
+    <div class="no-math"><a href="#geospatial-engineering-in-pandas-creating-valid-gps-columns-part-3">Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3</a></div>
     <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
     <div class="no-math"><a href="#heating-costs">Heating Costs</a></div>
     <div class="no-math"><a href="#latitude">Latitude</a></div>
@@ -23,40 +23,42 @@ comments: true
   </nav>
 </d-contents>
 
-# Wrangling with that Data! 3/4
+# Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3
 
-This series shows how cleaning a CSV file using `pandas`, `numpy`, `re` and the
-`pyjanitor` (imported under the name `janitor`) modules can be achieved. Some
-outputs are shortened for readability.
+Highlights my skills in geospatial data engineering using pandas. This part focuses on cleaning, validating, and creating GPS data columns by merging longitude and latitude fields into Point geometry objects.
 
-#### Links To All Parts Of The Series
+### Links To All Parts Of The Series
 
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
 
-## Summary Of This Article
-
-In order to create the GPS column, the longitude and latitude columns are joined
-together using geometry object `Point` from library `shapely.geometry`. This
-enables completely independent geospatial features to be assigned to listings
-from the dataset. A set of features that are significant for predicting variable
-'base_rent' later on in the process. Furthermore, the data from the
-'date_listed' and 'date_unlisted' columns is calculated to determine how long a
-listing has been on 'immoscout24.de'.
 
 ## Summary Of The Series
 
-- A DataFrame is given as input that contains 47 columns at the beginning.
-- Dimensionality Reduction is performed on the columns, to filter and keep relevant columns.
-- The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
-- Unique values of each column determine the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly employed to extract cell contents that hold valid data.
-- Regex also replace invalid character patterns with valid ones.
-- Validation of the values after cleaning is performed using regex patterns.
-- The `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
+> This series demonstrates my deep expertise in pandas and pyjanitor for advanced data exploration and cleaning. In Part 1, "[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %}),” a 47-column dataset is analyzed to showcase complex tabular data management. Dimensionality reduction techniques are applied to retain only relevant columns. Part 2, "[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %}),” leverages pyjanitor's method chaining syntax to enhance the speed and efficiency of string data cleaning. The focus is on unique column values to guide the cleaning steps.
 
+> Regular expressions (regex) are extensively used in Part 4, "[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %}),” for extracting and validating cell contents, replacing invalid patterns with valid ones. Additionally, this part emphasizes handling large volumes of tabular data through batch processing. Part 3, "[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %}),” highlights the creation and validation of `Point` geometry `gps` columns by merging longitude and latitude fields into GPS data columns. The series culminates with the creation of new `timedelta64[ns]` `time_listed` and `gps` columns, illustrating advanced data cleaning and validation techniques.
+
+---
+
+*Important Distinction:*
+
+When we approach the process of data analysis in the following, we often selectively choose columns from our DataFrame that are most relevant to our immediate analytical goals. This means some columns may be dropped to streamline the analysis and focus on the most pertinent data. However, this step is specific to the exploratory and interpretative phases of our project.
+
+In contrast, for the machine learning (ML) phase, our strategy differs significantly. Here, we retain a broader range of columns, including those we might have excluded during the data analysis phase. The rationale is that, even if a column doesn't seem immediately relevant for analytical insights, it could still provide valuable information when building predictive models. Therefore, we clean and prepare all columns meticulously to ensure they are suitable as input features for our ML algorithms.
+
+This approach serves two main purposes in the ML context:
+
+1. **Baseline Model Creation**: By including a comprehensive set of features, we establish a robust baseline model. This model serves as an initial point of reference to evaluate the performance of more complex models developed later.
+    
+2. **Feature Evaluation and Engineering**: With a full set of features at our disposal, we have the opportunity to explore a wide range of variables during feature engineering. This stage might reveal unexpected patterns or relationships that could enhance the predictive power of our final models.
+    
+
+In summary, the difference in handling the DataFrame between data analysis and machine learning stages is deliberate and strategic. It reflects the distinct objectives and methodologies of these two critical phases of our project.
+
+--- 
 
 ## Heating Costs
 
@@ -96,6 +98,24 @@ df.heating_costs.value_counts().head(10)
 ```python
 df.drop(labels=["heating_costs"], axis=1, inplace=True)
 ```
+
+## Creation Of GPS Column 
+
+**The Steps for linking listing location with location based features**. In
+order to create the GPS column, the longitude and latitude columns are joined
+together using geometry object `Point` from library `shapely.geometry`. This
+enables completely independent geospatial features to be assigned to listings
+from the dataset. These features allow for the engineering of a robust set of
+features for each listing, such as proximity to the nearest underground and
+suburban train station, noise levels for day and night from street noise for
+example. Many prove to be significant for predicting variable 'base_rent' later
+on in the process. Please see the full text of my Bachelor's Thesis
+**[**Data Mining: Hyperparameter Optimization For Real Estate Prediction Models**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})** for more details.
+
+Furthermore, the data from the 'date_listed' is transformed into valid and
+'date_unlisted' columns is calculated to determine how long a listing has been
+on 'immoscout24.de'.
+
 
 ## Latitude
 
@@ -366,12 +386,13 @@ df[['gps']].info()
 
 ## Reviewing The Columns In The DataFrame Again
 
-We drop more columns, after the creation of the `gps` column. `street_number`
-(street and number of a listing) are not needed anymore, since all listings have
-a valid pair of longitude and latitude coordinates associated with them. `floor
-space` is a variable that has 827 non-missing values and around 91.2% of rows
-have missing values. This ratio between valid and missing values is too large to
-be imputed in this case. The column is therefore dropped.
+We drop the `street_number`, and `floor_space` columns after the creation of
+the `gps` column. `street_number` (street *and* number as part of the address
+of a listing) is not needed anymore, since all listings have a valid pair of
+longitude and latitude coordinates associated with them. `floor space` is a
+variable that has 827 non-missing values and around 91.2% of rows have missing
+values. This ratio between valid and missing values is too large to be imputed
+for analytical purposes in this case.
 
 
 
@@ -409,31 +430,40 @@ df.date_listed.unique()[
            '[\'exposeOnlineSince: "23.11.2018"\']'], dtype=object)
 
 
-
 ### Extracting DateTime Information
-- For both columns, we extract the valid data. Data in the form of `dd.mm.yyyy`.
-- pandas `datetime64[ns]` goes down to the Nanosecond level. However, the data only goes down to the day level. This leads to us removing anything below the day level in the data.
-- We fill missing data by selecting the next valid data entry, above the row with the missing value. The time a listing was online does not vary much, except for a few outliers, as will be discussed later.
+
+Handling date-time data is a crucial step in data analysis, especially when dealing with time-sensitive information like rental listings. Our approach involves careful extraction and processing of date-time data to ensure accuracy and consistency.
+
+1. **Data Extraction**: We begin by extracting date information from two specific columns in our dataset. The data is expected to be in the format `dd.mm.yyyy`. This step is vital to standardize the date format across our dataset, allowing for uniform processing and analysis.
+
+2. **Utilizing Pandas `datetime64[ns]`**: Pandas offers the `datetime64[ns]` data type, which is part of the [pandas.Timestamp class](https://pandas.pydata.org/docs/reference/api/pandas.Timestamp.html#pandas-timestamp). This data type is precise up to the nanosecond. However, our data only includes information up to the day level. To align with our data granularity and improve processing efficiency, we truncate the time information, removing any details below the day level. This simplification streamlines our dataset and focuses our analysis on relevant date information.
+
+3. **Handling Missing Data**: In cases where date information is missing, we employ a forward-fill strategy. This means we replace missing values with the next available valid entry. This approach is based on the observation that the time a listing is online usually doesn't vary significantly, with few exceptions. By using the next valid date, we maintain continuity in our data and minimize the impact of missing values. This method is particularly useful when analyzing trends over time, as it ensures no gaps in the date sequence.
+
+ - *Note on Outliers*: While this method is generally effective, it's important to be aware of outliers. Listings that were online for unusually long or short periods can skew the analysis. We will address these outliers in a later stage, ensuring our final insights are robust and representative of the typical listing patterns.
+
+Through these steps, we ensure that our date-time data is accurate, consistent, and ready for further analysis, such as trend identification or temporal pattern exploration.
 
 
 ```python
+# Process the 'date_listed' and 'date_unlisted' columns to extract valid dates and convert them to datetime
 df = (
-        df.process_text(
-                column_name="date_listed",
-                string_function="extract",
-                pat=r"(\d{2}\.\d{2}\.\d{4})",
-                expand=False,
-                )
-            .process_text(
-                column_name="date_unlisted",
-                string_function="extract",
-                pat=r"(\d{2}\.\d{2}\.\d{4})",
-                expand=False,
-                )
-            .to_datetime("date_listed", errors="raise", dayfirst=True)
-            .to_datetime("date_unlisted", errors="raise", dayfirst=True)
-            .fill_direction(date_listed="up", date_unlisted="up")
-            .truncate_datetime_dataframe(datepart="day")
+    df.process_text(
+        column_name="date_listed",
+        string_function="extract",
+        pat=r"(\d{2}\.\d{2}\.\d{4})",  # Pattern to match dates in dd.mm.yyyy format
+        expand=False
+    )
+    .process_text(
+        column_name="date_unlisted",
+        string_function="extract",
+        pat=r"(\d{2}\.\d{2}\.\d{4})",  # Same pattern for 'date_unlisted'
+        expand=False
+    )
+    .to_datetime("date_listed", errors="raise", dayfirst=True)  # Convert to datetime with day first format
+    .to_datetime("date_unlisted", errors="raise", dayfirst=True)  # Convert to datetime with day first format
+    .fill_direction(date_listed="up", date_unlisted="up")  # Forward fill missing data
+    .truncate_datetime_dataframe(datepart="day")  # Truncate time information below day level
 )
 ```
 
@@ -441,6 +471,7 @@ df = (
 
 
 ```python
+# Print the first 10 rows of 'date_listed' and 'date_unlisted' to inspect the cleaned data
 ppr = df[["date_listed", "date_unlisted"]][0:10]
 print(ppr)
 ```
@@ -458,16 +489,25 @@ print(ppr)
     9  2018-12-03    2018-12-03
 
 
-The time listed column is created calculating the difference between the
-`date_unlisted` and `date_listed` columns. The result is the `time_listed`
-column, which has type `timedelta64[ns]`. We truncate the timedelta values in
-this column to only show the days that the listing was online, since our data
-only includes the day a listing was listed/unlisted.
 
+## Handling Negative Time Deltas: A Critical Approach*
 
-```python
-tg = df["date_unlisted"] - df["date_listed"]
-```
+During our data cleaning process, we've identified instances where `date_unlisted` is earlier than `date_listed`, resulting in negative time deltas. Initially, one might consider simply converting these deltas to absolute values to rectify the negatives. This approach, while straightforward, has a significant limitation: it can potentially obscure underlying data quality issues.
+
+Negative time deltas often point towards deeper inconsistencies or errors in data entry, such as incorrect listing or unlisting dates. Merely converting these values to their absolute counterparts may yield numerically correct but contextually inaccurate data. This could lead to misleading conclusions in both our data analysis and machine learning stages.
+
+Hence, a more nuanced and effective approach is required:
+
+1. **Individual Investigation**: We should first scrutinize each case of negative time delta. This involves examining the corresponding `date_listed` and `date_unlisted` entries to identify potential errors or anomalies.
+    
+2. **Correcting Data Inconsistencies**: Wherever possible, we should attempt to correct these inconsistencies. This may involve consulting additional data sources, cross-referencing with other columns, or applying logical rules based on our understanding of the data.
+    
+3. **Documenting and Reporting**: All changes and the rationale behind them should be thoroughly documented. This transparency is crucial for maintaining the integrity of the dataset and for future reference.
+    
+4. **Fallback Strategy**: In cases where correction is not feasible, taking the absolute value of the time delta may be used as a fallback strategy. However, this should be accompanied by a note of caution regarding the potential inaccuracies it introduces.
+    
+
+By adopting this more rigorous approach, we not only enhance the reliability of our dataset but also deepen our understanding of its nuances. This leads to more robust and credible analyses and predictions in subsequent stages of our project.
 
 Looking at several metrics for the `timedelta64[ns]` type column, we see that
 there are negative values for a couple of rows. Looking at the corresponding
@@ -633,27 +673,27 @@ df.loc[indv, ["date_listed", "date_unlisted"]]
   </tbody>
 </table>
 
+ Given that only few rows are affected and that the inspection of the affected rows points towards swapped values for `date_listed` and `date_unlisted` for the affected listing, we keep the outlined solution.
 
+## Creating the time_listed Column
 
-## time_listed Column
-The `time_listed` column is created and added to the DataFrame.
-
+Next, we create the time_listed column by calculating the difference between date_unlisted and date_listed. We then apply an absolute transformation to ensure all values are positive.
 
 ```python
+
+# Add 'time_listed' column with absolute time deltas
 df = (
-        df.add_column(
-                column_name="time_listed", value=df["date_unlisted"] - df["date_listed"]
-                )
-            #    .change_type(column_name="time_listed", dtype="pd.Timedelta", ignore_exception=False)
-            .transform_column(column_name="time_listed", function=lambda x: np.abs(x))
+    df.add_column(
+        column_name="time_listed", 
+        value=df["date_unlisted"] - df["date_listed"]
+    )
+    .transform_column(
+        column_name="time_listed", 
+        function=lambda x: np.abs(x)
+    )
 )
-```
 
-The minimum is 0 days, as it should be and no missing data was added by the
-cleaning steps.
-
-
-```python
+# Verify minimum time listed and check for missing values
 print(df["time_listed"].min())
 print(df["time_listed"].isna().value_counts())
 ```
@@ -662,12 +702,14 @@ print(df["time_listed"].isna().value_counts())
     False    9423
     Name: time_listed, dtype: int64
 
+The minimum value in time_listed is correctly set to 0 days, indicating proper handling of the data.
 
 ### Dtype of `time_listed`
-The dtype of the new column `date_listed` is `timedelta64[ns]`, as it should be.
 
+We confirm that the time_listed column is of type timedelta64[ns], aligning with our data processing requirements.
 
 ```python
+# Check the data type of 'time_listed' column
 df[['time_listed']].info()
 ```
 
@@ -682,18 +724,13 @@ df[['time_listed']].info()
 
 
 ### Validation Of `time_listed`
-`df.describe()` is used to show the distribution of `time_listed`, to verify
-that the subtraction of `date_listed` from `date_unlisted` earlier resulted in
-valid `timedelta64[ns]` values in the `time_listed` column.  It becomes clear,
-that there must be outliers in the data of the `time_listed` column, as the mean
-is 20 days, while the median is 5 days. The mean is much more sensitive to
-outliers in the way it is calculated compared to the median.
 
+Using df.describe(), we explore the distribution of time_listed values. The disparity between the mean and median suggests the presence of outliers.
 
 ```python
+# Describe statistics of 'time_listed' to identify distribution and outliers
 df[['time_listed']].describe()
 ```
-
 
 
 <table>
@@ -740,18 +777,26 @@ df[['time_listed']].describe()
 </table>
 
 
+### Dropping Redundant Column
 
-Column `pc_city_quarter` is dropped, since the gps column makes it redundant.
+Finally, we remove the `pc_city_quarter` column, as it becomes redundant (for our initial analysis) due to the availability of GPS-based location data.
 
 
 ```python
+# Drop the 'pc_city_quarter' column
 df.drop(columns=["pc_city_quarter"], inplace=True)
 ```
+
+By ensuring the correctness of the time delta calculations and addressing data inaccuracies, we maintain the integrity and reliability of our analysis. The above steps and code modifications enhance readability and align with best practices in Python and pandas usage.
+
+This was part 3 in our series on data cleaning, and geospatial feature creation series. Keep reading part 4: 
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
 
 ---
 <br>
 <br>
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  

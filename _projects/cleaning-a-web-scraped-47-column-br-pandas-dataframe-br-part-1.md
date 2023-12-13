@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Cleaning a web scraped 47 Column<br>Pandas DataFrame<br>Part 1'
+title: 'Mastery in Pandas: In-Depth Data Exploration, Part 1'
 date: 2021-01-10
-description: 'Data Preparation Series: Exploring Tabular Data With pandas: An Overview Of Available Tools In The pandas Library.'
+description: 'This article showcases my expertise in using pandas for advanced data exploration. It focuses on analyzing a 47-column dataset, providing insights into leveraging pandas for complex tabular data management.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
-tags: ['data-exploration', 'first-steps', 'introduction', 'pandas', 'tabular-data']
+tags: ['data-exploration', 'advanced-pandas', 'data-analysis', 'tabular-data']
 category: ['data-preprocessing']
 comments: true
 
@@ -12,75 +12,78 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
+    <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
     <div class="no-math"><a href="#reading-in-the-input-data">Reading In The Input Data</a></div>
     <div class="no-math"><a href="#first-look-at-the-dataframe">First Look At The DataFrame</a></div>
   </nav>
 </d-contents>
 
-# From Webscraping Data<br>To Tidy Pandas DataFrame
+# Mastery in Pandas: In-Depth Data Exploration, Part 1
 
-### Cleaning The Data! Series.<br>Part 1/4
+## Summary Of The Series
 
-#### Links To All Parts Of The Series
+> This series demonstrates my deep expertise in pandas and pyjanitor for advanced data exploration and cleaning. In Part 1, "[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %}),” a 47-column dataset is analyzed to showcase complex tabular data management. Dimensionality reduction techniques are applied to retain only relevant columns. Part 2, "[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %}),” leverages pyjanitor's method chaining syntax to enhance the speed and efficiency of string data cleaning. The focus is on unique column values to guide the cleaning steps.
 
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+> Regular expressions (regex) are extensively used in Part 4, "[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %}),” for extracting and validating cell contents, replacing invalid patterns with valid ones. Additionally, this part emphasizes handling large volumes of tabular data through batch processing. Part 3, "[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %}),” highlights the creation and validation of `Point` geometry `gps` columns by merging longitude and latitude fields into GPS data columns. The series culminates with the creation of new `timedelta64[ns]` `time_listed` and `gps` columns, illustrating advanced data cleaning and validation techniques.
+
+---
+
+### Links To All Parts Of The Series
+
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+
+---
 
 ## Reading In The Input Data
 
-The input data is split into 3 csv files that together capture all rental
-listings that were online and within the boundaries of the city of Hamburg at
-the time of scraping the data. The source was a large German rental listing site
-called 'Immoscout24'. [ImmoScout24 -
-https://www.immobilienscout24.de](https://www.immobilienscout24.de/) is their
-official brand name and URL.
+The input data, crucial for analyzing rental listings in Hamburg, is divided into three CSV files. These files collectively encompass all rental listings available on 'ImmosScout24', a prominent German rental listing website, within the city boundaries at the time of scraping. The official website can be found at [ImmoScout24](https://www.immobilienscout24.de/).
 
-Various features were extracted from the listings through the use of webscraping
-and it is the main objective at this stage to clean and construct a tidy
-DataFrame that is ready for the following stages. A brief overview of the
-following stages is given below.
+The primary goal at this stage is to clean and prepare a tidy DataFrame, setting the foundation for subsequent stages such as Feature Engineering, Exploratory Data Analysis, Machine Learning, and ultimately presenting the solution to stakeholders.
 
-- Feature Engineering - Adding location based features.
-- EDA - Exploratory Data Analysis.
-- Machine Learning - Fitting and optimizing candidate models to select the best model for this problem. Predictions are made for variable 'base rent'.
-- Presenting the Solution to Stakeholders.
+### Preliminary Steps
 
-Back to the task at hand, we begin by reading in the csv files and creating the
-Pandas (*pd*) DataFrame object.  Throughout this article, any Pandas DataFrame
-object will be assigned to a variable that always contains the letters ' df',
-plus any prefix or suffix, preceding or succeeding the letters 'df' in some
-cases.  <br> In the first step, we import the necessary modules
+First, we import the necessary Python libraries and set a seed for reproducibility:
 
 ```python
-import pandas as pd # The library used to manipulate and to create a tidy DataFrame object
-seed = 42 # Create reproducible random output.
+import pandas as pd  # Library for DataFrame manipulation
+seed = 42  # Set seed for reproducible random outputs
 ```
 
-The path to the input data is assigned to variables `scraping_{1..3}`. For each
-of them a DataFrame object is created afterwards. The DataFrame `df`, which
-holds the data of all three is created and duplicate rows are dropped.  The
-command used to drop any possibly duplicate rows is `df.drop_duplicates()`
-without any specifying further parameters as to the subset of columns to
-consider when determining, if two rows are identical. Like that, only such rows
-are dropped that have identical values for all variables found in the dataset.
-This was mainly done to get rid of overlapping page ranges from the scraping
-part and also to get rid of duplicate listings on the website.
+
+### Data Preparation
+
+The paths to the scraping data are defined, and DataFrames are created using a custom function `read_and_prepare_data`. This function enhances readability, ensures consistent data type handling, and follows the principle of DRY (Don't Repeat Yourself). The `low_memory=False` option is used in `pd.read_csv()` to avoid dtype guessing, ensuring more accurate data types, particularly for columns with mixed types.
+
+The DataFrames are then concatenated, and duplicate rows are removed. This approach is more efficient and cleaner than appending DataFrames.
 
 ```python
+# File paths for the scraping data
 scraping_1 = "../data/20181203-first_scraping_topage187.csv"
 scraping_2 = "../data/20181203-second_scraping_topage340.csv"
 scraping_3 = "../data/20181203-third_scraping_topage340.csv"
 
-df1 = pd.read_csv(scraping_1, index_col=False, parse_dates=False)
-df2 = pd.read_csv(scraping_2, index_col=False, parse_dates=False)
-df3 = pd.read_csv(scraping_3, index_col=False, parse_dates=False)
+def read_and_prepare_data(file_path: str) -> pd.DataFrame:
+    """
+    Reads and processes CSV data from a given file path.
+    Uses low_memory=False for accurate data type detection.
+    """
+    return pd.read_csv(file_path, index_col=False, parse_dates=False, low_memory=False)
 
-df = df1.append([df2, df3], ignore_index=True)
-del df["Unnamed: 0"]
-df = df.drop_duplicates()
+# Reading and processing the data
+df1 = read_and_prepare_data(scraping_1)
+df2 = read_and_prepare_data(scraping_2)
+df3 = read_and_prepare_data(scraping_3)
+
+# Concatenating and cleaning dataframes
+df = pd.concat([df1, df2, df3], ignore_index=True).drop(columns=["Unnamed: 0"]).drop_duplicates()
 ```
+
+### Summary
+
+The updated approach adheres to best practices in Python programming, ensuring efficiency, readability, and maintainability of the code. The initial data preprocessing sets a strong foundation for the upcoming data analysis and machine learning stages.
 
 ## First Look At The DataFrame
 
@@ -1133,7 +1136,8 @@ they can be used in projects.
 ---
 <br>
 <br>
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  

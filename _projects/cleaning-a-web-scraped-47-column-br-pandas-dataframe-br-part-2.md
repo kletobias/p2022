@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Cleaning a web scraped 47 Column<br>Pandas DataFrame<br>Part 2'
+title: 'PyJanitor Proficiency: Efficient String Data Cleaning, Part 2'
 date: 2022-01-11
-description: 'More efficient string data cleaning by using the pyjanitor module and method chaining.'
+description: 'Demonstrates my proficiency with pyjanitor in streamlining string data cleaning. This installment details method chaining and advanced string manipulation techniques for optimizing data preprocessing.'
 img: 'assets/img/838338477938@+-3948324823-data-cleansing.webp'
-tags: ['data-cleaning', 'pandas', 'regular-expressions', 'string-manipulation', 'tabular-data']
+tags: ['data-cleaning', 'pyjanitor', 'string-manipulation', 'method-chaining', 'pandas']
 category: ['data-preprocessing']
 comments: true
 ---
@@ -12,7 +12,7 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
+    <div class="no-math"><a href="#pyjanitor-proficiency-efficient-string-data-cleaning-part-2">PyJanitor Proficiency: Efficient String Data Cleaning, Part 2</a></div>
     <div class="no-math"><a href="#reading-in-the-dataframe-from-previous-steps">Reading In The DataFrame From Previous Steps</a></div>
     <div class="no-math"><a href="#checking-data-types-of-the-columns">Checking Data Types Of The Columns</a></div>
     <div class="no-math"><a href="#columns-with-little-information">Columns With Little Information</a></div>
@@ -22,31 +22,30 @@ comments: true
   </nav>
 </d-contents>
 
-# Cleaning that Data! 2/4
+# PyJanitor Proficiency: Efficient String Data Cleaning, Part 2
 
-This article shows how cleaning a CSV file using `pandas`, `numpy`, `re` and the
-`pyjanitor` (imported under the name `janitor`) modules can be achieved. Some
-outputs are shortened for readability.
+This article demonstrates my proficiency with pyjanitor in streamlining string
+data cleaning. This installment details method chaining and advanced string
+manipulation techniques for optimizing data preprocessing.
+It showcases how cleaning a CSV file using `pandas`, `numpy`, `re` and the `pyjanitor`
+(imported under the name `janitor`) modules can be achieved.
 
-#### Links To All Parts Of The Series
+*Some outputs are shortened for readability.*
 
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+### Links To All Parts Of The Series
+
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
 
 ## Summary Of The Series
 
-- A DataFrame is given as input that contains 47 columns at the beginning.
-- Dimensionality Reduction is performed on the columns, to filter and only keep relevant columns.
-- The `pyjanitor` module is widely used with its *method chaining syntax* to increase the speed of the cleaning procedure.
-- Unique values of each column give the basis for the steps needed to clean the columns.
-- Regular Expressions (**regex**) are mostly used to extract cell contents that hold the valid data.
-- Regex are also used to replace invalid character patterns with valid ones.
-- Validation of the values, after cleaning is performed using regex patterns.
-- New `timedelta64[ns]` `time_listed` and `Point` geometry `gps` columns are created.
+> This series demonstrates my deep expertise in pandas and pyjanitor for advanced data exploration and cleaning. In Part 1, "[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %}),” a 47-column dataset is analyzed to showcase complex tabular data management. Dimensionality reduction techniques are applied to retain only relevant columns. Part 2, "[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %}),” leverages pyjanitor's method chaining syntax to enhance the speed and efficiency of string data cleaning. The focus is on unique column values to guide the cleaning steps.
 
+> Regular expressions (regex) are extensively used in Part 4, "[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %}),” for extracting and validating cell contents, replacing invalid patterns with valid ones. Additionally, this part emphasizes handling large volumes of tabular data through batch processing. Part 3, "[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %}),” highlights the creation and validation of `Point` geometry `gps` columns by merging longitude and latitude fields into GPS data columns. The series culminates with the creation of new `timedelta64[ns]` `time_listed` and `gps` columns, illustrating advanced data cleaning and validation techniques.
 
+---
 
 We begin by importing the needed libraries and modules.
 
@@ -900,7 +899,8 @@ print(ll)
 ---
 <br>
 <br>
-[Data Preparation Series 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
-[Data Preparation Series 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
-[Data Preparation Series 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Data Preparation Series 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+
+[Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
+[PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
+[Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
