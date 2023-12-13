@@ -39,57 +39,51 @@ comments: true
 
 ## Reading In The Input Data
 
-The input data is split into 3 csv files that together capture all rental
-listings that were online and within the boundaries of the city of Hamburg at
-the time of scraping the data. The source was a large German rental listing site
-called 'Immoscout24'. [ImmoScout24 -
-https://www.immobilienscout24.de](https://www.immobilienscout24.de/) is their
-official brand name and URL.
+The input data, crucial for analyzing rental listings in Hamburg, is divided into three CSV files. These files collectively encompass all rental listings available on 'ImmosScout24', a prominent German rental listing website, within the city boundaries at the time of scraping. The official website can be found at [ImmoScout24](https://www.immobilienscout24.de/).
 
-Various features were extracted from the listings through the use of webscraping
-and it is the main objective at this stage to clean and construct a tidy
-DataFrame that is ready for the following stages. A brief overview of the
-following stages is given below.
+The primary goal at this stage is to clean and prepare a tidy DataFrame, setting the foundation for subsequent stages such as Feature Engineering, Exploratory Data Analysis, Machine Learning, and ultimately presenting the solution to stakeholders.
 
-- Feature Engineering - Adding location based features.
-- EDA - Exploratory Data Analysis.
-- Machine Learning - Fitting and optimizing candidate models to select the best model for this problem. Predictions are made for variable 'base rent'.
-- Presenting the Solution to Stakeholders.
+### Preliminary Steps
 
-Back to the task at hand, we begin by reading in the csv files and creating the
-Pandas (*pd*) DataFrame object.  Throughout this article, any Pandas DataFrame
-object will be assigned to a variable that always contains the letters ' df',
-plus any prefix or suffix, preceding or succeeding the letters 'df' in some
-cases.  <br> In the first step, we import the necessary modules
+First, we import the necessary Python libraries and set a seed for reproducibility:
 
 ```python
-import pandas as pd # The library used to manipulate and to create a tidy DataFrame object
-seed = 42 # Create reproducible random output.
+import pandas as pd  # Library for DataFrame manipulation
+seed = 42  # Set seed for reproducible random outputs
 ```
 
-The path to the input data is assigned to variables `scraping_{1..3}`. For each
-of them a DataFrame object is created afterwards. The DataFrame `df`, which
-holds the data of all three is created and duplicate rows are dropped.  The
-command used to drop any possibly duplicate rows is `df.drop_duplicates()`
-without any specifying further parameters as to the subset of columns to
-consider when determining, if two rows are identical. Like that, only such rows
-are dropped that have identical values for all variables found in the dataset.
-This was mainly done to get rid of overlapping page ranges from the scraping
-part and also to get rid of duplicate listings on the website.
+
+### Data Preparation
+
+The paths to the scraping data are defined, and DataFrames are created using a custom function `read_and_prepare_data`. This function enhances readability, ensures consistent data type handling, and follows the principle of DRY (Don't Repeat Yourself). The `low_memory=False` option is used in `pd.read_csv()` to avoid dtype guessing, ensuring more accurate data types, particularly for columns with mixed types.
+
+The DataFrames are then concatenated, and duplicate rows are removed. This approach is more efficient and cleaner than appending DataFrames.
 
 ```python
+# File paths for the scraping data
 scraping_1 = "../data/20181203-first_scraping_topage187.csv"
 scraping_2 = "../data/20181203-second_scraping_topage340.csv"
 scraping_3 = "../data/20181203-third_scraping_topage340.csv"
 
-df1 = pd.read_csv(scraping_1, index_col=False, parse_dates=False)
-df2 = pd.read_csv(scraping_2, index_col=False, parse_dates=False)
-df3 = pd.read_csv(scraping_3, index_col=False, parse_dates=False)
+def read_and_prepare_data(file_path: str) -> pd.DataFrame:
+    """
+    Reads and processes CSV data from a given file path.
+    Uses low_memory=False for accurate data type detection.
+    """
+    return pd.read_csv(file_path, index_col=False, parse_dates=False, low_memory=False)
 
-df = df1.append([df2, df3], ignore_index=True)
-del df["Unnamed: 0"]
-df = df.drop_duplicates()
+# Reading and processing the data
+df1 = read_and_prepare_data(scraping_1)
+df2 = read_and_prepare_data(scraping_2)
+df3 = read_and_prepare_data(scraping_3)
+
+# Concatenating and cleaning dataframes
+df = pd.concat([df1, df2, df3], ignore_index=True).drop(columns=["Unnamed: 0"]).drop_duplicates()
 ```
+
+### Summary
+
+The updated approach adheres to best practices in Python programming, ensuring efficiency, readability, and maintainability of the code. The initial data preprocessing sets a strong foundation for the upcoming data analysis and machine learning stages.
 
 ## First Look At The DataFrame
 
