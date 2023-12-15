@@ -2,7 +2,7 @@
 layout: distill
 title: 'Automation Using A Test Harness<br>For Deep Learning:<br>Part 1'
 date: 2022-12-04
-description: 'How to create and use a custom test harness that automates many steps of the deep learning testing process. It lowers GPU idle time, lets one build more models, test more parameter combinations in less time. The fastai library for deep learning is used throughout this article.'
+description: 'Outlines the development and application of a custom test harness to optimize deep learning testing workflows. This approach enhances GPU utilization and accelerates model building and parameter testing, using the fastai library.'
 img: 'assets/img/67822330-automation.webp'
 tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']
 category: ['deep-learning']

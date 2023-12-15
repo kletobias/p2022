@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Multicollinearity: What It Is & Measures To Spot It'
+title: 'Understanding and Detecting Multicollinearity in Data Analysis'
 date: 2023-03-12
-description: 'Covariance and the Pearson correlation coefficient: How to spot multicollinearity between random variables.'
+description: 'A thorough examination of multicollinearity in statistical datasets, explaining covariance and Pearson correlation coefficient techniques for identifying inter-variable relationships.'
 img: 'assets/img/stats-sexy.webp'
-tags: ['covariance','multicollinearity','pearson-correlation-coefficient','random-variable','statistics']
+tags: ['data-analysis', 'multicollinearity-detection', 'covariance-analysis', 'correlation-techniques', 'statistical-methods']
 category: ['statistics']
 authors: 'Tobias Klein'
 comments: true
@@ -21,47 +21,18 @@ comments: true
 <br>
 
 ### Summary
-Two highly correlated distributions ($S1$, $S2$) are created
-from scratch.  A scatter plot of both distributions is created,
-with values on the x-axis from $S1$ and values on the y-axis from $S2$, to
-display what collinearity looks like. *Covariance* along with the prerequisites
-that need to be met for it to be a suitable metric, is first explored as a
-metric to spot collinearity. The mathematical formula and a shortcut for
-calculating it are presented. The second metric is the *Pearson Correlation
-Coefficient*. It is described much like the *Covariance*, along with a
-description the possible values of the correlation coefficient $r$. The article
-concludes with an example of how the *Pearson Correlation Coefficient* can be
-used in a hypothesis test to determine, if $S1$ and $S2$ are at all correlated
-with each other.<br>
+This article constructs two highly correlated distributions, denoted as $S1$ and $S2$, from the ground up. A scatter plot displaying these distributions is generated, with $S1$ values on the x-axis and $S2$ values on the y-axis, to visually represent collinearity. The concept of *Covariance* is initially examined as a metric for identifying collinearity, including its mathematical formulation and a practical shortcut for calculation. Following this, the *Pearson Correlation Coefficient* is introduced, paralleling the treatment of *Covariance*. This section details the possible values and interpretations of the correlation coefficient $r$. The discussion culminates with a practical application of the *Pearson Correlation Coefficient* in a hypothesis test to evaluate the correlation between $S1$ and $S2$.<br>
 <br>
-# Multicollinearity
+# Understanding and Detecting Multicollinearity in Data Analysis
 <br>
-Covariance and the Pearson Correlation Coefficient: How to Spot
-Multicollinearity between random variables.<br>
+Covariance and the Pearson Correlation Coefficient: Detecting Multicollinearity among Random Variables.<br>
 <br>
-Multicollinearity is a statistical concept that describes the phenomenon of
-several independent variables that are part of a multiple regression model, are
-linearly correlated with each other.  In this article we mention two metrics,
-that can be used to test for collinearity between two random variables. The
-metrics work on a per-pair or independent variables basis and so can be
-illustrated by using two random variables S1 and S2 in the following.  
+Multicollinearity, in statistical analysis, refers to the condition where several independent variables in a multiple regression model are linearly related to one another. This article highlights two key metrics for detecting collinearity between pairs of random variables, using the variables $S1$ and $S2$ as examples.  
   
-There are several reasons, why having Multicollinearity among several
-independent variables can cause problems. One of them is:  
-- The presence of Multicollinearity undermines the statistical significance of an independent variable.
+The presence of Multicollinearity in a model can lead to various issues, one of which includes:  
+- Diminished statistical significance of individual independent variables.
   
-Multiple linear regression models are often used for their easy to explain
-relationship between the independent variables and the dependent variable. One
-important metric when describing this relationship is, whether the impact of an
-independent variable on the dependent variable is statistically significant. If
-this is the case, then the coefficients that a model assigns to each
-independent variable $X_{i}$ is proportional (in case of a continuous variable
-$X_{i}$ and dependent variable $Y_{i}$) to the impact that the variable has on
-the dependent variable. Boolean variables can be used to describe other
-relationships between independent and dependent variable. That is, if the model
-does not suffer from Multicollinearity among other problems that can undermine
-this relationship.
-
+Multiple linear regression models are favored for their straightforward explanation of the relationship between independent and dependent variables. A crucial aspect of this relationship is determining the statistical significance of each independent variable's influence on the dependent variable. In the case of a continuous independent variable $X_{i}$ and a dependent variable $Y_{i}$, the model's coefficients should reflect the variable's impact on the dependent outcome. Boolean variables can represent different types of relationships between independent and dependent variables. However, this is contingent on the model being free from Multicollinearity and other issues that could compromise these relationships.
 
 ## Creating Suitable Samples
 

@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'The Tasks In Every Machine Learning Project:<br>Structured Data'
+title: 'Key Tasks in Structured Data Machine Learning Projects'
 date: 2023-02-21
-description: 'The six tasks in every machine learning project with structured data.'
+description: 'An essential guide to the six fundamental tasks in machine learning projects involving structured data, emphasizing aspects like predictive modeling and hyperparameter optimization.'
 img: 'assets/img/838338477938@+-398898935-workflow.webp'
-tags: ['predictive-modeling', 'hyperparameter-optimization', 'reproducable-code', 'tabular-data', 'feature-engineering']
+tags: ['structured-data-ml', 'machine-learning-process', 'predictive-modeling', 'hyperparameter-tuning', 'project-guide']
 category: ['machine-learning-concepts']
 authors: 'Tobias Klein'
 comments: true
@@ -23,18 +23,12 @@ comments: true
   </nav>
 </d-contents>
 
-# The Six Tasks In Every Machine Learning Project: Structured Data
+# Key Tasks in Structured Data Machine Learning Projects
 
 ## Summary
 A predictive modeling machine learning project can be divided into six main
 tasks, as described below using Python. These tasks are part of the prototyping
 process and are tailored for tabular data.
-
-<!-- You can find the tasks for image and more generally unstructured data in the -->
-<!-- article **The Six Tasks In Every ML Project: Unstructured Data** -->
-<!-- _projects/steps-unstructured.md. There is no difference between structured -->
-<!-- and unstructured data in the tasks described here, only the subtasks within each -->
-<!-- task vary. -->
 
 ## Task No. 1 | Define Problem
 
@@ -82,4 +76,4 @@ weights.
 - Present the work and explain how the final solution addresses the problem
 defined at the beginning.
 - Acknowledge limitations and areas for further improvement.
-<br><br><br><br><br>
+<br><br>

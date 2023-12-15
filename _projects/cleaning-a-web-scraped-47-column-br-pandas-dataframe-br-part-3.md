@@ -490,7 +490,7 @@ print(ppr)
 
 
 
-## Handling Negative Time Deltas: A Critical Approach*
+## Handling Negative Time Deltas: A Critical Approach
 
 During our data cleaning process, we've identified instances where `date_unlisted` is earlier than `date_listed`, resulting in negative time deltas. Initially, one might consider simply converting these deltas to absolute values to rectify the negatives. This approach, while straightforward, has a significant limitation: it can potentially obscure underlying data quality issues.
 

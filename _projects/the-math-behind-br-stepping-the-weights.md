@@ -1,76 +1,52 @@
 ---
 layout: distill
-title: 'The Math Behind<br>"Stepping The Weights"'
+title: 'Fundamental Concepts of Stochastic Gradient Descent Explained'
 date: 2023-01-12
-description: 'In this article we highlight a key concept in the Stochastic Gradient Descent and explore the basics that this optimization algorithm is derived of.'
+description: 'A comprehensive exploration of the mathematical foundations of Stochastic Gradient Descent, crucial for understanding its application in optimization algorithms in deep learning.'
 img: 'assets/img/838338477938@+-398898935.jpg'
-tags: ['deep-learning', 'math', 'ordinary-least-squares', 'partial-derivate', 'stochastic-gradient-descent']
-category: ['machine-learning-concepts']
+tags: ['optimization-algorithms', 'mathematical-fundamentals', 'gradient-descent', 'algorithmic-understanding', 'deep-learning-basics']
+category: ['deep-learning']
 authors: 'Tobias Klein'
 comments: true
 ---
 <br>
 <d-contents>
-  <nav class="l-text figcaption">
-  <h3>Contents</h3>
-    <div><a href="#a-univariate-linear-regression-function">A Univariate Linear Regression Function</a></div>
-    <div class="no-math"><a href="#minimizing-the-l_2-loss">Minimizing The $$L_{2}$$ Loss</a></div>
-    <div class="no-math"><a href="#from-loss-function-to-optimization">From Loss Function To Optimization</a></div>
-    <div class="no-math"><a href="#univariate-linear-regression">Univariate Linear Regression</a></div>
-    <div class="no-math"><a href="#gradient-descent">Gradient Descent</a></div>
-    <div class="no-math"><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></div>
-    <div class="no-math"><a href="#summary">Summary</a></div>
-  </nav>
+    <nav class="l-text figcaption">
+        <h3>Contents</h3>
+        <div><a href="#unraveling-univariate-linear-regression">Unraveling Univariate Linear Regression</a></div>
+        <div class="no-math"><a href="#optimizing-the-l_2-loss">Optimizing the $$L_{2}$$ Loss</a></div>
+        <div class="no-math"><a href="#from-loss-function-to-optimization">From Loss Function To Optimization</a></div>
+        <div class="no-math"><a href="#univariate-linear-regression">Univariate Linear Regression</a></div>
+        <div class="no-math"><a href="#gradient-descent">Gradient Descent</a></div>
+        <div class="no-math"><a href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></div>
+        <div class="no-math"><a href="#summary">Summary</a></div>
+    </nav>
 </d-contents>
 
-# The Math Behind<br>"Stepping The Weights"
+# Fundamental Concepts of Stochastic Gradient Descent Explained
 <br>
-**Stochastic Gradient Descent in detail.**
+**Delving into Stochastic Gradient Descent.**
 
-In this article we highlight a key concept in the Stochastic Gradient Descent
-and explore the basics that this optimization algorithm is derived of. These
-terms and concepts are covered in this article, among others.
+This article delves into the fundamental concept of Stochastic Gradient Descent, elucidating the basic principles from which this optimization algorithm is derived. Among the topics covered in this article are:
 
-1. The components of a univariate linear function (a straight line).
-2. What are **weights** in this context?
-3. Linear Regression.
-4. The empirical loss (using $$\mathit{L}_2$$).
-5. Gradient Descent
+1. Elements of a univariate linear function.
+2. Understanding **weights** in this framework.
+3. An introduction to Linear Regression.
+4. The concept of empirical loss and the use of $$\mathit{L}_2$$ loss.
+5. An overview of Gradient Descent.
 
 
-## A Univariate Linear Regression Function
+## Unraveling Univariate Linear Regression
 
-A basic linear regression function, which is used in machine learning
-applications and also in general applications of statistical modeling for
-example.<br>
-<br>
-Looking at it as a mathematical function, it is a single straight line. A linear
-function therefore that only has two real-values parameters $$w_{0},\,w_{1}$$.
-$$w_{0}$$ is the parameter that specifies the intercept of the function, while
-$$w_{1}$$ specifies the slope of the regression line. These parameters are called
-**weights**. In addition to these parameters, there is the independent variable,
-oftentimes referred to as $$x$$ and $$x_{i}\,i\, \in \mathit{I}$$, if referring to
-the elements of $$x$$. The dependent variable is denoted by $$y$$ and the linear
-regression $$h_{w}(\,x)\,$$ in this case. The function then looks like this:<br>
-<br>
+At its core, a basic linear regression function is employed in various machine learning and statistical modeling applications. Conceptually, it represents a single straight line, defined mathematically by two real-valued parameters: $$w_{0},\,w_{1}$$. Here, $$w_{0}$$ is the intercept of the function, while $$w_{1}$$ represents the slope of the regression line, collectively referred to as **weights**. The independent variable is usually denoted as $$x$$, or $$x_{i}\,i\, \in \mathit{I}$$ when referencing individual elements. The dependent variable is symbolized by $$y$$, and the linear regression itself is expressed as $$h_{w}(\,x)\,$$. The function is represented as:
 
 $$h_{w}(\,x)\, =\, w_{1}x\,+\,w_{0}$$
 
-<br>
+Linear regression optimizes this function, particularly when dealing with $$n$$ training points in the *x,y* plane. The algorithm aims to find the best fit for $$h_{w}$$ based on these data points, adjusting $$w_{0}$$ and $$w_{1}$$ to minimize empirical loss.
 
-This function is optimized by the linear regression algorithm, e.g., given $$n$$
-training points in the *x,y* plane. **Linear Regression** finds the best fit for
-$$h_{w}$$, given these data. The only values that it can change are the ones of
-$$w_{0}$$ and $$w_{1}$$, in order to minimize the empirical loss.<br>
+## Optimizing the $$L_{2}$$ Loss
 
-## Minimizing The $$L_{2}$$ Loss
-
-If the noise of the dependent variable $$y_{j}$$ is normally distributed, then
-using a squared-error loss function will be the most likely type to find the
-best values for $$w_{0}$$ and $$w_{1}$$, *that linear regression is capable of
-finding.* We assume that the noise of the dependent variable is normally
-distributed and use $$L_{2}$$ as loss function. We sum over all the training
-values:
+In scenarios where the noise in the dependent variable $$y_{j}$$ follows a normal distribution, a squared-error loss function is typically the most effective for identifying optimal values for $$w_{0}$$ and $$w_{1}$$ within the constraints of linear regression. Assuming normally distributed noise for the dependent variable, the $$L_{2}$$ loss function is employed. The loss is calculated by summing over all training data points:
 
 $$
 \begin{aligned}
@@ -80,8 +56,7 @@ $$
 \end{aligned}
 $$
 
-
-# From Loss Function To Optimization
+## From Loss Function To Optimization
 
 
 ```python
@@ -572,9 +547,6 @@ $$\sqrt{10000}\,=\,100$$, while for the minibatch it is $$\sqrt{100}\,=\,10$$.
 
 That means that the SGD trades being 100 times less computationally expensive
 with a 10 times larger standard error for this example.
-
-
-
 
 
 ## Summary

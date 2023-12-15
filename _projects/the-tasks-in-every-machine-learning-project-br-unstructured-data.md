@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: 'The Tasks In Every Machine Learning Project:<br>Unstructured Data'
+title: 'Essential Tasks for Machine Learning Projects with Unstructured Data'
 date: 2023-04-13
-description: 'The six tasks in every machine learning project with unstructured data.'
+description: 'A concise overview of the six vital tasks in machine learning projects handling unstructured data, covering aspects from feature engineering to workflow optimization.'
 img: 'assets/img/838338477938@+-398898935-workflow.webp'
-tags: ['predictive-modeling', 'hyperparameter-optimization', 'workflow-outline', 'unstructured-data', 'feature-engineering']
-category: ['machine-learning-concepts']
+tags: ['unstructured-data-ml', 'project-management', 'machine-learning-tasks', 'workflow-optimization', 'feature-engineering']
+category: ['deep-learning']
 authors: 'Tobias Klein'
 comments: true
 featured: true
@@ -24,7 +24,7 @@ featured: true
   </nav>
 </d-contents>
 
-# The Six Tasks In Every Machine Learning Project: Unstructured Data
+# Essential Tasks for Machine Learning Projects with Unstructured Data
 
 ## Summary
 
@@ -65,4 +65,4 @@ A predictive modeling machine learning project can be divided into six main task
 - Use techniques such as Grad-CAM or attention mechanisms to interpret and visualize model predictions.
 
 Note that there is overlap between these tasks and the tasks for structured data, but the subtasks and approaches are different due to the unique characteristics of unstructured data.
-<br><br><br><br><br>
+<br><br>

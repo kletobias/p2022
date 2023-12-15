@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: 'Comparison of Support Vector Machines and XGBoost'
+title: 'In-depth Analysis: Support Vector Machines vs XGBoost'
 date: 2023-06-29
-description: 'Literature review on the differences, advantages and disadvantages of the two models'
+description: 'Comprehensive literature review comparing Support Vector Machines and XGBoost, focusing on their distinctive features, strengths, and limitations in predictive modeling.'
 img: 'assets/img/838338477938@+-398898935.jpg'
-tags: ['machine-learning', 'literature-review', 'support-vector-machine', 'xgboost', 'comparison']
-category: ['machine-learning-concepts']
+tags: ['machine-learning', 'literature-review', 'support-vector-machine', 'xgboost', 'predictive-modeling']
+category: ['machine-learning-process']
 authors: 'Tobias Klein'
 comments: true
 ---

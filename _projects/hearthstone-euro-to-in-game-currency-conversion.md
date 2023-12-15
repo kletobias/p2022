@@ -1,10 +1,10 @@
 ---
 layout: distill
-title: 'Hearthstone: Euro To In-Game Currency Conversion'
+title: 'Economic Analysis of Hearthstone: Euro to In-Game Currency'
 date: 2023-03-08
-description: 'With an introduction that explains the fundamentals of the card game Hearthstone, this article simulates the dust value from opening one pack of cards. This makes it possible to quantify what a Hearthstone deck is worth in Euro.'
+description: 'Delving into the economic aspects of Hearthstone, this article provides a detailed simulation of in-game currency value, offering insights into the real-world monetary worth of Hearthstone decks.'
 img: 'assets/img/stats-sexy.webp'
-tags: ['hearthstone', 'money-to-in-game-currency', 'research', 'simulation', 'statistics']
+tags: ['economic-analysis', 'game-economics', 'hearthstone', 'simulation', 'value-quantification']
 category: ['statistics']
 authors: 'Tobias Klein'
 comments: true
@@ -31,7 +31,8 @@ featured: false
   </nav>
 </d-contents>
 
-# Hearthstone: Euro To In-Game Currency Conversion
+# Economic Analysis of Hearthstone: Euro to In-Game Currency
+#### Hearthstone: Euro To In-Game Currency Conversion
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -39,28 +40,29 @@ featured: false
     </div>
 </div>
 <div class="caption">
-       Just as many other games, Hearthstone uses a <i>loot box</i> system
-       to monetize the game. The player can only buy card packs for the most
-       part. These rarely contain the card(s) that the player actually wants.
-       There is however one universal in-game currency. The dust value that
-       each of the rarity classes has. Using hacker statistics, this article
-       calculates the relationship between Euro spent and equivalent in-game
+       Hearthstone, like many other games, employs a <i>loot box</i> system
+       for monetization. Players predominantly purchase card packs, which
+       seldom contain the specific cards they seek. However, the game features
+       a universal in-game currency: the 'dust' value associated with each card
+       rarity class. Utilizing statistical analysis, this article presents a
+       calculated relationship between the Euros spent and the equivalent in-game
        dust value.
 </div>
 
 ## Abstract
 
-This article calculates the equivalent average dust value (ADV) of a single
-Hearthstone card pack. Specifically, this project aims to define a function
-whose independent variable is Euro spent. The dependent variable of this
-function is the equivalent dust value one can expect, given the amount spent.
-There is a universal in-game currency called dust value, which indicates how
-expensive decks are. Two different simulations for that purpose are evaluated
-and compared in terms of approximate runtime and results. It is shown that the
-ADV converges towards a Normal distribution with identical mean and standard
-deviation values. It follows that the here found results are in agreement with
-the central limit theorem. The implications of the Law of Large Numbers for this
-study's findings are discussed as well.
+This article conducts a comprehensive analysis of the equivalent average dust
+value (ADV) for a single Hearthstone card pack. It aims to establish a function
+where Euro expenditure serves as the independent variable, and the equivalent
+dust value, a universal in-game currency indicative of deck costs, is the
+dependent variable. The research includes two distinct simulations, with a
+focus on comparing their runtime and outcomes. Interestingly, the results do
+not definitively indicate a trend towards a Normal distribution for the ADV.
+This unexpected outcome is thoroughly examined in light of the central limit
+theorem and the law of large numbers. The article delves into potential reasons
+why these classical statistical theories may not align with the observed data,
+and discusses the broader implications of these deviations on the study's
+conclusions.
 
 ## Research Questions
 1\. Compare the performance of two different simulation functions written in
@@ -78,14 +80,6 @@ central limit theorem.<br>
 5\. How is the function defined that maps Euro spent to the equivalent dust
 value.
 
-<!-- simulate the process of opening card packs in the -->
-<!-- game of Hearthstone. -->
-
-<!-- Further, it tries to estimate the average dust value (**ADV**) of a card -->
-<!-- pack.  in terms of how much money has to be spent buying card packs, in order for a player who does -->
-<!-- not have the cards that make up the new deck to create it. to -->
-<!-- create one of the Tier 1 decks. *Casual player* here refers to someone who does -->
-<!-- not have all cards -->
 
 ## Introduction
 
@@ -112,12 +106,9 @@ million monthly players on average. Data originates from
 is only reproduced here.*
 
 <div id="table_2_wrapper" class="wpDataTables wpDataTablesWrapper no-footer wpDataTableID-38 wpdt-pagination-right"><div class="dt-buttons"></div><div class="clear"></div><table id="table_2" class="display nowrap data-t data-t wpDataTable wpDataTableID-38 dataTable no-footer" style="" data-described-by="table_2_desc" data-wpdatatable_id="38" role="grid">
-        <!-- Table header -->
 <thead>
 <tr role="row"><th data-class="expand" class="wdtheader sort expand sorting_disabled column-month" style="" rowspan="1" colspan="1">Month</th><th class="wdtheader sort numdata integer sorting_disabled column-average-monthly-players" style="" rowspan="1" colspan="1">Average Monthly Players</th><th class="wdtheader sort numdata integer sorting_disabled column-monthly-gain--loss" style="" rowspan="1" colspan="1">Monthly Gain / Loss</th><th class="wdtheader sort numdata float sorting_disabled column-monthly-gain--loss-" style="" rowspan="1" colspan="1">Monthly Gain / Loss %</th><th class="wdtheader sort numdata integer sorting_disabled column-max-players-in-a-day" style="" rowspan="1" colspan="1">Max Players in a Day</th></tr>
 </thead>
-        <!-- /Table header -->
-        <!-- Table body -->
 <tbody><tr id="table_38_row_0" role="row" class="odd">
                             <td style="" class="  column-month">Last 30 Days</td>
                             <td style="" class=" numdata integer  column-average-monthly-players">4,110,654</td>
@@ -149,8 +140,6 @@ is only reproduced here.*
                             <td style="" class=" numdata float  column-monthly-gain--loss-">0.13</td>
                             <td style="" class=" numdata integer  column-max-players-in-a-day">334,717</td>
                     </tr></tbody>        <!-- /Table body -->
- <!-- Table footer -->
-        <!-- /Table footer -->
     </table></div>
 
 
@@ -749,7 +738,6 @@ as well.
 
 
 ```python
-# mm = (40, 100,000  # packs per trial, trials
 mm = (inputs["packs"], inputs["trials"])
 packs, trials = mm[0], mm[1]
 

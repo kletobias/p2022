@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: 'Machine Learning: Structured vs Unstructured Data'
-date: 2023-06-29
+title: 'Optimal Machine Learning Models for Structured vs Unstructured Data: A Comparative Analysis'
+date: 2023-12-13
 description: 'Structured data is searchable, suitable for traditional ML. Unstructured data suits deep learning models.'
 img: 'assets/img/838338477938@+-398898935.jpg'
-tags: ['machine-learning', 'structured-data', 'unstructured-data', 'machine-learning-models', 'comparison']
-category: ['machine-learning-concepts']
+tags: ['machine-learning', 'structured-data', 'unstructured-data', 'video-presentation', 'comparison']
+category: ['machine-learning-process']
 authors: 'Tobias Klein'
 comments: true
 ---
