@@ -11,11 +11,11 @@ comments: true
 <d-contents>
   <nav class="l-text figcaption">
   <h3>Contents</h3>
-    <div class="no-math"><a href="#geospatial-engineering-in-pandas-creating-valid-gps-columns-part-3">Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3</a></div>
+    <div class="no-math"><a href="#geospatial-engineering-in-pandas-creating-valid-gps-columns-part-3">Geospatial Engineering in Pandas: Creating Valid GPS Column, Pt 3</a></div>
     <div class="no-math"><a href="#summary-of-the-series">Summary Of The Series</a></div>
     <div class="no-math"><a href="#heating-costs">Heating Costs</a></div>
     <div class="no-math"><a href="#latitude">Latitude</a></div>
-    <div class="no-math"><a href="#creating-the-gps-column">Creating The GPS Column</a></div>
+    <div class="no-math"><a href="#generating-a-gps-column">Generating a GPS Column</a></div>
     <div class="no-math"><a href="#creation-of-the-gps-column-13">Creation Of The GPS Column 1/3</a></div>
     <div class="no-math"><a href="#reviewing-the-columns-in-the-dataframe-again">Reviewing The Columns In The DataFrame Again</a></div>
     <div class="no-math"><a href="#date-listed--date-unlisted-columns">Date Listed & Date Unlisted Columns</a></div>
@@ -99,22 +99,11 @@ df.heating_costs.value_counts().head(10)
 df.drop(labels=["heating_costs"], axis=1, inplace=True)
 ```
 
-## Creation Of GPS Column 
+## Generating a GPS Column
 
-**The Steps for linking listing location with location based features**. In
-order to create the GPS column, the longitude and latitude columns are joined
-together using geometry object `Point` from library `shapely.geometry`. This
-enables completely independent geospatial features to be assigned to listings
-from the dataset. These features allow for the engineering of a robust set of
-features for each listing, such as proximity to the nearest underground and
-suburban train station, noise levels for day and night from street noise for
-example. Many prove to be significant for predicting variable 'base_rent' later
-on in the process. Please see the full text of my Bachelor's Thesis
-**[**Data Mining: Hyperparameter Optimization For Real Estate Prediction Models**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%})** for more details.
+This section outlines the process of integrating listing locations with spatial features. The creation of the GPS column involves merging the longitude and latitude data using the `Point` geometry object from the `shapely.geometry` library. This method facilitates the association of unique geospatial characteristics with each listing in the dataset. The resulting spatial features are instrumental in developing a comprehensive feature set for each listing. These include aspects like proximity to the closest underground and suburban train stations, as well as day and night noise levels from street noise. Many of these features are crucial for the subsequent prediction of the 'base_rent' variable. For a more detailed explanation, refer to my Bachelor's Thesis [**Data Mining: Hyperparameter Optimization For Real Estate Prediction Models**]({% link assets/pdf/hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf%}).
 
-Furthermore, the data from the 'date_listed' is transformed into valid and
-'date_unlisted' columns is calculated to determine how long a listing has been
-on 'immoscout24.de'.
+Additionally, the process converts the original string values in the `date_listed` and `date_unlisted` columns to valid `pandas.Timestamp` objects. A new column, [`time_listed`](#creating-the-time_listed-column), is derived by calculating the duration between `date_unlisted` and `date_listed`. This indicates the length of time a listing remains active on 'immoscout24.de'.
 
 
 ## Latitude
@@ -122,7 +111,7 @@ on 'immoscout24.de'.
 Together with the Longitude column, this column is one of the most important in
 the dataset. For most listings, they provide GPS coordinates. In addition to
 this spatial data, external geospatial information will be added from the
-dataset that is independent of the dataset. *XGBoost* and *Lasso Regression* models
+dataset that is independent of the dataset. [*XGBoost*](https://github.com/dmlc/xgboost) and [*Lasso Regression*](https://en.wikipedia.org/wiki/Lasso_(statistics)) models
 will be trained using these features together. 
 
 ```python
