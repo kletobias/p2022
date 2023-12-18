@@ -554,23 +554,27 @@ Partial Dependence Plots: Each subplot represents the relationship between `sale
 
 ## Tree Interpreter
 
-A plot using `treeinterpreter` from treeinterpreter, and we try to answer the
-question:
+Utilizing the `treeinterpreter` package, we delve into the fine-grained factors affecting predictions for individual data points. We aim to uncover the most influential features for a specific prediction and quantify their individual contributions. This can be particularly insightful for understanding model decisions on a case-by-case basis.
 
-- For predicting with a particular row of data, what were the most important
-factors, and how did they influence that prediction?
-
+Here's how we can dissect the prediction for a single data instance:
 
 ```python
+# Sample a row from the validation set
 row = valid_xs_final.sample(n=2, random_state=seed)
-predict, bias, contributions = treeinterpreter.predict(m, row.values)
-# rounding for display purposes
-predict = np.round(predict,3)
-bias = np.round(bias,3)
-contributions = np.round(contributions,3)
 
+# Predict using the treeinterpreter
+predict, bias, contributions = ti.predict(m, row.values)
+
+# Round the values for clearer display
+predict = np.round(predict, 3)
+bias = np.round(bias, 3)
+contributions = np.round(contributions, 3)
+
+# Display the prediction, bias, and contributions for the first row
 print(
-    f'For the first row in the sample predict is: {predict[0]},\n\nThe overall log average of column "saleprice": {bias[0]},\n\nThe contributions of the columns are:\n\n{contributions[0]}'
+    f'For the first row in the sample predict is: {predict[0]},\n\n'
+    f'The overall log average of column "saleprice": {bias[0]},\n\n'
+    f'The contributions of the columns are:\n\n{contributions[0]}'
 )
 ```
 
@@ -583,21 +587,27 @@ print(
     [ 0.142 -0.081  0.105 -0.016 -0.015 -0.05   0.014  0.026 -0.073 -0.005
      -0.007 -0.035  0.002  0.009  0.    -0.009 -0.001 -0.016 -0.003]
 
-
+Next, we visualize the contributions to the prediction with a waterfall chart:
 
 ```python
+# Plot the contributions using a waterfall chart
 for e in zip(predict, bias, contributions):
     waterfall(
         valid_xs_final.columns,
         e[2],
-        Title=f"Predict: {e[0][0]}, Intercept: {e[1]}",
+        title=f"Prediction: {e[0][0]}, Base Value (Intercept): {e[1]}",
         threshold=0.08,
         rotation_value=45,
-        formatting="{:,.3f}",
+        formatting="{:,.3f}"
     )
-plt.show()
+    plt.show()
 ```
 
+The waterfall chart illuminates how each feature nudges the prediction away from the base value, providing a visual narrative of the prediction process. Features contributing positively will push the predicted value upwards, while negative contributions pull it down, culminating in the final prediction.
+
+### Waterfall Chart
+
+The waterfall chart below demonstrates the incremental effect of each feature on the model's prediction for a single house's sale price. It starts with the base value, which is the average log sale price across the dataset, and then sequentially adds the contribution of each feature to arrive at the final predicted value. This visualization aids in interpreting the complex decision-making process of the model, highlighting the significant role of certain features while also revealing those with minimal impact.
 
     
 <div class="row">
@@ -606,11 +616,9 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Example of how to use the treeinterpreter on a single sample.
+    An illustrative example of applying `treeinterpreter` to analyze the contributions of features to a specific prediction, showcasing the interpretability of machine learning models.
 </div>
     
-
-
 
     
 <div class="row">
@@ -619,7 +627,7 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        Example of how to use the treeinterpreter on a single sample.
+    Another illustrative example of applying `treeinterpreter` to analyze the contributions of features to a specific prediction, showcasing the interpretability of machine learning models.
 </div>
     
 
