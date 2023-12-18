@@ -296,7 +296,7 @@ xs_final = xs_imp.drop(to_drop, axis=1)
 valid_xs_final = valid_xs_imp.drop(to_drop, axis=1)
 ```
 
-Exporting and immediately importing the datasets in their current state as
+Exporting and immediately importing the datasets in their current version as
 *.pkl* files using the fastai proprietary functions `save_pickle` and
 `load_pickle` respectively.
 
@@ -348,7 +348,7 @@ plot_fi(dfi)
     </div>
 </div>
 <div class="caption">
-        
+Bar Plot Analysis: Dominance of 'OverallQual' in Feature Importance, Post-Exclusion of 'GarageType' and 'ExterQual' — A Comparative Insight Using OOB Error Metric
 </div>
     
 
@@ -362,7 +362,7 @@ two to ten in ascending order. It describes the "overall quality" of an object
 and judging by the feature importance plots, it is the strongest predictor for
 variable `saleprice`.
 
-The value counts and the box plot for `overallqual` are given below.
+The value counts and the box plot for `overallqual` are given below. As depicted, the most frequent rating is '5', suggesting a trend towards mid-level quality in the dataset. Rare extremes can be observed with the '10' rating being the least frequent, indicating high quality is uncommon, reinforcing its high predictive power for `saleprice`. The box plot reveals a median quality rating close to '6', with outliers at the lower end of the scale.
 
 
 ```python
@@ -459,9 +459,10 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-        
+    <s>Upper Plot</s>: The bar chart illustrates the absolute frequency of each unique 'overallqual' value within the training set, providing a clear visual representation of the distribution of quality ratings. The higher counts of mid-level ratings reflect the typical quality characteristics of the dataset's entries.<br>
+    <s>Lower Plot</s>: The box plot complements the bar chart by offering a summary of the distribution's spread and central tendency. It showcases the range and variability of the 'overallqual' ratings, with the box encompassing the interquartile range and the line within indicating the median.
 </div>
-    
+
 
 
 Another important feature is `grlivarea`, which gives the area above ground in
@@ -511,6 +512,7 @@ independent variables. Four columns that have shown several times that they
 are of high importance for the predictions of the dependent variable are chosen
 and their partial dependence plots are created.
 
+
 The output shows that `overallqual` and `yearbuilt` show a high correlation with
 the dependent variable. Not only that though, the plot also shows how the
 assumed change in the value of the dependent variable, $$\frac{\partial \mathrm{saleprice}}{\partial x_{i}}\,\,\mathrm{for}\,\,\mathrm{i}\, \in \{\mathrm{overallqual},\, \mathrm{grlivarea},\, \mathrm{garagecars},\, \mathrm{yearbuilt}\}$$
@@ -528,7 +530,16 @@ ax = plot_partial_dependence(
 )
 ```
 
+The Partial Dependence plots below offer a visual exploration of how changes in
+`overallqual`, `grlivarea`, `garagecars`, and `yearbuilt` are associated with
+shifts in `saleprice`. These plots underscore the direct correlation and
+potential causal inference between each of these pivotal features and the
+target variable, with `overallqual` and `yearbuilt` exhibiting particularly
+strong influences. By isolating the effect of each feature while accounting for
+the average effect of others, these graphs serve as a powerful tool in
+interpreting the predictive model's behavior.
 
+Partial Dependence Plots: Each subplot represents the relationship between `saleprice` and one of the key features — `overallqual`, `grlivarea`, `garagecars`, and `yearbuilt`. The consistent upward trend in `overallqual` and `yearbuilt` indicates a robust positive impact on `saleprice`, highlighting their predictive significance. In contrast, `grlivarea` and `garagecars` also display a positive correlation but with variations that may reflect other interacting factors within the housing market dynamics.
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -536,7 +547,7 @@ ax = plot_partial_dependence(
     </div>
 </div>
 <div class="caption">
-        
+         The above visualization captures the nuanced relationship between critical housing features and `saleprice`, emphasizing the value of `overallqual` and `yearbuilt` as primary indicators in property valuation models.
 </div>
     
 
