@@ -42,7 +42,7 @@ to submitting the final predictions on the Kaggle test set for the competition.
 
 **Series: Kaggle Competition - Deep Dive Tabular Data**
 
-- [Deep Dive Tabular Data Pt. 1: Introduction]({% link _projects/deep-dive-tabular-data-pt-1.md %})
+- [Advanced Missing Value Analysis in Tabular Data, Part 1]({% link _projects/deep-dive-tabular-data-pt-1.md %})
 
 ```toc
   - Imports For The Series
@@ -251,7 +251,7 @@ tl(train)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -447,7 +447,7 @@ train.iloc[:, :3].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -555,7 +555,7 @@ out = auq(train, 0, 9, 8)
     Number of unique values: 4
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['Lvl', 'Bnk', 'Low', 'HLS']
-    
+
 
 
 ### Columns 10:19
@@ -577,7 +577,7 @@ train.iloc[:, 10:20].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -689,7 +689,7 @@ out.update(auq(train, 10, 20, 8))
     Number of unique values: 5
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['1Fam', '2fmCon', 'Duplex', 'TwnhsE', 'Twnhs']
-    
+
 
 
 ### Columns 20:29
@@ -711,7 +711,7 @@ train.iloc[:, 20:30].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -833,7 +833,7 @@ out.update(auq(train, 20, 30, 8))
     Number of unique values: 6
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['PConc', 'CBlock', 'BrkTil', 'Wood', 'Slab', 'Stone']
-    
+
 
 
 ### Columns 30:39
@@ -855,7 +855,7 @@ train.iloc[:, 30:40].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -982,7 +982,7 @@ out.update(auq(train, 30, 40, 8))
     Number of unique values: 6
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['GasA', 'GasW', 'Grav', 'Wall', 'OthW', 'Floor']
-    
+
 
 
 ### Columns 40:49
@@ -1004,7 +1004,7 @@ train.iloc[:, 40:50].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1133,7 +1133,7 @@ out.update(auq(train, 40, 50, 8))
     Number of unique values: 4
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: [2, 1, 3, 0]
-    
+
 
 
 
@@ -1153,7 +1153,7 @@ train.iloc[:, 50:60].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1265,7 +1265,7 @@ train.iloc[:, 60:70].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1387,7 +1387,7 @@ out.update(auq(train, 60, 70, 8))
     Number of unique values: 3
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['Y', 'N', 'P']
-    
+
 
 
 ### Columns 70:80
@@ -1409,7 +1409,7 @@ train.iloc[:, 70:81].sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -1538,7 +1538,7 @@ out.update(auq(train, 70, 80, 8))
     Number of unique values: 6
     Number of [non-missing values, missing values]: [1460]
     The complete list of unique values: ['Normal', 'Abnorml', 'Partial', 'AdjLand', 'Alloca', 'Family']
-    
+
 
 
 ## Visualizing Missing Values
@@ -1557,48 +1557,56 @@ total into two parts and returns the rendered plots for both halves separately.
 
 
 ```python
-def fp_msno(df: pd.DataFrame, num=1):
-    '''Visualize missing values in the DataFrame'''
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import missingno as msno
+
+def visualize_missing_values(df: pd.DataFrame, num: int = 1) -> None:
+    """
+    Visualize missing values in the DataFrame by dividing it into two halves.
+    
+    Args:
+    df (pd.DataFrame): The DataFrame to be analyzed.
+    num (int): A numeric identifier for the output file.
+
+    Raises:
+    ValueError: If the DataFrame is empty.
+    """
+
+    if df.empty:
+        raise ValueError("The DataFrame is empty.")
+
     len_cols = len(df.columns)
-    the_dict = dict(
-        start=0, first_half_uplimt=[], second_half_llimt=[], second_half_uplimt=[]
-    )
     split_at = np.floor_divide(len_cols, 2)
-    the_dict["first_half_uplimt"].append(split_at)
-    the_dict["second_half_llimt"].append(split_at + 1)
-    the_dict["second_half_uplimt"].append(len_cols)
-    print(the_dict["second_half_uplimt"])
-    print(int(len_cols))
-    print(the_dict["first_half_uplimt"][0])
-    assert the_dict["second_half_uplimt"][0] == int(len_cols)
+
+    _plot_missing_values(df, 0, split_at, num, "first_half")
+    _plot_missing_values(df, split_at, len_cols, num, "second_half")
+
+def _plot_missing_values(df: pd.DataFrame, start: int, end: int, num: int, label: str) -> None:
+    """
+    Helper function to plot missing values for a specified range in the DataFrame.
+
+    Args:
+    df (pd.DataFrame): The DataFrame to be analyzed.
+    start (int): The starting index for columns.
+    end (int): The ending index for columns.
+    num (int): A numeric identifier for the output file.
+    label (str): Label for distinguishing different halves.
+    """
     msno.matrix(
-        df.loc[
-            :, [col for col in df.columns if df.columns.tolist().index(col) < split_at]
-        ],
-        figsize=(11,6),
+        df.iloc[:, start:end],
+        figsize=(11, 6),
         label_rotation=60
     )
     plt.xticks(fontsize=12)
     plt.subplots_adjust(top=.8)
-    plt.savefig(f"{num}", dpi=300)
+    plt.savefig(f"{label}-missingno-matrix{num}", dpi=300)
     plt.show()
-    plt.savefig(f"missingno-matrix{num}", dpi=300)
-    msno.matrix(
-        df.loc[
-            :,
-            [
-                col
-                for col in df.columns
-                if split_at <= df.columns.tolist().index(col) <= len_cols
-            ],
-        ],
-        figsize=(11,6),
-        label_rotation=60
-    )
-    plt.xticks(fontsize=12)
-    plt.subplots_adjust(top=.8)
-    plt.savefig("2", dpi=300)
-    plt.show()
+
+# Example usage
+# df = pd.DataFrame(...) # Your DataFrame
+# visualize_missing_values(df, num=1)
 ```
 
 ### Handling Missing Values
@@ -1616,7 +1624,7 @@ fp_msno(train)
 
 
 
-    
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/tabular-deep-dive-series/output_39_1.png" title="" class="img-fluid rounded z-depth-1" %}
@@ -1625,14 +1633,14 @@ fp_msno(train)
 <div class="caption">
         Missingno 1/2
 </div>
-    
+​    
 
 
 
 
 
 
-    
+​    
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/tabular-deep-dive-series/output_39_3.png" title="" class="img-fluid rounded z-depth-1" %}
@@ -1641,7 +1649,7 @@ fp_msno(train)
 <div class="caption">
         Missingno 2/2
 </div>
-    
+​    
 
 
 #### Overview
@@ -2058,7 +2066,7 @@ xs.filter(like="_na", axis=1).sample(n=5, random_state=seed)
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -2203,7 +2211,7 @@ to.items.head()
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
