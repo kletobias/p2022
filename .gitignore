@@ -21,3 +21,4 @@ toc_script/*.html
 .vim-bookmarks
 /assets/img/psd/
 /landing-page-mockup/
+/references/test.py
