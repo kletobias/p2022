@@ -105,7 +105,6 @@ This section outlines the process of integrating listing locations with spatial 
 
 Additionally, the process converts the original string values in the `date_listed` and `date_unlisted` columns to valid `pandas.Timestamp` objects. A new column, [`time_listed`](#creating-the-time_listed-column), is derived by calculating the duration between `date_unlisted` and `date_listed`. This indicates the length of time a listing remains active on 'immoscout24.de'.
 
-
 ## Latitude
 
 Together with the Longitude column, this column is one of the most important in

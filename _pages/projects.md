@@ -5,7 +5,7 @@ permalink: /projects/
 description: Here you can find multi-part series and in-depth articles.
 nav: true
 nav_order: 2
-display_categories: ['machine-learning-concepts','tabular-data','data-preprocessing','deep-learning','statistics']
+display_categories: ['machine-learning-process','tabular-data','data-preprocessing','deep-learning','statistics']
 horizontal: false
 ---
 
