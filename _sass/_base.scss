@@ -705,7 +705,7 @@ d-article h4{
 }
 @media (min-width: 1024px){
 d-article {
-    font-size: 0.875rem !important;
+    font-size: 1.0rem !important;
     line-height: 1.5em;
 }
 }
@@ -1081,9 +1081,10 @@ pre code.hljs{line-height: 1.4em;}
     position: relative;
 }
 .hero__left .hero__title, .hero__left .hero__job {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: -2px;
+    text-shadow: 2px 2px 18px rgba(0, 0, 0, 0.6); // Optional: Adjust the shadow's opacity
     color: #fff;
 }
 .hero__left .hero__title {
@@ -1159,7 +1160,13 @@ pre code.hljs{line-height: 1.4em;}
     margin-bottom: 16px;
 }
 .hero__description{
-  color: #fff;
+    font-size: 26px;
+    background-color: rgba(8, 135, 125, 0.9); // Adjust the alpha value to blend with the background
+    color: #fff;
+    text-shadow: 2px 2px 18px rgba(0, 0, 0, 0.6); // Optional: Adjust the shadow's opacity
+    border-radius: 25px; // Adjust as needed for the desired roundness
+    padding: 20px; // Adjust as needed
+    // Other styles like margin, width, etc., may be necessary to adjust as well.
 }
 a.hero__button {
     background: #fff;
@@ -2971,6 +2978,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .author-profile .author-profile__desc {
     margin-bottom: 20px;
+    text-align: justify;
 }
 .social {
     text-align: center;
