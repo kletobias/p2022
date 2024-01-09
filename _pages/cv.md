@@ -7,7 +7,7 @@ nav_order: 2
 cv_pdf: hyperparameter-optimization-bachelor-thesis-tobias-klein.pdf
 ---
 
-# **CV Of Tobias Klein**
+# **CV of Tobias Klein**
 
 ## Links
 
