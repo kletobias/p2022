@@ -5,7 +5,7 @@ date: 2022-11-04
 description: 'Demonstrates my expertise in data cleaning and transformation for generating geospatial features. The process involves converting raw GPS data into decimal degrees format and identifying key transportation hubs in Hamburg, Germany.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 tags: ['data-cleaning', 'data-transformation', 'geospatial-feature-creation', 'regular-expression', 'shapely', 'tabular-data' ]
-category: ['data-preprocessing']
+category: ['Data Preprocessing']
 authors: 'Tobias Klein'
 comments: true
 featured: false

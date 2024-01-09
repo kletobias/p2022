@@ -5,7 +5,7 @@ date: 2023-03-12
 description: 'A thorough examination of multicollinearity in statistical datasets, explaining covariance and Pearson correlation coefficient techniques for identifying inter-variable relationships.'
 img: 'assets/img/stats-sexy.webp'
 tags: ['data-analysis', 'multicollinearity-detection', 'covariance-analysis', 'correlation-techniques', 'statistical-methods']
-category: ['statistics']
+category: ['Statistics']
 authors: 'Tobias Klein'
 comments: true
 ---

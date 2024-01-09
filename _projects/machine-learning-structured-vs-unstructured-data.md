@@ -5,7 +5,7 @@ date: 2023-12-13
 description: 'Structured data is searchable, suitable for traditional ML. Unstructured data suits deep learning models.'
 img: 'assets/img/838338477938@+-398898935.jpg'
 tags: ['machine-learning', 'structured-data', 'unstructured-data', 'video-presentation', 'comparison']
-category: ['machine-learning-process']
+category: ['Machine Learning Process']
 authors: 'Tobias Klein'
 comments: true
 ---

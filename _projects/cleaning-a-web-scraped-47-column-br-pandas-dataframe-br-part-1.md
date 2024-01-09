@@ -5,7 +5,7 @@ date: 2021-01-10
 description: 'This article showcases my expertise in using pandas for advanced data exploration. It focuses on analyzing a 47-column dataset, providing insights into leveraging pandas for complex tabular data management.'
 img: 'assets/img/838338477938@+-3948324823.jpg'
 tags: ['data-exploration', 'advanced-pandas', 'data-analysis', 'tabular-data']
-category: ['data-preprocessing']
+category: ['Data Preprocessing']
 comments: true
 
 ---

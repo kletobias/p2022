@@ -5,7 +5,7 @@ date: 2023-05-23
 description: 'In the current era of data-driven decision-making, understanding the intricacies of data extraction, cleansing, validation, and enrichment is a valuable asset for businesses across all sectors.'
 img: 'assets/img/838338477938@+-791693336-video.webp'
 tags: ['etl', 'data-extraction', 'problem-solving', 'video', 'feature-enrichment']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 featured: true

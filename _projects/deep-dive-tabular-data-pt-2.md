@@ -5,7 +5,7 @@ date: 2023-01-02
 description: "Detailed exploration of feature selection using sklearn's DecisionTreeRegressor. It includes testing the reliability of the feature_importances_ method."
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['decision-tree-analysis', 'feature-selection-techniques', 'sklearn', 'model-evaluation', 'tabular-data']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---
@@ -326,75 +326,49 @@ m.feature_importances_
 
 
 ```python
-def calculate_feature_importances(
-    train: pd.DataFrame,
-    xs: pd.DataFrame,
-    y: pd.Series,
-    iterations: int = 1,
-    seed: int = None,
-) -> pd.DataFrame:
-    """
-    Calculate feature importances using a DecisionTreeRegressor.
-
-    Args:
-    train (pd.DataFrame): Training data.
-    xs (pd.DataFrame): Feature data.
-    y (pd.Series): Target variable.
-    iterations (int): Number of iterations for averaging the importances.
-    seed (int): Random seed for reproducibility.
-
-    Returns:
-    pd.DataFrame: DataFrame containing mean and standard deviation of feature importances.
-    """
-    feature_names = train.columns.tolist()
-    feature_importances = {feature: [] for feature in feature_names}
-
-    for _ in range(iterations):
-        model = DecisionTreeRegressor(
+def fp(train=train, xs=xs, y=y, i=1):
+    cc = train.columns.tolist()
+    tup = [(c, []) for c in cc]
+    msd = dict(tup)
+    fpd = dict(tup)
+    for t in range(i):
+        mi = DecisionTreeRegressor(
             max_features=40, min_samples_leaf=50, random_state=seed
         )
-        model.fit(xs, y)
-        importances = model.feature_importances_
-        for feature, importance in zip(feature_names, importances):
-            feature_importances[feature].append(importance)
+        mi.fit(xs, y)
+        fii = mi.feature_importances_
+        for c, s in zip(cc, fii):
+            fpd[f"{c}"].append(s)
+    cc = train.columns.tolist()
+    tup = [(c, []) for c in cc]
+    msd = dict(tup)
+    for i in fpd.keys():
+        num = 0
+        mean, std = np.mean(fpd[i]), np.std(fpd[i])
+        msd[i].append(mean)
+        msd[i].append(std)
+        if num == 0:
+            num = len(fpd[i])
 
-    statistics = {
-        feature: [np.mean(importances), np.std(importances)]
-        for feature, importances in feature_importances.items()
-    }
-    return pd.DataFrame(statistics, index=["Mean", "Std"]).T.sort_values(
-        by="Mean", ascending=False
-    )
-
-
-def plot_feature_importances(df: pd.DataFrame) -> None:
-    """
-    Plot the feature importances.
-
-    Args:
-    df (pd.DataFrame): DataFrame with feature importances.
-    """
-    fig, axes = plt.subplots(1, 2, figsize=(22, 10))
-
-    # Bar plot for mean importances
-    ax1 = plt.subplot(121)
-    df["Mean"].plot(kind="barh", ax=ax1)
-    plt.title(f"Mean of Feature Importances")
-    plt.ylabel("Features")
-    plt.xlabel("Relative Feature Importance")
-
-    # Box plot for distribution of importances
-    ax2 = plt.subplot(122)
-    sns.boxplot(data=df.drop("Std", axis=1), ax=ax2)
-    ax2.set_title("Boxplot of Feature Importances")
+    dffp = pd.DataFrame(msd).T.sort_values(by=0, ascending=False)
+    dffpg0 = dffp[dffp.iloc[:, 0] > 0]
+    cols_filter = dffpg0.reset_index()
+    dffpdo =pd.DataFrame(fpd,columns=cols_filter['index'].tolist())
+    fig, ax = plt.subplots(1,2,figsize=(22,10))
+    ax=plt.subplot(121)
+    dffpg0[0].plot(kind="barh", figsize=(12, 7), legend=False)
+    plt.title(f"mean of {num} samples")
+    plt.subplots_adjust(left=.14)
+    plt.subplots_adjust(bottom=.2)
+    plt.ylabel('features')
+    plt.xlabel('relative feature importance, if greater 0')
+    ax=plt.subplot(122)
+    sns.boxplot(data=dffpdo,ax=ax)
+    ax.set_title(f'Boxplot Of Feature Importances')
     plt.xticks(rotation=90)
-
-    plt.tight_layout()
     plt.show()
 
-
-feature_importances_df = calculate_feature_importances(train, xs, y, iterations=1000)
-plot_feature_importances(feature_importances_df)
+fpdo = fp(i=1000)
 ```
 
 

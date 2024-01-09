@@ -5,7 +5,7 @@ date: 2022-01-11
 description: 'Showcases advanced techniques in data cleaning and validation, using batch processing with pandas and regular expressions. It exemplifies how to handle large volumes of tabular data efficiently.'
 img: 'assets/img/838338477938@+-3948324823-data-cleansing.webp'
 tags: ['advanced-data-cleaning', 'batch-processing', 'pandas', 'regular-expressions', 'data-validation']
-category: ['data-preprocessing']
+category: ['Data Preprocessing']
 comments: true
 ---
 <d-contents>

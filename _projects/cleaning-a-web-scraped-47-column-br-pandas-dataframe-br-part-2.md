@@ -5,7 +5,7 @@ date: 2022-01-11
 description: 'Demonstrates my proficiency with pyjanitor in streamlining string data cleaning. This installment details method chaining and advanced string manipulation techniques for optimizing data preprocessing.'
 img: 'assets/img/838338477938@+-3948324823-data-cleansing.webp'
 tags: ['data-cleaning', 'pyjanitor', 'string-manipulation', 'method-chaining', 'pandas']
-category: ['data-preprocessing']
+category: ['Data Preprocessing']
 comments: true
 ---
 

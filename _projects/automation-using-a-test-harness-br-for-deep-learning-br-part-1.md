@@ -5,7 +5,7 @@ date: 2022-12-04
 description: 'Outlines the development and application of a custom test harness to optimize deep learning testing workflows. This approach enhances GPU utilization and accelerates model building and parameter testing, using the fastai library.'
 img: 'assets/img/67822330-automation.webp'
 tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization', 'learning-rate', 'loss-function', 'stochastic-gradient-descent']
-category: ['deep-learning']
+category: ['Deep Learning']
 authors: 'Tobias Klein'
 comments: true
 featured: false

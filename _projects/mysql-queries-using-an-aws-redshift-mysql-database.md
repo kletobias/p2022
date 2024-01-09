@@ -5,7 +5,7 @@ date: 2023-02-06
 description: 'Demonstrates the integration of Python, Pandas, and MySQL in an AWS Redshift environment, guiding through the process of data import and formulation of MySQL queries for effective data retrieval.'
 img: 'assets/img/838338477938@+-98398438.jpg'
 tags: ['AWS-redshift', 'mysql-integration', 'python-data-import', 'data-querying', 'pandas-usage']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---

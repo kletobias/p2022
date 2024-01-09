@@ -5,7 +5,7 @@ date: 2023-01-05
 description: 'Comprehensive exploration of feature importance in tackling the out-of-domain problem, including identification, significance, and mitigation strategies.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['feature-selection-expertise', 'out-of-domain-solutions', 'model-robustness', 'random-forest', 'tabular-data']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---
@@ -32,30 +32,54 @@ comments: true
 <br>
 
 # Addressing the Out-of-Domain Problem in Feature Selection, Part 5
-
 ## Introduction
 
-The "out of domain" problem is a critical challenge in the application of machine learning models to real-world scenarios. This issue arises when a model, trained on a particular dataset, encounters new data with a distribution that significantly deviates from its training environment. Such discrepancies can adversely affect the model's accuracy and reliability, leading to erroneous outcomes that can have far-reaching consequences, particularly in industries where decision-making is heavily reliant on predictive insights.
+The "out of domain" problem refers to the challenge of deploying machine
+learning models in real-world scenarios where the data distribution differs
+significantly from the data on which the model was trained. When a machine
+learning model is trained on a specific dataset, it learns to identify patterns
+and make predictions based on that dataset. However, when the model is deployed
+on a new dataset that is outside its training distribution, its performance
+can be severely impacted, resulting in lower accuracy and reliability.
 
-For instance, in the finance sector, machine learning models play a pivotal role in fraud detection and credit risk assessment. These models need to perform with high precision to prevent substantial financial losses and protect the firm's credibility. Training on non-representative datasets can cause models to misclassify legitimate transactions as fraudulent (false positives) or fail to detect actual fraud (false negatives), both of which can have dire financial and reputational repercussions.
+The out of domain problem is especially relevant in industry projects where
+machine learning models are used to make critical business decisions. For
+example, in the finance industry, machine learning models are often used to
+identify fraud or predict credit risk. In these scenarios, the models must be
+highly accurate and reliable, and any errors can have serious consequences. If
+the model is trained on a dataset that is not representative of the real-world
+data, it can lead to false positives or false negatives, which can result in
+significant financial losses or damage to the reputation of the company.
 
-Consequently, it is imperative to tackle the out of domain problem to ensure the efficacy of machine learning deployments in industry settings. Techniques like transfer learning and domain adaptation are employed to mitigate this issue. Transfer learning involves adjusting a pre-trained model to a new dataset, while domain adaptation techniques modify the model or its features to better align with the new domain's characteristics.
+Addressing the out of domain problem is therefore crucial for the success of
+machine learning projects in industry. One approach is to use transfer learning,
+where a pre-trained model is fine-tuned on the new dataset to adapt to the new
+distribution. Another approach is to use domain adaptation techniques, where the
+model is adapted to the new domain by modifying the feature space or the
+decision boundaries.
 
-Recent research endeavors have introduced a variety of methods aimed at enhancing the generalizability and resilience of machine learning models against the out of domain problem. Significant contributions to this field have been acknowledged<d-footnote>"Unsupervised Domain Adaptation by Backpropagation" by Ganin and Lempitsky</d-footnote><d-footnote>"Domain-Adversarial Training of Neural Networks" by Tzeng et al.</d-footnote><d-footnote>"Deep Domain Confusion: Maximizing for Domain Invariance" by Ghifary et al.</d-footnote>.
+There has been significant research in recent years on addressing the out of
+domain problem in machine learning, with various techniques proposed to improve
+the generalization and robustness of machine learning models. Some notable
+research papers in this area include the following<d-footnote>"Unsupervised Domain Adaptation by
+Backpropagation" by Ganin and Lempitsky</d-footnote><d-footnote>"Domain-Adversarial Training of Neural
+Networks" by Tzeng et al.</d-footnote><d-footnote>"Deep Domain Confusion: Maximizing for Domain
+Invariance" by Ghifary et al.</d-footnote>.
 
 ## Understanding and Addressing the Out-of-Domain Problem in Machine Learning
 
-In practical terms, the out of domain problem can be illustrated by a simple simulation of data points. The provided code snippet generates a linear sequence of x-values and associates y-values with an added layer of random noise, representing the variability often present in real-world data. The scatter plot of these points helps visualize the potential discrepancies a model might face when applied beyond its training scope.
+The provided code creates a series of 45 linear values for the x-axis and
+generates corresponding y-values by adding noise sampled from a normal
+distribution. The resulting data points are then plotted using a scatter plot.
+
 
 ```python
-# Generate a sequence of linear values and corresponding noisy y-values
 xlins = torch.linspace(0, 20, steps=45)
 ylins = xlins + torch.randn_like(xlins)
-# Visualize the data points with a scatter plot
 plt.scatter(xlins, ylins)
 ```
 
-The scatter plot underscores the challenge of modeling under the presence of noise, which can be viewed as a proxy for out-of-domain data. The deviation from the expected linear relationship exemplifies how a model might struggle when predicting on data that differ from the training distribution, emphasizing the necessity for robust machine learning practices that can withstand such variability.
+
 
 
 
@@ -100,39 +124,40 @@ xlins[:, None].shape
 
     torch.Size([45, 1])
 
-
-To illustrate the challenges of model generalization and the "out of domain" problem, we train two different regression models: the `RandomForestRegressor` and the `XGBRegressor`. These models are tasked with learning the relationship between the `xslins` and `ylins` data points, which we have synthetically generated to simulate a real-world scenario.
-
-The training is performed using only the first 35 data points of the `xslins` and `ylins` series. This approach is intentional, to demonstrate what happens when models are asked to predict beyond the range they have been trained on – a common situation in practical applications.
+Two different regression models, the
+`RandomForestRegressor` and `XGBRegressor`, are then trained on the first 35
+rows of `xslins` and `ylins`.
 
 ```python
-from sklearn.ensemble import RandomForestRegressor
-from xgboost import XGBRegressor
-
-# Train a RandomForestRegressor with the first 35 data points
 m_linrfr = RandomForestRegressor().fit(xslins[:35], ylins[:35])
-
-# Train an XGBRegressor with the same data points
+# Do the same and train a `XGBRegressor` using the same data.
 m_lin = XGBRegressor().fit(xslins[:35], ylins[:35])
 ```
 
-After training, we use these models to predict values across the entire range of `xslins`, including the final five values that the models were not trained on. We create a scatter plot to visualize these predictions compared to the actual data points. This visualization starkly reveals the out-of-domain problem: for the last five values (the data points beyond what the models have been trained on), both models' predictions are consistently lower than the actual `ylins` values. This discrepancy is a classic example of an extrapolation challenge, where models are prone to inaccurate predictions outside the range of the training data's dependent variable.
+The scatter plot shows the predicted values for all points in `xslins`, as well
+as the final five values that were not used in the training data. The predicted
+values for the omitted values are all too low, highlighting the problem of the
+out-of-domain problem. This is an example of an extrapolation problem, where the
+model can only make predictions within the range of what it has seen for the
+dependent variable during training.
 
 ```python
-# Plotting the model predictions and the actual data points
-plt.figure(figsize=(10, 8))
-plt.scatter(xslins, m_linrfr.predict(xslins), c="red", alpha=0.4, s=10, label='RandomForestRegressor Predicted Values')
-plt.scatter(xslins, m_lin.predict(xslins), c="blue", marker="2", alpha=0.5, label='XGBRegressor Predicted Values')
-plt.scatter(xslins, ylins, 20, marker="H", alpha=0.5, c="yellow", label='Set Of All Values')
-plt.vlines(x=15.5, ymin=0, ymax=20, linestyle='dashed', alpha=0.7, label='Last Independent Training Value')
+plt.scatter(xlins, m_linrfr.predict(xslins), c="r", alpha=0.4,s=10,label='RandomForestRegressor Predicted Values')
+plt.scatter(xlins, m_lin.predict(xslins), c="b",marker="2", alpha=0.5,label='XGBRegressor Predicted Values')
+plt.scatter(xslins, ylins, 20,marker="H",alpha=0.5, c="y",label='Set Of All Values')
+plt.vlines(x=15.5,ymin=0,ymax=20,alpha=0.7,label='Last Independent Training Value')
 plt.title('Visualization Of The Out-Of-Domain Problem')
 plt.legend(loc='best')
 plt.xlabel('x-Axis')
 plt.ylabel('y-Axis')
-plt.show()
 ```
 
-In the resulting plot, we use different markers and colors to distinguish between the predicted values from the RandomForestRegressor (red), XGBRegressor (blue), and the actual set of values (yellow). A vertical dashed line is also drawn at `x=15.5` to indicate the boundary of the last value used in training. This visualization helps in understanding the limitation of machine learning models when they are asked to predict outside the domain of their training data – a cautionary insight for practitioners in the field of machine learning.
+
+
+
+    Text(0, 0.5, 'y-Axis')
+
+
 
 
     
@@ -142,8 +167,7 @@ In the resulting plot, we use different markers and colors to distinguish betwee
     </div>
 </div>
 <div class="caption">
-    This visualization helps in understanding the limitation of machine learning models when they are asked to predict outside the domain of their training data – a cautionary insight for practitioners in the field of machine learning.
-
+        
 </div>
     
 
@@ -412,12 +436,12 @@ plt.subplots_adjust(top=.9)
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <!-- Figure inclusion for the ECDF plot -->
         {% include figure.html path="assets/img/tabular-deep-dive-series/output_187_0.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    The ECDF plot reveals the distribution differences for 'lotarea' between the training data (indicated as 0) and validation data (indicated as 1). The cumulative density curves are closely aligned for the majority of the range, indicating a strong distributional similarity. A critical distinction, however, is evident at the higher end of the value spectrum: the training data extends beyond 200,000 square feet, whereas the validation data's 'lotarea' does not exceed 150,000 square feet. This divergence at the upper bounds is emblematic of the out-of-domain problem, highlighting potential challenges in applying a model trained on this data to accurately predict for larger lot areas that are not represented in the validation set.
+        ECDF plot is not rendered well, as it is not yet implemented in
+        matplotlib, according to an error message.
 </div>
     
 

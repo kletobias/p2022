@@ -5,7 +5,7 @@ date: 2023-01-06
 description: 'Strategy and techniques for Kaggle competitions, focusing on RandomForestRegressor and fastai deep learning models, including hyperparameter optimization and preprocessing.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['kaggle-competition-strategies', 'model-optimization', 'fastai', 'hyperparameter-tuning', 'tabular-data']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---
@@ -79,51 +79,22 @@ respectively, and it is these lists that are returned by the function.
 
 ```python
 def rf2(
-    xs_final: pd.DataFrame,
-    y: pd.Series,
-    valid_xs_final: pd.DataFrame,
-    valid_y: pd.Series,
-    nestimators: List[int] = [60, 50, 40, 30, 20],
-    max_samples: List[int] = [200, 300, 400, 500, 600, 700],
-    max_features: float = 0.5,
-    min_samples_leaf: int = 5,
+    xs_final=xs_final,
+    y=y,
+    valid_xs_final=valid_xs_final,
+    valid_y=valid_y,
+    nestimators=[60, 50, 40, 30, 20],
+    max_samples=[200, 300, 400, 500, 600, 700],
+    max_features=0.5,
+    min_samples_leaf=5,
     **kwargs,
-) -> Tuple[List[Tuple[float, int, int]], List[Tuple[float, int, int]]]:
-    """
-    Performs a manual grid search to optimize RandomForestRegressor hyperparameters
-    by evaluating combinations of n_estimators and max_samples.
-
-    Args:
-    xs_final (pd.DataFrame): Training feature set.
-    y (pd.Series): Training target variable.
-    valid_xs_final (pd.DataFrame): Validation feature set.
-    valid_y (pd.Series): Validation target variable.
-    nestimators (List[int]): List of n_estimators (number of trees) to try.
-    max_samples (List[int]): List of max_samples (number of samples for each tree) to try.
-    max_features (float): The fraction of features to consider for each split.
-    min_samples_leaf (int): The minimum number of samples required to be at a leaf node.
-
-    Returns:
-    Tuple[List[Tuple[float, int, int]], List[Tuple[float, int, int]]]: 
-    A tuple containing two lists of tuples. Each tuple consists of an RMSE score, 
-    the number of estimators, and the number of samples. The first list pertains to 
-    the training set and the second list to the validation set.
-    
-    Each combination of hyperparameters is evaluated, and the RMSE is calculated for both 
-    the training and validation datasets. The function returns these values for further analysis.
-    """
+):
     from itertools import product
 
-    # Initialize lists to store RMSE values for training and validation
     m_rmsel = []
     m_rmselv = []
-    
-    # Generate all combinations of hyperparameters
     setups = product(nestimators, max_samples)
-    
-    # Iterate over each combination
     for ne in setups:
-        # Configure the RandomForestRegressor with the current set of hyperparameters
         mt = RandomForestRegressor(
             n_jobs=-1,
             n_estimators=ne[0],
@@ -132,13 +103,9 @@ def rf2(
             min_samples_leaf=min_samples_leaf,
             oob_score=True,
             random_state=seed,
-            **kwargs
         ).fit(xs_final, y)
-        
-        # Append RMSE and hyperparameters to the respective lists
         m_rmsel.append((m_rmse(mt, xs_final, y), ne[0], ne[1]))
         m_rmselv.append((m_rmse(mt, valid_xs_final, valid_y), ne[0], ne[1]))
-    
     return m_rmsel, m_rmselv
 ```
 
@@ -304,7 +271,7 @@ dfnn_v.columns[:3]
 
 
 Assigning the ordered categorical columns to the data, as we did before for the
-tree based models in a previous part. See [**Advanced Missing Value Analysis in Tabular Data, Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
+tree based models in a previous part. See [**Deep Dive Tabular Data Part 1**]({% link _projects/deep-dive-tabular-data-pt-1.md %})<br>
 
 
 ```python

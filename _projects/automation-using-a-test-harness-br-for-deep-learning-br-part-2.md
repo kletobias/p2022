@@ -5,7 +5,7 @@ date: 2022-12-15
 description: 'Continuation of the series, delving into empirical experimentation using fastai on a unique dataset. This segment focuses on handling a small dataset with 850 images and two target labels, demonstrating advanced image data handling and classification skills.'
 img: 'assets/img/67822330-automation.webp'
 tags: ['binary-classification', 'deep-learning', 'fastai', 'hyperparameter-optimization','image-data']
-category: ['deep-learning']
+category: ['Deep Learning']
 authors: 'Tobias Klein'
 comments: true
 featured: false

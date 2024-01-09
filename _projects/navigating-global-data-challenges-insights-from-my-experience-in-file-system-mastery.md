@@ -3,13 +3,36 @@ layout: distill
 title: 'Navigating Global Data Challenges: Insights from My Experience in File System Mastery'
 date: 2024-01-09
 description: 'Unlocking the secrets of file system mastery in ML: A real-world journey through data management and scripting challenges.'
-img: 'assets/img/838338477938@+-67822330.jpg'
+img: 'assets/img/838338477938@+-0293049249.webp'
 tags: ['machine-learning', 'data-management', 'tech-insights', 'scripting-skills', 'real-world-ml']
 category: ['Machine Learning in Action']
 authors: 'Tobias Klein'
 comments: true
 ---
+
 <br>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/838338477938@+-0293049249.webp" title="Home Run Analytics" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Home Run Analytics: Pitching Machine Learning into the Heart of the Game! 
+</div>
+
+<d-contents>
+  <nav class="l-text figcaption">
+  <h3>Contents</h3>
+    <div class="no-math"><a href="#embracing-challenges-with-file-system-commands-and-scripting">Embracing Challenges with File System Commands and Scripting</a></div>
+    <div class="no-math"><a href="#leveraging-my-experience-for-broader-applications">Leveraging My Experience for Broader Applications</a></div>
+    <div class="no-math"><a href="#understanding-file-system-operations">Understanding File System Operations</a></div>
+    <div class="no-math"><a href="#the-comparative-table-a-quick-reference">The Comparative Table: A Quick Reference</a></div>
+    <div class="no-math"><a href="#real-world-applications-in-machine-learning">Real-World Applications in Machine Learning</a></div>
+    <div class="no-math"><a href="#broader-use-cases-in-tech-firms">Broader Use Cases in Tech Firms</a></div>
+    <div class="no-math"><a href="#conclusion">Conclusion</a></div>
+  </nav>
+</d-contents>
 
 # Navigating Global Data Challenges: Insights from My Experience in File System Mastery
 
@@ -87,8 +110,8 @@ The table below provides a side-by-side comparison of common file operations in 
 | `os.path.splitext()`            | `PurePath.stem` and `PurePath.suffix`            | `file_name=$(basename "$file_path"); stem="${file_name%.*}"; suffix="${file_name##*.}"` |
 
 Notes:
-- [1]: `Path.absolute()` in Python's `pathlib` does not resolve symlinks. It's more akin to `os.path.abspath()`. However, `realpath` in the shell resolves symlinks, similar to Python's `Path.resolve()`.
-- [2]: There is no direct shell command equivalent to `PurePath.relative_to()`, but `realpath` with `--relative-to` can be used to get a similar result. However, it may not behave identically in all cases.
+- \[1\]: `Path.absolute()` in Python's `pathlib` does not resolve symlinks. It's more akin to `os.path.abspath()`. However, `realpath` in the shell resolves symlinks, similar to Python's `Path.resolve()`.
+- \[2\]: There is no direct shell command equivalent to `PurePath.relative_to()`, but `realpath` with `--relative-to` can be used to get a similar result. However, it may not behave identically in all cases.
 
 ### Key Insights from the Table
 - **Path Manipulation**: Python's `pathlib` offers a more intuitive approach compared to `os.path`. Operations like joining paths, extracting file names, and working with relative paths are more readable and less error-prone.

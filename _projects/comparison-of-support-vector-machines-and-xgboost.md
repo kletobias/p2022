@@ -5,7 +5,7 @@ date: 2023-06-29
 description: 'Comprehensive literature review comparing Support Vector Machines and XGBoost, focusing on their distinctive features, strengths, and limitations in predictive modeling.'
 img: 'assets/img/838338477938@+-398898935.jpg'
 tags: ['machine-learning', 'literature-review', 'support-vector-machine', 'xgboost', 'predictive-modeling']
-category: ['machine-learning-process']
+category: ['Machine Learning Process']
 authors: 'Tobias Klein'
 comments: true
 ---

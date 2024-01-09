@@ -5,7 +5,7 @@ date: 2023-03-08
 description: 'Delving into the economic aspects of Hearthstone, this article provides a detailed simulation of in-game currency value, offering insights into the real-world monetary worth of Hearthstone decks.'
 img: 'assets/img/stats-sexy.webp'
 tags: ['economic-analysis', 'game-economics', 'hearthstone', 'simulation', 'value-quantification']
-category: ['statistics']
+category: ['Statistics']
 authors: 'Tobias Klein'
 comments: true
 featured: false

@@ -5,7 +5,7 @@ date: 2023-04-13
 description: 'A concise overview of the six vital tasks in machine learning projects handling unstructured data, covering aspects from feature engineering to workflow optimization.'
 img: 'assets/img/838338477938@+-398898935-workflow.webp'
 tags: ['unstructured-data-ml', 'project-management', 'machine-learning-tasks', 'workflow-optimization', 'feature-engineering']
-category: ['deep-learning']
+category: ['Deep Learning']
 authors: 'Tobias Klein'
 comments: true
 featured: true

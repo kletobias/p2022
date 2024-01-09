@@ -5,7 +5,7 @@ date: 2023-01-03
 description: 'In-depth analysis of RandomForestRegressor, focusing on feature importance and out-of-bag error as key performance indicators.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['performance-analysis', 'random-forest-optimization', 'model-evaluation', 'feature-importance', 'tabular-data']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---

@@ -5,7 +5,7 @@ date: 2023-01-04
 description: 'Advanced statistical visualization techniques for data interpretation, including dendrograms, Spearman rank correlation, and partial dependence plots.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['statistical-data-interpretation', 'advanced-visualizations', 'dendrogram', 'correlation-analysis', 'tabular-data']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---
@@ -296,7 +296,7 @@ xs_final = xs_imp.drop(to_drop, axis=1)
 valid_xs_final = valid_xs_imp.drop(to_drop, axis=1)
 ```
 
-Exporting and immediately importing the datasets in their current version as
+Exporting and immediately importing the datasets in their current state as
 *.pkl* files using the fastai proprietary functions `save_pickle` and
 `load_pickle` respectively.
 
@@ -348,7 +348,7 @@ plot_fi(dfi)
     </div>
 </div>
 <div class="caption">
-Bar Plot Analysis: Dominance of 'OverallQual' in Feature Importance, Post-Exclusion of 'GarageType' and 'ExterQual' — A Comparative Insight Using OOB Error Metric
+        
 </div>
     
 
@@ -362,7 +362,7 @@ two to ten in ascending order. It describes the "overall quality" of an object
 and judging by the feature importance plots, it is the strongest predictor for
 variable `saleprice`.
 
-The value counts and the box plot for `overallqual` are given below. As depicted, the most frequent rating is '5', suggesting a trend towards mid-level quality in the dataset. Rare extremes can be observed with the '10' rating being the least frequent, indicating high quality is uncommon, reinforcing its high predictive power for `saleprice`. The box plot reveals a median quality rating close to '6', with outliers at the lower end of the scale.
+The value counts and the box plot for `overallqual` are given below.
 
 
 ```python
@@ -459,10 +459,9 @@ plt.show()
     </div>
 </div>
 <div class="caption">
-    <s>Upper Plot</s>: The bar chart illustrates the absolute frequency of each unique 'overallqual' value within the training set, providing a clear visual representation of the distribution of quality ratings. The higher counts of mid-level ratings reflect the typical quality characteristics of the dataset's entries.<br>
-    <s>Lower Plot</s>: The box plot complements the bar chart by offering a summary of the distribution's spread and central tendency. It showcases the range and variability of the 'overallqual' ratings, with the box encompassing the interquartile range and the line within indicating the median.
+        
 </div>
-
+    
 
 
 Another important feature is `grlivarea`, which gives the area above ground in
@@ -512,7 +511,6 @@ independent variables. Four columns that have shown several times that they
 are of high importance for the predictions of the dependent variable are chosen
 and their partial dependence plots are created.
 
-
 The output shows that `overallqual` and `yearbuilt` show a high correlation with
 the dependent variable. Not only that though, the plot also shows how the
 assumed change in the value of the dependent variable, $$\frac{\partial \mathrm{saleprice}}{\partial x_{i}}\,\,\mathrm{for}\,\,\mathrm{i}\, \in \{\mathrm{overallqual},\, \mathrm{grlivarea},\, \mathrm{garagecars},\, \mathrm{yearbuilt}\}$$
@@ -530,16 +528,7 @@ ax = plot_partial_dependence(
 )
 ```
 
-The Partial Dependence plots below offer a visual exploration of how changes in
-`overallqual`, `grlivarea`, `garagecars`, and `yearbuilt` are associated with
-shifts in `saleprice`. These plots underscore the direct correlation and
-potential causal inference between each of these pivotal features and the
-target variable, with `overallqual` and `yearbuilt` exhibiting particularly
-strong influences. By isolating the effect of each feature while accounting for
-the average effect of others, these graphs serve as a powerful tool in
-interpreting the predictive model's behavior.
 
-Partial Dependence Plots: Each subplot represents the relationship between `saleprice` and one of the key features — `overallqual`, `grlivarea`, `garagecars`, and `yearbuilt`. The consistent upward trend in `overallqual` and `yearbuilt` indicates a robust positive impact on `saleprice`, highlighting their predictive significance. In contrast, `grlivarea` and `garagecars` also display a positive correlation but with variations that may reflect other interacting factors within the housing market dynamics.
     
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -547,34 +536,30 @@ Partial Dependence Plots: Each subplot represents the relationship between `sale
     </div>
 </div>
 <div class="caption">
-         The above visualization captures the nuanced relationship between critical housing features and `saleprice`, emphasizing the value of `overallqual` and `yearbuilt` as primary indicators in property valuation models.
+        
 </div>
     
 
 
 ## Tree Interpreter
 
-Utilizing the `treeinterpreter` package, we delve into the fine-grained factors affecting predictions for individual data points. We aim to uncover the most influential features for a specific prediction and quantify their individual contributions. This can be particularly insightful for understanding model decisions on a case-by-case basis.
+A plot using `treeinterpreter` from treeinterpreter, and we try to answer the
+question:
 
-Here's how we can dissect the prediction for a single data instance:
+- For predicting with a particular row of data, what were the most important
+factors, and how did they influence that prediction?
+
 
 ```python
-# Sample a row from the validation set
 row = valid_xs_final.sample(n=2, random_state=seed)
+predict, bias, contributions = treeinterpreter.predict(m, row.values)
+# rounding for display purposes
+predict = np.round(predict,3)
+bias = np.round(bias,3)
+contributions = np.round(contributions,3)
 
-# Predict using the treeinterpreter
-predict, bias, contributions = ti.predict(m, row.values)
-
-# Round the values for clearer display
-predict = np.round(predict, 3)
-bias = np.round(bias, 3)
-contributions = np.round(contributions, 3)
-
-# Display the prediction, bias, and contributions for the first row
 print(
-    f'For the first row in the sample predict is: {predict[0]},\n\n'
-    f'The overall log average of column "saleprice": {bias[0]},\n\n'
-    f'The contributions of the columns are:\n\n{contributions[0]}'
+    f'For the first row in the sample predict is: {predict[0]},\n\nThe overall log average of column "saleprice": {bias[0]},\n\nThe contributions of the columns are:\n\n{contributions[0]}'
 )
 ```
 
@@ -587,27 +572,21 @@ print(
     [ 0.142 -0.081  0.105 -0.016 -0.015 -0.05   0.014  0.026 -0.073 -0.005
      -0.007 -0.035  0.002  0.009  0.    -0.009 -0.001 -0.016 -0.003]
 
-Next, we visualize the contributions to the prediction with a waterfall chart:
+
 
 ```python
-# Plot the contributions using a waterfall chart
 for e in zip(predict, bias, contributions):
     waterfall(
         valid_xs_final.columns,
         e[2],
-        title=f"Prediction: {e[0][0]}, Base Value (Intercept): {e[1]}",
+        Title=f"Predict: {e[0][0]}, Intercept: {e[1]}",
         threshold=0.08,
         rotation_value=45,
-        formatting="{:,.3f}"
+        formatting="{:,.3f}",
     )
-    plt.show()
+plt.show()
 ```
 
-The waterfall chart illuminates how each feature nudges the prediction away from the base value, providing a visual narrative of the prediction process. Features contributing positively will push the predicted value upwards, while negative contributions pull it down, culminating in the final prediction.
-
-### Waterfall Chart
-
-The waterfall chart below demonstrates the incremental effect of each feature on the model's prediction for a single house's sale price. It starts with the base value, which is the average log sale price across the dataset, and then sequentially adds the contribution of each feature to arrive at the final predicted value. This visualization aids in interpreting the complex decision-making process of the model, highlighting the significant role of certain features while also revealing those with minimal impact.
 
     
 <div class="row">
@@ -616,9 +595,11 @@ The waterfall chart below demonstrates the incremental effect of each feature on
     </div>
 </div>
 <div class="caption">
-    An illustrative example of applying `treeinterpreter` to analyze the contributions of features to a specific prediction, showcasing the interpretability of machine learning models.
+        Example of how to use the treeinterpreter on a single sample.
 </div>
     
+
+
 
     
 <div class="row">
@@ -627,7 +608,7 @@ The waterfall chart below demonstrates the incremental effect of each feature on
     </div>
 </div>
 <div class="caption">
-    Another illustrative example of applying `treeinterpreter` to analyze the contributions of features to a specific prediction, showcasing the interpretability of machine learning models.
+        Example of how to use the treeinterpreter on a single sample.
 </div>
     
 

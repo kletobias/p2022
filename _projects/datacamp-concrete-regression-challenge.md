@@ -5,7 +5,7 @@ date: 2022-12-26
 description: 'This article documents my approach to the Datacamp Concrete Challenge, completed within an hour. It offers detailed explanations for each step, emphasizing my proficiency with the Lasso regression model in a time-constrained environment.'
 img: 'assets/img/838338477938@+-791693336.jpg'
 tags: ['time-efficient-analysis', 'lasso-regression-expertise', 'mathematical-insights', 'multivariate-regression', 'regression-analysis']
-category: ['tabular-data']
+category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
 ---
