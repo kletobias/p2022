@@ -48,11 +48,7 @@ It remains to be seen if Google can narrow the gap to the current market leader,
 
 ## The Podcast
 
-<<<<<<< HEAD
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S_1aPj2E2nE?si=Eib7LMWe8io28uFN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-=======
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u1rU_fDe-pc?si=5Stpaq-iMGKMopTx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
->>>>>>> eb2def13 (final-nice-machine-learning-podcast-002)
 
 <br>
 <br>
