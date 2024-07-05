@@ -34,15 +34,15 @@ implementations mentioned in this article:
 - **Silhouette Score**: [sklearn.metrics.silhouette_score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html)
 
 
-# Theoretical Foundations of PCA
+## Theoretical Foundations of PCA
 
 Principal Component Analysis (PCA) is a statistical technique used to simplify complex datasets by reducing their dimensionality while preserving as much variance as possible. PCA transforms the original variables into a new set of uncorrelated variables, known as principal components, ordered by the amount of variance they capture from the data. This method helps in visualizing high-dimensional data and identifying patterns, making it easier to perform further analysis.
 
-# The Importance of Data Standardization
+## The Importance of Data Standardization
 
 Data standardization is a crucial preprocessing step in machine learning and data analysis. It involves transforming the data to have a mean of zero and a standard deviation of one. This process ensures that all features contribute equally to the analysis, preventing features with larger scales from dominating the results. Standardization is particularly important for algorithms like PCA and clustering, which are sensitive to the scales of the input data.
 
-# Determining the Optimal Number of Clusters Using Various Metrics
+## Determining the Optimal Number of Clusters Using Various Metrics
 
 Choosing the optimal number of clusters in clustering algorithms like K-means is essential for meaningful data segmentation. Several metrics can help determine this number, including the Elbow Method, Silhouette Score, and Calinski-Harabasz Index. The Elbow Method involves plotting the within-cluster sum of squares against the number of clusters and looking for an "elbow" point. The Silhouette Score measures how similar an object is to its own cluster compared to other clusters, with higher scores indicating better-defined clusters. The Calinski-Harabasz Index evaluates the ratio of the sum of between-cluster dispersion and within-cluster dispersion, with higher scores indicating better-defined clusters. Using these metrics helps in finding a balance between simplicity and accuracy in the clustering results.
 
@@ -51,7 +51,7 @@ Choosing the optimal number of clusters in clustering algorithms like K-means is
 <iframe width="560" height="315" src="https://www.youtube.com/embed/J-c1kFBMj1w?si=Vc7J8g-KpxjRL32R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-### Tags:
+## Tags:
 #DataScience, #MachineLearning, #PCA, #PrincipalComponentAnalysis, #KMeans,
 #Clustering, #DataStandardization, #SilhouetteScore, #CalinskiHarabaszScore,
 #ElbowMethod, #Python, #Sklearn, #DataAnalysis, #DimensionalityReduction,
