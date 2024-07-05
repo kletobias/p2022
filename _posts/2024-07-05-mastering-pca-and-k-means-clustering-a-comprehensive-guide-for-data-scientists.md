@@ -40,7 +40,7 @@ Principal Component Analysis (PCA) is a statistical technique used to simplify c
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/pca_95pct_optimal_components.png" title="Plot Explained Variance by Number of Components" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/pca_95pct_optimal_components.png" title="" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -54,6 +54,7 @@ Data standardization is a crucial preprocessing step in machine learning and dat
 ## Determining the Optimal Number of Clusters Using Various Metrics
 
 Choosing the optimal number of clusters in clustering algorithms like K-means is essential for meaningful data segmentation. Several metrics can help determine this number, including the Elbow Method, Silhouette Score, and Calinski-Harabasz Index. The Elbow Method involves plotting the within-cluster sum of squares against the number of clusters and looking for an "elbow" point. The Silhouette Score measures how similar an object is to its own cluster compared to other clusters, with higher scores indicating better-defined clusters. The Calinski-Harabasz Index evaluates the ratio of the sum of between-cluster dispersion and within-cluster dispersion, with higher scores indicating better-defined clusters. Using these metrics helps in finding a balance between simplicity and accuracy in the clustering results.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/choosing_number_of_clusters.png" title="" class="img-fluid rounded z-depth-1" %}
@@ -62,6 +63,7 @@ Choosing the optimal number of clusters in clustering algorithms like K-means is
 <div class="caption">
     Figure 2: Comparison of the Elbow Method and Silhouette Score Method for selecting the optimal number of clusters.
 </div>
+
 ## The Podcast
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/J-c1kFBMj1w?si=Vc7J8g-KpxjRL32R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
