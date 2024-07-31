@@ -35,6 +35,19 @@ This article delves into the fundamental concept of Stochastic Gradient Descent,
 4. The concept of empirical loss and the use of $$\mathit{L}_2$$ loss.
 5. An overview of Gradient Descent.
 
+<iframe width="100%" height="450" scrolling="no" frameborder="no"
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1885370463&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe><div
+    style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break:
+    normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida
+    Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a
+        href="https://soundcloud.com/kletob" title="kletob" target="_blank"
+style="color: #cccccc; text-decoration: none;">kletob</a> · <a
+        href="https://soundcloud.com/kletob/the-math-behind-br-stepping-the-weights"
+title="Article Summary: The math behind stepping the weights" target="_blank"
+style="color: #cccccc; text-decoration: none;">Article Summary: The math behind
+stepping the weights</a></div>
 
 ## Unraveling Univariate Linear Regression
 
