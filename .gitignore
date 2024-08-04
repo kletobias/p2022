@@ -23,3 +23,5 @@ toc_script/*.html
 /landing-page-mockup/
 /references/test.py
 assets/audio/*
+scripts/*
+assets/**/*.py

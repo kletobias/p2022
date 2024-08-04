@@ -10,7 +10,7 @@ comments: true
 
 <br>
 
-# Revolutionizing Real-Time Image Analysis: Google adds Continuous Image Segmenation to Gemini AI Assistant
+# Revolutionizing Real-Time Image Analysis: Google adds Continuous Image Segmentation to Gemini AI Assistant
 
 In the latest [episode](#the-podcast) of the Nice Machine Learning Podcast we embark on a thrilling journey into the heart of the AI revolution.
 
@@ -57,4 +57,23 @@ It remains to be seen if Google can narrow the gap to the current market leader,
 
 Thank you for listening. If you enjoyed this update, don't forget to like, share, and subscribe for more insights into the latest tech innovations. I'm your host, Tobias Klein, signing off.
 
+## Links
 
+Here are some essential links to resources about Google Gemini, the large language model by Google, providing a wide range of information from documentation to features and developer tools:
+
+1. **Overview and Introduction to Gemini**: Explore an introduction and overview of the Gemini model, its capabilities, and the vision behind its development.  
+   [Learn more about Gemini](https://blog.google/products/search/introducing-gemini/)
+
+2. **Gemini API Developer Docs and API Reference**: Comprehensive developer documentation, including API references, fine-tuning guidance, function calling, and troubleshooting tips.  
+   [Access Gemini API Developer Docs](https://ai.google.dev/products/gemini/docs)
+
+3. **Getting Started Guide for Gemini API**: Detailed tutorials and guides on how to start building applications using the Gemini API, covering various programming languages and platforms.  
+   [Gemini API Getting Started Guide](https://ai.google.dev/products/gemini/start)
+
+4. **Gemini Technical Capabilities and Use Cases**: Dive into the technical capabilities of Gemini, explore use cases, and understand its multimodal functionalities.  
+   [Explore Gemini Capabilities](https://ai.google.dev/products/gemini/capabilities)
+
+5. **Community and Support for Gemini Developers**: Connect with other developers and find support in the Gemini developer forum.  
+   [Join the Gemini Developer Community](https://discuss.ai.google.dev/category/gemini)
+
+These resources provide a broad and detailed view of Google Gemini's capabilities and offer guides and tools for developers to integrate and leverage this powerful model in various applications.
