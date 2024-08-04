@@ -57,23 +57,31 @@ It remains to be seen if Google can narrow the gap to the current market leader,
 
 Thank you for listening. If you enjoyed this update, don't forget to like, share, and subscribe for more insights into the latest tech innovations. I'm your host, Tobias Klein, signing off.
 
+## API Key
+
+Ready to use the Google Gemini API? Obtain your API key here:
+
+<br>
+[Get API Key | Google AI Studio](https://aistudio.google.com/app/apikey)
+<br>
+
 ## Links
 
 Here are some essential links to resources about Google Gemini, the large language model by Google, providing a wide range of information from documentation to features and developer tools:
 
 1. **Overview and Introduction to Gemini**: Explore an introduction and overview of the Gemini model, its capabilities, and the vision behind its development.  
-   [Learn more about Gemini](https://blog.google/products/search/introducing-gemini/)
+    [Tutorial: Get started with the Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=python)
 
 2. **Gemini API Developer Docs and API Reference**: Comprehensive developer documentation, including API references, fine-tuning guidance, function calling, and troubleshooting tips.  
-   [Access Gemini API Developer Docs](https://ai.google.dev/products/gemini/docs)
+    [Gemini API Developer Docs and API Reference  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs)
 
 3. **Getting Started Guide for Gemini API**: Detailed tutorials and guides on how to start building applications using the Gemini API, covering various programming languages and platforms.  
-   [Gemini API Getting Started Guide](https://ai.google.dev/products/gemini/start)
+    [Gemini API Model Variants](https://ai.google.dev/gemini-api/docs/models/gemini#model-variations)
 
 4. **Gemini Technical Capabilities and Use Cases**: Dive into the technical capabilities of Gemini, explore use cases, and understand its multimodal functionalities.  
-   [Explore Gemini Capabilities](https://ai.google.dev/products/gemini/capabilities)
+    [Google | Build with Gemini  |  Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/cookbook)
 
 5. **Community and Support for Gemini Developers**: Connect with other developers and find support in the Gemini developer forum.  
-   [Join the Gemini Developer Community](https://discuss.ai.google.dev/category/gemini)
+    [Build with Google AI](https://discuss.ai.google.dev/)
 
 These resources provide a broad and detailed view of Google Gemini's capabilities and offer guides and tools for developers to integrate and leverage this powerful model in various applications.
