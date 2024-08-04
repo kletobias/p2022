@@ -25,3 +25,4 @@ toc_script/*.html
 assets/audio/*
 scripts/*
 assets/**/*.py
+assets/linkedin_posts/
