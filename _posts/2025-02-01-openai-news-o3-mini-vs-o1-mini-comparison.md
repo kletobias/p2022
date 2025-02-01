@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: 'OpenAI News: o3-mini vs 01-mini comparison'
+title: 'OpenAI News: o3-mini vs o1-mini comparison'
 date: 2025-02-01
 description: 'Comparing the o3-mini and the o1-mini in terms of response latency, completion tokens, reasoning tokens'
 tags: ['openai', 'o3-mini', 'reasoning-models', 'o1-mini', 'reasoning_effort']
