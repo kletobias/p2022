@@ -26,3 +26,4 @@ assets/audio/*
 scripts/*
 assets/**/*.py
 assets/linkedin_posts/
+errors-bundle.log

@@ -5,7 +5,7 @@ date: 2023-01-12
 description: 'A comprehensive exploration of the mathematical foundations of Stochastic Gradient Descent, crucial for understanding its application in optimization algorithms in deep learning.'
 img: 'assets/img/838338477938@+-398898935.jpg'
 tags: ['optimization-algorithms', 'mathematical-fundamentals', 'gradient-descent', 'algorithmic-understanding', 'deep-learning-basics']
-category: ['Deep Learning']
+category: 'Deep Learning'
 authors: 'Tobias Klein'
 comments: true
 ---
