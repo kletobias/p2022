@@ -35,9 +35,6 @@ social-links:
 
 <br>
 
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-
 > Embracing the power of predictive modeling, I meld data and
 innovation, to unravel patterns today for actionable insights tomorrow, paving
 the way to a future steered by foresight and proactive decision-making.
