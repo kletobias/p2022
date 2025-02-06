@@ -50,5 +50,5 @@ Skilled in data engineering and machine learning, with a strong background in ha
 <br>
 
 
-<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="deep-learning-mastery" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://de.linkedin.com/in/deep-learning-mastery?trk=profile-badge"></a></div>
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="deep-learning-mastery" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/deep-learning-mastery?trk=profile-badge"></a></div>
 
