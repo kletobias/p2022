@@ -5,7 +5,7 @@ permalink: /projects/
 description: Here you can find multi-part series and in-depth articles.
 nav: true
 nav_order: 2
-display_categories: ['Machine Learning in Action','Machine Learning Process','Tabular Data','Data Preprocessing','Deep Learning','Statistics']
+display_categories: ['NY DRG MLOps Showcase','Machine Learning in Action','Machine Learning Process','Tabular Data','Data Preprocessing','Deep Learning','Statistics']
 horizontal: false
 ---
 
