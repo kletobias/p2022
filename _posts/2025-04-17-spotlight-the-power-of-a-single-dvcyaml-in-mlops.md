@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight The Power of a Single dvc.yaml in MLOps'
-date: '2025-01-03'
+date: '2025-04-17'
 description: 'The dvc.yaml file plays a central role in orchestrating a DVC-based pipeline. By consolidating raw data ingestion, transformations, feature engineering, and modeling into a single file, it serves as the primary source of truth.'
 tags: [mlops,dvc,pipeline-design,reproducibility,single-source-of-truth,standardized-stage-definition,consolidated-stage-definitions,atomic-transformations,hydra]
 category: 'MLOps: Designing a Modular Pipeline'
