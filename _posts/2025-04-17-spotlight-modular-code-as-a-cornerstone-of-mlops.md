@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight Modular Code as a Cornerstone of MLOps'
-date: '2025-01-18'
+date: '2025-04-17'
 description: 'Modular code separates each pipeline function—data loading, cleaning, feature engineering, training—into well-defined modules.'
 tags: [mlops,modular-code,pipeline-design,stage-module,atomic-transformations,scalablility]
 category: 'MLOps: Designing a Modular Pipeline'
