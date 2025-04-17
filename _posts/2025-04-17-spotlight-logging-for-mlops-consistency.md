@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight Logging for MLOps Consistency'
-date: '2025-01-12'
+date: '2025-04-17'
 description: 'A unified logging strategy underpins every stage of this MLOps pipeline. Hydra configuration files, such as configs/logging_utils/base.yaml define a uniform format and verbosity level, ensuring consistent output from scripts managing data ingestion, transformations, or hyperparameter optimization. By assigning a unique run ID to each pipeline execution, logs tie neatly into both DVC and MLflow runs.'
 tags: [mlops,logging,logging-strategy,unified-logging,hydra,mlflow,prefect,log-levels,reproducibility]
 category: 'MLOps: Designing a Modular Pipeline'
