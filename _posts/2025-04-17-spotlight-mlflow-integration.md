@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight MLflow Integration'
-date: '2025-01-15'
+date: '2025-04-17'
 description: 'This spotlight highlights how MLflow is integrated into a Hydra-based pipeline for reliable experiment tracking.'
 tags: [mlops,mlflow,artifact-tracking,log-metrics,log-parameters,experiment-tracking]
 category: 'MLOps: Designing a Modular Pipeline'
