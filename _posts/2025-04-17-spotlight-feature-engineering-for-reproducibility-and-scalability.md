@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight Feature Engineering for Reproducibility and Scalability'
-date: '2025-01-06'
+date: '2025-04-17'
 description: 'A strong feature engineering pipeline should maintain clean separation between data ingestion, cleaning, and transformation steps.'
 tags: [mlops,feature-engineering,atomic-transformations,hydra,dvc,structured-configs,modular-code,separation-of-concerns,version-agnostic-transformations]
 category: 'MLOps: Designing a Modular Pipeline'
