@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Spotlight Hyperparameter Tuning with Hydra, Optuna, and MLflow'
-date: '2025-01-09'
+date: '2025-04-17'
 description: 'This project integrates Hydra configs, Optuna optimization, and MLflow tracking to streamline hyperparameter tuning.'
 tags: [mlops,hyperparameters,optuna,mlflow,hydra,hyperparameter-tuning,sklearn]
 category: 'MLOps: Designing a Modular Pipeline'
