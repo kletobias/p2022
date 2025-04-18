@@ -146,13 +146,26 @@ stages:
 
 #### Adding a Transformation to dvc.yaml
 
-<img src="../../visualizations/kapture2025-04-0115.25.49.gif" alt="transformation_components" style="max-width: 80%; height: auto;">
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/kapture2025-04-0115.25.49.gif" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Figure 1: Nothing beats when it all clicks: Hydra, Jinja2, DVC, LuaSnip, DRY principle, a deliberate directory structure, and naming conventions. A single snippet is all it takes to spin up a new DVC stage in this ML pipeline—exactly like in the GIF.
+</div>
 
-_Nothing beats when it all clicks: Hydra, Jinja2, DVC, LuaSnip, DRY principle, a deliberate directory structure, and naming conventions. A single snippet is all it takes to spin up a new DVC stage in this ML pipeline—exactly like in the GIF._
 
 #### Transformation Components Overview
 
-<img src="../../visualizations/transformation_components.png" alt="transformation_components" style="max-width: 80%; height: auto;">
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/transformation_components.png" title="" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+        Figure 2: Illustration of how each transformation flows through the pipeline.
+</div>
 
 The diagram illustrates how each transformation flows through the pipeline:
 
