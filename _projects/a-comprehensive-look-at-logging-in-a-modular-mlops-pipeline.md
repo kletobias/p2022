@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'A Comprehensive Look at Logging in a Modular MLOps Pipeline'
-date: '2024-01-10'
+date: '2025-04-17'
 description: 'This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage’s logs tie back to DVC and MLflow runs.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,logging,logging-strategy,unified-logging,hydra,mlflow,prefect,log-levels,reproducibility]

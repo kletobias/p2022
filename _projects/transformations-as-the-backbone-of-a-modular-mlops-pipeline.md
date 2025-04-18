@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Transformations as the Backbone of a Modular MLOps Pipeline'
-date: '2024-01-18'
+date: '2025-04-17'
 description: 'Poor code organization leads to “pipeline spaghetti,” where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,transformations,anti-patterns,spaghetti-code,modular-code,DRY,logical-separation-of-transformations,best-practices]

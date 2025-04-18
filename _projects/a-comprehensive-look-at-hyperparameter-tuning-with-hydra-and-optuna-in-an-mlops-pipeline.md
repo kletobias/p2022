@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'A Comprehensive Look at Hyperparameter Tuning with Hydra and Optuna in an MLOps Pipeline'
-date: '2024-01-08'
+date: '2025-04-17'
 description: 'This article explores hyperparameter tuning best practices within a modern MLOps pipeline that integrates Hydra, Optuna, and MLflow, alongside DVC for reproducibility.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,hyperparameters,optuna,mlflow,hydra,hyperparameter-tuning,sklearn]

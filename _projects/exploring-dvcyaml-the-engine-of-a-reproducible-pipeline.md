@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Exploring dvc.yaml The Engine of a Reproducible Pipeline'
-date: '2024-01-04'
+date: '2025-04-17'
 description: 'The dvc.yaml file is the central point for defining a DVC-based pipeline. It specifies each stage, along with the command, dependencies, and outputs. In this project, the entire pipeline—spanning raw data ingestion, transformations, feature engineering, and modeling—is consolidated into a single dvc.yaml.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,dvc,pipeline-design,reproducibility,single-source-of-truth,standardized-stage-definition,consolidated-stage-definitions,atomic-transformations,hydra]

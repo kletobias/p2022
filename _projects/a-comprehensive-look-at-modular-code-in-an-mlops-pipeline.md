@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'A Comprehensive Look at Modular Code in an MLOps Pipeline'
-date: '2024-01-14'
+date: '2025-04-17'
 description: 'Modular code refers to designing each pipeline stage—data ingestion, preprocessing, model training, evaluation, and deployment—as a distinct module with well-defined inputs, outputs, and responsibilities.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,modular-code,pipeline-design,stage-module,atomic-transformations,scalablility]
@@ -10,6 +10,7 @@ authors: 'Tobias Klein'
 comments: true
 ---
 
+<!-- a-comprehensive-look-at-modular-code-in-an-mlops-pipeline.md -->
 <br>
 
 # A Comprehensive Look at Modular Code in an MLOps Pipeline

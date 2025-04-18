@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'The Integration Of MLflow In This Project'
-date: '2024-01-12'
+date: '2025-04-17'
 description: 'MLflow is central to this project’s experiment tracking, artifact management, and reproducible model development. It is integrated through Hydra configurations, S3 synchronization scripts, and Python modeling code that leverages MLflow’s Pythonic API.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,mlflow,artifact-tracking,log-metrics,log-parameters,experiment-tracking]

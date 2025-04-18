@@ -1,7 +1,7 @@
 ---
 layout: 'distill'
 title: 'Automating DVC Pipelines with Jinja2 Templates'
-date: '2024-01-16'
+date: '2025-04-17'
 description: 'This article explains how Jinja2 templates are structured, how Python scripts generate the final dvc.yaml, and why this method has significantly improved the maintainability of a large MLOps pipeline.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,jinja2,advanced-templates,DVC,dvc.yaml,automation,DRY]
