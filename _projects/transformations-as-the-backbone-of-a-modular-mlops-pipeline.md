@@ -8,6 +8,7 @@ tags: [mlops,transformations,anti-patterns,spaghetti-code,modular-code,DRY,logic
 category: 'MLOps: Designing a Modular Pipeline'
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
 <br>
