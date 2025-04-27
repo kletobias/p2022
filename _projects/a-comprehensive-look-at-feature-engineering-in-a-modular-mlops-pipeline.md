@@ -8,8 +8,10 @@ tags: [mlops,feature-engineering,atomic-transformations,hydra,dvc,structured-con
 category: 'MLOps: Designing a Modular Pipeline'
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
+<!-- _projects/a-comprehensive-look-at-feature-engineering-in-a-modular-mlops-pipeline.md -->
 <br>
 
 # A Comprehensive Look at Feature Engineering in a Modular MLOps Pipeline
