@@ -8,8 +8,10 @@ tags: [mlops,logging,logging-strategy,unified-logging,hydra,mlflow,prefect,log-l
 category: 'MLOps: Designing a Modular Pipeline'
 authors: 'Tobias Klein'
 comments: true
+featured: true
 ---
 
+<!-- _projects/a-comprehensive-look-at-logging-in-a-modular-mlops-pipeline.md -->
 <br>
 
 <!-- documentation/articles/logging/long_post.md -->
