@@ -8,7 +8,7 @@ tags: ['unstructured-data-ml', 'project-management', 'machine-learning-tasks', '
 category: ['Deep Learning']
 authors: 'Tobias Klein'
 comments: true
-featured: true
+featured: false
 ---
 <br>
 <d-contents>

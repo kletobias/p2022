@@ -8,7 +8,7 @@ tags: ['hyperparameter-optimization', 'random-search', 'tabular-data', 'tabular_
 category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
-featured: true
+featured: false
 ---
 <d-contents>
   <nav class="l-text figcaption">

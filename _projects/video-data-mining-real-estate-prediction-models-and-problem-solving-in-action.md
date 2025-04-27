@@ -8,7 +8,7 @@ tags: ['etl', 'data-extraction', 'problem-solving', 'video', 'feature-enrichment
 category: ['Tabular Data']
 authors: 'Tobias Klein'
 comments: true
-featured: true
+featured: false
 ---
 
 
