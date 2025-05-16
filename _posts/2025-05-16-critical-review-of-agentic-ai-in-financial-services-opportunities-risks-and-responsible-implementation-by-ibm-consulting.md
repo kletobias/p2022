@@ -19,6 +19,7 @@ category: "AIOps"
 comments: true
 ---
 
+<!-- _posts/2025-05-16-critical-review-of-agentic-ai-in-financial-services-opportunities-risks-and-responsible-implementation-by-ibm-consulting.md -->
 <br>
 # Critical Review of “Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation” by IBM Consulting
 
@@ -26,7 +27,7 @@ The recent IBM Consulting publication Agentic AI in Financial Services: Opportun
 
 Link to the document IBM Consulting published: [governing-agentic-ai-for-financial-services.pdf](https://www.ibm.com/downloads/documents/gb-en/12f5a71117cdc329)
 
-⸻
+---
 
 ## Overlooking Strict Data Use Constraints
 
@@ -36,7 +37,7 @@ On pages 7–8, the authors tout “AI-Powered Customer Engagement & Personalisa
 
 - Inadequate discussion of data minimization: The authors propose (p. 27) “robust data governance frameworks” but do not detail how to keep day-to-day compliance on track with the EU’s data minimization principle. Simply referencing “data governance” overlooks that banks need to implement fine-grained pseudonymization, encryption, and local data processing strategies to avoid infringing on privacy regulations.
 
-⸻
+---
 
 ## Naive Treatment of Code and IP Considerations
 
@@ -48,19 +49,19 @@ Pages 9–10 discuss “AI-Augmented Technology & Software Development,” as th
 
 This gap undermines the practicality of “AI-augmented coding” at scale when engineers cannot simply hand over sensitive code bases to black-box third-party systems.
 
-⸻
+---
 
 ## Shallow Acknowledgment of the EU AI Act
 
 Though the text covers “Compliance-Proofing in an Uncertain Regulatory Landscape” (pp. 18–19), it primarily references the Australian Proposals Paper. The section on the EU AI Act does note that certain use cases (e.g. loan approvals) might be “high-risk,” yet the guidance remains broad. For instance, while the Act stipulates mandatory human oversight (Article 14) and robust record-keeping, the IBM paper mainly repeats the idea of “compliance by design” without exploring how a financial institution would genuinely operationalize data erasure rights, model documentation, or real-time user control.
 
-⸻
+---
 
 ## Repetition Over Depth
 
 The booklet frequently reiterates the same risk categories—data privacy, drift, misalignment, etc.—across multiple sections (see especially pp. 10–17, and again on pp. 20–21). However, the level of detail on actual implementation challenges remains limited. For example, the repeated call for “robust guardrails,” “real-time monitoring,” or “codified controls” (pp. 20–21, 33–34) sounds comprehensive, but the authors rarely move beyond conceptual statements toward actionable tactics that satisfy strict GDPR or local financial regulations.
 
-⸻
+---
 
 ## Missing Practical Details for EU Readiness
 
@@ -72,7 +73,7 @@ In real-world EU financial contexts, the paper’s scenarios would demand:
 
 Without these specifics, the “Agentic AI” vision may conflict with everyday privacy demands in Europe.
 
-⸻
+---
 
 ## Conclusion
 
