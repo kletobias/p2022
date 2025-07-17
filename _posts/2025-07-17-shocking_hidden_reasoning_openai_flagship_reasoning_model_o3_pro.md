@@ -8,6 +8,7 @@ category: "LLM Reasoning"
 comments: true
 ---
 
+<!-- _posts/shocking_hidden_reasoning_openai_flagship_reasoning_model_o3_pro.md -->
 <br>
 
 # Shocking Hidden Reasoning: OpenAI Flagship Reasoning Model o3-pro
