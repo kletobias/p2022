@@ -2,12 +2,13 @@
 layout: distill
 title: 'Paper review: Not quite the AlphaGo moment yet'
 date: 2025-07-28
-description: 'ASI‑ARCH presents a fully autonomous LLM‑driven pipeline that reports discovering **106 “state‑of‑the‑art” linear‑attention architectures** and frames this as an “AlphaGo‑like” leap'
+description: 'ASI‑ARCH presents a fully autonomous LLM‑driven pipeline that reports discovering 106 "state‑of‑the‑art" linear‑attention architectures and frames this as an "AlphaGo‑like" leap.'
 tags: ['research', 'paper', 'AlphaGo', 'ASI-ARCH', 'Model-Discovery-Pipeline']
 category: 'LLM-centric Automation'
 comments: true
 ---
 
+<!-- _posts/2025-07-28-paper-review-not-quite-the-alphago-moment-yet.md -->
 <br>
 
 ## Summary
