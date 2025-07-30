@@ -152,7 +152,7 @@ for pid, text in corpus_stream():
         texts.clear(); pids.clear()
 ```
 
-Full script at the end of this post. [index_msmarco.py](#index-script).
+Full script at the end of this post.
 
 ---
 
@@ -222,9 +222,11 @@ An OOM at 8 h would double the bill and lose one workday.
 [11]: https://microsoft.github.io/msmarco/ "MS MARCO - GitHub Pages"
 
 
-## Full script {#index-script}
+## Full index_msmarco.py script
 
 Complete `index_msmarco.py` script to index the MS MARCO passage corpus (8.8 M lines, 2.9 GB) with FAISS and Sentence‑Transformers:
+
+GPU: H100 80GB
 
 ```python
 # Required packages (CUDA 12 instance):
