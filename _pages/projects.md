@@ -5,11 +5,11 @@ permalink: /projects/
 description: Here you can find multi-part series and in-depth articles.
 nav: true
 nav_order: 2
-display_categories: ['MLOps: Designing a Modular Pipeline','Machine Learning in Action','Machine Learning Process','Tabular Data','Data Preprocessing','Deep Learning','Statistics']
+display_categories: ['LLMOps','MLOps: Designing a Modular Pipeline','Machine Learning in Action','Machine Learning Process','Tabular Data','Data Preprocessing','Deep Learning','Statistics']
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+<!-- _pages/projects.md -->
 <div class="projects">
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
