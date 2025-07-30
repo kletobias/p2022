@@ -156,6 +156,12 @@ kramdown:
       line_numbers: false
       start_line: 1
 
+# Sass configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+  sourcemap: never
+
 # Includes & excludes
 include: ['_pages']
 exclude:
@@ -179,7 +185,7 @@ plugins:
   - jekyll-imagemagick
   - jekyll-minifier
   - jekyll-paginate-v2
-  # - jekyll/scholar
+  # - jekyll-scholar
   - jekyll-sitemap
   - jekyll-target-blank
   - jekyll-twitter-plugin
