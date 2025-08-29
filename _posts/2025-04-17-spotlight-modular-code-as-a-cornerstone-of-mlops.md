@@ -13,7 +13,12 @@ comments: true
 
 # Spotlight: Modular Code as a Cornerstone of MLOps
 
-Modular code separates each pipeline function—data loading, cleaning, feature engineering, training—into well-defined modules. By following a single-responsibility principle and keeping configuration details in YAML, the pipeline in this project remains flexible and reusable. For instance, references to [configs/transformations](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations) align each module’s parameters with typed dataclasses in [dependencies/transformations](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations).
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
+Modular code separates each pipeline function—data loading, cleaning, feature engineering, training—into well-defined modules. By following a single-responsibility principle and keeping configuration details in YAML, the pipeline in this project remains flexible and reusable. For instance, references to [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) align each module’s parameters with typed dataclasses in [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations).
 
 **Key Advantages**
 

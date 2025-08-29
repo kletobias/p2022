@@ -12,6 +12,11 @@ comments: true
 
 # Spotlight: Jinja2 Templates for Efficient Pipeline Generation
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 Large machine learning pipelines can suffer from repetitive edits when stage definitions expand or change. Jinja2 templates streamline this process by centralizing all configuration details into a single, parameterized YAML structure. Each transformation stage is defined by placeholders—such as commands, dependencies, and outputs—so adding or modifying a stage involves updating a Hydra config rather than copying and pasting YAML blocks.
 
 **This approach follows several best practices:**

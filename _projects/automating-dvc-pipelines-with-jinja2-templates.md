@@ -15,8 +15,13 @@ comments: true
 
 # Automating DVC Pipelines with Jinja2 Templates
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 Introduction  
-Manually editing [dvc.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dvc.yaml) whenever a transformation is added or a parameter changes can be both tedious and error-prone. To address this challenge, a templating system using Jinja2 was introduced. This article explains how Jinja2 templates are structured, how Python scripts generate the final dvc.yaml, and why this method has significantly improved the maintainability of a large MLOps pipeline.
+Manually editing [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) whenever a transformation is added or a parameter changes can be both tedious and error-prone. To address this challenge, a templating system using Jinja2 was introduced. This article explains how Jinja2 templates are structured, how Python scripts generate the final dvc.yaml, and why this method has significantly improved the maintainability of a large MLOps pipeline.
 
 1. The Problem with Manual YAML  
 Each stage in dvc.yaml typically includes a cmd (the only required field), deps, and outs section. A pipeline with 20 transformations might require 20 nearly identical stage definitions. If a parameter needs updating or a script is renamed, each stage’s definition must be edited manually—an error-prone process, particularly under tight deadlines or when collaborating with multiple contributors. In a larger pipeline with dozens of transformations, the overhead grows exponentially.
@@ -28,9 +33,9 @@ Each stage in dvc.yaml typically includes a cmd (the only required field), deps,
 
 The template creates all stages + plots in dvc.yaml
 
-- Template: [templates/dvc/generate_dvc.yaml.j2](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/templates/dvc/generate_dvc.yaml.j2)
-- Script: [dependencies/templates/generate_dvc_yaml_core.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/templates/generate_dvc_yaml_core.py)
-- Output: [dvc.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dvc.yaml)
+- Template: [templates/dvc/generate_dvc.yaml.j2](https://github.com/kletobias/advanced-mlops-demo/tree/main/templates/dvc/generate_dvc.yaml.j2)
+- Script: [scripts/orchestrate_dvc_flow.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/orchestrate_dvc_flow.py)
+- Output: [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -45,7 +50,7 @@ This approach keeps dvc.yaml in sync with the Hydra configurations at all times,
 
 ### Example: LuaSnip Snippet For Adding a Stage
 
-This snippet takes advantage of the fact that [configs/pipeline/base.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/pipeline/base.yaml) (the input file) itself is a hydra config.
+This snippet takes advantage of the fact that [configs/pipeline/base.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/pipeline/base.yaml) (the input file) itself is a hydra config.
 
 ```snippet
 snippet step_jinja "YAML step for jinja to create dvc.yaml"
@@ -64,7 +69,7 @@ snippet step_jinja "YAML step for jinja to create dvc.yaml"
 ```
 
 3. Handling Updates & Diffs  
-Overwriting manually edited dvc.yaml files is a concern. To address this, the generation process ([scripts/orchestrate_dvc_flow.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/orchestrate_dvc_flow.py)) includes a diff check. Whenever a new dvc.yaml is rendered, it is compared against the existing version. If differences exist, the script prompts the user or logs a warning, ensuring that unintended changes do not go unnoticed. In practice, manual edits are rare because the template captures most scenarios, and unusual requirements are better handled within the Hydra configs themselves.
+Overwriting manually edited dvc.yaml files is a concern. To address this, the generation process ([scripts/orchestrate_dvc_flow.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/orchestrate_dvc_flow.py)) includes a diff check. Whenever a new dvc.yaml is rendered, it is compared against the existing version. If differences exist, the script prompts the user or logs a warning, ensuring that unintended changes do not go unnoticed. In practice, manual edits are rare because the template captures most scenarios, and unusual requirements are better handled within the Hydra configs themselves.
 
 Conclusion  
 Jinja2 templating has proven invaluable in keeping dvc.yaml concise and up to date. Even as the pipeline expands, the overhead of adding or modifying stages remains small. Templating enforces consistency, encourages best practices, and supports a DRY (Don’t Repeat Yourself) philosophy. Further details about the Jinja2 file and Python script are available in the repository. Future posts will examine how the pipeline logs each step’s output and metadata, integrating seamlessly with tools like Hydra, DVC, and MLflow.

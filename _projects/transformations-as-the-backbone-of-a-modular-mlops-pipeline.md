@@ -17,6 +17,11 @@ featured: true
 
 # Transformations as the Backbone of a Modular MLOps Pipeline
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 ## Introduction
 
 Poor code organization leads to “pipeline spaghetti,” where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.
@@ -27,7 +32,7 @@ These anti-patterns contrast with recommended software engineering practices: mo
 
 ### 1. Avoiding Monolithic Transformations
 
-Modular transformations help prevent large, unmanageable blocks of code. Each transformation is often reduced to a single core step with standardized inputs and outputs—such as providing a DataFrame plus a typed configuration object and returning an updated DataFrame. This practice keeps the codebase transparent, testable, and easier to iterate upon. See [configs/transformations](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations), and [dependencies/transformations](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations) for details on how each transformation is defined in this project.
+Modular transformations help prevent large, unmanageable blocks of code. Each transformation is often reduced to a single core step with standardized inputs and outputs—such as providing a DataFrame plus a typed configuration object and returning an updated DataFrame. This practice keeps the codebase transparent, testable, and easier to iterate upon. See [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations), and [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations) for details on how each transformation is defined in this project.
 
 ### 2. Consistency Through Single-Source Configuration
 
@@ -36,12 +41,12 @@ Transformations work hand in hand with structured configurations (YAML plus Pyth
 ### 3. Clear Naming Conventions and “Don’t Repeat Yourself”
 
 A best practice is to give each transformation a base name shared by:
-[dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py)
+[dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py)
 
-- The [Python module (e.g., \`mean_profit.py\`)](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py) for each transformation consists of:
+- The [Python module (e.g., \`mean_profit.py\`)](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py) for each transformation consists of:
   - The dataclass (e.g., `MeanProfitConfig`)
   - The function (e.g., `mean_profit`)
-- [The config file (e.g., \`mean_profit.yaml\`)](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/mean_profit.yaml)
+- [The config file (e.g., \`mean_profit.yaml\`)](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml)
 
 This approach results a single source of truth for each step. Rather than scattering parameter definitions or helper functions across multiple places, the pipeline references one module and its associated config.
 
@@ -96,7 +101,7 @@ This mean_profit module demonstrates how each transformation resides in a dedica
 
 #### Version Control for Code and Data
 
-A [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py) script can import both the dataclass and function. It instantiates the dataclass with parameters from the [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/mean_profit.yaml) YAML file, then calls the transformation [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py). Meanwhile, DVC treats each transformation as a separate stage, referencing that same base name in [dvc.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dvc.yaml) (via overrides, deps and outs). When any detail of the transformation changes—be it in the code or the config, or the input/output file(s), or the metadata file — DVC reruns only that step without invalidating the entire pipeline.
+A [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py) script can import both the dataclass and function. It instantiates the dataclass with parameters from the [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml) YAML file, then calls the transformation [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py). Meanwhile, DVC treats each transformation as a separate stage, referencing that same base name in [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) (via overrides, deps and outs). When any detail of the transformation changes—be it in the code or the config, or the input/output file(s), or the metadata file — DVC reruns only that step without invalidating the entire pipeline.
 
 This ensures that for every single execution a snapshot is created for each referenced file by DVC. Rollbacks are easy to perform, and any guesswork regarding which parameter values were used for any previous execution is eliminated. DVC maintains a cache under `.dvc/cache/`.
 
@@ -104,7 +109,7 @@ This ensures that for every single execution a snapshot is created for each refe
 
 #### Practical Example
 
-This section showcases how one transformations is defined and ran. It underlines the importance of [dvc.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dvc.yaml). Stage [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py) is used in the following.
+This section showcases how one transformations is defined and ran. It underlines the importance of [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml). Stage [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py) is used in the following.
 
 ##### Running a Single Stage
 
@@ -137,7 +142,7 @@ stages:
       data_versions.data_version_output=v4
     desc: Refer to deps/outs for details.
     deps:
-      - /Users/tobias/.local/projects/portfolio_medical_drg_ny/scripts/universal_step.py
+      - ./project/scripts/universal_step.py
       - ./dependencies/transformations/mean_profit.py
       - ./configs/data_versions/v3.yaml
     outs:

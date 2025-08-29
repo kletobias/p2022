@@ -16,27 +16,31 @@ featured: true
 
 # A Comprehensive Look at Feature Engineering in a Modular MLOps Pipeline
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
 **Introduction**  
-Effective feature engineering is central to building high-performing and maintainable machine learning pipelines. This project’s codebase illustrates several practices that keep transformations organized, version-controlled, and consistent across training and inference stages. By splitting transformations into distinct Python modules, referencing them via standardized YAML configs, and orchestrating the entire pipeline with DVC, the overall design ensures reproducibility, scalability, and clear data lineage.
+Effective feature engineering is central to building high-performing and maintainable machine learning pipelines. This project's codebase illustrates several practices that keep transformations organized, version-controlled, and consistent across training and inference stages. By splitting transformations into distinct Python modules, referencing them via standardized YAML configs, and orchestrating the entire pipeline with DVC, the overall design ensures reproducibility, scalability, and clear data lineage.
 
 ---
 
 ## 1. Versioning and Lineage
 
-Tracking data lineage and transformation code in the same repository is essential for reproducibility. The script [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py) invokes specific transformations (for example, [dependencies/transformations/lag_columns.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/lag_columns.py)) based on the Hydra config. Each transformation is defined in both a Python script and a YAML file (e.g., [configs/transformations/lag_columns.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/lag_columns.yaml)), and all changes to these files are recorded in version control. Additionally, DVC ensures that each input and output artifact is tied to the version of the code that produced it. This setup allows any stage in the pipeline to be reproduced precisely, even months after initial development.
+Tracking data lineage and transformation code in the same repository is essential for reproducibility. The script [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py) invokes specific transformations (for example, [dependencies/transformations/lag_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/lag_columns.py)) based on the Hydra config. Each transformation is defined in both a Python script and a YAML file (e.g., [configs/transformations/lag_columns.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/lag_columns.yaml)), and all changes to these files are recorded in version control. Additionally, DVC ensures that each input and output artifact is tied to the version of the code that produced it. This setup allows any stage in the pipeline to be reproduced precisely, even months after initial development.
 
 ---
 
 ## 2. Modular Design
 
-The pipeline divides transformations into atomic steps, each handling a discrete operation such as dropping rare rows, shifting columns, or aggregating severity data. In [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py), a dictionary called [`TRANSFORMATIONS`](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py#L74-L147) maps each transformation name (e.g., `drop_rare_drgs`, `agg_severities`) to its corresponding Python function, and `dataclass`. This allows new transformations to be added with minimal impact on the rest of the codebase. For instance, the transformation `lag_columns` only concerns itself with shifting numeric columns; if that logic changes, it does not affect other operations (like `drop_description_columns`).
+The pipeline divides transformations into atomic steps, each handling a discrete operation. In the demo version of [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py), a simplified registry demonstrates the pattern of mapping transformation names to their corresponding Python functions and dataclasses. The production version contains 15+ transformations including medical domain-specific algorithms (removed for IP protection). This modular design allows new transformations to be added with minimal impact on the rest of the codebase.
 
 ### Examples
 
 #### Example: Transformation drop_description_columns
 
-[dependencies/logging_utils/log_function_call.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/logging_utils/log_function_call.py)
-[dependencies/transformations/drop_description_columns.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/drop_description_columns.py)
+[dependencies/logging_utils/log_function_call.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/logging_utils/log_function_call.py)
+[dependencies/transformations/drop_description_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/drop_description_columns.py)
 
 ```python
 from dependencies.logging_utils.log_function_call import log_function_call
@@ -54,44 +58,27 @@ TRANSFORMATIONS = {
 }
 ```
 
-#### Example: Transformation agg_severities
+#### Example: Medical Transformation Pattern (Proprietary)
 
-[dependencies/logging_utils/log_function_call.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/logging_utils/log_function_call.py)
-[dependencies/transformations/agg_severities.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/agg_severities.py)
-
-```python
-from dependencies.transformations.agg_severities import (
-    AggSeveritiesConfig, # Config for agg_severities transformation
-    agg_severities, # atomic transformation function
-)
-
-TRANSFORMATIONS = {
-    # ...
-    "agg_severities": {
-        "transform": log_function_call(agg_severities),
-        "Config": AggSeveritiesConfig,
-    },
-    # ...
-}
-```
+The production pipeline includes sophisticated medical transformations such as severity aggregation and DRG ratio calculations. These domain-specific algorithms have been removed from the demo version for IP protection. The pattern follows the same structure as shown in the `drop_description_columns` example above, maintaining consistency across all transformations.
 
 ---
 
 ## 3. Consistency Across Training and Inference
 
-Maintaining identical transformation code for training and inference prevents data drift and performance degradation. The transformations under [dependencies/transformations](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations) can be called by any script that runs in production or testing. By referencing the same YAML configurations (for instance, [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/mean_profit.yaml)) during both training and deployment, the project ensures that incoming data is transformed with identical parameters. This consistency is crucial for stable model performance over time.
+Maintaining identical transformation code for training and inference prevents data drift and performance degradation. The transformations under [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations) can be called by any script that runs in production or testing. By referencing the same YAML configurations (for instance, [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml)) during both training and deployment, the project ensures that incoming data is transformed with identical parameters. This consistency is crucial for stable model performance over time.
 
 ---
 
 ## 4. Scalability and Parallelism
 
-The modular nature of each transformation enables parallel processing. A transformation like `agg_severities` (see [dependencies/transformations/agg_severities.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/agg_severities.py)) can be scaled by distributing the grouped operations over a cluster if necessary. The pipeline design does not currently show an explicit Spark or Dask integration, but the separated data ingestion and transformation scripts are amenable to parallel frameworks. Each step is clearly defined, so adapting it to a distributed context typically involves small code changes.
+The modular nature of each transformation enables parallel processing. Medical transformations in the production version can be scaled by distributing grouped operations over a cluster if necessary. The pipeline design does not currently show an explicit Spark or Dask integration, but the separated data ingestion and transformation scripts are amenable to parallel frameworks. Each step is clearly defined, so adapting it to a distributed context typically involves small code changes.
 
 ---
 
 ## 5. Data Validation and Monitoring
 
-The pipeline’s design includes typed dataclasses (e.g., [dataclass block for agg_severities.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/agg_severities.py#L10-L21)) to enforce correct parameter types. Logging statements in each transformation (e.g., `"Done with core transformation: drop_rare_drgs"`) also facilitate monitoring. Integrating distribution checks or anomaly detection would be straightforward to implement within each transformation script. Such checks can quickly alert maintainers if an unexpected data shift occurs.
+The pipeline's design includes typed dataclasses to enforce correct parameter types. Logging statements in each transformation also facilitate monitoring. Integrating distribution checks or anomaly detection would be straightforward to implement within each transformation script. Such checks can quickly alert maintainers if an unexpected data shift occurs.
 
 ### Example
 
@@ -99,23 +86,23 @@ Relevant lines are highlighted by `>` symbol at the start of the line.
 
 ```log
 [2025-03-21 16:40:29,477][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/logs/pipeline
-[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v7/v7.csv, created df
-> [2025-03-21 16:54:21,317][dependencies.transformations.agg_severities][INFO] - Done with core transformation: agg_severities
+./project/logs/pipeline
+[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read ./project/data/v7/v7.csv, created df
+> [2025-03-21 16:54:21,317][dependencies.transformations.[medical_transform]][INFO] - Done with core transformation: [medical_transform]
 [2025-03-21 16:54:21,325][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8
-[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
+./project/data/v8
+[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: ./project/data/v8/v8.csv
 [2025-03-21 16:54:27,709][dependencies.metadata.compute_file_hash][INFO] - Generated file hash: 0cee898257560d8e67d10b502b136054d5340a30fa1836d59e40cc53cbd45144
-[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
-[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8_metadata.json
-> [2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: agg_severities
+[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: ./project/data/v8/v8.csv
+[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to ./project/data/v8/v8_metadata.json
+> [2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: [medical_transform]
 ```
 
 ---
 
 ## 6. Metadata Capture
 
-Metadata is generated for each pipeline stage by calling `calculate_and_save_metadata` in [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py). This function records essential properties, such as input shape or timestamp, to the relevant metadata file. Over time, these logs allow auditing of how each feature was computed, including the parameter configuration used at the time of transformation.
+Metadata is generated for each pipeline stage by calling `calculate_and_save_metadata` in [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py). This function records essential properties, such as input shape or timestamp, to the relevant metadata file. Over time, these logs allow auditing of how each feature was computed, including the parameter configuration used at the time of transformation.
 
 ### Example
 
@@ -123,27 +110,27 @@ Relevant lines are highlighted by `>` symbol at the start of the line.
 
 ```log
 [2025-03-21 16:40:29,477][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/logs/pipeline
-[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v7/v7.csv, created df
-[2025-03-21 16:54:21,317][dependencies.transformations.agg_severities][INFO] - Done with core transformation: agg_severities
+./project/logs/pipeline
+[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read ./project/data/v7/v7.csv, created df
+[2025-03-21 16:54:21,317][dependencies.transformations.[medical_transform]][INFO] - Done with core transformation: [medical_transform]
 [2025-03-21 16:54:21,325][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8
-[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
+./project/data/v8
+[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: ./project/data/v8/v8.csv
 > [2025-03-21 16:54:27,709][dependencies.metadata.compute_file_hash][INFO] - Generated file hash: 0cee898257560d8e67d10b502b136054d5340a30fa1836d59e40cc53cbd45144
-> [2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
-> [2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8_metadata.json
-[2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: agg_severities
+> [2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: ./project/data/v8/v8.csv
+> [2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to ./project/data/v8/v8_metadata.json
+[2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: [medical_transform]
 ```
 
 ---
 
 ## 7. Clear Separation of Concerns
 
-Distinct scripts handle ingestion ([dependencies/ingestion/download_and_save_data.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/ingestion/download_and_save_data.py)), cleaning ([dependencies/cleaning/sanitize_column_names.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/cleaning/sanitize_column_names.py)), and feature engineering ([dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py), etc.). This prevents confusion over which part of the code deals with each phase of the pipeline. Moreover, each script references a separate YAML config in the `configs/transformations/` folder, making it simple to locate or modify specific functionality without breaking other parts of the pipeline.
+Distinct scripts handle ingestion ([dependencies/ingestion/ingest_data.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/ingestion/ingest_data.py)), cleaning ([dependencies/cleaning/sanitize_column_names.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/cleaning/sanitize_column_names.py)), and feature engineering ([dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py), etc.). This prevents confusion over which part of the code deals with each phase of the pipeline. Moreover, each script references a separate YAML config in the `configs/transformations/` folder, making it simple to locate or modify specific functionality without breaking other parts of the pipeline.
 
 ### Example: Transformation mean_profit
 
-[configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/mean_profit.yaml)
+[configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml)
 
 ```yaml
 defaults:

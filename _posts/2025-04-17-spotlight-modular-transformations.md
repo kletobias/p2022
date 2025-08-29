@@ -13,6 +13,11 @@ comments: true
 <!-- documentation/articles/transformations/short_post.md -->
 # Spotlight: Modular Transformations
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 Modular transformations reduce code tangling, facilitate quick iteration, and improve testability. By confining each transformation to a single step with standardized inputs/outputs, pipelines remain clear and maintainable. Single-source configurations in YAML and Python dataclasses ensure consistent parameter definitions and trigger partial pipeline reruns in DVC when relevant changes occur. Clear naming conventions, including separate files for code and config, enforce the DRY principle and make each transformation easy to reference and modify. Each transformation typically includes a dataclass specifying parameters and a function applying them, promoting transparency and reproducibility. DVC’s stage-based structure reruns only modified transformations, preserving the pipeline’s integrity and enabling easy rollbacks. Together, these practices ensure a streamlined, flexible, and collaborative MLOps pipeline.
 
 

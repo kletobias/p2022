@@ -12,6 +12,11 @@ comments: true
 
 # Spotlight: Hyperparameter Tuning with Hydra, Optuna, and MLflow
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 This project integrates Hydra configs, Optuna optimization, and MLflow tracking to streamline hyperparameter tuning:
 
 - **Hydra Config**: Each model’s tuning parameters—such as `n_estimators` or `alpha`—are declared in YAML (e.g., [rf_optuna_trial_params.yaml](../model_params/rf_optuna_trial_params.yaml)). Hydra merges these configs at runtime, preventing duplication and confusion.

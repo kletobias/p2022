@@ -15,6 +15,11 @@ comments: true
 
 # A Comprehensive Look at Modular Code in an MLOps Pipeline
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 **Introduction**  
 Modular code refers to designing each pipeline stage—data ingestion, preprocessing, model training, evaluation, and deployment—as a distinct module with well-defined inputs, outputs, and responsibilities. This principle underpins maintainability, scalability, and straightforward debugging. By separating out each function or transformation step into its own file and configuration, developers ensure that changes remain localized, dependencies stay clear, and new features can be introduced with minimal disruption.
 
@@ -23,13 +28,13 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
 ## 1. Why Modular Code Matters
 
 1. **Single Responsibility per Module**  
-   A script or function should handle a single task. For instance, [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/mean_profit.py) implements profit calculation, while [dependencies/transformations/agg_severities.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/agg_severities.py) focuses on aggregating severities. This prevents large, monolithic scripts that are difficult to test or extend.
+   A script or function should handle a single task. For instance, [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py) implements profit calculation, while [dependencies/transformations/[medical_transform_removed].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/[medical_transform_removed].py) focuses on aggregating severities. This prevents large, monolithic scripts that are difficult to test or extend.
 
 2. **Explicit Interfaces**  
-   Configuration-driven modules reference typed dataclasses in, for example, [dependencies/transformations/agg_severities.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/agg_severities.py#L10) or [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/modeling/rf_optuna_trial.py). Each dataclass defines the parameters that feed into a function, forming a clear contract between modules.
+   Configuration-driven modules reference typed dataclasses in, for example, [dependencies/transformations/[medical_transform_removed].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/[medical_transform_removed].py#L10) or [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py). Each dataclass defines the parameters that feed into a function, forming a clear contract between modules.
 
 3. **Isolation and Testability**  
-   When transformations are spread across smaller Python files—[lag_columns.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/lag_columns.py), [drop_rare_drgs.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/drop_rare_drgs.py), etc.—testing becomes simpler because each function can be unit tested with controlled inputs. It is also easier to check logs and outputs when the code path is limited to a single transformation.
+   When transformations are spread across smaller Python files—[lag_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/lag_columns.py), [[medical_transform].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/[medical_transform_removed].py), etc.—testing becomes simpler because each function can be unit tested with controlled inputs. It is also easier to check logs and outputs when the code path is limited to a single transformation.
 
 4. **Parallel and Distributed Execution**  
    With modules isolated, orchestrators (DVC, Prefect, Airflow) can run steps in parallel if their data dependencies do not overlap. For instance, if one stage aggregates data while another calculates column lags, they can proceed independently before merging results.
@@ -39,29 +44,29 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
 ## 2. Best Practices
 
 - **Keep Configs Separate**  
-  Store parameters in dedicated YAML files under [configs/transformations/](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations) or [configs/model_params/](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/model_params). This decouples code from configuration, aligning with Hydra’s compositional approach.
+  Store parameters in dedicated YAML files under [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) or [configs/model_params/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params). This decouples code from configuration, aligning with Hydra’s compositional approach.
 
 - **Use Clear Naming Conventions**  
-  In the transformations folder, each file name (e.g., `mean_profit.py`) matches the YAML config key (e.g., [mean_profit.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/transformations/mean_profit.yaml)). This consistency lowers the barrier to jumping between code and config.
+  In the transformations folder, each file name (e.g., `mean_profit.py`) matches the YAML config key (e.g., [mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml)). This consistency lowers the barrier to jumping between code and config.
 
 - **Minimize Cross-Module Dependencies**  
   If a module references another transformation’s output, prefer well-defined data structures or intermediary files tracked by DVC. Avoid hidden imports or direct references that can create spaghetti dependencies.
 
 - **Combine Automation & Code Generation**  
-  The pipeline uses Jinja2 for generating [dvc.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dvc.yaml) (see [templates_jinja2/long_post.md](../templates_jinja2/long_post.md)) to ensure each transformation stage is automatically listed, removing human error in writing repetitive YAML.
+  The pipeline uses Jinja2 for generating [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) (see [templates_jinja2/long_post.md](../templates_jinja2/long_post.md)) to ensure each transformation stage is automatically listed, removing human error in writing repetitive YAML.
 
 ---
 
 ## 3. Critical Aspects to Get Right
 
 - **Interface Consistency**  
-  Each module should use typed parameters if possible, as done in [dependencies/transformations/rolling_columns.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations/rolling_columns.py#L14). This typed approach avoids mismatches.
+  Each module should use typed parameters if possible, as done in [dependencies/transformations/rolling_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/rolling_columns.py#L14). This typed approach avoids mismatches.
 
 - **Logging**  
   Centralized logging (see [logging/long_post.md](../logging/long_post.md)) ensures each module’s operations are captured, facilitating troubleshooting.
 
 - **Reuse and Composability**  
-  If multiple transformations perform a similar operation—such as computing weighted averages—develop a shared utility in [dependencies/transformations/](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/transformations). This approach prevents code duplication and fosters uniformity.
+  If multiple transformations perform a similar operation—such as computing weighted averages—develop a shared utility in [dependencies/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations). This approach prevents code duplication and fosters uniformity.
 
 - **Continuous Integration**  
   Having tests that verify each module’s function ensures new commits do not break existing transformations. DVC stages also keep the pipeline in sync, only re-running modules with changed configs or inputs.

@@ -12,6 +12,11 @@ comments: true
 
 # Spotlight: The Power of a Single dvc.yaml in MLOps
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 The dvc.yaml file plays a central role in orchestrating a DVC-based pipeline. By consolidating raw data ingestion, transformations, feature engineering, and modeling into a single file, it serves as the primary source of truth. This approach aligns with recognized best practices: it reduces version control conflicts, simplifies contributor onboarding, and creates a clear, linear stage flow.
 
 Atomic transformations form another key advantage. Instead of scripts dedicated to individual pipeline steps, each script is designed to be data-version-agnostic and standardized in both input and output. This standardization ensures that each stage references only one file, making maintenance and auditing more straightforward.

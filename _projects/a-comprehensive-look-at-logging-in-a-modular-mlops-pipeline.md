@@ -17,6 +17,11 @@ featured: true
 <!-- documentation/articles/logging/long_post.md -->
 # A Comprehensive Look at Logging in a Modular MLOps Pipeline
 
+> **Note**: This article references the academic demonstration version of the pipeline.  
+> Some implementation details have been simplified or removed for IP protection.  
+> Full implementation available under commercial license.
+
+
 **Introduction**  
 Logging is essential for traceability, debugging, and performance monitoring within an MLOps pipeline. When multiple components—Hydra configuration management, DVC versioning, Optuna hyperparameter optimization, MLflow experiment tracking, and tools like Prefect—must interoperate, logging becomes the glue that keeps the entire process auditable and reproducible. This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage’s logs tie back to DVC and MLflow runs.
 
@@ -24,7 +29,7 @@ Logging is essential for traceability, debugging, and performance monitoring wit
 
 ## 1. Centralized and Configurable Logging
 
-[configs/logging_utils/base.yaml](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/logging_utils/base.yaml) stores default logging parameters ([log_file_path](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/logging_utils/base.yaml#L3), [formatting](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/logging_utils/base.yaml#L4), [level](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/configs/logging_utils/base.yaml#L5)). By loading these configurations through Hydra, the pipeline ensures every step—whether a data ingestion script or an Optuna trial—follows consistent logging conventions.
+[configs/logging_utils/base.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml) stores default logging parameters ([log_file_path](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L3), [formatting](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L4), [level](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L5)). By loading these configurations through Hydra, the pipeline ensures every step—whether a data ingestion script or an Optuna trial—follows consistent logging conventions.
 
 ### Example: base.yaml:
 
@@ -46,7 +51,7 @@ Tools like [Prefect](https://docs.prefect.io/v3/get-started/index) and [MLflow](
 
 ## 2. Integration with DVC and Hydra
 
-Each pipeline step logs relevant events (for example, reading a CSV, computing file hashes, applying transformations). DVC references these logs as artifacts whenever a step is re-run. The script [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/scripts/universal_step.py) initializes logging by calling [dependencies/logging_utils/setup_logging.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/logging_utils/setup_logging.py). This ensures consistent logging across data ingestion, cleaning, feature engineering, and model training stages.
+Each pipeline step logs relevant events (for example, reading a CSV, computing file hashes, applying transformations). DVC references these logs as artifacts whenever a step is re-run. The script [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py) initializes logging by calling [dependencies/logging_utils/setup_logging.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/logging_utils/setup_logging.py). This ensures consistent logging across data ingestion, cleaning, feature engineering, and model training stages.
 
 DVC's `dvc repro` triggers steps in sequence; the logs from each step get appended or stored in a new timestamped file, depending on your Hydra config. Because each stage is versioned, rolling back to a prior commit recovers both the scripts and the logs at that point in time.
 
@@ -54,23 +59,23 @@ DVC's `dvc repro` triggers steps in sequence; the logs from each step get append
 
 ```log
 [2025-03-21 16:40:29,477][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/logs/pipeline
-[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v7/v7.csv, created df
-[2025-03-21 16:54:21,317][dependencies.transformations.agg_severities][INFO] - Done with core transformation: agg_severities
+./project/logs/pipeline
+[2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read ./project/data/v7/v7.csv, created df
+[2025-03-21 16:54:21,317][dependencies.transformations.[medical_transform]][INFO] - Done with core transformation: [medical_transform]
 [2025-03-21 16:54:21,325][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
-/Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8
-[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
+./project/data/v8
+[2025-03-21 16:54:24,451][dependencies.io.dataframe_to_csv][INFO] - Exported df to csv using filepath: ./project/data/v8/v8.csv
 [2025-03-21 16:54:27,709][dependencies.metadata.compute_file_hash][INFO] - Generated file hash: 0cee898257560d8e67d10b502b136054d5340a30fa1836d59e40cc53cbd45144
-[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8.csv
-[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to /Users/tobias/.local/projects/portfolio_medical_drg_ny/data/v8/v8_metadata.json
-[2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: agg_severities
+[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Generated metadata for file: ./project/data/v8/v8.csv
+[2025-03-21 16:54:27,857][dependencies.metadata.calculate_metadata][INFO] - Metadata successfully saved to ./project/data/v8/v8_metadata.json
+[2025-03-21 16:54:27,857][__main__][INFO] - Sucessfully executed step: [medical_transform]
 ```
 
 ---
 
 ## 3. Logging in Optuna and MLflow
 
-When running hyperparameter tuning with Optuna (for example, [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/modeling/rf_optuna_trial.py)), the pipeline logs each trial’s metrics to MLflow. [dependencies/logging_utils/calculate_and_log_importances_as_artifact.py](https://github.com/kletobias/advanced-mlops-lifecycle-hydra-mlflow-optuna-dvc/tree/main/dependencies/logging_utils/calculate_and_log_importances_as_artifact.py) demonstrates how model artifacts (such as feature importances) are logged as well.
+When running hyperparameter tuning with Optuna (for example, [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py)), the pipeline logs each trial’s metrics to MLflow. [dependencies/logging_utils/calculate_and_log_importances_as_artifact.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/logging_utils/calculate_and_log_importances_as_artifact.py) demonstrates how model artifacts (such as feature importances) are logged as well.
 
 Each trial also streams standard log messages (for example, “Trial 1 => RMSE=764781.853”) to the console and the .log file, allowing real-time monitoring. By referencing the unique MLflow run ID in logs, it’s straightforward to cross-check experiment results with pipeline events.
 
