@@ -5,8 +5,10 @@
 // Dimensions
 $max-content-width: {{ site.max_width }};
 
-@use "variables";
-@use "themes";
-@use "layout";
-@use "base";
-@use "distill";
+@import
+  "variables",
+  "themes",
+  "layout",
+  "base",
+  "distill"
+;
