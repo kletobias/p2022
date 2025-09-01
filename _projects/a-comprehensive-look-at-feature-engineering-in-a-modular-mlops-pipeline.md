@@ -20,7 +20,8 @@ featured: true
 > Some implementation details have been simplified or removed for IP protection.  
 > Full implementation available under commercial license.
 
-**Introduction**  
+## Introduction
+
 Effective feature engineering is central to building high-performing and maintainable machine learning pipelines. This project's codebase illustrates several practices that keep transformations organized, version-controlled, and consistent across training and inference stages. By splitting transformations into distinct Python modules, referencing them via standardized YAML configs, and orchestrating the entire pipeline with DVC, the overall design ensures reproducibility, scalability, and clear data lineage.
 
 ---

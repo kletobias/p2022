@@ -22,7 +22,8 @@ featured: true
 > Full implementation available under commercial license.
 
 
-**Introduction**  
+## Introduction
+
 Logging is essential for traceability, debugging, and performance monitoring within an MLOps pipeline. When multiple components—Hydra configuration management, DVC versioning, Optuna hyperparameter optimization, MLflow experiment tracking, and tools like Prefect—must interoperate, logging becomes the glue that keeps the entire process auditable and reproducible. This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage’s logs tie back to DVC and MLflow runs.
 
 ---

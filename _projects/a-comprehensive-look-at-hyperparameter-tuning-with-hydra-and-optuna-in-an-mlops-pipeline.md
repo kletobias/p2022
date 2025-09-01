@@ -19,7 +19,8 @@ comments: true
 > Full implementation available under commercial license.
 
 
-**Introduction**  
+## Introduction
+
 This article explores hyperparameter tuning best practices within a modern MLOps pipeline that integrates Hydra, Optuna, and MLflow, alongside DVC for reproducibility. Two sample model configurations—[configs/model_params/rf_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/rf_optuna_trial_params.yaml) and [configs/model_params/ridge_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/ridge_optuna_trial_params.yaml)—illustrate how parameter search spaces are defined and fed into Optuna. The resulting runs are tracked by MLflow, ensuring that each trial’s metrics and artifacts are documented. References to the relevant code under [dependencies/modeling/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling) and [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) demonstrate how tuning logic stays modular and consistent.
 
 ---
