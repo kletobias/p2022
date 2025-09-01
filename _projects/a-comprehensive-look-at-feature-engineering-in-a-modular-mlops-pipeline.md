@@ -84,7 +84,7 @@ The pipeline's design includes typed dataclasses to enforce correct parameter ty
 
 Relevant lines are highlighted by `>` symbol at the start of the line.
 
-```
+```log
 [2025-03-21 16:40:29,477][dependencies.general.mkdir_if_not_exists][INFO] - Directory exists, skipping creation
 ./project/logs/pipeline
 [2025-03-21 16:40:30,476][dependencies.io.csv_to_dataframe][INFO] - Read ./project/data/v7/v7.csv, created df
