@@ -75,6 +75,39 @@ def emit(out, rec: dict) -> None:
     out.write(json.dumps(rec) + "\n")
 
 
+def identify_posts_targets(snapshot: dict[str, bytes]) -> dict[str, dict]:
+    """Identify targets in _posts using filename pattern YYYY-MM-DD-."""
+    targets = {}
+    for filename, content in snapshot.items():
+        if not filename.endswith(".md"):
+            continue
+        match = FILENAME_PATTERN.match(filename)
+        if not match:
+            continue
+        year = match.group(1)
+        footer = footer_for_year(year)
+        if footer in content:
+            continue
+        targets[filename] = {"year": year, "footer": footer, "dir": POSTS_DIR}
+    return targets
+
+
+def identify_projects_targets(snapshot: dict[str, bytes]) -> dict[str, dict]:
+    """Identify targets in _projects using frontmatter date field."""
+    targets = {}
+    for filename, content in snapshot.items():
+        if not filename.endswith(".md"):
+            continue
+        year = extract_year_from_frontmatter(content)
+        if year is None:
+            continue
+        footer = footer_for_year(year)
+        if footer in content:
+            continue
+        targets[filename] = {"year": year, "footer": footer, "dir": PROJECTS_DIR}
+    return targets
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
