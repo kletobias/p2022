@@ -183,41 +183,57 @@ def main() -> int:
     args = parser.parse_args()
 
     if not POSTS_DIR.is_dir():
-        return 1
+        raise ValueError(f"Directory does not exist: {POSTS_DIR}")
+    if not PROJECTS_DIR.is_dir():
+        raise ValueError(f"Directory does not exist: {PROJECTS_DIR}")
 
-    # Phase 1: Snapshot BEFORE - this is ground truth
-    before = snapshot_directory(POSTS_DIR)
+    # Phase 1: Snapshot BEFORE - ground truth for both directories
+    before_posts = snapshot_directory(POSTS_DIR)
+    before_projects = snapshot_directory(PROJECTS_DIR)
 
-    # Phase 2: Identify files to modify (without computing expected)
-    targets = {}
-    for filename, content in before.items():
-        if not filename.endswith(".md"):
-            continue
-        match = FILENAME_PATTERN.match(filename)
-        if not match:
-            continue
-        year = match.group(1)
-        footer = footer_for_year(year)
-        if footer in content:
-            continue
-        targets[filename] = {"year": year, "footer": footer}
+    # Phase 2: Identify targets using dedicated functions
+    posts_targets = identify_posts_targets(before_posts)
+    projects_targets = identify_projects_targets(before_projects)
 
     with ARTIFACT_FILE.open("w", encoding="utf-8") as out:
         ts = datetime.now(timezone.utc).isoformat()
 
-        emit(out, {"ts": ts, "phase": "snapshot_before", "file_count": len(before), "target_count": len(targets)})
+        emit(out, {
+            "ts": ts,
+            "phase": "snapshot_before",
+            "posts_file_count": len(before_posts),
+            "posts_target_count": len(posts_targets),
+            "projects_file_count": len(before_projects),
+            "projects_target_count": len(projects_targets),
+        })
 
-        # Record ground truth hashes
-        for filename, content in before.items():
-            emit(out, {"ts": ts, "phase": "before", "file": filename, "sha256": sha256(content), "len": len(content)})
+        # Record ground truth hashes for both directories
+        for filename, content in before_posts.items():
+            emit(out, {"ts": ts, "phase": "before", "dir": str(POSTS_DIR), "file": filename, "sha256": sha256(content), "len": len(content)})
+        for filename, content in before_projects.items():
+            emit(out, {"ts": ts, "phase": "before", "dir": str(PROJECTS_DIR), "file": filename, "sha256": sha256(content), "len": len(content)})
 
         if args.dry_run:
-            for filename, info in targets.items():
-                original = before[filename]
+            for filename, info in posts_targets.items():
+                original = before_posts[filename]
                 footer = info["footer"]
                 emit(out, {
                     "ts": ts,
                     "phase": "dry_run",
+                    "dir": str(POSTS_DIR),
+                    "file": filename,
+                    "year": info["year"],
+                    "original_len": len(original),
+                    "footer_len": len(footer),
+                    "expected_len_after": len(original.rstrip()) + len(footer),
+                })
+            for filename, info in projects_targets.items():
+                original = before_projects[filename]
+                footer = info["footer"]
+                emit(out, {
+                    "ts": ts,
+                    "phase": "dry_run",
+                    "dir": str(PROJECTS_DIR),
                     "file": filename,
                     "year": info["year"],
                     "original_len": len(original),
@@ -226,77 +242,43 @@ def main() -> int:
                 })
             return 0
 
-        # Phase 3: Apply changes
-        for filename, info in targets.items():
+        # Phase 3: Apply changes to both directories
+        for filename, info in posts_targets.items():
             path = POSTS_DIR / filename
-            original = before[filename]
+            original = before_posts[filename]
             footer = info["footer"]
             path.write_bytes(original.rstrip() + footer)
 
-        # Phase 4: Snapshot AFTER
-        after = snapshot_directory(POSTS_DIR)
-
-        # Phase 5: Validate using INVARIANTS (not computed expected)
-
-        # Invariant 1: Same files exist
-        if set(before.keys()) != set(after.keys()):
-            created = set(after.keys()) - set(before.keys())
-            deleted = set(before.keys()) - set(after.keys())
-            emit(out, {"ts": ts, "phase": "validate", "check": "same_files", "result": "FAIL", "created": list(created), "deleted": list(deleted)})
-            return 1
-        emit(out, {"ts": ts, "phase": "validate", "check": "same_files", "result": "PASS"})
-
-        # Invariant 2: Non-target files unchanged (byte-for-byte)
-        for filename in before:
-            if filename in targets:
-                continue
-            if before[filename] != after[filename]:
-                emit(out, {"ts": ts, "phase": "validate", "check": "non_target_unchanged", "file": filename, "result": "FAIL"})
-                return 1
-        emit(out, {"ts": ts, "phase": "validate", "check": "non_target_unchanged", "result": "PASS", "count": len(before) - len(targets)})
-
-        # Invariant 3: Target files = original_stripped + footer (byte-for-byte)
-        for filename, info in targets.items():
-            original = before[filename]
-            original_stripped = original.rstrip()
+        for filename, info in projects_targets.items():
+            path = PROJECTS_DIR / filename
+            original = before_projects[filename]
             footer = info["footer"]
-            year = info["year"]
-            actual = after[filename]
+            path.write_bytes(original.rstrip() + footer)
 
-            # Check 3a: actual starts with original_stripped (byte-for-byte)
-            if not actual.startswith(original_stripped):
-                emit(out, {"ts": ts, "phase": "validate", "check": "original_preserved", "file": filename, "result": "FAIL"})
-                return 1
+        # Phase 4: Snapshot AFTER for both directories
+        after_posts = snapshot_directory(POSTS_DIR)
+        after_projects = snapshot_directory(PROJECTS_DIR)
 
-            # Check 3b: actual ends with footer (byte-for-byte)
-            if not actual.endswith(footer):
-                emit(out, {"ts": ts, "phase": "validate", "check": "footer_appended", "file": filename, "result": "FAIL"})
-                return 1
+        # Phase 5: Validate using INVARIANTS
+        if not validate_directory(before_posts, after_posts, posts_targets, POSTS_DIR, out, ts):
+            return 1
+        if not validate_directory(before_projects, after_projects, projects_targets, PROJECTS_DIR, out, ts):
+            return 1
 
-            # Check 3c: actual is EXACTLY original_stripped + footer (no extra bytes)
-            if actual != original_stripped + footer:
-                emit(out, {"ts": ts, "phase": "validate", "check": "exact_concatenation", "file": filename, "result": "FAIL", "actual_len": len(actual), "expected_len": len(original_stripped) + len(footer)})
-                return 1
+        # Record final hashes for both directories
+        for filename, content in after_posts.items():
+            emit(out, {"ts": ts, "phase": "after", "dir": str(POSTS_DIR), "file": filename, "sha256": sha256(content), "len": len(content)})
+        for filename, content in after_projects.items():
+            emit(out, {"ts": ts, "phase": "after", "dir": str(PROJECTS_DIR), "file": filename, "sha256": sha256(content), "len": len(content)})
 
-            # Check 3d: length difference is exactly footer length
-            len_diff = len(actual) - len(original_stripped)
-            if len_diff != len(footer):
-                emit(out, {"ts": ts, "phase": "validate", "check": "length_diff", "file": filename, "result": "FAIL", "diff": len_diff, "footer_len": len(footer)})
-                return 1
-
-            # Check 3e: correct year in footer
-            year_bytes = f"© Tobias Klein {year}".encode("utf-8")
-            if year_bytes not in actual[-len(footer):]:
-                emit(out, {"ts": ts, "phase": "validate", "check": "correct_year", "file": filename, "result": "FAIL", "expected_year": year})
-                return 1
-
-            emit(out, {"ts": ts, "phase": "validate", "file": filename, "result": "PASS", "original_len": len(original), "original_stripped_len": len(original_stripped), "footer_len": len(footer), "actual_len": len(actual)})
-
-        # Record final hashes
-        for filename, content in after.items():
-            emit(out, {"ts": ts, "phase": "after", "file": filename, "sha256": sha256(content), "len": len(content)})
-
-        emit(out, {"ts": ts, "phase": "complete", "modified": len(targets), "unchanged": len(before) - len(targets)})
+        emit(out, {
+            "ts": ts,
+            "phase": "complete",
+            "posts_modified": len(posts_targets),
+            "posts_unchanged": len(before_posts) - len(posts_targets),
+            "projects_modified": len(projects_targets),
+            "projects_unchanged": len(before_projects) - len(projects_targets),
+        })
 
     return 0
 
