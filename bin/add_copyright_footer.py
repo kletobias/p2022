@@ -100,7 +100,7 @@ def identify_projects_targets(snapshot: dict[str, bytes]) -> dict[str, dict]:
             continue
         year = extract_year_from_frontmatter(content)
         if year is None:
-            continue
+            raise ValueError(f"No valid date line in frontmatter: {filename}")
         footer = footer_for_year(year)
         if footer in content:
             continue
