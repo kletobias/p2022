@@ -25,10 +25,15 @@ The screenshots were polished. The marketing decks were confident.
 And in real-world environments? Most of these "agents" collapsed immediately under the weight of reality:
 
 1. Ambiguous questions.
+
 2. Messy schemas and half-documented systems.
+
 3. Shifting business definitions.
+
 4. Permissions, compliance, and auditability.
+
 5. Cost and latency constraints.
+
 6. The boring but non-negotiable requirement of being correct.
 
 What shipped in 2025, in the vast majority of cases, were **toy agents**: safe enough for a demo, fragile in production, unusable when the cost of being wrong is non-trivial.
@@ -62,8 +67,11 @@ That sounds empowering. It's also dangerously incomplete.
 To let "anyone" safely control complex systems via natural language, you need someone who:
 
 1. Deeply understands the system and its failure modes.
+
 2. Anticipates the anti-patterns the model will generate.
+
 3. Enforces hard constraints around what the agent can and cannot do.
+
 4. Designs verification layers that don't trust the model just because the answer sounds confident.
 
 That someone is not a casual user.
@@ -117,8 +125,11 @@ Before agents, work was slower but more linear. When you write everything yourse
 With AI, the work changes:
 
 1. You constantly read and review large volumes of generated content.
+
 2. You look for invisible edge cases that are not obvious at a glance.
+
 3. You reverse-engineer the model's choices and ask, "Why this? What did it miss?"
+
 4. You run more tests, more often, because you don't trust the generator.
 
 The result: your throughput goes up, but so does your cognitive load.
@@ -143,8 +154,11 @@ I don't see innovation. I see a risk disguised as a convenience.
 Because in the real world:
 
 1. Data has access boundaries and regulatory constraints.
+
 2. Business logic lives in weird legacy corners nobody wrote down.
+
 3. "Revenue" means one thing in Finance, another in Sales, and a third in Analytics.
+
 4. A wrong answer isn't just "oops," it's a bad decision, a broken audit trail, or a compliance incident.
 
 If there is no visible story about governance, constraints, observability, and evaluators, then it's not a production agent. It's a demo.
@@ -153,8 +167,11 @@ We don't need more toy agents in 2026.
 We need agents that are:
 
 1. Bounded.
+
 2. Testable.
+
 3. Auditable.
+
 4. Operated by people who deeply understand the systems they're touching.
 
 ## Where this actually leaves us
