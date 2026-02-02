@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Add copyright footer to markdown files in _posts/ directory.
-Year extracted from filename pattern YYYY-MM-DD-.
+Add copyright footer to markdown files in _posts/ and _projects/ directories.
+Year extracted from filename pattern YYYY-MM-DD- for _posts.
+Year extracted from YAML frontmatter date field for _projects.
 
 Validates using invariants independent of transformation code.
 """
