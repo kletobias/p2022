@@ -611,7 +611,3 @@ allintitle:formula 1 cornering
 \\[\begin{bmatrix} w_1 \ w_2 \end{bmatrix} := \begin{bmatrix} w_1 \ w_2 \end{bmatrix} - \eta \begin{bmatrix} \frac{\partial}{\partial w_1} (w_1 + w_2 x_i - y_i)^2 \ \frac{\partial}{\partial w_2} (w_1 + w_2 x_i - y_i)^2 \end{bmatrix} = \begin{bmatrix} w_1 \ w_2 \end{bmatrix} - \eta \begin{bmatrix} 2 (w_1 + w_2 x_i - y_i) \ 2 x_i(w_1 + w_2 x_i - y_i) \end{bmatrix}\\]
 
 $$ \mathrm{math\, is\, sexy} $$
-
----
-
-(c) Tobias Klein 2022 - All rights reserved LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/
