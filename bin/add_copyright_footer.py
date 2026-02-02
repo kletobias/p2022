@@ -109,6 +109,74 @@ def identify_projects_targets(snapshot: dict[str, bytes]) -> dict[str, dict]:
     return targets
 
 
+def validate_directory(
+    before: dict[str, bytes],
+    after: dict[str, bytes],
+    targets: dict[str, dict],
+    directory: Path,
+    out,
+    ts: str,
+) -> bool:
+    """Validate transformations for a single directory. Returns True on success."""
+    dir_name = str(directory)
+
+    # Invariant 1: Same files exist
+    if set(before.keys()) != set(after.keys()):
+        created = set(after.keys()) - set(before.keys())
+        deleted = set(before.keys()) - set(after.keys())
+        emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "same_files", "result": "FAIL", "created": list(created), "deleted": list(deleted)})
+        return False
+    emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "same_files", "result": "PASS"})
+
+    # Invariant 2: Non-target files unchanged (byte-for-byte)
+    for filename in before:
+        if filename in targets:
+            continue
+        if before[filename] != after[filename]:
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "non_target_unchanged", "file": filename, "result": "FAIL"})
+            return False
+    emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "non_target_unchanged", "result": "PASS", "count": len(before) - len(targets)})
+
+    # Invariant 3: Target files = original_stripped + footer (byte-for-byte)
+    for filename, info in targets.items():
+        original = before[filename]
+        original_stripped = original.rstrip()
+        footer = info["footer"]
+        year = info["year"]
+        actual = after[filename]
+
+        # Check 3a: actual starts with original_stripped (byte-for-byte)
+        if not actual.startswith(original_stripped):
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "original_preserved", "file": filename, "result": "FAIL"})
+            return False
+
+        # Check 3b: actual ends with footer (byte-for-byte)
+        if not actual.endswith(footer):
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "footer_appended", "file": filename, "result": "FAIL"})
+            return False
+
+        # Check 3c: actual is EXACTLY original_stripped + footer (no extra bytes)
+        if actual != original_stripped + footer:
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "exact_concatenation", "file": filename, "result": "FAIL", "actual_len": len(actual), "expected_len": len(original_stripped) + len(footer)})
+            return False
+
+        # Check 3d: length difference is exactly footer length
+        len_diff = len(actual) - len(original_stripped)
+        if len_diff != len(footer):
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "length_diff", "file": filename, "result": "FAIL", "diff": len_diff, "footer_len": len(footer)})
+            return False
+
+        # Check 3e: correct year in footer
+        year_bytes = f"© Tobias Klein {year}".encode("utf-8")
+        if year_bytes not in actual[-len(footer):]:
+            emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "check": "correct_year", "file": filename, "result": "FAIL", "expected_year": year})
+            return False
+
+        emit(out, {"ts": ts, "phase": "validate", "dir": dir_name, "file": filename, "result": "PASS", "original_len": len(original), "original_stripped_len": len(original_stripped), "footer_len": len(footer), "actual_len": len(actual)})
+
+    return True
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
