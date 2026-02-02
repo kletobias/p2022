@@ -2,7 +2,7 @@
 layout: distill
 title: 'From Demos to Production: Guardrails and Review Budget'
 date: 2026-02-17
-description: "Generators output code fast. Your bottleneck is review budget - the amount of code you can verify without losing confidence. Optimize for reviewability, not throughput. Turn architecture preferences into enforceable constraints."
+description: "Part 3/3 | Generators output code fast. Your bottleneck is review budget - the amount of code you can verify without losing confidence. Optimize for reviewability, not throughput. Turn architecture preferences into enforceable constraints."
 tags: ['llm', 'guardrails', 'code-review', 'automation', 'best-practices']
 category: 'LLM-centric Automation'
 comments: true
@@ -100,3 +100,8 @@ A sustainable way to integrate code LLM agents into serious engineering work is 
 When those roles are clear, the working relationship becomes productive and less emotionally charged. You are no longer hoping that the generator "understands your architecture" in the human sense. You are designing a system where architecture is encoded in templates, constraints, and checks-so that even a fast, eager generator can contribute without quietly degrading the codebase.
 
 That is often the difference between agent usage that feels impressive in demos and agent usage that remains dependable over months of production work.
+
+### Links to the other posts in this series
+
+[**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
+[**From Demos to Production: Part 2**]({% link _posts/2026-02-12-from-demos-to-production-distribution-mismatch.md %})

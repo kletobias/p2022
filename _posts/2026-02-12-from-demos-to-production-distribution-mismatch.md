@@ -2,7 +2,7 @@
 layout: distill
 title: 'From Demos to Production: Distribution Mismatch'
 date: 2026-02-12
-description: "LLM generators were trained on public code - simple examples, minimal composition. Your Hydra-driven, config-first architecture is far from that center. Under ambiguity, the model drifts toward common patterns, not your invariants."
+description: "Part 2/3 | LLM generators were trained on public code - simple examples, minimal composition. Your Hydra-driven, config-first architecture is far from that center. Under ambiguity, the model drifts toward common patterns, not your invariants."
 tags: ['llm', 'hydra', 'config-driven', 'distribution-mismatch', 'mlops']
 category: 'LLM-centric Automation'
 comments: true
@@ -97,4 +97,7 @@ A useful dividing line is the type of work:
 
 The more your system depends on conventions that are not widely represented in public code, the more important it becomes to treat the agent as a fast proposer and rely on your own architecture artefacts and checks for correctness.
 
----
+### Links to the other posts in this series
+
+[**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
+[**From Demos to Production: Part 3**]({% link _posts/2026-02-17-from-demos-to-production-guardrails-and-review-budget.md %})
