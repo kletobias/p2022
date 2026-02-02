@@ -828,3 +828,8 @@ logged data.
 In *Part 2*, we analyze the logged data in the DataFrame and build more
 combinations (*Batch No. 2*) to answer our questions that we have after
 analyzing the DataFrame with the results of *Batch No. 1*.
+
+---
+
+**© Tobias Klein 2022 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

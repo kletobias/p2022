@@ -25,3 +25,8 @@ Support Vector Machines (SVMs) and XGBoost are both popular machine learning alg
 
 It's worth noting that XGBoost generally performs well on a wide range of problems, especially when dealing with large datasets and when high predictive accuracy is the primary objective<d-footnote>Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794).</d-footnote>. However, SVMs may have advantages in specific cases as mentioned above. The choice between SVMs and XGBoost ultimately depends on the specific characteristics of your data, the problem at hand, and your priorities in terms of interpretability, computational efficiency, and accuracy<d-footnote>Cortes, C., & Vapnik, V. (1995). Support-vector networks. Machine learning, 20(3), 273-297.</d-footnote><d-footnote>Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (pp. 785-794).</d-footnote>.
 <br><br><br><br><br><br><br>
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

@@ -195,3 +195,8 @@ correct predictions in regard to the correlation.
 This marks the end of this educational article. Thank you very much for reading
 it. Please feel free to link to this article or write a comment in the comments
 section below.
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

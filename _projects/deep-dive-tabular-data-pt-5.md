@@ -473,3 +473,8 @@ Entire Series:<br>
 [**Kaggle Challenge Strategy: RandomForestRegressor and Deep Learning, Part 6**]({% link _projects/deep-dive-tabular-data-pt-6.md %})<br>
 [**Hyperparameter Optimization in Deep Learning for Kaggle, Part 7**]({% link _projects/deep-dive-tabular-data-pt-7.md %})<br>
 <br>
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

@@ -903,4 +903,9 @@ print(ll)
 [Mastery in Pandas: In-Depth Data Exploration, Part 1]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-1.md %})  
 [PyJanitor Proficiency: Efficient String Data Cleaning, Part 2]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-2.md %})  
 [Geospatial Engineering in Pandas: Creating Valid GPS Columns, Part 3]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-3.md %})  
-[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})  
+[Advanced Data Cleaning and Validation: Batch Processing with Pandas, Part 4]({% link _projects/cleaning-a-web-scraped-47-column-br-pandas-dataframe-br-part-4.md %})
+
+---
+
+**© Tobias Klein 2022 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

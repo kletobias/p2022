@@ -168,3 +168,8 @@ In addition to machine learning, efficient file system navigation and manipulati
 
 ## Conclusion
 Mastering file system operations is an essential skill for anyone in the field of machine learning and broader tech industries. It aids in data management, model handling, and automating various ML pipeline components. The choice between Python and shell commands depends on the specific needs of the task, the complexity of the operations, and the environment in which the scripts will run. By leveraging the strengths of both Python and shell scripting, ML engineers and tech professionals can significantly enhance their productivity and workflow efficiency.
+
+---
+
+**© Tobias Klein 2024 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

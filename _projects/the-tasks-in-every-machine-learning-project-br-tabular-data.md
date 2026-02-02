@@ -77,3 +77,8 @@ weights.
 defined at the beginning.
 - Acknowledge limitations and areas for further improvement.
 <br><br>
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

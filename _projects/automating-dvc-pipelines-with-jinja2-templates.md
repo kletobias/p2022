@@ -37,3 +37,8 @@ Overwriting manually edited dvc.yaml files is a concern. To address this, the Pr
 ## Conclusion  
 
 templating has proven invaluable in keeping dvc.yaml concise and up to date. Even as the pipeline expands, the overhead of adding or modifying stages remains small. Templating enforces consistency, encourages best practices, and supports a DRY (Don’t Repeat Yourself) philosophy. Further details about the file and Python script are available in the repository. Future posts will examine how the pipeline logs each step’s output and metadata, integrating seamlessly with tools like Hydra, DVC, and MLflow.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

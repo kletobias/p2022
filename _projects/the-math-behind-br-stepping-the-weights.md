@@ -579,3 +579,8 @@ the parameters and used them to show how the weights are updated during each
 step. The stochastic gradient descent was introduced and compared to the batch
 gradient descent.
 <br><br><br>
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

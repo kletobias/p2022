@@ -459,3 +459,7 @@ if __name__ == "__main__":
     main()
 ```
 
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

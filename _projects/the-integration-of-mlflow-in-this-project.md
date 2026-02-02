@@ -75,4 +75,7 @@ MLflow is more lightweight to maintain compared to large Kubernetes-based platfo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/M1WEOWW_9CM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+---
 
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

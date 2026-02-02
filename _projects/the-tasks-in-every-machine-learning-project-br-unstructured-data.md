@@ -66,3 +66,8 @@ A predictive modeling machine learning project can be divided into six main task
 
 Note that there is overlap between these tasks and the tasks for structured data, but the subtasks and approaches are different due to the unique characteristics of unstructured data.
 <br><br>
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

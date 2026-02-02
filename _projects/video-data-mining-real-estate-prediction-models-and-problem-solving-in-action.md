@@ -119,3 +119,7 @@ All the articles mentioned here are parts of my Bachelor's thesis:
     <p>If you have any specific inquiries or opportunities for collaboration, feel free to reach out to me directly. I'm always open to new ideas and perspectives!</p>
 </footer>
 
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

@@ -1149,3 +1149,8 @@ dfu.to_csv("../data/u-bahn_final.csv")
 ```
 
 These are the steps for creating new geospatial features that are completely independent of the ones in the core dataset scraped from www.immobilienscout24.de . In the following steps, these features will be integrated into the core dataset and used to create new features for each listing found in the core dataset.
+
+---
+
+**© Tobias Klein 2022 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**
