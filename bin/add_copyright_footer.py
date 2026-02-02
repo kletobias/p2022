@@ -19,7 +19,6 @@ PROJECTS_DIR = Path("_projects")
 ARTIFACT_FILE = Path("/tmp/.copyright_transform.jsonl")
 LINKEDIN_URL = "https://www.linkedin.com/in/deep-learning-mastery/"
 FILENAME_PATTERN = re.compile(r"^(\d{4})-\d{2}-\d{2}-")
-FRONTMATTER_PATTERN = re.compile(rb"^---\s*\n(.*?)\n---", re.DOTALL)
 DATE_PATTERN = re.compile(rb"^date:\s*['\"]?(\d{4})", re.MULTILINE)
 FOOTER_LEN = 123  # Known constant: len of footer without year + 4 for year
 
@@ -38,11 +37,34 @@ def snapshot_directory(directory: Path) -> dict[str, bytes]:
 
 
 def extract_year_from_frontmatter(content: bytes) -> str | None:
-    """Extract year from YAML frontmatter date field."""
-    frontmatter_match = FRONTMATTER_PATTERN.match(content)
-    if not frontmatter_match:
+    """Extract year from YAML frontmatter date field.
+
+    Frontmatter requirements:
+    - Line 0 must be exactly '---'
+    - Closes at first subsequent line that is exactly '---'
+    - date: field searched only within extracted frontmatter block
+    """
+    lines = content.split(b"\n")
+
+    # Line 0 must be exactly ---
+    if not lines or lines[0].rstrip() != b"---":
         return None
-    frontmatter = frontmatter_match.group(1)
+
+    # Find closing --- (first occurrence after line 0)
+    closing_idx = None
+    for i, line in enumerate(lines[1:], start=1):
+        if line.rstrip() == b"---":
+            closing_idx = i
+            break
+
+    if closing_idx is None:
+        return None
+
+    # Extract frontmatter content (lines 1 to closing_idx-1)
+    frontmatter_lines = lines[1:closing_idx]
+    frontmatter = b"\n".join(frontmatter_lines)
+
+    # Search for date: at start of line within frontmatter only
     date_match = DATE_PATTERN.search(frontmatter)
     if not date_match:
         return None
