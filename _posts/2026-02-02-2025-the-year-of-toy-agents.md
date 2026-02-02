@@ -33,8 +33,6 @@ And in real-world environments? Most of these "agents" collapsed immediately und
 
 What shipped in 2025, in the vast majority of cases, were **toy agents**: safe enough for a demo, fragile in production, unusable when the cost of being wrong is non-trivial.
 
----
-
 ## I'm not looking at this from the outside
 
 Who am I to say this?
@@ -53,8 +51,6 @@ And here is the core observation from that experience:
 
 > AI doesn't remove complexity. It relocates it.
 > The hard part isn't prompting. The hard part is **governance**.
-
----
 
 ## The fantasy: "AI makes it less technical"
 
@@ -77,8 +73,6 @@ That someone is a domain expert who is **actively governing** the AI.
 Which leads to a very unpopular truth:
 AI does not make things "less technical." It makes them **differently technical**.
 The work moves from "write all the code yourself" to "design, constrain, and continuously audit a non-deterministic collaborator."
-
----
 
 ## What real AI work looked like for me in 2025
 
@@ -107,8 +101,6 @@ When I say I "govern" AI, this is what that actually looks like in practice:
 
 That is what "harnessing" AI actually looks like in 2025.
 Not "ask once, trust always," but "ask repeatedly, constrain aggressively, verify relentlessly."
-
----
 
 ## The mental cost no one likes to talk about
 
@@ -140,8 +132,6 @@ Today, if you want to stay ahead, you don't really have the option of ignoring A
 - You will spend a lot of time saying "no" to the model.
 - Your value is not that you can type a clever prompt; your value is that you can **govern** an unruly but powerful system.
 
----
-
 ## Toy agents vs. real-world agents
 
 So when I see yet another announcement about:
@@ -166,8 +156,6 @@ We need agents that are:
 2. Testable.
 3. Auditable.
 4. Operated by people who deeply understand the systems they're touching.
-
----
 
 ## Where this actually leaves us
 
