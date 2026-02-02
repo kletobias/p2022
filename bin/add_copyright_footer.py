@@ -19,7 +19,7 @@ PROJECTS_DIR = Path("_projects")
 ARTIFACT_FILE = Path("/tmp/.copyright_transform.jsonl")
 LINKEDIN_URL = "https://www.linkedin.com/in/deep-learning-mastery/"
 FILENAME_PATTERN = re.compile(r"^(\d{4})-\d{2}-\d{2}-")
-DATE_PATTERN = re.compile(rb"^date:\s*['\"]?(\d{4})", re.MULTILINE)
+DATE_PATTERN = re.compile(rb"^date:\s[']?(\d{4})-\d{2}-\d{2}[']?$", re.MULTILINE)
 FOOTER_LEN = 123  # Known constant: len of footer without year + 4 for year
 
 
