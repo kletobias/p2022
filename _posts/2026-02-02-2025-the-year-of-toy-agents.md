@@ -11,11 +11,12 @@ comments: true
 
 # 2025: The Year of Toy Agents
 
-Today is 2 February 2026, and I'm looking back at a year that was supposed to be "the year of agents."
 
-It wasn't.
-
-It was the year of **agent demos**.
+>*Today is 2 February 2026, and I'm looking back at a year that was supposed to be "the year of agents."*<br>
+<br>
+*It wasn't.*<br>
+<br>
+*It was the year of **agent demos**.*
 
 Everywhere you looked, vendors had the same storyline:
 "Just use natural language. Our agent will write the query, fetch the data, do the work. No more technical barriers."
@@ -34,7 +35,7 @@ What shipped in 2025, in the vast majority of cases, were **toy agents**: safe e
 
 ---
 
-**I'm not looking at this from the outside**
+## I'm not looking at this from the outside
 
 Who am I to say this?
 
@@ -55,7 +56,7 @@ And here is the core observation from that experience:
 
 ---
 
-**The fantasy: "AI makes it less technical"**
+## The fantasy: "AI makes it less technical"
 
 The current narrative is:
 "AI will make everything less technical. Anyone can just tell the system what they want in plain language. The agent will figure it out."
@@ -79,7 +80,7 @@ The work moves from "write all the code yourself" to "design, constrain, and con
 
 ---
 
-**What real AI work looked like for me in 2025**
+## What real AI work looked like for me in 2025
 
 When I say I "govern" AI, this is what that actually looks like in practice:
 
@@ -109,7 +110,7 @@ Not "ask once, trust always," but "ask repeatedly, constrain aggressively, verif
 
 ---
 
-**The mental cost no one likes to talk about**
+## The mental cost no one likes to talk about
 
 The marketing story is: "AI makes things easier."
 
@@ -141,7 +142,7 @@ Today, if you want to stay ahead, you don't really have the option of ignoring A
 
 ---
 
-**Toy agents vs. real-world agents**
+## Toy agents vs. real-world agents
 
 So when I see yet another announcement about:
 
@@ -168,7 +169,7 @@ We need agents that are:
 
 ---
 
-**Where this actually leaves us**
+## Where this actually leaves us
 
 Despite all of this, I'm not pessimistic about AI.
 Quite the opposite.

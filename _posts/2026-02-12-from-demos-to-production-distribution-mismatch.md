@@ -11,7 +11,7 @@ comments: true
 
 # From Demos to Production: Distribution Mismatch
 
-## Part 2/3 - Why Public Patterns Don't Map to Your Hydra-Driven System
+### Part 2/3 - Why Public Patterns Don't Map to Your Hydra-Driven System
 
 This article is not about BERT or embedding models. It is about tool-using code agents built around an LLM: **code LLM agents (e.g., Claude Code, OpenAI Codex-style agents)**. These systems wrap an LLM in an orchestration layer that can optionally retrieve code, read files, and run tools.
 
@@ -22,7 +22,7 @@ Two terms will be used precisely:
 
 With that established, the most common source of disappointment in "architectural prompting" is a form of distribution mismatch.
 
-### Public code patterns are not production architecture patterns
+## Public code patterns are not production architecture patterns
 
 Many generators were trained on a mixture of sources that strongly reflect what is publicly available and frequently represented. Regardless of the exact mix, the practical consequence is that a generator's defaults tend to align with patterns that are common, simple, and widely visible.
 
@@ -38,7 +38,7 @@ In public repositories, the same tooling is often used in a simplified way: smal
 
 If your codebase uses configuration as an architectural backbone rather than as a convenience layer, you are asking the generator to operate far away from the centre of what it most frequently sees. Under ambiguity, it will often produce code that is plausible in isolation but inconsistent with your architecture.
 
-### Why documentation alone rarely closes the gap
+## Why documentation alone rarely closes the gap
 
 A common expectation is that "if the agent can read the docs, it will know how to apply them." In practice, documentation tends to describe feature surfaces: what is possible, what flags exist, what decorators do. It rarely shows the organisational patterns that make the tool effective at scale.
 
@@ -50,7 +50,7 @@ Production usage patterns are often:
 
 This is not a critique of documentation; it is simply a reality of complex systems. The "how" of a mature architecture is often encoded in internal examples, templates, and guardrails-artefacts that public docs cannot fully replicate.
 
-### What the generator is actually doing with your inputs
+## What the generator is actually doing with your inputs
 
 Even with a tool-enabled agent, the generator is still generating tokens under its trained weights and biases, conditioned on the text it sees. It will try to compress what it reads into a few internal cues:
 
@@ -61,7 +61,7 @@ Even with a tool-enabled agent, the generator is still generating tokens under i
 
 When the visible code is large, interconnected, and shaped by conventions, those cues can be incomplete or misleading. The generator may correctly identify the names of relevant functions and still miss the invariants that matter. The result is a patch that looks coherent yet subtly changes the architecture: a direct instantiation appears where only config-driven instantiation is acceptable; a dependency boundary is crossed; a convenience shortcut is introduced.
 
-### Why "just list the files" is not sufficient
+## Why "just list the files" is not sufficient
 
 Providing a manifest of involved files is helpful, but it does not automatically provide the semantics the generator needs. In architecture-heavy systems, correctness depends on relationships:
 
@@ -72,7 +72,7 @@ Providing a manifest of involved files is helpful, but it does not automatically
 
 A list of files improves coverage; it does not guarantee comprehension. In many production settings, "understanding" is not just reading code; it is understanding the design intent that sits behind the code.
 
-### A constructive way to reduce distribution mismatch
+## A constructive way to reduce distribution mismatch
 
 If the generator's priors do not match your architecture, the most practical response is to feed it a better local distribution. That typically means creating artefacts that make your patterns easy to retrieve and hard to misinterpret:
 
@@ -88,7 +88,7 @@ If the generator's priors do not match your architecture, the most practical res
 4. **Tool outputs as grounding material**
    Logs, stack traces, and real command outputs help the agent remain anchored. When the generator must account for concrete evidence, it is less likely to drift into plausible-but-wrong narratives.
 
-### When to use the agent, and when to keep it as support
+## When to use the agent, and when to keep it as support
 
 A useful dividing line is the type of work:
 
@@ -97,7 +97,7 @@ A useful dividing line is the type of work:
 
 The more your system depends on conventions that are not widely represented in public code, the more important it becomes to treat the agent as a fast proposer and rely on your own architecture artefacts and checks for correctness.
 
-### Links to the other posts in this series
+## Links to the other posts in this series
 
 [**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
 [**From Demos to Production: Part 3**]({% link _posts/2026-02-17-from-demos-to-production-guardrails-and-review-budget.md %})

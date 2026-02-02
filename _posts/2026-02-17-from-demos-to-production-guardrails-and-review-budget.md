@@ -11,7 +11,7 @@ comments: true
 
 # From Demos to Production: Guardrails and Review Budget
 
-## Part 3/3 - Designing Workflows Where Agents Stay Useful
+### Part 3/3 - Designing Workflows Where Agents Stay Useful
 
 This article is not about BERT or embedding models. It is about tool-using code agents built around an LLM: **code LLM agents (e.g., Claude Code, OpenAI Codex-style agents)**.
 
@@ -22,7 +22,7 @@ Two terms are used consistently:
 
 With that clarified, the most practical question is not "how do I make the generator obey?", but "how do I set up a workflow where the generator's output is easy to verify and difficult to merge when it is wrong?"
 
-### The bottleneck is usually human verification, not generation speed
+## The bottleneck is usually human verification, not generation speed
 
 Modern agents can generate large amounts of code quickly. That can feel productive in the moment, but it often shifts the cost to the engineer: you receive a large patch that you must now understand, review, and maintain.
 
@@ -30,7 +30,7 @@ In production engineering, your scarcest resource is frequently the review budge
 
 A good agent workflow therefore optimises for **reviewability**, not raw throughput.
 
-### Prefer small, constrained changes over "complete modules"
+## Prefer small, constrained changes over "complete modules"
 
 A generator can be very helpful when you constrain the scope tightly:
 
@@ -40,7 +40,7 @@ A generator can be very helpful when you constrain the scope tightly:
 
 This keeps the patch size within your review budget and reduces the chance of architectural drift. It also allows the model to operate in a narrow region of the code, where local context is more reliable.
 
-### Turn preferences into enforceable constraints
+## Turn preferences into enforceable constraints
 
 Many teams attempt to encode architecture in prompts: "use Hydra instantiation", "no ad hoc dependencies", "keep layers clean". Prompts help, but they are not enforcement.
 
@@ -66,7 +66,7 @@ In practice, this means moving architectural expectations into mechanisms such a
 
 The key idea is simple: the generator should not be able to "talk its way" into success. It should have to satisfy the same mechanical standards as a human contribution.
 
-### Make the agent prove work with tool outputs
+## Make the agent prove work with tool outputs
 
 A reliable pattern is to require grounding:
 
@@ -76,7 +76,7 @@ A reliable pattern is to require grounding:
 
 This moves the interaction from narrative to evidence. It also reduces the likelihood of the generator producing a confident explanation that is not anchored in actual execution.
 
-### Address the "optimised for speed" bias directly
+## Address the "optimised for speed" bias directly
 
 Many code agents are tuned to move quickly: generate patches, run tools, propose next steps. That is valuable, but it can also encourage overly large edits and "complete solutions" that look tidy yet exceed the review budget.
 
@@ -89,7 +89,7 @@ You can counterbalance this by setting explicit constraints in the workflow:
 
 These are not stylistic preferences; they are operational controls that keep the agent useful in production.
 
-### A calm mental model: proposer, verifier, and gatekeeper
+## A calm mental model: proposer, verifier, and gatekeeper
 
 A sustainable way to integrate code LLM agents into serious engineering work is to separate roles:
 
@@ -101,7 +101,7 @@ When those roles are clear, the working relationship becomes productive and less
 
 That is often the difference between agent usage that feels impressive in demos and agent usage that remains dependable over months of production work.
 
-### Links to the other posts in this series
+## Links to the other posts in this series
 
 [**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
 [**From Demos to Production: Part 2**]({% link _posts/2026-02-12-from-demos-to-production-distribution-mismatch.md %})

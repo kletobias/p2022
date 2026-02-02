@@ -11,7 +11,7 @@ comments: true
 
 # From Demos to Production: The Generator Is Not Learning Your Architecture
 
-## Part 1/3
+**Part 1/3**
 
 It helps to start with clear boundaries, because the discussion around "AI coding" often blends together several different systems.
 
@@ -24,7 +24,7 @@ Two terms matter throughout:
 
 With that framing, a core principle becomes easier to accept and work with:
 
-### Inference does not rewrite trained weights and biases
+## Inference does not rewrite trained weights and biases
 
 In standard deployments, an LLM's trained weights and biases are fixed during inference. When you give an instruction like "use config-driven instantiation", you are not installing new behaviour into the model. You are adding a short-lived constraint into the prompt. The generator then tries to produce a continuation that is plausible under its trained weights and biases, given the prompt and any retrieved context.
 
@@ -37,7 +37,7 @@ This distinction explains a common gap between expectation and outcome. Many eng
 
 Those commitments are rarely explicit in one place. They emerge across dozens of files, conventions, and tooling. A generator can produce the right surface form of code and still miss the invariants that make the code "correct" for your system.
 
-### Why real-world, multi-file work is still a weak fit
+## Why real-world, multi-file work is still a weak fit
 
 The challenge is not that a generator cannot ever output high-quality code. It is that, for architecture-sensitive changes spanning many files, reliability becomes the central issue.
 
@@ -51,25 +51,25 @@ That is difficult for any system that primarily operates by generating likely co
 
 This is why many experienced engineers adopt an operational heuristic: for large, multi-file architectural work, treat the agent as assistance-not as the primary implementer.
 
-### "It feels like some models validate more than others"
+## "It feels like some models validate more than others"
 
 In practice, different products exhibit different behaviours. Some interactive chat models appear more cautious, more willing to revise, and more inclined to provide intermediate reasoning. Many code agents appear tuned for throughput: they run tool loops quickly, generate patches rapidly, and keep the workflow moving.
 
 It is important to describe this as an observed difference in product behaviour rather than as a claim about hidden internal mechanisms. The key point is practical: the agent's optimisation target influences your outcome. If the system is tuned to deliver output quickly, it will tend to generate more code per unit time and will depend more on you (and your checks) to catch subtle architectural drift.
 
-### The "cheap confidence" problem
+## The "cheap confidence" problem
 
 Most generators can produce fluent, confident text with very little friction. That does not mean they are consistently calibrated about whether a patch is correct in your environment. In fact, a common pattern is that the generator will provide a positive narrative ("this should work now", "tests pass") even when it has not executed anything, has partial context, or has quietly assumed missing details.
 
 The issue is not that the model can never express uncertainty. It can. The issue is that uncertainty is not reliably produced unless you enforce it with your workflow. In other words: you often have to design the interaction such that the model cannot "succeed" without concrete evidence.
 
-### Context window is not the same as comprehension
+## Context window is not the same as comprehension
 
 Long context windows help with retrieval and referencing, but they do not guarantee that the generator will preserve architectural invariants. Even when all relevant files fit into a large context window, the generator still has to allocate attention across a very large input, identify what matters, and remain consistent over long edits.
 
 In production codebases, the limiting factor is frequently not "can the text fit", but "what does the model infer from what it sees", filtered through its trained weights and biases. When your architecture is unusual relative to what the model frequently saw during training, the generator's default completions will often drift toward more common patterns.
 
-### A more productive stance
+## A more productive stance
 
 A helpful mental model is:
 
@@ -79,7 +79,7 @@ A helpful mental model is:
 
 When you shift from "teach the model my architecture" to "use the model where its strengths align, and enforce architecture mechanically", the experience becomes more predictable. The agent remains valuable, but you use it with clearer expectations: it is not learning your codebase; it is generating proposals under fixed trained weights and biases, guided by the context you provide and the constraints you enforce.
 
-### Links to the other posts in this series
+## Links to the other posts in this series
 
 [**From Demos to Production: Part 2**]({% link _posts/2026-02-12-from-demos-to-production-distribution-mismatch.md %})<br>
 [**From Demos to Production: Part 3**]({% link _posts/2026-02-17-from-demos-to-production-guardrails-and-review-budget.md %})
