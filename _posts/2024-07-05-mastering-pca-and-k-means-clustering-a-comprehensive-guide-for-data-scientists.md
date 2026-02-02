@@ -75,3 +75,8 @@ Choosing the optimal number of clusters in clustering algorithms like K-means is
 #ElbowMethod, #Python, #Sklearn, #DataAnalysis, #DimensionalityReduction,
 #Eigenvalues, #Eigenvectors, #MLAlgorithms, #DataPreprocessing,
 #DataVisualization, #TechTutorials, #AI, #ArtificialIntelligence
+
+---
+
+**© Tobias Klein 2024 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

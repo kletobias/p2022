@@ -55,3 +55,8 @@ The slide below visualizes both sections side‑by‑side: API mappings on top, 
 </div>
 
 #OpenAI #GPT5 #MLOps #LLM #GenAI
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

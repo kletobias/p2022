@@ -131,3 +131,8 @@ the following.
 The process of importing the data can take anywhere from seconds to minutes, depending on the number of columns and rows to be imported, among other factors.
 
 I am glad, if the article was able to help you in solving the challenge of how to import CSV data into MySQL. Python is a versatile tool and `sqlalchemy` makes it possible to use all the tools that MySQL has from within the Python universe. With the respective driver, it also works for PostgreSQL, Oracle, Microsoft Server, SQLite among others.
+
+---
+
+**© Tobias Klein 2022 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

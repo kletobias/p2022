@@ -124,3 +124,8 @@ LangchainInstrumentor().instrument()
 - **Use SigNoz for infra‑wide metrics and alerts; use LangSmith for LLM‑centric debugging and QA.**
 
 Deploy all three together and you cover both the _what_ (LangChain), the _why_ (LangSmith), and the _where/when_ (SigNoz) of your RAG production stack.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

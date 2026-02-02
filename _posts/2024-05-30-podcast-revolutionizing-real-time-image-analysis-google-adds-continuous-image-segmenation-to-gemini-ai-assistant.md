@@ -85,3 +85,8 @@ Here are some essential links to resources about Google Gemini, the large langua
     [Build with Google AI](https://discuss.ai.google.dev/)
 
 These resources provide a broad and detailed view of Google Gemini's capabilities and offer guides and tools for developers to integrate and leverage this powerful model in various applications.
+
+---
+
+**© Tobias Klein 2024 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

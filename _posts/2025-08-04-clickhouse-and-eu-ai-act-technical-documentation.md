@@ -49,3 +49,8 @@ tags:
 ## Conclusion
 
 ClickHouse excels at high‑volume logging, metrics, and traceability required by the EU AI Act, but needs complementary tooling for narrative documentation, signatures, and artefact governance. Combine it with Git, MLflow, and a QMS to achieve full compliance while keeping analytics fast and cost‑efficient.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

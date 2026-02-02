@@ -52,3 +52,8 @@ Overall, the study is an interesting automation prototype, **but the evidence fa
    - Report variance, significance, and compute/energy per model.
    - Benchmark inference speed vs. sequence length.
    - Ablate each agent (Judge, cognition base, etc.) to measure contribution.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

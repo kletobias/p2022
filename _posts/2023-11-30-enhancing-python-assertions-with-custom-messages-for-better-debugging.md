@@ -120,3 +120,7 @@ def test_transcribe(model_name: str):
 ## Conclusion
 Adding custom messages to assertions is a simple yet effective way to make your Python tests more robust and maintainable. It aids in quick debugging and ensures that your test suite remains a reliable component of the development process.
 
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

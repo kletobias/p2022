@@ -122,6 +122,9 @@ create_new_article(date_in_fname=True)
     [jupytext] Updating /Users/tobias/all_code/projects/python_projects/portfolio_articles/_posts/2023-04-08-best-article/2023-04-08-best-article.md
     [jupytext] Updating /Users/tobias/all_code/projects/python_projects/portfolio_articles/_posts/2023-04-08-best-article/2023-04-08-best-article.py
     
-     ['2023-04-08-best-article.py', '2023-04-08-best-article.ipynb', '2023-04-08-best-article.md'] 
-    
+     ['2023-04-08-best-article.py', '2023-04-08-best-article.ipynb', '2023-04-08-best-article.md']
 
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

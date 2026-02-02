@@ -80,3 +80,8 @@ Without these specifics, the “Agentic AI” vision may conflict with everyday 
 In Agentic AI in Financial Services, IBM Consulting offers a thorough overview of potential agent-based AI benefits—improving customer onboarding, governance, and software development—yet the document tends to downplay or oversimplify the tangible constraints in EU contexts. While it recommends broad frameworks—risk management, compliance by design, or real-time monitoring—the discussion of operational data usage, data-subject rights, vendor IP rules, and the EU AI Act remains high-level. Financial institutions pursuing agentic AI will need far more detailed strategies to ensure that using client data for training or generative tools for coding is both practical and lawful in jurisdictions like the EU.
 
 In short, the paper’s conceptual overview cannot substitute for a rigorous, domain-specific approach that addresses GDPR constraints, vendor trust issues, and strict EU AI Act obligations. Enterprises evaluating these solutions should pair IBM’s high-level risk categories with deep operational expertise to remain compliant, protect sensitive data, and build truly sustainable AI programs.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

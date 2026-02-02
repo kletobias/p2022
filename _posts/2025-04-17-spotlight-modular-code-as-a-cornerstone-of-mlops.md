@@ -34,3 +34,8 @@ In short, embracing modular code fosters clarity, accelerates development, and s
 ## Video: A Comprehensive Look at Modular Code in an MLOps Pipeline
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lGIJrzQ3-q8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

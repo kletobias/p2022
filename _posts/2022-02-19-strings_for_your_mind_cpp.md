@@ -37,3 +37,7 @@ int main() {
 }
 ```
 
+---
+
+**© Tobias Klein 2022 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

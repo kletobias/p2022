@@ -193,3 +193,7 @@ If there's a mindset I've taken into 2026, it's this:
 That's not as shiny as "everyone can be a developer now."
 But it's honest. And in real-world systems, honest beats hype every single time.
 
+---
+
+**© Tobias Klein 2026 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

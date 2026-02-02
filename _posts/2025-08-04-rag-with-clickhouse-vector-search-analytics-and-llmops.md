@@ -104,3 +104,8 @@ ClickHouse now spans three RAG layers:
 3. **Telemetry Warehouse** — traces & evals.
 
 If your team already speaks SQL and values open‑source, consolidating on ClickHouse shrinks moving parts from laptop dev to petabyte clusters—at the cost of betting on an index that’s still hardening. For many, that trade‑off is worth it.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

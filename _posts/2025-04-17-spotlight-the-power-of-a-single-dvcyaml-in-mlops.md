@@ -31,4 +31,7 @@ Several benefits arise from this structure, including reduced compute costs—on
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gVPG-DZkI2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+---
 
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

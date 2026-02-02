@@ -163,3 +163,8 @@ As we conclude today's episode, let's keep in mind that the true essence of AI i
 ## References
 
 - [OpenAI Losses Hit $540 Million Last Year As ChatGPT Costs Racked up](https://www.businessinsider.com/openai-2022-losses-hit-540-million-as-chatgpt-costs-soared-2023-5?r=US&IR=T)
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

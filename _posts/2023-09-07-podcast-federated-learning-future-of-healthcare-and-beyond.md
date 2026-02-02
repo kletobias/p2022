@@ -38,3 +38,8 @@ Join Tobias Klein on the "What's happening in ML" podcast as he navigates the co
 ### Final Thoughts
 
 After listening to the episode, we'd love to hear your thoughts and insights. Join the discussion below and let's deepen our understanding together. Your perspective is invaluable to our community.
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

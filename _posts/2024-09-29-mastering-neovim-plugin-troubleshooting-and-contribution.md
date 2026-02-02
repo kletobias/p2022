@@ -96,3 +96,8 @@ Taking charge of plugin issues in Neovim not only solves your immediate problems
 For more information, visit the [Neovim official documentation](https://neovim.io/doc/) and the [Neovim GitHub repository](https://github.com/neovim/neovim).
 
 By following this guide, you'll be well-equipped to handle any Neovim plugin issues that come your way, making you a more effective and resourceful developer.
+
+---
+
+**© Tobias Klein 2024 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

@@ -116,3 +116,8 @@ In the fast-paced world of technology, time is of the essence. With this Python 
 Feel free to download the script, customize it as per your requirements, and let us know your thoughts in the comments section below.
 
 Happy archiving!
+
+---
+
+**© Tobias Klein 2023 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**

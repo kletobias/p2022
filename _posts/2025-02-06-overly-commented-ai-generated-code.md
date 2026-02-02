@@ -49,3 +49,8 @@ Also, pro tip: The regex substitution to remove comments is now something I’m 
 
 
 Thank you very much for reading this article. Please feel free to link to this article or write a comment in the comments section below.
+
+---
+
+**© Tobias Klein 2025 · All rights reserved**<br>
+**LinkedIn: https://www.linkedin.com/in/deep-learning-mastery/**
