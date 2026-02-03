@@ -54,8 +54,10 @@ Not in one-off chats or weekend experiments, but in long, messy, multi-day sessi
 
 And here is the core observation from that experience:
 
-> AI doesn't remove complexity. It relocates it.
-> The hard part isn't prompting. The hard part is **governance**.
+> AI doesn't remove complexity.<br>
+> It relocates it.<br>
+> The hard part isn't prompting.<br>
+> The hard part is **governance**.
 
 ## The fantasy: "AI makes it less technical"
 
@@ -109,8 +111,9 @@ When I say I "govern" AI, this is what that actually looks like in practice:
    The model's job is to propose; my job is to verify.
    I never confuse fluency with correctness. The more confident the output looks, the more suspicious I am.
 
-That is what "harnessing" AI actually looks like in 2025.<br>
-Not "ask once, trust always," but "ask repeatedly, constrain aggressively, verify relentlessly."
+That is what "harnessing" AI actually looked like in 2025.<br>
+
+**Not "ask once, trust always," but "ask repeatedly, constrain aggressively, verify relentlessly."**
 
 ## The mental cost no one likes to talk about
 
