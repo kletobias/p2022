@@ -83,7 +83,8 @@ That someone is a domain expert who is **actively governing** the AI.
 
 Which leads to a very unpopular truth:
 
-AI does not make things "less technical." It makes them **differently technical**.<br>
+AI does not make things "less technical." It makes them **differently technical**.
+
 The work moves from "write all the code yourself" to "design, constrain, and continuously audit a non-deterministic collaborator."
 
 ## What real AI work looked like for me in 2025
