@@ -7,10 +7,9 @@ tags: ['llm', 'genai', 'ai-agents', 'governance', 'ai-in-business']
 category: 'LLM-centric Automation'
 comments: true
 ---
-<br>
 
 # 2025: The Year of Toy Agents
-
+<br>
 
 >*Today is 2 February 2026, and I'm looking back at a year that was supposed to be "the year of agents."*<br>
 <br>
@@ -19,9 +18,10 @@ comments: true
 *It was the year of **agent demos**.*
 
 Everywhere you looked, vendors had the same storyline:
-"Just use natural language. Our agent will write the query, fetch the data, do the work. No more technical barriers."
 
-The screenshots were polished. The marketing decks were confident.
+*"Just use natural language. Our agent will write the query, fetch the data, do the work. No more technical barriers."*
+
+The screenshots were polished. The marketing decks were confident.<br>
 And in real-world environments? Most of these "agents" collapsed immediately under the weight of reality:
 
 1. Ambiguous questions.
@@ -60,7 +60,8 @@ And here is the core observation from that experience:
 ## The fantasy: "AI makes it less technical"
 
 The current narrative is:
-"AI will make everything less technical. Anyone can just tell the system what they want in plain language. The agent will figure it out."
+
+*"AI will make everything less technical. Anyone can just tell the system what they want in plain language. The agent will figure it out."*
 
 That sounds empowering. It's also dangerously incomplete.
 
@@ -74,12 +75,12 @@ To let "anyone" safely control complex systems via natural language, you need so
 
 4. Designs verification layers that don't trust the model just because the answer sounds confident.
 
-That someone is not a casual user.
-That someone is not a slide in a pitch deck.
+That someone is not a casual user.<br>
+That someone is not a slide in a pitch deck.<br>
 That someone is a domain expert who is **actively governing** the AI.
 
-Which leads to a very unpopular truth:
-AI does not make things "less technical." It makes them **differently technical**.
+Which leads to a very unpopular truth:<br>
+AI does not make things "less technical." It makes them **differently technical**.<br>
 The work moves from "write all the code yourself" to "design, constrain, and continuously audit a non-deterministic collaborator."
 
 ## What real AI work looked like for me in 2025
@@ -107,7 +108,7 @@ When I say I "govern" AI, this is what that actually looks like in practice:
    The model's job is to propose; my job is to verify.
    I never confuse fluency with correctness. The more confident the output looks, the more suspicious I am.
 
-That is what "harnessing" AI actually looks like in 2025.
+That is what "harnessing" AI actually looks like in 2025.<br>
 Not "ask once, trust always," but "ask repeatedly, constrain aggressively, verify relentlessly."
 
 ## The mental cost no one likes to talk about
@@ -163,7 +164,7 @@ Because in the real world:
 
 If there is no visible story about governance, constraints, observability, and evaluators, then it's not a production agent. It's a demo.
 
-We don't need more toy agents in 2026.
+We don't need more toy agents in 2026.<br>
 We need agents that are:
 
 1. Bounded.
@@ -176,7 +177,7 @@ We need agents that are:
 
 ## Where this actually leaves us
 
-Despite all of this, I'm not pessimistic about AI.
+Despite all of this, I'm not pessimistic about AI.<br>
 Quite the opposite.
 
 Last year showed me that:
@@ -196,7 +197,7 @@ If there's a mindset I've taken into 2026, it's this:
 > Don't worship it. Don't fear it.
 > Govern it.
 
-That's not as shiny as "everyone can be a developer now."
+That's not as shiny as "everyone can be a developer now."<br>
 But it's honest. And in real-world systems, honest beats hype every single time.
 
 ---
