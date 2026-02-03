@@ -135,7 +135,7 @@ With AI, the work changes:
 
 The result: your throughput goes up, but so does your cognitive load.
 
-Ironically, it was **less** mentally taxing before agents existed.
+Ironically, it was **less** mentally taxing before agents existed.<br>
 You had fewer surprises, fewer hidden landmines, and more direct control.
 
 Today, if you want to stay ahead, you don't really have the option of ignoring AI. But using it seriously means accepting that:
