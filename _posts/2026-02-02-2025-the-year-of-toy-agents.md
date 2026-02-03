@@ -79,7 +79,8 @@ That someone is not a casual user.<br>
 That someone is not a slide in a pitch deck.<br>
 That someone is a domain expert who is **actively governing** the AI.
 
-Which leads to a very unpopular truth:<br>
+Which leads to a very unpopular truth:
+
 AI does not make things "less technical." It makes them **differently technical**.<br>
 The work moves from "write all the code yourself" to "design, constrain, and continuously audit a non-deterministic collaborator."
 
