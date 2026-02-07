@@ -100,7 +100,7 @@ The more your system depends on conventions that are not widely represented in p
 ## Links to the other posts in this series
 
 [**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
-[**From Demos to Production: Part 3**]({% link _posts/2026-02-17-from-demos-to-production-guardrails-and-review-budget.md %})
+[**From Demos to Production: Part 3**]({% link _posts/2026-02-07-from-demos-to-production-guardrails-and-review-budget.md %})
 
 ---
 
