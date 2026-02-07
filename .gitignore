@@ -28,3 +28,4 @@ assets/**/*.py
 assets/linkedin_posts/
 errors-bundle.log
 .troubleshoot/
+google_search_console_reports/
