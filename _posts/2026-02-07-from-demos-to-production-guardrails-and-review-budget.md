@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'From Demos to Production: Guardrails and Review Budget'
-date: 2026-02-17
+date: 2026-02-07
 description: "Part 3/3 | Generators output code fast. Your bottleneck is review budget - the amount of code you can verify without losing confidence. Optimize for reviewability, not throughput. Turn architecture preferences into enforceable constraints."
 tags: ['llm', 'guardrails', 'code-review', 'automation', 'best-practices']
 category: 'LLM-centric Automation'
