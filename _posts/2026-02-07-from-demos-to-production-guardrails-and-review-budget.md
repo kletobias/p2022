@@ -104,7 +104,7 @@ That is often the difference between agent usage that feels impressive in demos 
 ## Links to the other posts in this series
 
 [**From Demos to Production: Part 1**]({% link _posts/2026-02-07-from-demos-to-production-the-generator-is-not-learning-your-architecture.md %})<br>
-[**From Demos to Production: Part 2**]({% link _posts/2026-02-12-from-demos-to-production-distribution-mismatch.md %})
+[**From Demos to Production: Part 2**]({% link _posts/2026-02-07-from-demos-to-production-distribution-mismatch.md %})
 
 ---
 
