@@ -127,7 +127,9 @@
     <!-- Footer -->
     {%- include footer.html %}
 
+    {% if page.bibliography %}
     <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
+    {% endif %}
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/common.js"></script>
     {% include scripts/bootstrap.html %}
