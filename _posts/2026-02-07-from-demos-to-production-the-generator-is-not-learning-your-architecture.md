@@ -81,8 +81,8 @@ When you shift from "teach the model my architecture" to "use the model where it
 
 ## Links to the other posts in this series
 
-[**From Demos to Production: Part 2**]({% link _posts/2026-02-12-from-demos-to-production-distribution-mismatch.md %})<br>
-[**From Demos to Production: Part 3**]({% link _posts/2026-02-17-from-demos-to-production-guardrails-and-review-budget.md %})
+[**From Demos to Production: Part 2**]({% link _posts/2026-02-07-from-demos-to-production-distribution-mismatch.md %})<br>
+[**From Demos to Production: Part 3**]({% link _posts/2026-02-07-from-demos-to-production-guardrails-and-review-budget.md %})
 
 ---
 
