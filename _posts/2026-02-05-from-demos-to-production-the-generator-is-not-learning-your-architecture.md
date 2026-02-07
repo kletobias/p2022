@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: 'From Demos to Production: The Generator Is Not Learning Your Architecture'
-date: 2026-02-07
+date: 2026-02-05
 description: "Part 1/3 | Inference doesn't rewrite trained weights. When you tell an LLM 'use config-driven instantiation,' you're adding a prompt constraint - not teaching it your architecture. That gap explains why real-world, multi-file work remains fragile."
 tags: ['llm', 'code-agents', 'architecture', 'inference', 'machine-learning']
 category: 'LLM-centric Automation'
@@ -81,7 +81,7 @@ When you shift from "teach the model my architecture" to "use the model where it
 
 ## Links to the other posts in this series
 
-[**From Demos to Production: Part 2**]({% link _posts/2026-02-07-from-demos-to-production-distribution-mismatch.md %})<br>
+[**From Demos to Production: Part 2**]({% link _posts/2026-02-06-from-demos-to-production-distribution-mismatch.md %})<br>
 [**From Demos to Production: Part 3**]({% link _posts/2026-02-07-from-demos-to-production-guardrails-and-review-budget.md %})
 
 ---
