@@ -9,9 +9,7 @@ _site
 Gemfile.lock
 vendor
 
-# ignore intellij files under .idea/ directory in root directory
-.idea/
-
+.envrc
 # ignore single zsh file
 git-get-branch.zsh
 /_projects/.vim-bookmarks
