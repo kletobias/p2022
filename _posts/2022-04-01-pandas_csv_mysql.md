@@ -11,7 +11,7 @@ comments: true
 # Using Pandas To Import CSV Data Into MySQL
 
 Using pandas, one can import any data type that pandas can read and create a DataFrame
-object from. The full list of possible input file types can be found here: [IO tools (text, CSV, HDF5, …) — pandas documentation](https://pandas.pydata.org/docs/user_guide/io.html#io-tools-text-csv-hdf5).  
+object from. The full list of possible input file types can be found here: [IO tools (text, CSV, HDF5, ...) - pandas documentation](https://pandas.pydata.org/docs/user_guide/io.html#io-tools-text-csv-hdf5).  
 In the following, only **CSV** data will be mentioned, but everything applies to all the file types mentioned in the link above, once a `pandas.DataFrame` object has been created.
 
 ## What Problem Does The Solution Solve?

@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'A Comprehensive Look at Modular Code in an MLOps Pipeline'
 date: '2025-04-17'
-description: 'Modular code refers to designing each pipeline stage—data ingestion, preprocessing, model training, evaluation, and deployment—as a distinct module with well-defined inputs, outputs, and responsibilities.'
+description: 'Modular code refers to designing each pipeline stage-data ingestion, preprocessing, model training, evaluation, and deployment-as a distinct module with well-defined inputs, outputs, and responsibilities.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,modular-code,pipeline-design,stage-module,atomic-transformations,scalablility]
 category: 'MLOps: Designing a Modular Pipeline'
@@ -21,7 +21,7 @@ comments: true
 
 
 **Introduction**  
-Modular code refers to designing each pipeline stage—data ingestion, preprocessing, model training, evaluation, and deployment—as a distinct module with well-defined inputs, outputs, and responsibilities. This principle underpins maintainability, scalability, and straightforward debugging. By separating out each function or transformation step into its own file and configuration, developers ensure that changes remain localized, dependencies stay clear, and new features can be introduced with minimal disruption.
+Modular code refers to designing each pipeline stage-data ingestion, preprocessing, model training, evaluation, and deployment-as a distinct module with well-defined inputs, outputs, and responsibilities. This principle underpins maintainability, scalability, and straightforward debugging. By separating out each function or transformation step into its own file and configuration, developers ensure that changes remain localized, dependencies stay clear, and new features can be introduced with minimal disruption.
 
 ---
 
@@ -34,7 +34,7 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
    Configuration-driven modules reference typed dataclasses in, for example, [dependencies/transformations/[medical_transform_removed].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/%5Bmedical_transform_removed%5D.py#L10) or [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py). Each dataclass defines the parameters that feed into a function, forming a clear contract between modules.
 
 3. **Isolation and Testability**  
-   When transformations are spread across smaller Python files—[lag_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/lag_columns.py), [[medical_transform].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/%5Bmedical_transform_removed%5D.py), etc.—testing becomes simpler because each function can be unit tested with controlled inputs. It is also easier to check logs and outputs when the code path is limited to a single transformation.
+   When transformations are spread across smaller Python files-[lag_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/lag_columns.py), [[medical_transform].py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/%5Bmedical_transform_removed%5D.py), etc.-testing becomes simpler because each function can be unit tested with controlled inputs. It is also easier to check logs and outputs when the code path is limited to a single transformation.
 
 4. **Parallel and Distributed Execution**  
    With modules isolated, orchestrators (DVC, Prefect, Airflow) can run steps in parallel if their data dependencies do not overlap. For instance, if one stage aggregates data while another calculates column lags, they can proceed independently before merging results.
@@ -44,13 +44,13 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
 ## 2. Best Practices
 
 - **Keep Configs Separate**  
-  Store parameters in dedicated YAML files under [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) or [configs/model_params/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params). This decouples code from configuration, aligning with Hydra’s compositional approach.
+  Store parameters in dedicated YAML files under [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) or [configs/model_params/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params). This decouples code from configuration, aligning with Hydra's compositional approach.
 
 - **Use Clear Naming Conventions**  
   In the transformations folder, each file name (e.g., `mean_profit.py`) matches the YAML config key (e.g., [mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml)). This consistency lowers the barrier to jumping between code and config.
 
 - **Minimize Cross-Module Dependencies**  
-  If a module references another transformation’s output, prefer well-defined data structures or intermediary files tracked by DVC. Avoid hidden imports or direct references that can create spaghetti dependencies.
+  If a module references another transformation's output, prefer well-defined data structures or intermediary files tracked by DVC. Avoid hidden imports or direct references that can create spaghetti dependencies.
 
 - **Combine Automation & Code Generation**  
   The pipeline uses Jinja2 for generating [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) (see [templates_jinja2/long_post.md](../templates_jinja2/long_post.md)) to ensure each transformation stage is automatically listed, removing human error in writing repetitive YAML.
@@ -63,13 +63,13 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
   Each module should use typed parameters if possible, as done in [dependencies/transformations/rolling_columns.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/rolling_columns.py#L14). This typed approach avoids mismatches.
 
 - **Logging**  
-  Centralized logging (see [logging/long_post.md](../logging/long_post.md)) ensures each module’s operations are captured, facilitating troubleshooting.
+  Centralized logging (see [logging/long_post.md](../logging/long_post.md)) ensures each module's operations are captured, facilitating troubleshooting.
 
 - **Reuse and Composability**  
-  If multiple transformations perform a similar operation—such as computing weighted averages—develop a shared utility in [dependencies/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations). This approach prevents code duplication and fosters uniformity.
+  If multiple transformations perform a similar operation-such as computing weighted averages-develop a shared utility in [dependencies/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations). This approach prevents code duplication and fosters uniformity.
 
 - **Continuous Integration**  
-  Having tests that verify each module’s function ensures new commits do not break existing transformations. DVC stages also keep the pipeline in sync, only re-running modules with changed configs or inputs.
+  Having tests that verify each module's function ensures new commits do not break existing transformations. DVC stages also keep the pipeline in sync, only re-running modules with changed configs or inputs.
 
 ---
 
@@ -91,7 +91,7 @@ Modular code refers to designing each pipeline stage—data ingestion, preproces
 
 ## Conclusion
 
-The project’s modular design ensures each script has a clear purpose, references a dedicated YAML config, and outputs consistent artifacts tracked by DVC. This organization—rooted in single-responsibility modules and typed interfaces—prevents a variety of MLOps headaches. By combining modular code with robust configuration management, logging, and pipeline orchestration, teams can sustain rapid iteration without losing clarity or reproducibility.
+The project's modular design ensures each script has a clear purpose, references a dedicated YAML config, and outputs consistent artifacts tracked by DVC. This organization-rooted in single-responsibility modules and typed interfaces-prevents a variety of MLOps headaches. By combining modular code with robust configuration management, logging, and pipeline orchestration, teams can sustain rapid iteration without losing clarity or reproducibility.
 
 
 

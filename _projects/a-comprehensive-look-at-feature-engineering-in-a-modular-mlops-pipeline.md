@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'A Comprehensive Look at Feature Engineering in a Modular MLOps Pipeline'
 date: '2025-04-17'
-description: 'Effective feature engineering is central to building high-performing and maintainable machine learning pipelines. This project’s codebase illustrates several practices that keep transformations organized, version-controlled, and consistent across training and inference stages.'
+description: 'Effective feature engineering is central to building high-performing and maintainable machine learning pipelines. This project's codebase illustrates several practices that keep transformations organized, version-controlled, and consistent across training and inference stages.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,feature-engineering,atomic-transformations,hydra,dvc,structured-configs,modular-code,separation-of-concerns,version-agnostic-transformations]
 category: 'MLOps: Designing a Modular Pipeline'

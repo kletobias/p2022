@@ -14,7 +14,7 @@ any search engine:
 
 
 > The goal with Information retrieval is the efficient
->	recall of information that satisfies a user’s
+>	recall of information that satisfies a user's
 >	information need.
 
 
@@ -191,9 +191,9 @@ queries.
  - Information to gain with the search query about different generations of BMW
  - 3 Series.
  - Precisely for chassis codes *E36*, *E46*, *E90*
-   - E36: 3 Series, 1992–1999 (third generation)
-   - E46: 3 Series, 1999–2006 (fourth generation)
-   - E90: 3 Series, 2005–2011 (fifth Generation)
+   - E36: 3 Series, 1992-1999 (third generation)
+   - E46: 3 Series, 1999-2006 (fourth generation)
+   - E90: 3 Series, 2005-2011 (fifth Generation)
  - We want to know which generation is the most reliable in general.
 
 We run this query in the [google.com](https://google.com) search field:

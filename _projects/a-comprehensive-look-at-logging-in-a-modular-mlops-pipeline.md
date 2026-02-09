@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'A Comprehensive Look at Logging in a Modular MLOps Pipeline'
 date: '2025-04-17'
-description: 'This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage’s logs tie back to DVC and MLflow runs.'
+description: 'This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage's logs tie back to DVC and MLflow runs.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,logging,logging-strategy,unified-logging,hydra,mlflow,prefect,log-levels,reproducibility]
 category: 'MLOps: Designing a Modular Pipeline'
@@ -24,13 +24,13 @@ featured: true
 
 ## Introduction
 
-Logging is essential for traceability, debugging, and performance monitoring within an MLOps pipeline. When multiple components—Hydra configuration management, DVC versioning, Optuna hyperparameter optimization, MLflow experiment tracking, and tools like Prefect—must interoperate, logging becomes the glue that keeps the entire process auditable and reproducible. This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage’s logs tie back to DVC and MLflow runs.
+Logging is essential for traceability, debugging, and performance monitoring within an MLOps pipeline. When multiple components-Hydra configuration management, DVC versioning, Optuna hyperparameter optimization, MLflow experiment tracking, and tools like Prefect-must interoperate, logging becomes the glue that keeps the entire process auditable and reproducible. This article explores how logging is integrated into the pipeline, referencing relevant Python scripts in dependencies/logging_utils, Hydra configs under configs/logging_utils, and how each stage's logs tie back to DVC and MLflow runs.
 
 ---
 
 ## 1. Centralized and Configurable Logging
 
-[configs/logging_utils/base.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml) stores default logging parameters ([log_file_path](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L3), [formatting](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L4), [level](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L5)). By loading these configurations through Hydra, the pipeline ensures every step—whether a data ingestion script or an Optuna trial—follows consistent logging conventions.
+[configs/logging_utils/base.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml) stores default logging parameters ([log_file_path](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L3), [formatting](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L4), [level](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/logging_utils/base.yaml#L5)). By loading these configurations through Hydra, the pipeline ensures every step-whether a data ingestion script or an Optuna trial-follows consistent logging conventions.
 
 ### Example: base.yaml:
 
@@ -76,9 +76,9 @@ DVC's `dvc repro` triggers steps in sequence; the logs from each step get append
 
 ## 3. Logging in Optuna and MLflow
 
-When running hyperparameter tuning with Optuna (for example, [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py)), the pipeline logs each trial’s metrics to MLflow. [dependencies/logging_utils/calculate_and_log_importances_as_artifact.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/logging_utils/calculate_and_log_importances_as_artifact.py) demonstrates how model artifacts (such as feature importances) are logged as well.
+When running hyperparameter tuning with Optuna (for example, [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py)), the pipeline logs each trial's metrics to MLflow. [dependencies/logging_utils/calculate_and_log_importances_as_artifact.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/logging_utils/calculate_and_log_importances_as_artifact.py) demonstrates how model artifacts (such as feature importances) are logged as well.
 
-Each trial also streams standard log messages (for example, “Trial 1 => RMSE=764781.853”) to the console and the .log file, allowing real-time monitoring. By referencing the unique MLflow run ID in logs, it’s straightforward to cross-check experiment results with pipeline events.
+Each trial also streams standard log messages (for example, "Trial 1 => RMSE=764781.853") to the console and the .log file, allowing real-time monitoring. By referencing the unique MLflow run ID in logs, it's straightforward to cross-check experiment results with pipeline events.
 
 ---
 

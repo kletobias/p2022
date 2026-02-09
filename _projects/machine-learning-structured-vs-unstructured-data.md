@@ -33,7 +33,7 @@ This is the video version of this article, as found on my YouTube channel:
 
 ## Structured data
 
-Structured data is data that has a high degree of organization and is easily searchable by simple, straightforward search engine algorithms or other search operations. It refers to data that is stored in databases, in a fixed field within a record or file. Examples include data in relational databases, such as spreadsheets, or can be anything from a name, a digital reading, a date, or a fact <d-footnote>Chen, M., Mao, S., & Liu, Y. (2014). Big Data: A Survey. Mobile Networks and Applications, 19(2), 171–209. https://doi.org/10.1007/s11036-013-0489-0</d-footnote>.
+Structured data is data that has a high degree of organization and is easily searchable by simple, straightforward search engine algorithms or other search operations. It refers to data that is stored in databases, in a fixed field within a record or file. Examples include data in relational databases, such as spreadsheets, or can be anything from a name, a digital reading, a date, or a fact <d-footnote>Chen, M., Mao, S., & Liu, Y. (2014). Big Data: A Survey. Mobile Networks and Applications, 19(2), 171-209. https://doi.org/10.1007/s11036-013-0489-0</d-footnote>.
 
 ## Unstructured data
 
@@ -47,7 +47,7 @@ The main differences between structured and unstructured data are:
 
 2. **Searchability**: Due to its organized format, structured data can easily be searched, while unstructured data, due to its lack of a specific format, is difficult to search.
 
-3. **Scalability**: Unstructured data is often more scalable as it encompasses a broader range of data types, compared to structured data which is limited by its defined structure<d-footnote>Jagadish, H. V., Gehrke, J., Labrinidis, A., Papakonstantinou, Y., Patel, J. M., Ramakrishnan, R., & Shahabi, C. (2014). Big data and its technical challenges. Communications of the ACM, 57(7), 86–94. https://doi.org/10.1145/2611567</d-footnote>.
+3. **Scalability**: Unstructured data is often more scalable as it encompasses a broader range of data types, compared to structured data which is limited by its defined structure<d-footnote>Jagadish, H. V., Gehrke, J., Labrinidis, A., Papakonstantinou, Y., Patel, J. M., Ramakrishnan, R., & Shahabi, C. (2014). Big data and its technical challenges. Communications of the ACM, 57(7), 86-94. https://doi.org/10.1145/2611567</d-footnote>.
 
 ## Machine Learning
 

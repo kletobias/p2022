@@ -26,12 +26,12 @@ Reasoning models: [https://platform.openai.com/docs/guides/reasoning](https://pl
 
 ## Summary
 
-I’ve been testing the new reasoning_effort parameter in Chat Completions across o3-mini and o1-mini. According to OpenAI, o3-mini is on par with o1-mini for cost per token and latency. My results suggest:
+I've been testing the new reasoning_effort parameter in Chat Completions across o3-mini and o1-mini. According to OpenAI, o3-mini is on par with o1-mini for cost per token and latency. My results suggest:
 
 - o1-mini has no adjustable reasoning setting but, in practice, performed similarly to o3-mini set to medium reasoning.
 - Low reasoning on o3-mini used significantly fewer reasoning tokens than o1-mini.
 - High reasoning on o3-mini used far more reasoning tokens (and took longer).
-- Both models share the same knowledge cutoff of October 2023, but we haven’t fully explored all comparisons yet.
+- Both models share the same knowledge cutoff of October 2023, but we haven't fully explored all comparisons yet.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -49,7 +49,7 @@ I’ve been testing the new reasoning_effort parameter in Chat Completions acros
 
 #### Main Script
 
-Main script – Demonstrates usage of the reasoning_effort parameter and logs completions (including latency and token usage).
+Main script - Demonstrates usage of the reasoning_effort parameter and logs completions (including latency and token usage).
 
 ```python
 # comments_and_posts/run_o3-and-o1-mini-latency.py
@@ -166,7 +166,7 @@ run_api_without_reasoning(timestamp, client, model_without_reasoning, prompt)
 
 #### Data Analysis Script
 
-Data analysis script – Reads JSON logs, loads them into a DataFrame, then visualizes latency vs. reasoning tokens with pandas + seaborn.
+Data analysis script - Reads JSON logs, loads them into a DataFrame, then visualizes latency vs. reasoning tokens with pandas + seaborn.
 
 ```python
 import pandas as pd

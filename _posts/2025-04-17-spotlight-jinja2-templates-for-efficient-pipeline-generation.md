@@ -17,7 +17,7 @@ comments: true
 > Full implementation available under commercial license.
 
 
-Large machine learning pipelines can suffer from repetitive edits when stage definitions expand or change. Jinja2 templates streamline this process by centralizing all configuration details into a single, parameterized YAML structure. Each transformation stage is defined by placeholders—such as commands, dependencies, and outputs—so adding or modifying a stage involves updating a Hydra config rather than copying and pasting YAML blocks.
+Large machine learning pipelines can suffer from repetitive edits when stage definitions expand or change. Jinja2 templates streamline this process by centralizing all configuration details into a single, parameterized YAML structure. Each transformation stage is defined by placeholders-such as commands, dependencies, and outputs-so adding or modifying a stage involves updating a Hydra config rather than copying and pasting YAML blocks.
 
 **This approach follows several best practices:**
 

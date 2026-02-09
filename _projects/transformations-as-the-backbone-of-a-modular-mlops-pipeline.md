@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'Transformations as the Backbone of a Modular MLOps Pipeline'
 date: '2025-04-17'
-description: 'Poor code organization leads to “pipeline spaghetti,” where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.'
+description: 'Poor code organization leads to "pipeline spaghetti," where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,transformations,anti-patterns,spaghetti-code,modular-code,DRY,logical-separation-of-transformations,best-practices]
 category: 'MLOps: Designing a Modular Pipeline'
@@ -24,21 +24,21 @@ featured: true
 
 ## Introduction
 
-Poor code organization leads to “pipeline spaghetti,” where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.
+Poor code organization leads to "pipeline spaghetti," where data ingestion, cleaning, feature engineering, and modeling code are tangled together. This tangle often arises when code is developed in a linear fashion (for example, in one giant notebook) rather than separated into reusable modules for each pipeline stage. The result is code that is hard to test or reuse.
 
 Without logical separation, experiments cannot be iterated quickly because even small changes require running or understanding the entire pipeline. A lack of modularity also undermines collaborative development, since multiple people cannot easily work on different pipeline components in parallel.
 
-These anti-patterns contrast with recommended software engineering practices: modular, well-documented code with consistent naming conventions is much easier to maintain than “thousands of lines of spaghetti code.”
+These anti-patterns contrast with recommended software engineering practices: modular, well-documented code with consistent naming conventions is much easier to maintain than "thousands of lines of spaghetti code."
 
 ### 1. Avoiding Monolithic Transformations
 
-Modular transformations help prevent large, unmanageable blocks of code. Each transformation is often reduced to a single core step with standardized inputs and outputs—such as providing a DataFrame plus a typed configuration object and returning an updated DataFrame. This practice keeps the codebase transparent, testable, and easier to iterate upon. See [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations), and [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations) for details on how each transformation is defined in this project.
+Modular transformations help prevent large, unmanageable blocks of code. Each transformation is often reduced to a single core step with standardized inputs and outputs-such as providing a DataFrame plus a typed configuration object and returning an updated DataFrame. This practice keeps the codebase transparent, testable, and easier to iterate upon. See [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations), and [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations) for details on how each transformation is defined in this project.
 
 ### 2. Consistency Through Single-Source Configuration
 
 Transformations work hand in hand with structured configurations (YAML plus Python dataclasses). Each configuration strictly defines relevant parameters and enforces type consistency. When DVC detects a change in either the transformation code or its config, it triggers only that transformation step, saving time and maintaining reproducibility.
 
-### 3. Clear Naming Conventions and “Don’t Repeat Yourself”
+### 3. Clear Naming Conventions and "Don't Repeat Yourself"
 
 A best practice is to give each transformation a base name shared by:
 [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py)
@@ -101,7 +101,7 @@ This mean_profit module demonstrates how each transformation resides in a dedica
 
 #### Version Control for Code and Data
 
-A [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py) script can import both the dataclass and function. It instantiates the dataclass with parameters from the [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml) YAML file, then calls the transformation [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py). Meanwhile, DVC treats each transformation as a separate stage, referencing that same base name in [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) (via overrides, deps and outs). When any detail of the transformation changes—be it in the code or the config, or the input/output file(s), or the metadata file — DVC reruns only that step without invalidating the entire pipeline.
+A [scripts/universal_step.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/scripts/universal_step.py) script can import both the dataclass and function. It instantiates the dataclass with parameters from the [configs/transformations/mean_profit.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations/mean_profit.yaml) YAML file, then calls the transformation [dependencies/transformations/mean_profit.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations/mean_profit.py). Meanwhile, DVC treats each transformation as a separate stage, referencing that same base name in [dvc.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/dvc.yaml) (via overrides, deps and outs). When any detail of the transformation changes-be it in the code or the config, or the input/output file(s), or the metadata file - DVC reruns only that step without invalidating the entire pipeline.
 
 This ensures that for every single execution a snapshot is created for each referenced file by DVC. Rollbacks are easy to perform, and any guesswork regarding which parameter values were used for any previous execution is eliminated. DVC maintains a cache under `.dvc/cache/`.
 
@@ -158,7 +158,7 @@ stages:
     </div>
 </div>
 <div class="caption">
-        Figure 1: Nothing beats when it all clicks: Hydra, Jinja2, DVC, LuaSnip, DRY principle, a deliberate directory structure, and naming conventions. A single snippet is all it takes to spin up a new DVC stage in this ML pipeline—exactly like in the GIF.
+        Figure 1: Nothing beats when it all clicks: Hydra, Jinja2, DVC, LuaSnip, DRY principle, a deliberate directory structure, and naming conventions. A single snippet is all it takes to spin up a new DVC stage in this ML pipeline-exactly like in the GIF.
 </div>
 
 

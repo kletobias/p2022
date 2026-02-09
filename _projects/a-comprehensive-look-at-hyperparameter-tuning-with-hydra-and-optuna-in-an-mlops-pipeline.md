@@ -21,7 +21,7 @@ comments: true
 
 ## Introduction
 
-This article explores hyperparameter tuning best practices within a modern MLOps pipeline that integrates Hydra, Optuna, and MLflow, alongside DVC for reproducibility. Two sample model configurations—[configs/model_params/rf_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/rf_optuna_trial_params.yaml) and [configs/model_params/ridge_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/ridge_optuna_trial_params.yaml)—illustrate how parameter search spaces are defined and fed into Optuna. The resulting runs are tracked by MLflow, ensuring that each trial’s metrics and artifacts are documented. References to the relevant code under [dependencies/modeling/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling) and [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) demonstrate how tuning logic stays modular and consistent.
+This article explores hyperparameter tuning best practices within a modern MLOps pipeline that integrates Hydra, Optuna, and MLflow, alongside DVC for reproducibility. Two sample model configurations-[configs/model_params/rf_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/rf_optuna_trial_params.yaml) and [configs/model_params/ridge_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/ridge_optuna_trial_params.yaml)-illustrate how parameter search spaces are defined and fed into Optuna. The resulting runs are tracked by MLflow, ensuring that each trial's metrics and artifacts are documented. References to the relevant code under [dependencies/modeling/](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling) and [configs/transformations/](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) demonstrate how tuning logic stays modular and consistent.
 
 ---
 
@@ -30,7 +30,7 @@ This article explores hyperparameter tuning best practices within a modern MLOps
 Hyperparameter tuning can significantly enhance model performance, but it must be approached systematically:
 
 1. **Search Space Design**  
-   Avoid overly broad or random parameter ranges. YAML files such as [configs/model_params/rf_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/rf_optuna_trial_params.yaml) define specific low/high boundaries for each parameter, focusing Optuna’s search where it is most likely to yield improvements.
+   Avoid overly broad or random parameter ranges. YAML files such as [configs/model_params/rf_optuna_trial_params.yaml](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/model_params/rf_optuna_trial_params.yaml) define specific low/high boundaries for each parameter, focusing Optuna's search where it is most likely to yield improvements.
 
 2. **Systematic Search Strategy**  
    Methods like [optuna.trial.Trial.suggest\_\*](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.trial.Trial.html) leverage Bayesian or TPE sampling to converge faster than random or grid approaches. For instance, the utility script [dependencies/modeling/optuna_random_search_util.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/optuna_random_search_util.py) carefully maps YAML config entries into trial suggestions.
@@ -42,7 +42,7 @@ Hyperparameter tuning can significantly enhance model performance, but it must b
    Hydra merges these tuning configs at runtime, while DVC tracks code and data lineage. Changes to either the code or the YAML parameters cause DVC to rerun only the affected pipeline stages.
 
 5. **Logging and Versioning**  
-   MLflow records each Optuna trial’s metrics and parameters—see [logs/runs/2025-03-21_16-56-53/rf_optuna_trial.log](https://github.com/kletobias/advanced-mlops-demo/tree/main/logs/runs/2025-03-21_16-56-53/rf_optuna_trial.log) for a record of how RMSE and $R^2$ were logged per trial. This centralized logging enables quick performance comparisons across parameter sets.
+   MLflow records each Optuna trial's metrics and parameters-see [logs/runs/2025-03-21_16-56-53/rf_optuna_trial.log](https://github.com/kletobias/advanced-mlops-demo/tree/main/logs/runs/2025-03-21_16-56-53/rf_optuna_trial.log) for a record of how RMSE and $R^2$ were logged per trial. This centralized logging enables quick performance comparisons across parameter sets.
 
 ---
 
@@ -68,10 +68,10 @@ Hyperparameter tuning can significantly enhance model performance, but it must b
   Scattering parameters from 1 to 1e6 can waste resources. In the provided config, each parameter has a carefully bounded range. For instance, `n_estimators` is set between 100 and 1000.
 
 - **Lack of Early Stopping/Pruning**  
-  Optuna’s pruners (Median or Hyperband) can halt unpromising trials early. While optional, ignoring such pruning can inflate compute costs.
+  Optuna's pruners (Median or Hyperband) can halt unpromising trials early. While optional, ignoring such pruning can inflate compute costs.
 
 - **Inconsistent Environments**  
-  Trials must run in identical environments with the same seeds, as done here via Hydra’s `random_state: ${ml_experiments.rng_seed}` reference. Inconsistent seeds or library versions complicate reproducibility.
+  Trials must run in identical environments with the same seeds, as done here via Hydra's `random_state: ${ml_experiments.rng_seed}` reference. Inconsistent seeds or library versions complicate reproducibility.
 
 - **Missing Data Lineage**  
   Failing to store the dataset version used for tuning can lead to confusion later. This project references `data_version_input` in dvc.yaml and ensures all transformations are consistent.
@@ -80,33 +80,33 @@ Hyperparameter tuning can significantly enhance model performance, but it must b
 
 ## 4. Optuna Integration
 
-Optuna’s core advantage is a flexible API for sampling hyperparameters:
+Optuna's core advantage is a flexible API for sampling hyperparameters:
 
 - **Parameter Mapping**  
-  [dependencies/modeling/optuna_random_search_util.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/optuna_random_search_util.py) reads each parameter key in the YAML’s `hyperparameters` section (e.g., `min_samples_split`) and calls the appropriate `suggest_*` method.
+  [dependencies/modeling/optuna_random_search_util.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/optuna_random_search_util.py) reads each parameter key in the YAML's `hyperparameters` section (e.g., `min_samples_split`) and calls the appropriate `suggest_*` method.
 
 - **Study Object**  
-  Scripts like [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py) create a `study = optuna.create_study(direction="minimize")`, then call `study.optimize(objective, n_trials=n_trials)`. The best trial’s parameters are used for final model retraining.
+  Scripts like [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py) create a `study = optuna.create_study(direction="minimize")`, then call `study.optimize(objective, n_trials=n_trials)`. The best trial's parameters are used for final model retraining.
 
 - **Advanced Tuning**  
   The same approach can incorporate pruners or custom samplers. The minimal example here uses cross-validation for objective scoring but can be extended to distributed settings.
 
 ---
 
-## 5. MLflow’s Role
+## 5. MLflow's Role
 
 MLflow primarily logs the results of each Optuna trial:
 
 1. **Experiment Naming**  
-   [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py#L50-L55) sets a unique experiment name, combining Hydra’s timestamp with a user-defined prefix.
+   [dependencies/modeling/rf_optuna_trial.py](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/modeling/rf_optuna_trial.py#L50-L55) sets a unique experiment name, combining Hydra's timestamp with a user-defined prefix.
 
 2. **Metrics & Parameters**  
-   Each trial logs RMSE and $R^2$, plus the final hyperparameters. The best trial is re-fitted, and its final metrics are recorded under a separate run named “final_model.”
+   Each trial logs RMSE and $R^2$, plus the final hyperparameters. The best trial is re-fitted, and its final metrics are recorded under a separate run named "final_model."
 
 3. **Artifact Tracking**  
    Extra files, such as `permutation_importances.csv`, are logged as artifacts. Once the logging completes, local copies are removed to keep the workspace clean.
 
-MLflow is not controlling the actual search loop—that falls to Optuna. Instead, it captures the entire history of parameter settings and performance, making it easy to compare different model families or runs.
+MLflow is not controlling the actual search loop-that falls to Optuna. Instead, it captures the entire history of parameter settings and performance, making it easy to compare different model families or runs.
 
 ---
 

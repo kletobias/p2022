@@ -19,7 +19,7 @@ comments: true
 
 This project integrates Hydra configs, Optuna optimization, and MLflow tracking to streamline hyperparameter tuning:
 
-- **Hydra Config**: Each model’s tuning parameters—such as `n_estimators` or `alpha`—are declared in YAML (e.g., [rf_optuna_trial_params.yaml](../model_params/rf_optuna_trial_params.yaml)). Hydra merges these configs at runtime, preventing duplication and confusion.
+- **Hydra Config**: Each model's tuning parameters-such as `n_estimators` or `alpha`-are declared in YAML (e.g., [rf_optuna_trial_params.yaml](../model_params/rf_optuna_trial_params.yaml)). Hydra merges these configs at runtime, preventing duplication and confusion.
 
 - **Optuna**: Scripts like [rf_optuna_trial.py](../../../dependencies/modeling/rf_optuna_trial.py) create an Optuna study, sample hyperparameters from the YAML definitions, and perform cross-validation to rank trials by RMSE or R2. This approach is more efficient than naive grid searches.
 

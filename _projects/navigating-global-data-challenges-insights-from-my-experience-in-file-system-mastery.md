@@ -36,7 +36,7 @@ comments: true
 
 # Navigating Global Data Challenges: Insights from My Experience in File System Mastery
 
-In my tenure at a leading multinational corporation, a titan in handling global sensor data for machine learning applications, mastering file system commands and scripting was not just a part of my job – it was central to my role and crucial for our success. Faced with the daunting task of collecting, validating, and streamlining sensor data from various corners of the world, I learned that the efficient management of these data streams is the linchpin of effective machine learning solutions.
+In my tenure at a leading multinational corporation, a titan in handling global sensor data for machine learning applications, mastering file system commands and scripting was not just a part of my job - it was central to my role and crucial for our success. Faced with the daunting task of collecting, validating, and streamlining sensor data from various corners of the world, I learned that the efficient management of these data streams is the linchpin of effective machine learning solutions.
 
 ## Embracing Challenges with File System Commands and Scripting
 
@@ -48,7 +48,7 @@ Working in an environment brimming with diverse, continuous data flows, my respo
 - **Streamlining Data for Accessibility**: Organizing vast datasets in a structured manner, making them readily accessible for analysis and machine learning, thereby reducing the time from data collection to insight generation.
 
 ### Strategic Use of Python and Shell Commands
-In this global data landscape, choosing between Python's `os` and `pathlib` modules and traditional shell commands was more than a technical decision—it was a strategic one. It hinged on factors like the complexity of data operations, scalability needs, and the overarching goal of creating reproducible and efficient workflows.
+In this global data landscape, choosing between Python's `os` and `pathlib` modules and traditional shell commands was more than a technical decision-it was a strategic one. It hinged on factors like the complexity of data operations, scalability needs, and the overarching goal of creating reproducible and efficient workflows.
 
 ## Leveraging My Experience for Broader Applications
 The skills and insights I gained in this role extend far beyond the specific context of my former company. They are universally applicable across various tech domains:

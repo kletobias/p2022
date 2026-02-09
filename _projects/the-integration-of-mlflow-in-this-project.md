@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'The Integration Of MLflow In This Project'
 date: '2025-04-17'
-description: 'MLflow is central to this project’s experiment tracking, artifact management, and reproducible model development. It is integrated through Hydra configurations, S3 synchronization scripts, and Python modeling code that leverages MLflow’s Pythonic API.'
+description: 'MLflow is central to this project's experiment tracking, artifact management, and reproducible model development. It is integrated through Hydra configurations, S3 synchronization scripts, and Python modeling code that leverages MLflow's Pythonic API.'
 img: 'assets/img/pipeline_worker_female.jpg'
 tags: [mlops,mlflow,artifact-tracking,log-metrics,log-parameters,experiment-tracking]
 category: 'MLOps: Designing a Modular Pipeline'
@@ -14,7 +14,7 @@ comments: true
 
 # The Integration Of MLflow In This Project
 
-MLflow is central to this project’s experiment tracking, artifact management, and reproducible model development. It is integrated through Hydra configurations, S3 synchronization scripts, and Python modeling code that leverages MLflow’s Pythonic API.
+MLflow is central to this project's experiment tracking, artifact management, and reproducible model development. It is integrated through Hydra configurations, S3 synchronization scripts, and Python modeling code that leverages MLflow's Pythonic API.
 
 ## Reasons for Using MLflow
 
@@ -67,7 +67,7 @@ Each run is named `trial_X` or `final_model`, storing critical information like 
 
 MLflow is more lightweight to maintain compared to large Kubernetes-based platforms (e.g., Kubeflow) or specialized SaaS solutions. It integrates seamlessly with Python scripts and Hydra, which supports complex configuration hierarchies, making it ideal for iterative experiment pipelines in this project.
 
-⸻
+---
 
 
 

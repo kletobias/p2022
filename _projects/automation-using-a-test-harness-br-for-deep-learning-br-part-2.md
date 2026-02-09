@@ -36,7 +36,7 @@ featured: false
 In Part 2 of this series, explore how the fastai deep learning library can be
 employed to conduct structured empirical experiments on a novel, small dataset
 consisting of 850 images with a nearly uniform distribution of target labels,
-“male” and “female”.
+"male" and "female".
 
 ## Batch No. 1
 
@@ -51,7 +51,7 @@ _projects/automation-using-a-test-harness-br-for-deep-learning-br-part-1.md %}).
 We will need pandas to work with the tabular data that is stored in
 a CSV file. Pandas is needed for most of the analyzing done. One
 can find information on the commands used in the following, by looking at the
-pandas docs: [API reference — pandas 1.4.3 documentation](https://pandas.pydata.org/docs/reference/index.html)
+pandas docs: [API reference - pandas 1.4.3 documentation](https://pandas.pydata.org/docs/reference/index.html)
 
 The `pyjanitor` library (imported as `janitor`) adds quality of life
 improvements in the form of convenient wrappers for common pandas functions and
@@ -64,7 +64,7 @@ docs of this library: [pyjanitor documentation](https://pyjanitor-devs.github.io
 
 From matplotlib, we import pyplot. Pyplot is a general tool for plotting and
 visualizing data in Python. The docs can be found here:
-[API Reference — Matplotlib 3.5.2 documentation](https://matplotlib.org/stable/api/index)
+[API Reference - Matplotlib 3.5.2 documentation](https://matplotlib.org/stable/api/index)
 
 Various parts of the `fastai` library are used throughout the following. One can
 find its docs following this link: [fastai - Welcome to fastai](https://docs.fast.ai/)

@@ -1160,7 +1160,7 @@ independent and adheres to the specified distribution, thus constituting the
 aggregate distribution of these draws.
 
 Notably, the individual draw distribution does not exhibit
-normality—evidenced by the asymmetrical probabilities heavily biased towards
+normality-evidenced by the asymmetrical probabilities heavily biased towards
 'common' outcomes. Nonetheless, the CLT assures that
 the distribution of sample means will approximate a normal distribution as
 the sample size burgeons, provided the draws are independent and identically
@@ -1176,8 +1176,8 @@ i.i.d. condition and a finite variance are satisfied.
 The probability distribution at hand implies a finite variance, hence the CLT
 is applicable. Yet, the skewness and kurtosis intrinsic to the original
 distribution may slow the convergence of the sample mean towards normality.
-The pronounced skewness—manifest in the high probability of 'common'
-outcomes—suggests that a greater number of draws might be necessary for the
+The pronounced skewness-manifest in the high probability of 'common'
+outcomes-suggests that a greater number of draws might be necessary for the
 sampling distribution of the sample mean to present as normally distributed.
 
 Statistical tests rejecting normality in this context may stem from multiple

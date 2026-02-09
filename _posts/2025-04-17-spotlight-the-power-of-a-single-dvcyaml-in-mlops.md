@@ -23,7 +23,7 @@ Atomic transformations form another key advantage. Instead of scripts dedicated 
 
 Challenges such as repetitive configuration or the management of large pipelines can be addressed by programmatically generating dvc.yaml via Jinja2 templates. This allows users to enumerate transformations in code, minimize errors, and automate updates.
 
-Several benefits arise from this structure, including reduced compute costs—only modified stages rerun—and robust versioning, since Git tracks every change. Ultimately, a well-organized dvc.yaml file becomes the backbone of reproducible and maintainable machine learning pipelines.
+Several benefits arise from this structure, including reduced compute costs-only modified stages rerun-and robust versioning, since Git tracks every change. Ultimately, a well-organized dvc.yaml file becomes the backbone of reproducible and maintainable machine learning pipelines.
 
 
 

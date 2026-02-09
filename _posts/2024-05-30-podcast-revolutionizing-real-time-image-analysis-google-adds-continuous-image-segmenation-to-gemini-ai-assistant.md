@@ -28,11 +28,11 @@ During the keynote, Google highlighted several key features, including a continu
 
 ## Real-Time Response Capability
 
-What truly sets Gemini 1.5 Flash apart is its near real-time response capability. Unlike other major players in the LLM assistant market—such as OpenAI, Microsoft, and Amazon—Google has managed to cut down on latency. This means that Gemini 1.5 Flash can greatly reduce the noticeable, iterative prediction process that other models perform for each generated token of output.
+What truly sets Gemini 1.5 Flash apart is its near real-time response capability. Unlike other major players in the LLM assistant market-such as OpenAI, Microsoft, and Amazon-Google has managed to cut down on latency. This means that Gemini 1.5 Flash can greatly reduce the noticeable, iterative prediction process that other models perform for each generated token of output.
 
 ## Advanced Image Segmentation
 
-Google's latest deep learning platform, Gemini—evolved from BERT—now features advanced image segmentation akin to those in autonomous vehicles. Gemini's agents can precisely predict every detail in video frames almost instantaneously, crucial for real-time applications.
+Google's latest deep learning platform, Gemini-evolved from BERT-now features advanced image segmentation akin to those in autonomous vehicles. Gemini's agents can precisely predict every detail in video frames almost instantaneously, crucial for real-time applications.
 
 ## Applications in Real-World Scenarios
 
@@ -40,7 +40,7 @@ At Fleet State, a vehicle body condition tracking startup assisting rental car c
 
 ## Privacy and Ethical Considerations
 
-The continuous image segmentation feature in Google's Gemini platform, similar to Tesla's utilization of camera data for its Autopilot and Full Self-Driving functionalities, involves the significant collection of video data. While Tesla employs this data to enhance its autonomous driving algorithms using anonymized datasets, Google's approach with Gemini could extend these capabilities further. This stands in contrast to OpenAI, which, despite its vast user-generated training data from diverse applications like multi-modal mobile apps and browser-based platforms, does not collect video data for image segmentation. This distinction marks a unique selling point for Gemini. However, the value of this feature hinges on its practical utility to customers and Google’s ability to manage the associated privacy concerns with the utmost care to prevent breaches. The effectiveness and appeal of Gemini’s advanced capabilities remain to be fully evaluated by the market.
+The continuous image segmentation feature in Google's Gemini platform, similar to Tesla's utilization of camera data for its Autopilot and Full Self-Driving functionalities, involves the significant collection of video data. While Tesla employs this data to enhance its autonomous driving algorithms using anonymized datasets, Google's approach with Gemini could extend these capabilities further. This stands in contrast to OpenAI, which, despite its vast user-generated training data from diverse applications like multi-modal mobile apps and browser-based platforms, does not collect video data for image segmentation. This distinction marks a unique selling point for Gemini. However, the value of this feature hinges on its practical utility to customers and Google's ability to manage the associated privacy concerns with the utmost care to prevent breaches. The effectiveness and appeal of Gemini's advanced capabilities remain to be fully evaluated by the market.
 
 ## Market Implications
 
@@ -70,16 +70,16 @@ Ready to use the Google Gemini API? Obtain your API key here:
 Here are some essential links to resources about Google Gemini, the large language model by Google, providing a wide range of information from documentation to features and developer tools:
 
 1. **Overview and Introduction to Gemini**: Explore an introduction and overview of the Gemini model, its capabilities, and the vision behind its development.  
-    [Tutorial: Get started with the Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=python)
+    [Tutorial: Get started with the Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs/get-started/tutorial?lang=python)
 
 2. **Gemini API Developer Docs and API Reference**: Comprehensive developer documentation, including API references, fine-tuning guidance, function calling, and troubleshooting tips.  
-    [Gemini API Developer Docs and API Reference  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs)
+    [Gemini API Developer Docs and API Reference  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs)
 
 3. **Getting Started Guide for Gemini API**: Detailed tutorials and guides on how to start building applications using the Gemini API, covering various programming languages and platforms.  
     [Gemini API Model Variants](https://ai.google.dev/gemini-api/docs/models/gemini#model-variations)
 
 4. **Gemini Technical Capabilities and Use Cases**: Dive into the technical capabilities of Gemini, explore use cases, and understand its multimodal functionalities.  
-    [Google | Build with Gemini  |  Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/cookbook)
+    [Google | Build with Gemini  |  Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/cookbook)
 
 5. **Community and Support for Gemini Developers**: Connect with other developers and find support in the Gemini developer forum.  
     [Build with Google AI](https://discuss.ai.google.dev/)

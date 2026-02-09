@@ -30,10 +30,10 @@ comments: true
 
 ## o3-pro Reasoning
 
-**Model’s hidden “reasoning”:**
+**Model's hidden "reasoning":**
 
-> Mapping out dataclasses…
-> I’m evaluating different methods to create dataclasses, considering generating skeletons with placeholders, dubious parameters, or pseudocode annotations.
+> Mapping out dataclasses...
+> I'm evaluating different methods to create dataclasses, considering generating skeletons with placeholders, dubious parameters, or pseudocode annotations.
 
 ## Reply
 
@@ -46,17 +46,17 @@ comments: true
 Generates explicit `@dataclass` definitions that mirror the public constructor
 signatures (types & defaults) of the LangChain *loader* classes supplied in
 `LOADER_PATHS`. Run once in an environment where the target packages (and any
-optional dependencies you care about) are import‑able:
+optional dependencies you care about) are import-able:
 
     $ python generate_loader_dataclasses.py
 
 The script will create `loader_dataclasses.py` alongside itself, containing
-static, human‑readable @dataclass wrappers for every successfully imported
+static, human-readable @dataclass wrappers for every successfully imported
 loader class.
 
 Each generated dataclass:
   • Inherits from the original loader (preserving runtime behaviour)
-  • Re‑states every `__init__` parameter with its default & type annotation
+  • Re-states every `__init__` parameter with its default & type annotation
   • Uses `slots=True` for memory efficiency
 """
 
@@ -65,8 +65,8 @@ Each generated dataclass:
 # 3. Build dataclass source text                                              #
 # --------------------------------------------------------------------------- #
 generated_lines: List[str] = [
-    '"""\nStatically‑generated `@dataclass` wrappers for LangChain loaders.\n'
-    "This file is **auto‑generated** by `generate_loader_dataclasses.py`.\n"
+    '"""\nStatically-generated `@dataclass` wrappers for LangChain loaders.\n'
+    "This file is **auto-generated** by `generate_loader_dataclasses.py`.\n"
     'Do **NOT** edit manually.\n"""\n',
     "from __future__ import annotations\n",
     "from dataclasses import dataclass, field\n",
@@ -96,11 +96,11 @@ print(f"[✓] Wrote {outfile.relative_to(outfile.parent)} with {len(LOADER_PATHS
 
 ## Analysis of the Reply
 
-The analysis highlights that the generator script works well as static documentation but is risky for production because the dataclass wrappers never invoke the original loaders’ initialization logic.
+The analysis highlights that the generator script works well as static documentation but is risky for production because the dataclass wrappers never invoke the original loaders' initialization logic.
 
 | Area                 | Impact                                                                                                       |
 | -------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Runtime behaviour    | The auto-generated `__init__` bypasses the original loader’s side-effects, leaving objects half-configured.  |
+| Runtime behaviour    | The auto-generated `__init__` bypasses the original loader's side-effects, leaving objects half-configured.  |
 | Super call           | Lacking a `__post_init__` that calls `super().__init__`, required setup steps never execute.                 |
 | Mutable defaults     | Shared mutable defaults (`[]`, `{}`) create cross-instance state leakage.                                    |
 | Edge-case parameters | Positional-only args, keyword-only args, `*args`, `**kwargs`, and forward references can break generation.   |
@@ -120,11 +120,11 @@ As a documentation scaffold the script scores well, but for runtime reliability 
 | **Covers every listed loader class**                        | Attempts to import each path inside a loop; any import failure is commented out in the output.                       | ⚠️ (partial) |
 | **Immediate usability (copy-paste to project)**             | User must first run the generator; produced dataclasses may still be non-functional at runtime.                      | ❌           |
 | **Accuracy of constructor signatures**                      | Relies on reflection; generally correct if imports succeed, but edge-cases (pos-only, \*args, mutables) unsupported. | ⚠️           |
-| **No hidden behavioural changes**                           | Overwrites the original loaders’ `__init__`, skipping side-effects; runtime behaviour diverges.                      | ❌           |
+| **No hidden behavioural changes**                           | Overwrites the original loaders' `__init__`, skipping side-effects; runtime behaviour diverges.                      | ❌           |
 
 #### Overall alignment score: **1 / 5**
 
-The reply’s generator approach partly addresses the prompt’s _intent_ (obtaining dataclasses) but fails the explicit requirement to _return_ a single script containing the fully written `@dataclass` definitions ready for immediate use.
+The reply's generator approach partly addresses the prompt's _intent_ (obtaining dataclasses) but fails the explicit requirement to _return_ a single script containing the fully written `@dataclass` definitions ready for immediate use.
 
 Demand transparency. Validate every output. 🚨
 

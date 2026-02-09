@@ -2,7 +2,7 @@
 layout: 'distill'
 title: 'Spotlight Modular Code as a Cornerstone of MLOps'
 date: '2025-04-17'
-description: 'Modular code separates each pipeline function—data loading, cleaning, feature engineering, training—into well-defined modules.'
+description: 'Modular code separates each pipeline function-data loading, cleaning, feature engineering, training-into well-defined modules.'
 tags: [mlops,modular-code,pipeline-design,stage-module,atomic-transformations,scalablility]
 category: 'MLOps: Designing a Modular Pipeline'
 comments: true
@@ -18,7 +18,7 @@ comments: true
 > Full implementation available under commercial license.
 
 
-Modular code separates each pipeline function—data loading, cleaning, feature engineering, training—into well-defined modules. By following a single-responsibility principle and keeping configuration details in YAML, the pipeline in this project remains flexible and reusable. For instance, references to [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) align each module’s parameters with typed dataclasses in [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations).
+Modular code separates each pipeline function-data loading, cleaning, feature engineering, training-into well-defined modules. By following a single-responsibility principle and keeping configuration details in YAML, the pipeline in this project remains flexible and reusable. For instance, references to [configs/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/configs/transformations) align each module's parameters with typed dataclasses in [dependencies/transformations](https://github.com/kletobias/advanced-mlops-demo/tree/main/dependencies/transformations).
 
 **Key Advantages**
 
