@@ -22,10 +22,11 @@ toc_script/*.html
 /assets/img/psd/
 /landing-page-mockup/
 /references/test.py
-assets/audio/*
-scripts/*
+assets/audio/
+scripts/
 assets/**/*.py
 assets/linkedin_posts/
 errors-bundle.log
 .troubleshoot/
 google_search_console_reports/
+bin/
