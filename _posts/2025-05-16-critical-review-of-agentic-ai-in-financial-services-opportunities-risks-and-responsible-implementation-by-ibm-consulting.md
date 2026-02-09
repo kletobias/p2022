@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: "Critical Review of "Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation" by IBM Consulting"
+title: 'Critical Review of "Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation" by IBM Consulting'
 date: 2025-05-16
 description: "The recent IBM Consulting publication Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation (May 2025, 36 pages) addresses the potential benefits and pitfalls of agent-based AI solutions in the financial sector. However, a close reading exposes gaps between the paper's broad aspirations and the strict regulatory and practical realities-especially regarding compliance with EU privacy rules (GDPR) and the complexities of using real operational data. The following critique highlights the major oversights."
 tags:
@@ -18,9 +18,8 @@ tags:
 category: "AIOps"
 comments: true
 ---
-
-<!-- _posts/2025-05-16-critical-review-of-agentic-ai-in-financial-services-opportunities-risks-and-responsible-implementation-by-ibm-consulting.md -->
 <br>
+
 # Critical Review of "Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation" by IBM Consulting
 
 The recent IBM Consulting publication Agentic AI in Financial Services: Opportunities, Risks, and Responsible Implementation (May 2025, 36 pages) addresses the potential benefits and pitfalls of agent-based AI solutions in the financial sector. However, a close reading exposes gaps between the paper's broad aspirations and the strict regulatory and practical realities-especially regarding compliance with EU privacy rules (GDPR) and the complexities of using real operational data. The following critique highlights the major oversights.
