@@ -654,8 +654,6 @@ for cc in zip(json_check, json_colnames):
     dtype: int64
 
 
-
-
 ```python
 df.drop(columns=json_check, inplace=True)
 ```
