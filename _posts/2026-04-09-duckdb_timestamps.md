@@ -15,7 +15,7 @@ comments: true
 
 When working with timestamps, it's crucial to understand the difference between unit and precision.
 
-*Unit and precision are not the same thing. A timestamp can be represented in different units (seconds, milliseconds, microseconds, nanoseconds) without changing the underlying precision of the original timestamp data.*
+Unit and precision are not the same thing. A timestamp can be represented in different units (seconds, milliseconds, microseconds, nanoseconds) without changing the underlying precision of the original timestamp data.
 
 Before we dive into the details, let's look at an example using DuckDB to illustrate these concepts.
 
@@ -40,9 +40,11 @@ FROM tsn;
 
 ## Explanation of the query
 
-** ts_dt is a TIMESTAMPTZ, a timezone-aware timestamp with microsecond precision.
-** epoch_ns, epoch_us, epoch_ms, and epoch are all functions that take a timestamp and return a numeric representation of the time since the Unix epoch (1970-01-01 00:00:00 UTC) in different units (nanoseconds, microseconds, milliseconds, and seconds, respectively).
-** The length of the string representation of each epoch value is calculated to show how many digits are in each representation.
+- ts_dt is a TIMESTAMPTZ, a timezone-aware timestamp with microsecond precision.
+
+- epoch_ns, epoch_us, epoch_ms, and epoch are all functions that take a timestamp and return a numeric representation of the time since the Unix epoch (1970-01-01 00:00:00 UTC) in different units (nanoseconds, microseconds, milliseconds, and seconds, respectively).
+
+- The length of the string representation of each epoch value is calculated to show how many digits are in each representation.
 
 ```json
 [
