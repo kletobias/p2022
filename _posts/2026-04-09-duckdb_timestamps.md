@@ -73,23 +73,23 @@ documents now() as “Current date and time (start of current transaction),” d
 TIMESTAMPTZ as a “Time zone aware timestamp with microsecond precision,” and says the
 configured time zone “defaults to the system time zone.” In the sample output
 2026-04-09 08:23:32.808211+02, the +02 shows this example is using the local offset,
-not UTC.  ￼
+not UTC.
 
 In the example, the same instant is exposed as epoch(), epoch_ms(), epoch_us(), and
 epoch_ns(). DuckDB documents those as “seconds,” “milliseconds,” “microseconds,” and
 “nanoseconds since the epoch,” and it notes that TIMESTAMP WITH TIME ZONE “does not
 store time zone information”; it stores the “INT64 number of non-leap microseconds since
-the Unix epoch 1970-01-01 00:00:00+00.”  ￼
+the Unix epoch 1970-01-01 00:00:00+00.”
 
 The subtle but important part: unit is not the same as precision. A 19-digit *_ns value
 does not automatically mean nanosecond-precision data. DuckDB’s own examples show
 epoch_ns('...123456+00') -> ...123456000 while epoch_us('...123456+00') ->
-...123456. Same instant, different unit, microsecond source precision.  ￼
+...123456. Same instant, different unit, microsecond source precision.
 
 And epoch() is that same value again, just rendered as seconds plus a fractional part.
 So 1775715812.808211 means 1775715812 whole seconds and 808211 microseconds.
 DuckDB’s date-part docs say epoch returns DOUBLEs, which is convenient for display,
-but exact integer units are usually the safer load-bearing representation in pipelines.  ￼
+but exact integer units are usually the safer load-bearing representation in pipelines.
 
 Rule: first verify the type, then the unit, then the real precision. Names help. Types and
 functions decide.
